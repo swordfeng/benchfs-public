@@ -1,0 +1,30 @@
+[package]
+name = "benchfs-fuse"
+version = "0.1.0"
+description = "Immutable Linux low-level FUSE adapter for BenchFS v1"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+async-channel = "2"
+async-trait = "0.1"
+benchfs-sdk = { path = "../benchfs-sdk" }
+compio = { version = "0.19.1", default-features = false, features = ["runtime"] }
+futures = "0.3"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+compio = { version = "0.19.1", default-features = false, features = ["runtime", "io-uring"] }
+[dev-dependencies]
+futures = "0.3"
+tokio = { version = "1", features = ["macros", "rt"] }
+[lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "deny", priority = -1 }
+missing_errors_doc = "allow"
+doc_markdown = "allow"
+module_name_repetitions = "allow"
+
+[lints.rust]
+missing_docs = "deny"

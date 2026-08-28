@@ -1,0 +1,1 @@
+Read the run-scoped task materials in the VM. Implement the requested {Core, Journal, or COW} variant of BenchFS in the writable implementation workspace, and try to score as much as you can.

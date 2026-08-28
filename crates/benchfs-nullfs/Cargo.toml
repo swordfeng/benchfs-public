@@ -1,0 +1,19 @@
+[package]
+name = "benchfs-nullfs"
+version = "0.1.0"
+description = "Intentionally non-functional BenchFS contestant scaffold"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+async-trait = "0.1"
+benchfs-fuse = { path = "../benchfs-fuse" }
+benchfs-sdk = { path = "../benchfs-sdk" }
+futures = "0.3"
+
+[dev-dependencies]
+
+[lints]
+workspace = true

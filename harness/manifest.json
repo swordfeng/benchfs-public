@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "harness": {
+    "name": "Pi Coding Agent",
+    "package": "@earendil-works/pi-coding-agent",
+    "version": "0.84.3",
+    "node_version": "22.23.2"
+  },
+  "execution": {
+    "mode": "continuous-one-shot",
+    "starts_per_trajectory": 1,
+    "repair_prompts": 0,
+    "human_technical_intervention": false,
+    "pilot_wall_clock_hours": 12,
+    "evaluation_feedback_returned": false
+  },
+  "tool_policy": {
+    "benchmark_specific_tools": false,
+    "model_specific_prompt_tuning": false,
+    "role_routing": false,
+    "fallback_models": false,
+    "subagents": false,
+    "memory": false,
+    "builtin_browser_or_web": false,
+    "dynamic_extensions": false
+  },
+  "goal_template": "agent-goal.txt"
+}

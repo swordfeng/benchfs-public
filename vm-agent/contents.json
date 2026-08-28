@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "publication_boundary": "catalog-only for task documents and tests",
+  "workspace_root": "/home/benchfs/solution",
+  "entries": [
+    {
+      "path": "docs/",
+      "role": "run-scoped task material",
+      "mutable": false,
+      "public_content": false
+    },
+    {
+      "path": "benchfs-sdk/",
+      "role": "fixed participant-facing API",
+      "mutable": false,
+      "public_snapshot": "../crates/benchfs-sdk/"
+    },
+    {
+      "path": "benchfs-fuse/",
+      "role": "fixed participant-facing adapter",
+      "mutable": false,
+      "public_snapshot": "../crates/benchfs-fuse/"
+    },
+    {
+      "path": "bench/",
+      "role": "NullFS implementation scaffold",
+      "mutable": true,
+      "public_snapshot": "../crates/benchfs-nullfs/"
+    },
+    {
+      "path": "Cargo.toml, Cargo.lock, .cargo/config.toml",
+      "role": "frozen workspace metadata",
+      "mutable": false
+    },
+    {
+      "path": "tools/dependency-allowlist.txt",
+      "role": "frozen direct-dependency policy",
+      "mutable": false
+    },
+    {
+      "path": "/opt/benchfs/",
+      "role": "Dev-visible feedback tests and helpers",
+      "mutable": false,
+      "public_content": false
+    }
+  ],
+  "excluded_from_dev_vm": [
+    "hidden tests and manifests",
+    "evaluator seeds, traces, and oracles",
+    "formal recovery workloads",
+    "reference or candidate implementations",
+    "host and provider credentials"
+  ]
+}
