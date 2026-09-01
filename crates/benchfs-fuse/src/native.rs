@@ -109,13 +109,14 @@ mod linux {
     use std::path::Path;
     use std::ptr;
     use std::sync::{
-        Arc,
+        Arc, Weak,
         atomic::{AtomicBool, Ordering},
     };
 
     use crate::{
         Adapter, MountSource, RuntimeConfig, XattrReply, normalize_fallocate_mode,
-        normalize_open_options, normalize_rename_mode, normalize_xattr_mode,
+        normalize_open_options, normalize_rename_mode, normalize_setattr_privilege_clear,
+        normalize_xattr_mode,
     };
     use async_channel::Sender;
     use benchfs_sdk::{
@@ -169,9 +170,6 @@ mod linux {
     const SET_ATTR_MTIME: u32 = 1 << 5;
     const SET_ATTR_ATIME_NOW: u32 = 1 << 7;
     const SET_ATTR_MTIME_NOW: u32 = 1 << 8;
-    const SET_ATTR_KILL_SUID: u32 = 1 << 11;
-    const SET_ATTR_KILL_SGID: u32 = 1 << 12;
-    const SET_ATTR_KILL_PRIV: u32 = 1 << 14;
     const SEEK_DATA: u32 = 3;
     const SEEK_HOLE: u32 = 4;
 
@@ -372,24 +370,43 @@ mod linux {
 
     struct ReplyState {
         handle: usize,
-        replied: std::sync::atomic::AtomicBool,
+        replied: AtomicBool,
+        completed: AtomicBool,
+        drain: Option<Weak<DrainState>>,
     }
 
     impl ReplyOnce {
         fn new(handle: usize) -> Self {
+            Self::with_drain(handle, None)
+        }
+
+        fn registered(handle: usize, drain: &Arc<DrainState>) -> Self {
+            Self::with_drain(handle, Some(Arc::downgrade(drain)))
+        }
+
+        fn with_drain(handle: usize, drain: Option<Weak<DrainState>>) -> Self {
             Self {
                 state: Arc::new(ReplyState {
                     handle,
-                    replied: std::sync::atomic::AtomicBool::new(false),
+                    replied: AtomicBool::new(false),
+                    completed: AtomicBool::new(false),
+                    drain,
                 }),
             }
         }
 
+        fn same_request(&self, other: &Self) -> bool {
+            Arc::ptr_eq(&self.state, &other.state)
+        }
+
         fn claim(&self) -> bool {
-            !self
-                .state
-                .replied
-                .swap(true, std::sync::atomic::Ordering::AcqRel)
+            let claimed = !self.state.replied.swap(true, Ordering::AcqRel);
+            if claimed {
+                if let Some(drain) = self.state.drain.as_ref().and_then(Weak::upgrade) {
+                    drain.retire(self);
+                }
+            }
+            claimed
         }
 
         fn raw(&self) -> *mut c_void {
@@ -514,6 +531,7 @@ mod linux {
             count: usize,
         );
     }
+
     // `inner` is the single synchronization boundary for stop-admission,
     // request registration/completion, and the condition-variable predicate.
     struct DrainState {
@@ -523,7 +541,10 @@ mod linux {
 
     struct DrainInner {
         stopping: bool,
+        // Admission guard keyed by the reusable native fuse_req_t address.
         replies: HashMap<usize, ReplyOnce>,
+        // Requests remain active until dispatch returns, even after replying.
+        active: usize,
     }
 
     impl DrainState {
@@ -532,6 +553,7 @@ mod linux {
                 inner: std::sync::Mutex::new(DrainInner {
                     stopping: false,
                     replies: HashMap::new(),
+                    active: 0,
                 }),
                 wake: std::sync::Condvar::new(),
             }
@@ -547,13 +569,40 @@ mod linux {
             if inner.replies.contains_key(&handle) {
                 return Err(Errno::Corrupt.into());
             }
+            inner.active = inner.active.checked_add(1).ok_or(Errno::Overflow)?;
             inner.replies.insert(handle, reply);
             Ok(())
         }
 
-        fn finish(&self, handle: usize) {
+        // A native request address may be reused as soon as fuse_reply_* returns.
+        // Retire it before making that call; `active` still keeps drain waiting.
+        fn retire(&self, reply: &ReplyOnce) {
             let mut inner = self.inner.lock().unwrap_or_else(|error| error.into_inner());
-            if inner.replies.remove(&handle).is_some() && inner.replies.is_empty() {
+            let handle = reply.state.handle;
+            if inner
+                .replies
+                .get(&handle)
+                .is_some_and(|current| current.same_request(reply))
+            {
+                inner.replies.remove(&handle);
+            }
+        }
+
+        fn complete(&self, reply: &ReplyOnce) {
+            if reply.state.completed.swap(true, Ordering::AcqRel) {
+                return;
+            }
+            let mut inner = self.inner.lock().unwrap_or_else(|error| error.into_inner());
+            let handle = reply.state.handle;
+            if inner
+                .replies
+                .get(&handle)
+                .is_some_and(|current| current.same_request(reply))
+            {
+                inner.replies.remove(&handle);
+            }
+            inner.active -= 1;
+            if inner.active == 0 {
                 self.wake.notify_all();
             }
         }
@@ -594,7 +643,6 @@ mod linux {
     ) {
         let reply = pending.reply;
         let state = pending.state;
-        let handle = reply.state.handle;
         let request = pending.request;
         let native = request.as_native();
         let result = AssertUnwindSafe(dispatch_request(&adapter, &reply, &native))
@@ -603,7 +651,7 @@ mod linux {
         if result.is_err() {
             reply.error(Errno::Io.into());
         }
-        state.finish(handle);
+        state.complete(&reply);
     }
     async fn process_message(
         adapter: Arc<Adapter<dyn FilesystemOperations>>,
@@ -1123,8 +1171,9 @@ mod linux {
             let bridge = unsafe { &*userdata.cast::<AsyncBridge>() };
             let request = unsafe { &*request };
             let request = unsafe { OwnedRequest::from_raw(request) }?;
-            let reply = ReplyOnce::new(request_handle as usize);
+            let reply = ReplyOnce::registered(request_handle as usize, &bridge.state);
             bridge.state.register(reply.clone())?;
+            let cleanup = reply.clone();
             bridge
                 .sender
                 .try_send(WorkerMessage::Request(PendingRequest {
@@ -1133,7 +1182,7 @@ mod linux {
                     state: Arc::clone(&bridge.state),
                 }))
                 .map_err(|_| {
-                    bridge.state.finish(request_handle as usize);
+                    bridge.state.complete(&cleanup);
                     FsError::from(Errno::Busy)
                 })
         }));
@@ -1155,7 +1204,7 @@ mod linux {
             .inner
             .lock()
             .unwrap_or_else(|error| error.into_inner());
-        while !inner.replies.is_empty() {
+        while inner.active != 0 {
             inner = bridge
                 .state
                 .wake
@@ -1453,19 +1502,7 @@ mod linux {
         request: &NativeRequest,
     ) -> FsResult<()> {
         let flags = request.flags;
-        let clear_bits = if flags & SET_ATTR_KILL_PRIV != 0 {
-            PrivilegeClearMask::BOTH.bits()
-        } else {
-            (if flags & SET_ATTR_KILL_SUID != 0 {
-                PrivilegeClearMask::SET_UID.bits()
-            } else {
-                0
-            }) | (if flags & SET_ATTR_KILL_SGID != 0 {
-                PrivilegeClearMask::SET_GID.bits()
-            } else {
-                0
-            })
-        };
+        let clear = normalize_setattr_privilege_clear(flags)?;
         let timestamp = |seconds, nanos| Timestamp::new(seconds, nanos);
         let attributes = SetAttr {
             mode: (flags & SET_ATTR_MODE != 0).then_some(request.mode & MODE_PERMISSIONS),
@@ -1492,7 +1529,7 @@ mod linux {
             } else {
                 None
             },
-            privilege_clear: PrivilegeClearMask::from_bits(clear_bits)?,
+            privilege_clear: clear,
             handle: optional_file_handle(request)?,
         };
         let (attribute, _invalidation) =
@@ -1886,12 +1923,12 @@ mod linux {
         #[test]
         fn drain_state_tracks_pending_request_to_zero() {
             let state = drain_state();
-            let reply = ReplyOnce::new(7);
-            state.register(reply).unwrap();
+            let reply = ReplyOnce::registered(7, &state);
+            state.register(reply.clone()).unwrap();
             assert_eq!(state.inner.lock().unwrap().replies.len(), 1);
             state.stop_admission();
             assert!(state.is_stopping());
-            state.finish(7);
+            state.complete(&reply);
             assert!(state.inner.lock().unwrap().replies.is_empty());
         }
         #[test]
@@ -1903,7 +1940,8 @@ mod linux {
             let worker_state = Arc::clone(&state);
             let worker = std::thread::spawn(move || {
                 attempting_sender.send(()).unwrap();
-                let result = worker_state.register(ReplyOnce::new(8));
+                let reply = ReplyOnce::registered(8, &worker_state);
+                let result = worker_state.register(reply);
                 finished_sender.send(()).unwrap();
                 result
             });
@@ -1924,14 +1962,16 @@ mod linux {
         #[test]
         fn final_completion_is_serialized_with_drain_waiting() {
             let state = drain_state();
-            state.register(ReplyOnce::new(9)).unwrap();
+            let reply = ReplyOnce::registered(9, &state);
+            state.register(reply.clone()).unwrap();
             let transition = state.inner.lock().unwrap();
             let (attempting_sender, attempting_receiver) = std::sync::mpsc::sync_channel(0);
             let (finished_sender, finished_receiver) = std::sync::mpsc::sync_channel(1);
             let worker_state = Arc::clone(&state);
+            let worker_reply = reply.clone();
             let worker = std::thread::spawn(move || {
                 attempting_sender.send(()).unwrap();
-                worker_state.finish(9);
+                worker_state.complete(&worker_reply);
                 finished_sender.send(()).unwrap();
             });
 
@@ -1946,6 +1986,37 @@ mod linux {
 
             worker.join().unwrap();
             assert!(state.inner.lock().unwrap().replies.is_empty());
+        }
+
+        #[test]
+        fn reply_retirement_allows_immediate_handle_reuse() {
+            let state = drain_state();
+            let first = ReplyOnce::registered(10, &state);
+            state.register(first.clone()).unwrap();
+
+            assert!(first.claim());
+            let inner = state.inner.lock().unwrap();
+            assert!(inner.replies.is_empty());
+            assert_eq!(inner.active, 1);
+            drop(inner);
+
+            let second = ReplyOnce::registered(10, &state);
+            state.register(second.clone()).unwrap();
+
+            state.complete(&first);
+            let current = state
+                .inner
+                .lock()
+                .unwrap()
+                .replies
+                .get(&10)
+                .cloned()
+                .unwrap();
+            assert!(current.same_request(&second));
+            state.complete(&second);
+            let inner = state.inner.lock().unwrap();
+            assert!(inner.replies.is_empty());
+            assert_eq!(inner.active, 0);
         }
 
         #[test]

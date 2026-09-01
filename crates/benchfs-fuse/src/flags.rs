@@ -1,8 +1,8 @@
 //! Frozen Linux x86-64 UAPI flag normalization.
 
 use benchfs_sdk::{
-    AccessMode, Errno, FallocateMode, FsResult, OpenOptions, RenameMode, SyncMode, TruncateIntent,
-    XattrSetMode,
+    AccessMode, Errno, FallocateMode, FsResult, OpenOptions, PrivilegeClearMask, RenameMode,
+    SyncMode, TruncateIntent, XattrSetMode,
 };
 
 /// Linux `O_ACCMODE`.
@@ -52,6 +52,21 @@ pub const FALLOC_FL_UNSHARE_RANGE: u32 = 0x40;
 pub const XATTR_CREATE: u32 = 0x1;
 /// Linux `XATTR_REPLACE`.
 pub const XATTR_REPLACE: u32 = 0x2;
+
+/// Linux `FUSE_SET_ATTR_MODE`.
+pub const SET_ATTR_MODE: u32 = 1 << 0;
+/// Linux `FUSE_SET_ATTR_UID`.
+pub const SET_ATTR_UID: u32 = 1 << 1;
+/// Linux `FUSE_SET_ATTR_GID`.
+pub const SET_ATTR_GID: u32 = 1 << 2;
+/// Linux `FUSE_SET_ATTR_SIZE`.
+pub const SET_ATTR_SIZE: u32 = 1 << 3;
+/// Linux `FUSE_SET_ATTR_KILL_SUID`.
+pub const SET_ATTR_KILL_SUID: u32 = 1 << 11;
+/// Linux `FUSE_SET_ATTR_KILL_SGID`.
+pub const SET_ATTR_KILL_SGID: u32 = 1 << 12;
+/// Linux `FUSE_SET_ATTR_KILL_PRIV`.
+pub const SET_ATTR_KILL_PRIV: u32 = 1 << 14;
 
 /// Normalizes the open/create flags that have persistent SDK meaning.
 pub fn normalize_open_options(
@@ -122,4 +137,32 @@ pub fn normalize_xattr_mode(flags: u32) -> FsResult<XattrSetMode> {
         XATTR_REPLACE => Ok(XattrSetMode::Replace),
         _ => Err(Errno::InvalidArgument.into()),
     }
+}
+
+/// Normalizes privilege clearing for negotiated `HANDLE_KILLPRIV` v1.
+///
+/// Linux 6.8 only supplies the individual kill flags when killpriv v2 is
+/// negotiated. Under v1 an ownership or size change is therefore the signal
+/// to clear both privilege bits. An explicit mode change alone preserves the
+/// requested mode, including any privilege bits it contains.
+pub fn normalize_setattr_privilege_clear(flags: u32) -> FsResult<PrivilegeClearMask> {
+    let explicit = if flags & SET_ATTR_KILL_PRIV != 0 {
+        PrivilegeClearMask::BOTH.bits()
+    } else {
+        (if flags & SET_ATTR_KILL_SUID != 0 {
+            PrivilegeClearMask::SET_UID.bits()
+        } else {
+            0
+        }) | (if flags & SET_ATTR_KILL_SGID != 0 {
+            PrivilegeClearMask::SET_GID.bits()
+        } else {
+            0
+        })
+    };
+    let inferred = if explicit == 0 && flags & (SET_ATTR_UID | SET_ATTR_GID | SET_ATTR_SIZE) != 0 {
+        PrivilegeClearMask::BOTH.bits()
+    } else {
+        explicit
+    };
+    PrivilegeClearMask::from_bits(inferred)
 }

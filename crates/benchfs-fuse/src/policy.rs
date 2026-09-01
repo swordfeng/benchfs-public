@@ -45,7 +45,7 @@ pub struct CachePolicy {
     pub writeback_cache: bool,
     /// Direct I/O is deliberately disabled.
     pub direct_io: bool,
-    /// Adapter emits explicit invalidations after out-of-band mutations.
+    /// Unsolicited invalidation notifications are disabled for request-local mutations.
     pub explicit_invalidation: bool,
 }
 
@@ -55,7 +55,7 @@ impl CachePolicy {
         buffered_io: true,
         writeback_cache: false,
         direct_io: false,
-        explicit_invalidation: true,
+        explicit_invalidation: false,
     };
 }
 

@@ -1,35 +1,57 @@
-# BenchFS Feature 概览
+# BenchFS 功能概览
 
 [English](features.md)
 
-本页只列出外部可观察的能力类别。它不是任务规格，并有意省略行为边界、必需布局、算法、常量和测试映射。
+BenchFS 有 Core、Journal 和 COW 三种变体：
 
-## Core
-
-| 类别 | 高层能力 |
+| 变体 | 功能 |
 |---|---|
-| 生命周期 | format、mount、unmount 和 remount |
-| Namespace | 文件、目录、创建、删除和 rename |
-| 链接 | hard link 和 symbolic link |
-| Handle | 文件和目录的 open/close，以及目录遍历 |
-| Metadata | owner、mode、timestamp、文件类型、attribute 和文件系统统计 |
-| 数据 I/O | 定位和顺序读写、truncate 和文件增长 |
-| 稀疏存储 | hole、稀疏文件导航、allocation、zeroing 和回收 |
-| Extended attribute | user extended-attribute 操作 |
-| 同步 | 文件、数据和目录同步 |
-| Kernel 可见行为 | buffered I/O、memory mapping、advisory locking 和 cache coherence |
-| 容量行为 | 空间耗尽、删除后复用，以及大文件和大目录操作 |
-| Special node | 支持的特殊 inode 类型的 metadata 和 namespace 生命周期 |
-| 持久性 | clean unmount/remount 后保留状态 |
+| Core | 文件、目录、链接、元数据、文件 I/O、同步，以及正常重新挂载后的持久化 |
+| Journal | Core 加上元数据日志和崩溃恢复 |
+| COW | Core 加上写时复制、快照、reflink 和空间回收 |
+
+## 共有功能
+
+### 容量
+
+BenchFS 支持大文件和大目录，能够报告文件系统容量、处理空间耗尽，并在删除后复用存储空间。
+
+### Extent
+
+与 ext4 和 XFS 一样，BenchFS 使用 extent 表示文件数据范围。
+
+### 稀疏文件和持久化预分配
+
+文件可以包含空洞和预分配但尚未写入的范围。BenchFS 支持稀疏文件导航、截断、增长、置零和打洞。
+
+### B+ tree 索引
+
+与 XFS 一样，BenchFS 使用 B+ tree 为元数据建立可扩展索引。
+
+### 扩展属性
+
+文件和目录支持用户扩展属性。
+
+### 元数据校验和
+
+持久化元数据带有校验和，可以检测损坏。
 
 ## Journal
 
-Journal 包含全部 Core 类别，并增加 journal Variant 的崩溃一致恢复和持久性行为。公开文档不披露必需的 log 组织、transaction protocol、恢复过程或 crash case。
+### 日志
+
+与 ext3、ext4 和 XFS 一样，Journal 使用预写日志记录元数据更新，并在崩溃后恢复已经提交的状态。
 
 ## COW
 
-COW 包含全部 Core 类别，并增加 snapshot、只读 snapshot view、文件 clone/reflink、copy-on-write isolation 和不可达空间回收。公开文档不披露 metadata 组织、更新算法、恢复过程或 evaluator workload。
+### 写时复制
 
-## 本页不定义的内容
+与 Btrfs 一样，COW 在保留现有状态的同时，把修改后的数据和元数据写入新的存储位置。更新后不再可达的存储空间可以被回收。
 
-能力名称仅用于说明。权威任务材料只在隔离的 agent run 内提供，并有意不进入本仓库。任何实现都不能只根据本概览声称符合要求；符合性由指定 benchmark 版本的冻结 evaluator 判定。
+### 快照
+
+COW 可以创建、列出、挂载和删除快照。挂载后的快照视图为只读。
+
+### Reflink
+
+全文件和范围 reflink 通过共享 extent 克隆文件。后续写入只分离修改部分，不影响另一份文件。

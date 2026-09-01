@@ -231,14 +231,14 @@ impl<F: FilesystemOperations + ?Sized, C: Clock> Adapter<F, C> {
         node: NodeKey,
         options: OpenOptions,
     ) -> FsResult<()> {
-        let replaced = self
-            .state()?
-            .files
-            .insert(handle.get(), FileRecord { node, options });
-        if replaced.is_some() {
-            return Err(Errno::Corrupt.into());
+        let mut state = self.state()?;
+        match state.files.entry(handle.get()) {
+            std::collections::btree_map::Entry::Vacant(slot) => {
+                slot.insert(FileRecord { node, options });
+                Ok(())
+            }
+            std::collections::btree_map::Entry::Occupied(_) => Err(Errno::Corrupt.into()),
         }
-        Ok(())
     }
 
     /// Maps lookup and acquires one kernel lookup reference.

@@ -426,7 +426,7 @@ static void init_cb(void *userdata, struct fuse_conn_info *connection) {
     required &= fuse_set_feature_flag(connection, FUSE_CAP_ATOMIC_O_TRUNC);
     required &= fuse_set_feature_flag(connection, FUSE_CAP_DONT_MASK);
     required &= fuse_set_feature_flag(connection, FUSE_CAP_PARALLEL_DIROPS);
-    required &= fuse_set_feature_flag(connection, FUSE_CAP_EXPLICIT_INVAL_DATA);
+    fuse_unset_feature_flag(connection, FUSE_CAP_EXPLICIT_INVAL_DATA);
     connection->time_gran = 1;
     if (!required) {
         session->init_error = EOPNOTSUPP;
@@ -563,6 +563,7 @@ destroy:
     fuse_session_destroy(bridge_state.session);
     return result;
 }
+
 
 static void fill_stat(struct stat *output, const struct benchfs_attr *input) {
     memset(output, 0, sizeof(*output));
