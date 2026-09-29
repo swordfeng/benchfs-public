@@ -2,7 +2,11 @@
 
 [English](README.md)
 
-BenchFS 用固定、可复现的协议，评估自主编程 agent 完成大型系统编程任务的能力。本仓库是公开发布面，用于发布基准元数据、参与者可见代码快照、测试套件汇总信息、评分规则和正式结果。
+BenchFS 是一个评估 **AI 编程 agent 实现用户态文件系统能力**的基准。Agent 根据统一的任务规格、SDK 和 FUSE adapter，在隔离的开发虚拟机中编写实现；随后将实现的冻结副本放到全新的评测虚拟机中重新构建和测试。评测关注实际运行表现：文件系统正确性、稳健性、崩溃一致性、真实应用和性能。
+
+本仓库公开基准介绍、参与者可见代码快照、测试套件汇总、评分规则和模型评测结果。它是基准的公开资料仓库，不是可用于生产的文件系统实现。
+
+**从这里开始：**[模型成绩与报告](results/README.zh-CN.md) · [基准目的](docs/benchmark.zh-CN.md) · [评分方法](docs/scoring.zh-CN.md)
 
 ## 公开边界
 
@@ -28,7 +32,7 @@ BenchFS 用固定、可复现的协议，评估自主编程 agent 完成大型�
 | [`vm-agent/README.zh-CN.md`](vm-agent/README.zh-CN.md) | agent VM 中材料的目录 |
 | [`harness/README.zh-CN.md`](harness/README.zh-CN.md) | harness 标识和运行协议 |
 | [`crates/`](crates/) | SDK、FUSE adapter 和 NullFS scaffold 快照 |
-| [`results/README.zh-CN.md`](results/README.zh-CN.md) | 已发布结果状态 |
+| [`results/README.zh-CN.md`](results/README.zh-CN.md) | 模型成绩和详细评测报告 |
 
 ## 语言策略
 

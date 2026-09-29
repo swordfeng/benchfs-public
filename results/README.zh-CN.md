@@ -1,19 +1,73 @@
-# 已发布结果
+# Core 评测结果
 
 [English](README.md)
 
-本仓库目前还没有发布正式 BenchFS 模型结果。
+BenchFS 评估 **AI 编程 agent 实现用户态文件系统的能力**。Agent 在隔离虚拟机中，根据统一的规格、SDK 和 FUSE adapter 开发；冻结后的实现再放到全新的评测虚拟机中重新构建和测试。它要衡量的是 agent 能否完成一项大型系统编程任务，并交付真正可运行的文件系统。
 
-当前项目活动属于发布前 pilot 验证。Pilot run 用于验证难度、隔离、evaluator 完整性、防泄漏能力和多次运行行为。它们永久标记为 pilot 数据，不进入正式排名。Infrastructure-invalid 的 pilot 尝试不属于候选成绩。
+本公开仓库提供基准介绍、SDK / adapter 代码快照、评分规则和评测结果。本页汇总 **Core 模型成绩与详细报告**。仓库内容见[项目首页](../README.zh-CN.md)，测试目标、能力范围和实验设置见[基准介绍](../docs/benchmark.zh-CN.md)。
 
-正式结果发布后，本目录将包含不可变、带版本的记录，至少包括：
+## 评测说明
 
-- 精确的 model、provider、harness、benchmark、公开代码和环境 identity；
-- Variant、Track、运行次数、预算、时间和人工干预状态；
-- build/mount 状态和获准公开的汇总评分维度；
-- 适用的 correctness、robustness、conformance、真实 workload scenario、crash test 和具备资格的合成 performance 汇总；
-- 与正确性分数分离的效率和审计元数据；
-- 足以验证记录的 manifest 和 artifact hash；
-- 明确的有效性和性能资格分类。
+原八个模型各有一次归档生成（`n=1`），采用 **Core** 赛道、**Pi**，以及操作者确认的 **High effort**。新增的 **Claude Code** 提交单独标注，并保留各自的生成及干预元数据。每个模型／harness 提交都是单次生成结果，不是多次生成的平均成绩；跨 harness 差异不构成受控的模型比较。条目按名称字母顺序排列，不按总分排序。
 
-公开记录不会包含 hidden case 标识、hidden test 正文、evaluator oracle、seed、trace、实现特定的详细失败信息或候选源码。
+报告覆盖构建与 SDK-smoke 检查、POSIX 正确性（`spec-tests`、`pjdfstest-core`、`xfstests-core`）、稳健性、格式一致性、崩溃一致性和真实应用。CPU / NVMe 性能、代码审查及可维护性目前尚未评测。
+
+点击模型名称可查看详细报告：用例数量、通过率、类别宏平均、运行溯源，以及已有的源码规模、生成耗时、token 用量和费用估算。生成过程的 goal 状态与候选评测结果分别记录：DeepSeek 和 Qwen 保留未完成的 goal 状态，但不影响报告已完成的 Eval 观察。Luna 和 Reference 不补造模型生成元数据。
+
+**分数怎么看：**原始通过率按适用用例计数，类别宏平均按类别等权；超时计失败，N/A 不计入分母。格式一致性使用原生一致性分，不使用其用例通过率。缺失结果在底层报告中仍为未测，只在下方暂计总分中填零。SDK-smoke 检查和生成费用不参与总分。
+
+<!-- core-results:begin -->
+## 总分与六维分
+
+共列出 12 项结果；点击模型名称查看报告。Reference 为校准基线，Luna 仅有评测记录。分数均为 0–100；未测项暂计 0，`*` 表示含零填充。
+
+C 正确性、R 稳健性、S 代码审查、W 真实应用、P 性能、M 可维护性。当前 S, P, M 未测，暂计总分最高 65.00，不重分配权重。
+
+| 模型 | Effort | 总分 / 100 | C | R | S | W | P | M | JSON |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---|
+| [DeepSeek V4 Flash 0731](core/deepseek-v4-flash-0731-high.zh-CN.md) | High | 61.15* | 89.72 | 82.48 | 0.00* | 66.67 | 0.00* | 0.00* | [JSON](data/core/deepseek-v4-flash-0731-high.json) |
+| [Fable 5.1](core/fable-5.1-high.zh-CN.md) | High | 60.81* | 95.52 | 63.43 | 0.00* | 83.33 | 0.00* | 0.00* | [JSON](data/core/fable-5.1-high.json) |
+| [Fable 5.1 (Claude Code)](core/fable-5.1-high-cc.zh-CN.md) | High | 61.56* | 97.45 | 68.52 | 0.00* | 83.33 | 0.00* | 0.00* | [JSON](data/core/fable-5.1-high-cc.json) |
+| [Gemini 3.8 Flash](core/gemini-3.8-flash-high.zh-CN.md) | High | 59.85* | 90.57 | 78.59 | 0.00* | 50.00 | 0.00* | 0.00* | [JSON](data/core/gemini-3.8-flash-high.json) |
+| [GLM 5.3](core/glm-5.3-high.zh-CN.md) | High | 63.89* | 95.81 | 99.77 | 0.00* | 83.33 | 0.00* | 0.00* | [JSON](data/core/glm-5.3-high.json) |
+| [GPT 5.6 Luna](eval-only/gpt-5.6-luna-eval-only.zh-CN.md) | — | 0.00* | 0.00* | 0.00 | 0.00* | 0.00 | 0.00* | 0.00* | [JSON](data/core/gpt-5.6-luna-eval-only.json) |
+| [GPT 5.6 Sol](core/gpt-5.6-sol-high.zh-CN.md) | High | 59.67* | 95.44 | 88.45 | 0.00* | 33.33 | 0.00* | 0.00* | [JSON](data/core/gpt-5.6-sol-high.json) |
+| [GPT-6 Astra](core/gpt-6-astra-high.zh-CN.md) | High | 64.09* | 97.33 | 100.00 | 0.00* | 83.33 | 0.00* | 0.00* | [JSON](data/core/gpt-6-astra-high.json) |
+| [Kimi K3](core/kimi-k3-high.zh-CN.md) | High | 62.57* | 93.48 | 96.20 | 0.00* | 66.67 | 0.00* | 0.00* | [JSON](data/core/kimi-k3-high.json) |
+| [Opus 5.5 (Claude Code)](core/opus-5.5-high-cc.zh-CN.md) | High | 64.97* | 99.73 | 100.00 | 0.00* | 100.00 | 0.00* | 0.00* | [JSON](data/core/opus-5.5-high-cc.json) |
+| [Qwen 3.8 Flash Next](core/qwen-3.8-flash-next-high.zh-CN.md) | High | 57.10* | 89.21 | 67.85 | 0.00* | 33.33 | 0.00* | 0.00* | [JSON](data/core/qwen-3.8-flash-next-high.json) |
+| [Reference](eval-only/reference-calibration.zh-CN.md) | — | 61.50* | 74.87 | 97.82 | 0.00* | 100.00 | 0.00* | 0.00* | [JSON](data/core/reference-calibration.json) |
+
+### Eval 项目分解
+
+Spec/PJD/XFS/Robustness/Crash/Real-world 为类别宏平均 × 100；Format 为原生一致性分；CPU/NVMe 为 fio 与峰值 RAM 归一化分。SDK smoke 不计分。
+
+| 模型 | Effort | Spec | PJD | XFS | Format | Robustness | Crash | Real-world | CPU | NVMe |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| DeepSeek V4 Flash 0731 | High | 100.00 | 100.00 | 84.02 | 74.86 | 69.58 | 95.37 | 66.67 | 0.00* | 0.00* |
+| Fable 5.1 | High | 100.00 | 99.26 | 87.35 | 95.45 | 90.28 | 36.57 | 83.33 | 0.00* | 0.00* |
+| Fable 5.1 (Claude Code) | High | 100.00 | 100.00 | 94.36 | 95.45 | 100.00 | 37.04 | 83.33 | 0.00* | 0.00* |
+| Gemini 3.8 Flash | High | 100.00 | 100.00 | 84.61 | 77.66 | 89.58 | 67.59 | 50.00 | 0.00* | 0.00* |
+| GLM 5.3 | High | 100.00 | 100.00 | 89.17 | 94.05 | 100.00 | 99.54 | 83.33 | 0.00* | 0.00* |
+| GPT 5.6 Luna | — | 0.00* | 0.00* | 0.00* | 0.00 | 0.00 | 0.00 | 0.00 | 0.00* | 0.00* |
+| GPT 5.6 Sol | High | 100.00 | 100.00 | 89.62 | 92.15 | 78.75 | 98.15 | 33.33 | 0.00* | 0.00* |
+| GPT-6 Astra | High | 100.00 | 100.00 | 89.31 | 100.00 | 100.00 | 100.00 | 83.33 | 0.00* | 0.00* |
+| Kimi K3 | High | 100.00 | 100.00 | 89.75 | 84.17 | 97.50 | 94.91 | 66.67 | 0.00* | 0.00* |
+| Opus 5.5 (Claude Code) | High | 100.00 | 100.00 | 98.90 | 100.00 | 100.00 | 100.00 | 100.00 | 0.00* | 0.00* |
+| Qwen 3.8 Flash Next | High | 100.00 | 100.00 | 81.52 | 75.33 | 66.25 | 69.44 | 33.33 | 0.00* | 0.00* |
+| Reference | — | 100.00 | 100.00 | 99.48 | 0.00 | 97.50 | 98.15 | 100.00 | 0.00* | 0.00* |
+
+### 计分口径
+
+`C=(Spec+PJD+XFS+Format)/4; R=(Robustness+Crash)/2; W=Real-world; P=(CPU+NVMe)/2`
+
+`Total=0.35U(C)+0.20U(R)+0.20U(S)+0.10U(W)+0.10U(P)+0.05U(M)`
+
+U 按 `(0,0)、(20,45)、(40,68)、(60,83)、(80,93)、(100,100)` 线性插值；先聚合维度，再计算效用。计算不提前舍入，展示保留两位小数。规则：`core-overall-v1-zero-fill`。
+
+暂计值汇总独立 profile 的结果，不代表同一构建的完整六维成绩；详细运行身份见报告。
+<!-- core-results:end -->
+
+## 评测状态
+
+Fable CC 八项非性能 profile 已全部完成。暂计总分为 **61.56/100**，C **97.45**、R **68.52**、W **83.33**；性能、代码审查和可维护性仍未测。

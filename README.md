@@ -2,7 +2,11 @@
 
 [中文](README.zh-CN.md)
 
-BenchFS evaluates how well an autonomous coding agent can complete a substantial systems-programming task under a fixed, reproducible protocol. This repository is the public release surface for benchmark metadata, participant-facing code snapshots, aggregate suite information, scoring rules, and released results.
+BenchFS is a benchmark for **AI coding agents implementing a userspace filesystem**. Agents work from a fixed task specification, SDK and FUSE adapter in isolated development VMs. A frozen copy of each implementation is then rebuilt and tested in a fresh evaluation VM. The benchmark measures executable filesystem behavior: correctness, robustness, crash consistency, real-world applications and performance.
+
+This repository publishes the benchmark overview, participant-facing code snapshots, aggregate test-suite information, scoring rules and model results. It is the public companion to the benchmark, not a production filesystem implementation.
+
+**Start here:** [Model scores and reports](results/README.md) · [Benchmark purpose](docs/benchmark.md) · [Scoring](docs/scoring.md)
 
 ## Publication boundary
 
@@ -28,7 +32,7 @@ This boundary reduces the risk that benchmark answers enter model-training corpo
 | [`vm-agent/README.md`](vm-agent/README.md) | Catalog of material present in the agent VM |
 | [`harness/README.md`](harness/README.md) | Harness identity and execution protocol |
 | [`crates/`](crates/) | SDK, FUSE adapter, and NullFS scaffold snapshots |
-| [`results/README.md`](results/README.md) | Released-result status |
+| [`results/README.md`](results/README.md) | Model scores and detailed evaluation reports |
 
 ## Language policy
 

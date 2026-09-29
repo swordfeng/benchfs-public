@@ -1,0 +1,320 @@
+{
+  "profiles": {
+    "canonical-format": {
+      "classification": "diagnostic",
+      "eligible": false,
+      "identity": {
+        "backend": "hyperv",
+        "candidate_binary_sha256": "7cf43d70f71c855b3258e0e11468ab2f3883dcea4c9d790e79bd9e28395aa4f8",
+        "cargo_lock_sha256": "40dcb6148c4e13090c841748b663e284c1a297ff88bbf7de3cd4ada9ab25fe47",
+        "evaluator_commits": [
+          "268916030058dc1782848b81c9d28b374aeca58e"
+        ],
+        "fixed_surface_sha256": "403020319f087ee6dae7197ea74ae1fa01c717cb8a4301954ff21b9585dbd5ee",
+        "manifest_sha256": "bff60b22d40feb77826f6d78e8d51873f5283a52e17cbe3c3da1c819426a1d82",
+        "profile_sha256": "9b848d905dadca3ba091eb06d4ff05e8596dcb3d820a21e6f785fab9e51d23ad",
+        "report_sha256": "4f3eb4de0a5a4f2814bf6b122f1fd9fd2db71a0c1c91657b955820d589d78d21",
+        "resolved_graph_sha256": "091fe92eb89963fb916c57548200bf6d566ad562dfc360f4dca617204d7aa6de",
+        "run_id": "core-canonical-kimi-oracle3-r5",
+        "validation_receipt_sha256": "867162574731f9ebfe9c557a9f89df939a6fddfd4f9933127b1aeac8759c7324",
+        "validator_sha256": "f34141bbbb74e875846c3f2b4f069a948b8a733dfd885090491713c6b491dd70"
+      },
+      "metrics": {
+        "conformance_score": 84.17065390749602,
+        "expected_fail": 0,
+        "fail": 69,
+        "full_conformance": false,
+        "infra_error": 0,
+        "macro_average": 0.8326745718050066,
+        "pass": 410,
+        "pass_rate": 0.8559498956158664,
+        "skip_impl": 0,
+        "skip_na": 0,
+        "timeout": 0,
+        "total": 479,
+        "unexpected_pass": 0
+      },
+      "outcome": "candidate-failed"
+    },
+    "crash-core": {
+      "classification": "diagnostic",
+      "eligible": false,
+      "identity": {
+        "manifest_sha256": "a7a8179f4dbd45ce95b4830bcef58a7aefddca3cebafe858b4c61a3c872c770a",
+        "run_id": "case-correction-core-kimi-k3-crash-core",
+        "sources": [
+          {
+            "backend": "hyperv",
+            "candidate_binary_sha256": "7cf43d70f71c855b3258e0e11468ab2f3883dcea4c9d790e79bd9e28395aa4f8",
+            "cargo_lock_sha256": "40dcb6148c4e13090c841748b663e284c1a297ff88bbf7de3cd4ada9ab25fe47",
+            "evaluator_commits": [
+              "19a2a51c0b219fc2f088ee9768fe978f05b439b7"
+            ],
+            "fixed_surface_sha256": "403020319f087ee6dae7197ea74ae1fa01c717cb8a4301954ff21b9585dbd5ee",
+            "manifest_sha256": "4c3cf421e5d2f877c8892fee0959f6f3abf8091f01084fcc336cd09c94325f24",
+            "profile_sha256": "f6c8027d7343a7691b7351f75346e331b8f5c155967339a7e43a136019f8784e",
+            "report_sha256": "6ca5dd302b485812a18c18c94ebc05280c936463da3544499d91f1f9e0cc9550",
+            "resolved_graph_sha256": "091fe92eb89963fb916c57548200bf6d566ad562dfc360f4dca617204d7aa6de",
+            "run_id": "core-crash-kimi-oracle2-r2",
+            "validation_receipt_sha256": "7874b7a69d82aad2c0b67a478d1b4fee351b08736bee9ffbca2307d0db479c13",
+            "validator_sha256": "0e0cc3195fcee161ffed1000d00dda753832ac4f29abb0c3f163c4dbdb5cf89a"
+          },
+          {
+            "backend": "qemu-kvm",
+            "candidate_binary_sha256": "8a373eba6bd75e5485aa816c59ac6b5f304f81c9b3c3fa06b4d186d6bf0f4806",
+            "cargo_lock_sha256": "40dcb6148c4e13090c841748b663e284c1a297ff88bbf7de3cd4ada9ab25fe47",
+            "evaluator_commits": [
+              "ca91452fddaa2ff2a6320f9d88324baa88d85727"
+            ],
+            "fixed_surface_sha256": "403020319f087ee6dae7197ea74ae1fa01c717cb8a4301954ff21b9585dbd5ee",
+            "manifest_sha256": "a7a8179f4dbd45ce95b4830bcef58a7aefddca3cebafe858b4c61a3c872c770a",
+            "profile_sha256": "e16a7ef4e970cfd3ef6496a84b290a537f148248c8733b7c1aabedad4228f867",
+            "report_sha256": "80e6ac8c02d872c779d7c81dfaf8724ac6e863dff9d9c78c48410c9d8cc34dd9",
+            "resolved_graph_sha256": "091fe92eb89963fb916c57548200bf6d566ad562dfc360f4dca617204d7aa6de",
+            "run_id": "core-kimi-k3-crash-approved-r1",
+            "validation_receipt_sha256": "efa50c78fd4713f8c8a98c0f5a9c6b7a6e9a8705b4637ec7ab1acf5f9d067e2c",
+            "validator_sha256": "dbdce7a2fbb0b9327a8bacfa095082560bf985e5b270a2c30568bb1b70d95d1e"
+          }
+        ]
+      },
+      "metrics": {
+        "expected_fail": 0,
+        "fail": 11,
+        "infra_error": 0,
+        "macro_average": 0.949074074074074,
+        "pass": 205,
+        "pass_rate": 0.9490740740740741,
+        "skip_impl": 0,
+        "skip_na": 0,
+        "timeout": 0,
+        "total": 216,
+        "unexpected_pass": 0
+      },
+      "outcome": "candidate-failed"
+    },
+    "perf-cpu": {
+      "classification": "not-run",
+      "eligible": false
+    },
+    "perf-nvme": {
+      "classification": "not-run",
+      "eligible": false
+    },
+    "pjdfstest-core": {
+      "classification": "diagnostic",
+      "eligible": false,
+      "identity": {
+        "manifest_sha256": "b1d19362d9ca9de95f12b218c3660b107bd617ecb85c9eb7894c118705aac61e",
+        "run_id": "case-correction-core-kimi-k3-pjdfstest-core",
+        "sources": [
+          {
+            "candidate_binary_sha256": "f903cf9c0c1c9fd21b6c89bf1113a9b34b2572724a604d2b16d0e0af009be705",
+            "cargo_lock_sha256": "40dcb6148c4e13090c841748b663e284c1a297ff88bbf7de3cd4ada9ab25fe47",
+            "fixed_surface_sha256": "17bdc389e89edc11815fd232da75305582b0ad308ebf03769b62f7f63aa9a4c2",
+            "manifest_sha256": "b1d19362d9ca9de95f12b218c3660b107bd617ecb85c9eb7894c118705aac61e",
+            "profile_sha256": "4861d900faca5eae24354cd4453fd6142470bb3bc5a09af4b78eb3a5660403b3",
+            "report_sha256": "6ea3f313cf21bf32c59eed69ddd623b492b41edca7dcb26f1395525622ca7c99",
+            "run_id": "eval-core-kimi-k3"
+          },
+          {
+            "backend": "qemu-kvm",
+            "candidate_binary_sha256": "8a373eba6bd75e5485aa816c59ac6b5f304f81c9b3c3fa06b4d186d6bf0f4806",
+            "cargo_lock_sha256": "40dcb6148c4e13090c841748b663e284c1a297ff88bbf7de3cd4ada9ab25fe47",
+            "evaluator_commits": [
+              "ca91452fddaa2ff2a6320f9d88324baa88d85727"
+            ],
+            "fixed_surface_sha256": "403020319f087ee6dae7197ea74ae1fa01c717cb8a4301954ff21b9585dbd5ee",
+            "manifest_sha256": "b1d19362d9ca9de95f12b218c3660b107bd617ecb85c9eb7894c118705aac61e",
+            "profile_sha256": "55240e9ea9e152b0fb0c0370d0b0fabf1b46b8f295fc25e0c42f7ad0e2b7d724",
+            "report_sha256": "553206700999b58206d2b9f862fdf413d15bd0fc43897bbc0e2ad502ef10ac56",
+            "resolved_graph_sha256": "091fe92eb89963fb916c57548200bf6d566ad562dfc360f4dca617204d7aa6de",
+            "run_id": "core-kimi-k3-pjd-approved-r1",
+            "validation_receipt_sha256": "2fbf7f523a4f0ed58614f8ecffb2de45f2f79324b7efd99e80fcdf522b4de4c4",
+            "validator_sha256": "dbdce7a2fbb0b9327a8bacfa095082560bf985e5b270a2c30568bb1b70d95d1e"
+          }
+        ]
+      },
+      "metrics": {
+        "expected_fail": 0,
+        "fail": 0,
+        "infra_error": 0,
+        "macro_average": 1.0,
+        "pass": 169,
+        "pass_rate": 1.0,
+        "skip_impl": 0,
+        "skip_na": 48,
+        "timeout": 0,
+        "total": 217,
+        "unexpected_pass": 0
+      },
+      "outcome": "pass"
+    },
+    "real-world": {
+      "classification": "diagnostic",
+      "eligible": false,
+      "identity": {
+        "backend": "hyperv",
+        "candidate_binary_sha256": "7cf43d70f71c855b3258e0e11468ab2f3883dcea4c9d790e79bd9e28395aa4f8",
+        "cargo_lock_sha256": "40dcb6148c4e13090c841748b663e284c1a297ff88bbf7de3cd4ada9ab25fe47",
+        "evaluator_commits": [
+          "789c0c452c8571a4a3268cd1985f24b88d76d193"
+        ],
+        "fixed_surface_sha256": "403020319f087ee6dae7197ea74ae1fa01c717cb8a4301954ff21b9585dbd5ee",
+        "manifest_sha256": "7c674a3c029945f413e18b626cc47123f6d3bb799ba6936288284b969f25be2d",
+        "profile_sha256": "3511f0132eea621007b5e77d63b0f24556fea5bfd584b7d6afc485c777041737",
+        "report_sha256": "24a85cb1872153b6f3e97d3d0dccfdf309e2c284c8ba883c2b5983d859e737ad",
+        "resolved_graph_sha256": "091fe92eb89963fb916c57548200bf6d566ad562dfc360f4dca617204d7aa6de",
+        "run_id": "core-realworld-kimi-20260925-r1",
+        "validation_receipt_sha256": "e0171f35928c41a344617db1cfa4370b8af9a36f2ab3eb3af422170498e2a43a",
+        "validator_sha256": "a6a465306c5a7b303fe168cbbfe71c74a55fbb5cdb1f0a9379ce73d186b2339a"
+      },
+      "metrics": {
+        "expected_fail": 0,
+        "fail": 1,
+        "infra_error": 0,
+        "macro_average": 0.6666666666666666,
+        "pass": 3,
+        "pass_rate": 0.75,
+        "skip_impl": 0,
+        "skip_na": 0,
+        "timeout": 0,
+        "total": 4,
+        "unexpected_pass": 0
+      },
+      "outcome": "candidate-failed"
+    },
+    "robustness": {
+      "classification": "valid",
+      "eligible": true,
+      "identity": {
+        "candidate_binary_sha256": "a28c4472959a12241c7fa000bf80ba6f47968812a8c529a3caf1c8dfeb7c1c1c",
+        "cargo_lock_sha256": "40dcb6148c4e13090c841748b663e284c1a297ff88bbf7de3cd4ada9ab25fe47",
+        "correction_profile_sha256": "2e6b509e7bd7210bed4474df08b7dfc3df5f5b53918b5481365569ab3c084baf",
+        "correction_report_sha256": "dfe45edd53be3702ad5b396e4d58d1edaa95e42188aa60cf2ea7ea66fc836ceb",
+        "evaluator_commits": [
+          "6f4d4595acd69a426c28a1796b8bb954f96b6807",
+          "849fc62",
+          "d6f2e6715777a510434e4b98058718e145599ede"
+        ],
+        "fixed_surface_sha256": "124f2d86c7e9011a53ab4788e6515c930484b697b79c36d963d96f29cbf84204",
+        "manifest_sha256": "ec1bb05218ed172760e71f0c3ef7919c2d677f5828e8c5e88680713bde6c6d9e",
+        "profile_sha256": "a1ba90ee5fa19f1a50e812965fdda99a821a96c1c8cca9ac1dacb7a961047ef1",
+        "report_sha256": "adbcf626cb13a874ce324e739e40c2b06f521a577d2f28313e9df348b3d7854c",
+        "run_id": "eval-submission-robustness-v2-core-kimi-k3-r2"
+      },
+      "metrics": {
+        "expected_fail": 0,
+        "fail": 1,
+        "infra_error": 0,
+        "macro_average": 0.975,
+        "pass": 46,
+        "pass_rate": 0.9787234042553191,
+        "skip_impl": 0,
+        "skip_na": 0,
+        "timeout": 0,
+        "total": 47,
+        "unexpected_pass": 0
+      },
+      "outcome": "candidate-failed"
+    },
+    "spec-tests": {
+      "classification": "valid",
+      "identity": {
+        "candidate_binary_sha256": "f903cf9c0c1c9fd21b6c89bf1113a9b34b2572724a604d2b16d0e0af009be705",
+        "cargo_lock_sha256": "40dcb6148c4e13090c841748b663e284c1a297ff88bbf7de3cd4ada9ab25fe47",
+        "fixed_surface_sha256": "17bdc389e89edc11815fd232da75305582b0ad308ebf03769b62f7f63aa9a4c2",
+        "manifest_sha256": "5794f99d9e0da1c955c1be18d12916db4201bcd7d8a87547a562ebdd0eef03ce",
+        "profile_sha256": "15cd7ea35c6bce5336c660150261b3e17aeef6f9e3572624047618295b6e624f",
+        "report_sha256": "6ea3f313cf21bf32c59eed69ddd623b492b41edca7dcb26f1395525622ca7c99",
+        "run_id": "eval-core-kimi-k3"
+      },
+      "metrics": {
+        "expected_fail": 0,
+        "fail": 0,
+        "infra_error": 0,
+        "macro_average": 1.0,
+        "pass": 44,
+        "pass_rate": 1.0,
+        "skip_impl": 0,
+        "skip_na": 7,
+        "timeout": 0,
+        "total": 51,
+        "unexpected_pass": 0
+      }
+    },
+    "xfstests-core": {
+      "classification": "valid",
+      "identity": {
+        "candidate_binary_sha256": "f903cf9c0c1c9fd21b6c89bf1113a9b34b2572724a604d2b16d0e0af009be705",
+        "cargo_lock_sha256": "40dcb6148c4e13090c841748b663e284c1a297ff88bbf7de3cd4ada9ab25fe47",
+        "fixed_surface_sha256": "17bdc389e89edc11815fd232da75305582b0ad308ebf03769b62f7f63aa9a4c2",
+        "manifest_sha256": "51f7ff44e07134a82de7781241c934cfba872f74061c323fdf071d113c9b28cd",
+        "profile_sha256": "3374ad4937a56ce4ad8e396e1b96634e2c598aeab59acf43fb317ecf5b3cdeff",
+        "report_sha256": "6ea3f313cf21bf32c59eed69ddd623b492b41edca7dcb26f1395525622ca7c99",
+        "run_id": "eval-core-kimi-k3"
+      },
+      "metrics": {
+        "expected_fail": 1,
+        "fail": 3,
+        "infra_error": 0,
+        "macro_average": 0.8974921630094044,
+        "pass": 185,
+        "pass_rate": 0.9587628865979382,
+        "skip_impl": 0,
+        "skip_na": 473,
+        "timeout": 5,
+        "total": 667,
+        "unexpected_pass": 0
+      }
+    }
+  },
+  "provisional_score": {
+    "dimensions": {
+      "C": 93.47996755210912,
+      "M": 0.0,
+      "P": 0.0,
+      "R": 96.2037037037037,
+      "S": 0.0,
+      "W": 66.66666666666666
+    },
+    "eligible": false,
+    "hard_gates": "not-assessed",
+    "inputs": {
+      "M": null,
+      "S": null,
+      "canonical-format": 84.17065390749602,
+      "crash-core": 94.90740740740739,
+      "perf-cpu": null,
+      "perf-nvme": null,
+      "pjdfstest-core": 100.0,
+      "real-world": 66.66666666666666,
+      "robustness": 97.5,
+      "spec-tests": 100.0,
+      "xfstests-core": 89.74921630094043
+    },
+    "rule": "core-overall-v1-zero-fill",
+    "status": "provisional",
+    "total": 62.56888861772595,
+    "utility": {
+      "C": 97.71798864323819,
+      "M": 0.0,
+      "P": 0.0,
+      "R": 98.67129629629629,
+      "S": 0.0,
+      "W": 86.33333333333333
+    },
+    "zero_imputed": [
+      "M",
+      "S",
+      "perf-cpu",
+      "perf-nvme"
+    ],
+    "zero_imputed_dimensions": [
+      "S",
+      "P",
+      "M"
+    ]
+  },
+  "schema_version": 1,
+  "submission": "core-kimi-k3"
+}
