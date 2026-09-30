@@ -23,20 +23,20 @@ BenchFS 评估 **AI 编程 agent 实现用户态文件系统的能力**。Agent 
 
 C 正确性、R 稳健性、S 代码审查、W 真实应用、P 性能、M 可维护性。当前 S, P, M 未测，暂计总分最高 65.00，不重分配权重。
 
-| 模型 | Effort | 总分 / 100 | C | R | S | W | P | M | JSON |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---|
-| [DeepSeek V4 Flash 0731](core/deepseek-v4-flash-0731-high.zh-CN.md) | High | 61.15* | 89.72 | 82.48 | 0.00* | 66.67 | 0.00* | 0.00* | [JSON](data/core/deepseek-v4-flash-0731-high.json) |
-| [Fable 5.1](core/fable-5.1-high.zh-CN.md) | High | 60.81* | 95.52 | 63.43 | 0.00* | 83.33 | 0.00* | 0.00* | [JSON](data/core/fable-5.1-high.json) |
-| [Fable 5.1 (Claude Code)](core/fable-5.1-high-cc.zh-CN.md) | High | 61.56* | 97.45 | 68.52 | 0.00* | 83.33 | 0.00* | 0.00* | [JSON](data/core/fable-5.1-high-cc.json) |
-| [Gemini 3.8 Flash](core/gemini-3.8-flash-high.zh-CN.md) | High | 59.85* | 90.57 | 78.59 | 0.00* | 50.00 | 0.00* | 0.00* | [JSON](data/core/gemini-3.8-flash-high.json) |
-| [GLM 5.3](core/glm-5.3-high.zh-CN.md) | High | 63.89* | 95.81 | 99.77 | 0.00* | 83.33 | 0.00* | 0.00* | [JSON](data/core/glm-5.3-high.json) |
-| [GPT 5.6 Luna](eval-only/gpt-5.6-luna-eval-only.zh-CN.md) | — | 0.00* | 0.00* | 0.00 | 0.00* | 0.00 | 0.00* | 0.00* | [JSON](data/core/gpt-5.6-luna-eval-only.json) |
-| [GPT 5.6 Sol](core/gpt-5.6-sol-high.zh-CN.md) | High | 59.67* | 95.44 | 88.45 | 0.00* | 33.33 | 0.00* | 0.00* | [JSON](data/core/gpt-5.6-sol-high.json) |
-| [GPT-6 Astra](core/gpt-6-astra-high.zh-CN.md) | High | 64.09* | 97.33 | 100.00 | 0.00* | 83.33 | 0.00* | 0.00* | [JSON](data/core/gpt-6-astra-high.json) |
-| [Kimi K3](core/kimi-k3-high.zh-CN.md) | High | 62.57* | 93.48 | 96.20 | 0.00* | 66.67 | 0.00* | 0.00* | [JSON](data/core/kimi-k3-high.json) |
-| [Opus 5.5 (Claude Code)](core/opus-5.5-high-cc.zh-CN.md) | High | 64.97* | 99.73 | 100.00 | 0.00* | 100.00 | 0.00* | 0.00* | [JSON](data/core/opus-5.5-high-cc.json) |
-| [Qwen 3.8 Flash Next](core/qwen-3.8-flash-next-high.zh-CN.md) | High | 57.10* | 89.21 | 67.85 | 0.00* | 33.33 | 0.00* | 0.00* | [JSON](data/core/qwen-3.8-flash-next-high.json) |
-| [Reference](eval-only/reference-calibration.zh-CN.md) | — | 61.50* | 74.87 | 97.82 | 0.00* | 100.00 | 0.00* | 0.00* | [JSON](data/core/reference-calibration.json) |
+| 模型 | Effort | 总分 / 100 | C | R | S | W | P | M |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| [DeepSeek V4 Flash 0731](core/deepseek-v4-flash-0731-high.zh-CN.md) | High | 61.15* | 89.72 | 82.48 | 0.00* | 66.67 | 0.00* | 0.00* |
+| [Fable 5.1](core/fable-5.1-high.zh-CN.md) | High | 60.81* | 95.52 | 63.43 | 0.00* | 83.33 | 0.00* | 0.00* |
+| [Fable 5.1 (Claude Code)](core/fable-5.1-high-cc.zh-CN.md) | High | 61.56* | 97.45 | 68.52 | 0.00* | 83.33 | 0.00* | 0.00* |
+| [Gemini 3.8 Flash](core/gemini-3.8-flash-high.zh-CN.md) | High | 59.85* | 90.57 | 78.59 | 0.00* | 50.00 | 0.00* | 0.00* |
+| [GLM 5.3](core/glm-5.3-high.zh-CN.md) | High | 63.89* | 95.81 | 99.77 | 0.00* | 83.33 | 0.00* | 0.00* |
+| [GPT 5.6 Luna](eval-only/gpt-5.6-luna-eval-only.zh-CN.md) | — | 0.00* | 0.00* | 0.00 | 0.00* | 0.00 | 0.00* | 0.00* |
+| [GPT 5.6 Sol](core/gpt-5.6-sol-high.zh-CN.md) | High | 59.67* | 95.44 | 88.45 | 0.00* | 33.33 | 0.00* | 0.00* |
+| [GPT-6 Astra](core/gpt-6-astra-high.zh-CN.md) | High | 64.09* | 97.33 | 100.00 | 0.00* | 83.33 | 0.00* | 0.00* |
+| [Kimi K3](core/kimi-k3-high.zh-CN.md) | High | 62.57* | 93.48 | 96.20 | 0.00* | 66.67 | 0.00* | 0.00* |
+| [Opus 5.5 (Claude Code)](core/opus-5.5-high-cc.zh-CN.md) | High | 64.97* | 99.73 | 100.00 | 0.00* | 100.00 | 0.00* | 0.00* |
+| [Qwen 3.8 Flash Next](core/qwen-3.8-flash-next-high.zh-CN.md) | High | 57.10* | 89.21 | 67.85 | 0.00* | 33.33 | 0.00* | 0.00* |
+| [Reference](eval-only/reference-calibration.zh-CN.md) | — | 61.50* | 74.87 | 97.82 | 0.00* | 100.00 | 0.00* | 0.00* |
 
 ### Eval 项目分解
 
@@ -67,7 +67,3 @@ U 按 `(0,0)、(20,45)、(40,68)、(60,83)、(80,93)、(100,100)` 线性插值�
 
 暂计值汇总独立 profile 的结果，不代表同一构建的完整六维成绩；详细运行身份见报告。
 <!-- core-results:end -->
-
-## 评测状态
-
-Fable CC 八项非性能 profile 已全部完成。暂计总分为 **61.56/100**，C **97.45**、R **68.52**、W **83.33**；性能、代码审查和可维护性仍未测。

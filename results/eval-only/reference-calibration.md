@@ -6,7 +6,7 @@ Submission: `core-reference`
 
 This page reports Eval observations only, without generation counts, duration, tokens or costs. Candidate and fixed-surface identities are recorded per profile; performance is unmeasured.
 
-SDK/POSIX and other profiles do not all use the same candidate source, so they are not a complete evaluation of one candidate binary; see JSON for exact identities.
+SDK/POSIX and other profiles do not all use the same candidate source, so they are not a complete evaluation of one candidate binary; each profile lists its own run.
 
 ## Results
 
@@ -123,9 +123,7 @@ No publishable evaluation result yet (`not-run`), not a measured zero; the index
 
 ## Scope and provenance
 
-[JSON](../data/core/reference-calibration.json)
-
-Original profile results remain independent; the index adds a derived provisional total with missing scores imputed as zero. JSON retains per-profile run, manifest, report, candidate, and fixed-surface identities, plus the execution backend where recorded; different backends are not treated as identical execution conditions.
+Original profile results remain independent; the index adds a derived provisional total with missing scores imputed as zero. Each profile lists its run and, where recorded, its execution backend; different backends are not treated as identical execution conditions.
 
 `valid` means the profile evidence is valid, not that all cases passed or release eligibility is established. `candidate-failed` is not an infrastructure error. `diagnostic` is diagnostic-only; `noneligible` cannot enter rankings. Hyper-V performance is always diagnostic.
 

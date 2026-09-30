@@ -30,6 +30,66 @@ Only candidate-owned source under `bench/` is counted. The fixed SDK and FUSE ad
 
 Physical lines include blanks and comments. Code lines count each line holding at least one non-comment token: blank lines, comments, and documentation comments (Rust `///` and `//!`, Python docstrings) are excluded, while Rust attributes such as `#[derive(...)]` count as code. Tests comprise nine dedicated files under `tests/` (one of them a shared helper module) and inline `#[cfg(test)]` modules, including their attribute lines, in two implementation files (`src/crc.rs`, `src/format/mod.rs`). Those two files overlap in the file counts; physical and code lines are partitioned without overlap. There are 41 distinct Rust files. These are source-size measurements, not test-coverage or code-quality scores.
 
+<!-- source-tree:begin -->
+### Directory structure
+
+Every file under `bench/`, excluding build output. Numbers are code lines counted as above; "test" is the part of them in test code.
+
+```text
+bench/
+├── src/
+│   ├── btree/
+│   │   ├── mod.rs  (8 code)
+│   │   ├── node.rs  (362 code)
+│   │   ├── ops.rs  (554 code)
+│   │   └── walk.rs  (97 code)
+│   ├── format/
+│   │   ├── geometry.rs  (284 code)
+│   │   ├── inode.rs  (313 code)
+│   │   ├── meta.rs  (130 code)
+│   │   ├── mod.rs  (182 code, 29 test)
+│   │   └── records.rs  (155 code)
+│   ├── fs/
+│   │   ├── data/
+│   │   │   ├── mod.rs  (107 code)
+│   │   │   ├── range.rs  (288 code)
+│   │   │   ├── read.rs  (132 code)
+│   │   │   └── write.rs  (328 code)
+│   │   ├── handles.rs  (179 code)
+│   │   ├── mod.rs  (487 code)
+│   │   ├── namespace.rs  (697 code)
+│   │   ├── ops.rs  (551 code)
+│   │   └── xattr.rs  (285 code)
+│   ├── alloc.rs  (254 code)
+│   ├── bin_fsck.rs  (37 code)
+│   ├── cache.rs  (253 code)
+│   ├── check.rs  (427 code)
+│   ├── crc.rs  (93 code, 18 test)
+│   ├── dev.rs  (109 code)
+│   ├── devlock.rs  (22 code)
+│   ├── extmap.rs  (259 code)
+│   ├── image.rs  (128 code)
+│   ├── lib.rs  (14 code)
+│   ├── main.rs  (89 code)
+│   ├── mkfs.rs  (70 code)
+│   ├── prof.rs  (49 code)
+│   └── store.rs  (243 code)
+├── tests/
+│   ├── common/
+│   │   └── mod.rs  (65 code, 65 test)
+│   ├── basic.rs  (408 code, 408 test)
+│   ├── btree.rs  (138 code, 138 test)
+│   ├── concurrent.rs  (172 code, 172 test)
+│   ├── corrupt.rs  (138 code, 138 test)
+│   ├── crash.rs  (220 code, 220 test)
+│   ├── faults.rs  (184 code, 184 test)
+│   ├── model.rs  (713 code, 713 test)
+│   └── spec.rs  (542 code, 542 test)
+├── Cargo.toml
+└── README.md
+```
+<!-- source-tree:end -->
+
 ## Generation time and activity
 
 | Metric | Value |
@@ -222,9 +282,7 @@ No publishable evaluation result yet (`not-run`), not a measured zero; the index
 
 ## Scope and provenance
 
-[JSON](../data/core/opus-5.5-high-cc.json)
-
-Original profile results remain independent; the index adds a derived provisional total with missing scores imputed as zero. JSON retains per-profile run, manifest, report, candidate, and fixed-surface identities, plus the execution backend where recorded; different backends are not treated as identical execution conditions.
+Original profile results remain independent; the index adds a derived provisional total with missing scores imputed as zero. Each profile lists its run and, where recorded, its execution backend; different backends are not treated as identical execution conditions.
 
 `valid` means the profile evidence is valid, not that all cases passed or release eligibility is established. `candidate-failed` is not an infrastructure error. `diagnostic` is diagnostic-only; `noneligible` cannot enter rankings. Hyper-V performance is always diagnostic.
 

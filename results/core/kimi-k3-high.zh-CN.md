@@ -31,6 +31,35 @@
 
 总行数包含空行和注释。代码行数统计至少包含一个非注释 token 的行：空行、注释和文档注释（Rust 的 `///`、`//!`，Python docstring）不计入，`#[derive(...)]` 等 Rust 属性计为代码。2026-09-27 更正：本页早先的版本把文档注释计为代码、把 Rust 属性计为注释；文件数和总行数不变。内联测试模块及其 test-only attribute 计入测试，而非实现。一个 Rust 文件同时包含实现和测试，因此文件数有重叠，行数不重复。共有 14 个不同的 Rust 文件。这些数据仅衡量源码规模，不是测试覆盖率或代码质量评分。
 
+<!-- source-tree:begin -->
+### 目录结构
+
+`bench/` 下的全部文件，不含构建产物。数字为按上述规则统计的代码行，“测试”为其中属于测试代码的部分。
+
+```text
+bench/
+├── src/
+│   ├── alloc.rs  (460 行代码)
+│   ├── btree.rs  (608 行代码)
+│   ├── cache.rs  (188 行代码)
+│   ├── format.rs  (1,255 行代码，测试 25)
+│   ├── formatter.rs  (225 行代码)
+│   ├── fs.rs  (3,471 行代码)
+│   ├── lib.rs  (7 行代码)
+│   ├── main.rs  (112 行代码)
+│   ├── mkfs.rs  (112 行代码)
+│   └── validate.rs  (294 行代码)
+├── tests/
+│   ├── btree_test.rs  (54 行代码，测试 54)
+│   ├── nsmodel.rs  (113 行代码，测试 113)
+│   ├── repro.rs  (93 行代码，测试 93)
+│   └── validate.rs  (47 行代码，测试 47)
+├── Cargo.toml
+├── NOTES.md
+└── qualify.sh  (32 行代码)
+```
+<!-- source-tree:end -->
+
 ## 生成时间与活动量
 
 | 指标 | 值 |
@@ -200,9 +229,7 @@ Profile: `perf-nvme`
 
 ## 评测范围与溯源
 
-[JSON](../data/core/kimi-k3-high.json)
-
-各 profile 原始结果独立保留；索引另列未测项暂计 0 的派生总分。JSON 保留逐 profile 的运行、manifest、报告、候选及固定评测面身份，并标明已记录的执行后端；不同后端不视为完全相同的执行条件。
+各 profile 原始结果独立保留；索引另列未测项暂计 0 的派生总分。每个 profile 列出其运行，并标明已记录的执行后端；不同后端不视为完全相同的执行条件。
 
 `valid` 表示该 profile 的证据有效，不等于全部用例通过或全维度发布合格。`candidate-failed` 是候选失败，不是基础设施错误。`diagnostic` 仅诊断；`noneligible` 不具备排名资格。Hyper-V 性能始终为诊断结果。
 

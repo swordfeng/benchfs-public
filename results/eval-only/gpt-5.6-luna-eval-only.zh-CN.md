@@ -117,9 +117,7 @@ Profile: `perf-nvme`
 
 ## 评测范围与溯源
 
-[JSON](../data/core/gpt-5.6-luna-eval-only.json)
-
-各 profile 原始结果独立保留；索引另列未测项暂计 0 的派生总分。JSON 保留逐 profile 的运行、manifest、报告、候选及固定评测面身份，并标明已记录的执行后端；不同后端不视为完全相同的执行条件。
+各 profile 原始结果独立保留；索引另列未测项暂计 0 的派生总分。每个 profile 列出其运行，并标明已记录的执行后端；不同后端不视为完全相同的执行条件。
 
 `valid` 表示该 profile 的证据有效，不等于全部用例通过或全维度发布合格。`candidate-failed` 是候选失败，不是基础设施错误。`diagnostic` 仅诊断；`noneligible` 不具备排名资格。Hyper-V 性能始终为诊断结果。
 

@@ -31,6 +31,33 @@ Only candidate-owned source under `bench/` is counted. The fixed SDK and FUSE ad
 
 Physical lines include blanks and comments. Code lines count each line holding at least one non-comment token: blank lines, comments, and documentation comments (Rust `///` and `//!`, Python docstrings) are excluded, while Rust attributes such as `#[derive(...)]` count as code. Corrected on 2026-09-27: earlier versions of this page counted documentation comments as code and Rust attributes as comments; file and physical-line counts are unchanged. Tests comprise one dedicated integration-test file and an explicitly documented test helper in an implementation file. File counts overlap in that one file; physical and code lines are partitioned without overlap. There are 13 distinct Rust files. These are source-size measurements, not test-coverage or code-quality scores.
 
+<!-- source-tree:begin -->
+### Directory structure
+
+Every file under `bench/`, excluding build output. Numbers are code lines counted as above; "test" is the part of them in test code.
+
+```text
+bench/
+├── src/
+│   ├── fs/
+│   │   ├── btree.rs  (744 code)
+│   │   ├── checker.rs  (668 code, 7 test)
+│   │   ├── format.rs  (780 code)
+│   │   ├── format_image.rs  (106 code)
+│   │   ├── inode.rs  (514 code)
+│   │   ├── layout.rs  (55 code)
+│   │   ├── mod.rs  (269 code)
+│   │   ├── ops.rs  (2,337 code)
+│   │   └── state.rs  (621 code)
+│   ├── lib.rs  (1 code)
+│   ├── main.rs  (47 code)
+│   └── mkfs.rs  (91 code)
+├── tests/
+│   └── core.rs  (565 code, 565 test)
+└── Cargo.toml
+```
+<!-- source-tree:end -->
+
 ## Generation time and activity
 
 | Metric | Value |
@@ -199,9 +226,7 @@ No publishable evaluation result yet (`not-run`), not a measured zero; the index
 
 ## Scope and provenance
 
-[JSON](../data/core/deepseek-v4-flash-0731-high.json)
-
-Original profile results remain independent; the index adds a derived provisional total with missing scores imputed as zero. JSON retains per-profile run, manifest, report, candidate, and fixed-surface identities, plus the execution backend where recorded; different backends are not treated as identical execution conditions.
+Original profile results remain independent; the index adds a derived provisional total with missing scores imputed as zero. Each profile lists its run and, where recorded, its execution backend; different backends are not treated as identical execution conditions.
 
 `valid` means the profile evidence is valid, not that all cases passed or release eligibility is established. `candidate-failed` is not an infrastructure error. `diagnostic` is diagnostic-only; `noneligible` cannot enter rankings. Hyper-V performance is always diagnostic.
 

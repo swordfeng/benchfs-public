@@ -32,6 +32,33 @@
 
 总行数包含空行和注释。代码行数统计至少包含一个非注释 token 的行：空行、注释和文档注释（Rust 的 `///`、`//!`，Python docstring）不计入，`#[derive(...)]` 等 Rust 属性计为代码。测试包括 `tests/` 下的 1 个独立文件，以及四个实现文件（`src/bitmap.rs`、`src/btree.rs`、`src/cache.rs`、`src/format.rs`）中的内联 `#[cfg(test)]` 模块（含属性行）。这四个文件在文件数上重叠；总行数和代码行数按行划分，不重叠。共有 12 个不同的 Rust 文件。这些数据仅衡量源码规模，不是测试覆盖率或代码质量评分。
 
+<!-- source-tree:begin -->
+### 目录结构
+
+`bench/` 下的全部文件，不含构建产物。数字为按上述规则统计的代码行，“测试”为其中属于测试代码的部分。
+
+```text
+bench/
+├── src/
+│   ├── bitmap.rs  (253 行代码，测试 48)
+│   ├── btree.rs  (1,159 行代码，测试 234)
+│   ├── cache.rs  (320 行代码，测试 50)
+│   ├── check.rs  (473 行代码)
+│   ├── core.rs  (1,061 行代码)
+│   ├── format.rs  (1,084 行代码，测试 55)
+│   ├── fs.rs  (1,912 行代码)
+│   ├── lib.rs  (8 行代码)
+│   ├── main.rs  (181 行代码)
+│   ├── mkfs.rs  (75 行代码)
+│   └── mount.rs  (214 行代码)
+├── tests/
+│   └── memfs.rs  (423 行代码，测试 423)
+├── Cargo.toml
+├── NOTES.md
+└── README.md
+```
+<!-- source-tree:end -->
+
 ## 生成时间与活动量
 
 | 指标 | 值 |
@@ -220,9 +247,7 @@ Profile: `perf-nvme`
 
 ## 评测范围与溯源
 
-[JSON](../data/core/fable-5.1-high-cc.json)
-
-各 profile 原始结果独立保留；索引另列未测项暂计 0 的派生总分。JSON 保留逐 profile 的运行、manifest、报告、候选及固定评测面身份，并标明已记录的执行后端；不同后端不视为完全相同的执行条件。
+各 profile 原始结果独立保留；索引另列未测项暂计 0 的派生总分。每个 profile 列出其运行，并标明已记录的执行后端；不同后端不视为完全相同的执行条件。
 
 `valid` 表示该 profile 的证据有效，不等于全部用例通过或全维度发布合格。`candidate-failed` 是候选失败，不是基础设施错误。`diagnostic` 仅诊断；`noneligible` 不具备排名资格。Hyper-V 性能始终为诊断结果。
 

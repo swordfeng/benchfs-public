@@ -31,6 +31,37 @@ Only candidate-owned source under `bench/` is counted. The fixed SDK and FUSE ad
 
 Physical lines include blanks and comments. Code lines count each line holding at least one non-comment token: blank lines, comments, and documentation comments (Rust `///` and `//!`, Python docstrings) are excluded, while Rust attributes such as `#[derive(...)]` count as code. Corrected on 2026-09-27: earlier versions of this page counted documentation comments as code and Rust attributes as comments; file and physical-line counts are unchanged. Tests include three dedicated files under `src/`, an inline test module, and its test-only module declaration. Two Rust files contain both implementation and test components; file counts overlap, while physical and code lines do not. There are 12 distinct Rust files and three scripts. These are source-size measurements, not test-coverage or code-quality scores.
 
+<!-- source-tree:begin -->
+### Directory structure
+
+Every file under `bench/`, excluding build output. Numbers are code lines counted as above; "test" is the part of them in test code.
+
+```text
+bench/
+├── scripts/
+│   ├── check_mkfs.py  (108 code)
+│   ├── service-daemon.sh  (10 code)
+│   └── trace-daemon.sh  (1 code)
+├── src/
+│   ├── content.rs  (795 code)
+│   ├── fault_tests.rs  (125 code, 125 test)
+│   ├── format.rs  (706 code, 24 test)
+│   ├── fs.rs  (1,161 code, 3 test)
+│   ├── lib.rs  (8 code)
+│   ├── main.rs  (43 code)
+│   ├── mkfs.rs  (55 code)
+│   ├── scale_tests.rs  (461 code, 461 test)
+│   ├── storage.rs  (513 code)
+│   ├── tests.rs  (480 code, 480 test)
+│   ├── tree.rs  (563 code)
+│   └── validate.rs  (297 code)
+├── Cargo.toml
+├── README.md
+├── WORKLOG.md
+└── qualification.json
+```
+<!-- source-tree:end -->
+
 ## Generation time and activity
 
 | Metric | Value |
@@ -203,9 +234,7 @@ No publishable evaluation result yet (`not-run`), not a measured zero; the index
 
 ## Scope and provenance
 
-[JSON](../data/core/gpt-6-astra-high.json)
-
-Original profile results remain independent; the index adds a derived provisional total with missing scores imputed as zero. JSON retains per-profile run, manifest, report, candidate, and fixed-surface identities, plus the execution backend where recorded; different backends are not treated as identical execution conditions.
+Original profile results remain independent; the index adds a derived provisional total with missing scores imputed as zero. Each profile lists its run and, where recorded, its execution backend; different backends are not treated as identical execution conditions.
 
 `valid` means the profile evidence is valid, not that all cases passed or release eligibility is established. `candidate-failed` is not an infrastructure error. `diagnostic` is diagnostic-only; `noneligible` cannot enter rankings. Hyper-V performance is always diagnostic.
 

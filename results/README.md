@@ -23,20 +23,20 @@ All 12 results; click a model name for its report. Reference is a calibration ba
 
 C correctness, R robustness, S code review, W real-world applications, P performance, M maintainability. S, P, M are unmeasured; the provisional ceiling is 65.00, without redistributing weights.
 
-| Model | Effort | Total / 100 | C | R | S | W | P | M | JSON |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---|
-| [DeepSeek V4 Flash 0731](core/deepseek-v4-flash-0731-high.md) | High | 61.15* | 89.72 | 82.48 | 0.00* | 66.67 | 0.00* | 0.00* | [JSON](data/core/deepseek-v4-flash-0731-high.json) |
-| [Fable 5.1](core/fable-5.1-high.md) | High | 60.81* | 95.52 | 63.43 | 0.00* | 83.33 | 0.00* | 0.00* | [JSON](data/core/fable-5.1-high.json) |
-| [Fable 5.1 (Claude Code)](core/fable-5.1-high-cc.md) | High | 61.56* | 97.45 | 68.52 | 0.00* | 83.33 | 0.00* | 0.00* | [JSON](data/core/fable-5.1-high-cc.json) |
-| [Gemini 3.8 Flash](core/gemini-3.8-flash-high.md) | High | 59.85* | 90.57 | 78.59 | 0.00* | 50.00 | 0.00* | 0.00* | [JSON](data/core/gemini-3.8-flash-high.json) |
-| [GLM 5.3](core/glm-5.3-high.md) | High | 63.89* | 95.81 | 99.77 | 0.00* | 83.33 | 0.00* | 0.00* | [JSON](data/core/glm-5.3-high.json) |
-| [GPT 5.6 Luna](eval-only/gpt-5.6-luna-eval-only.md) | — | 0.00* | 0.00* | 0.00 | 0.00* | 0.00 | 0.00* | 0.00* | [JSON](data/core/gpt-5.6-luna-eval-only.json) |
-| [GPT 5.6 Sol](core/gpt-5.6-sol-high.md) | High | 59.67* | 95.44 | 88.45 | 0.00* | 33.33 | 0.00* | 0.00* | [JSON](data/core/gpt-5.6-sol-high.json) |
-| [GPT-6 Astra](core/gpt-6-astra-high.md) | High | 64.09* | 97.33 | 100.00 | 0.00* | 83.33 | 0.00* | 0.00* | [JSON](data/core/gpt-6-astra-high.json) |
-| [Kimi K3](core/kimi-k3-high.md) | High | 62.57* | 93.48 | 96.20 | 0.00* | 66.67 | 0.00* | 0.00* | [JSON](data/core/kimi-k3-high.json) |
-| [Opus 5.5 (Claude Code)](core/opus-5.5-high-cc.md) | High | 64.97* | 99.73 | 100.00 | 0.00* | 100.00 | 0.00* | 0.00* | [JSON](data/core/opus-5.5-high-cc.json) |
-| [Qwen 3.8 Flash Next](core/qwen-3.8-flash-next-high.md) | High | 57.10* | 89.21 | 67.85 | 0.00* | 33.33 | 0.00* | 0.00* | [JSON](data/core/qwen-3.8-flash-next-high.json) |
-| [Reference](eval-only/reference-calibration.md) | — | 61.50* | 74.87 | 97.82 | 0.00* | 100.00 | 0.00* | 0.00* | [JSON](data/core/reference-calibration.json) |
+| Model | Effort | Total / 100 | C | R | S | W | P | M |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| [DeepSeek V4 Flash 0731](core/deepseek-v4-flash-0731-high.md) | High | 61.15* | 89.72 | 82.48 | 0.00* | 66.67 | 0.00* | 0.00* |
+| [Fable 5.1](core/fable-5.1-high.md) | High | 60.81* | 95.52 | 63.43 | 0.00* | 83.33 | 0.00* | 0.00* |
+| [Fable 5.1 (Claude Code)](core/fable-5.1-high-cc.md) | High | 61.56* | 97.45 | 68.52 | 0.00* | 83.33 | 0.00* | 0.00* |
+| [Gemini 3.8 Flash](core/gemini-3.8-flash-high.md) | High | 59.85* | 90.57 | 78.59 | 0.00* | 50.00 | 0.00* | 0.00* |
+| [GLM 5.3](core/glm-5.3-high.md) | High | 63.89* | 95.81 | 99.77 | 0.00* | 83.33 | 0.00* | 0.00* |
+| [GPT 5.6 Luna](eval-only/gpt-5.6-luna-eval-only.md) | — | 0.00* | 0.00* | 0.00 | 0.00* | 0.00 | 0.00* | 0.00* |
+| [GPT 5.6 Sol](core/gpt-5.6-sol-high.md) | High | 59.67* | 95.44 | 88.45 | 0.00* | 33.33 | 0.00* | 0.00* |
+| [GPT-6 Astra](core/gpt-6-astra-high.md) | High | 64.09* | 97.33 | 100.00 | 0.00* | 83.33 | 0.00* | 0.00* |
+| [Kimi K3](core/kimi-k3-high.md) | High | 62.57* | 93.48 | 96.20 | 0.00* | 66.67 | 0.00* | 0.00* |
+| [Opus 5.5 (Claude Code)](core/opus-5.5-high-cc.md) | High | 64.97* | 99.73 | 100.00 | 0.00* | 100.00 | 0.00* | 0.00* |
+| [Qwen 3.8 Flash Next](core/qwen-3.8-flash-next-high.md) | High | 57.10* | 89.21 | 67.85 | 0.00* | 33.33 | 0.00* | 0.00* |
+| [Reference](eval-only/reference-calibration.md) | — | 61.50* | 74.87 | 97.82 | 0.00* | 100.00 | 0.00* | 0.00* |
 
 ### Eval profile breakdown
 
@@ -67,7 +67,3 @@ U linearly interpolates `(0,0), (20,45), (40,68), (60,83), (80,93), (100,100)` a
 
 These provisional values combine retained observations, not a complete same-build evaluation; reports retain run identities.
 <!-- core-results:end -->
-
-## Evaluation status
-
-Fable CC's eight non-performance profiles are complete. Its provisional total is **61.56/100**, with C **97.45**, R **68.52**, and W **83.33**. Performance, security review and maintainability remain unmeasured.

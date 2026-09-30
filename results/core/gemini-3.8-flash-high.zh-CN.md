@@ -31,6 +31,29 @@
 
 物理行数包含空行和注释。代码行数统计至少包含一个非注释 token 的行：空行、注释和文档注释（Rust 的 `///`、`//!`，Python docstring）不计入，`#[derive(...)]` 等 Rust 属性计为代码。2026-09-27 更正：本页早先的版本把文档注释计为代码、把 Rust 属性计为注释；文件数和物理行数不变。归档 `bench/` 目录共有 11 个不同的 Rust 文件，没有独立测试、内联测试模块或脚本。这不代表 agent 在开发期间没有运行测试。这些是源码规模数据，不是测试覆盖率或代码质量评分。
 
+<!-- source-tree:begin -->
+### 目录结构
+
+`bench/` 下的全部文件，不含构建产物。数字为按上述规则统计的代码行，“测试”为其中属于测试代码的部分。
+
+```text
+bench/
+├── src/
+│   ├── btree.rs  (318 行代码)
+│   ├── btree_mgr.rs  (334 行代码)
+│   ├── directory.rs  (150 行代码)
+│   ├── extent.rs  (458 行代码)
+│   ├── format.rs  (477 行代码)
+│   ├── fs.rs  (1,372 行代码)
+│   ├── main.rs  (85 行代码)
+│   ├── mkfs.rs  (283 行代码)
+│   ├── storage.rs  (427 行代码)
+│   ├── superblock.rs  (268 行代码)
+│   └── xattr.rs  (245 行代码)
+└── Cargo.toml
+```
+<!-- source-tree:end -->
+
 ## 生成时间与活动量
 
 | 指标 | 值 |
@@ -200,9 +223,7 @@ Profile: `perf-nvme`
 
 ## 评测范围与溯源
 
-[JSON](../data/core/gemini-3.8-flash-high.json)
-
-各 profile 原始结果独立保留；索引另列未测项暂计 0 的派生总分。JSON 保留逐 profile 的运行、manifest、报告、候选及固定评测面身份，并标明已记录的执行后端；不同后端不视为完全相同的执行条件。
+各 profile 原始结果独立保留；索引另列未测项暂计 0 的派生总分。每个 profile 列出其运行，并标明已记录的执行后端；不同后端不视为完全相同的执行条件。
 
 `valid` 表示该 profile 的证据有效，不等于全部用例通过或全维度发布合格。`candidate-failed` 是候选失败，不是基础设施错误。`diagnostic` 仅诊断；`noneligible` 不具备排名资格。Hyper-V 性能始终为诊断结果。
 

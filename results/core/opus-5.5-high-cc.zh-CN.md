@@ -30,6 +30,66 @@
 
 总行数包含空行和注释。代码行数统计至少包含一个非注释 token 的行：空行、注释和文档注释（Rust 的 `///`、`//!`，Python docstring）不计入，`#[derive(...)]` 等 Rust 属性计为代码。测试包括 `tests/` 下的 9 个独立文件（其中一个是共享辅助模块），以及两个实现文件（`src/crc.rs`、`src/format/mod.rs`）中的内联 `#[cfg(test)]` 模块（含属性行）。这两个文件在文件数上重叠；总行数和代码行数按行划分，不重叠。共有 41 个不同的 Rust 文件。这些数据仅衡量源码规模，不是测试覆盖率或代码质量评分。
 
+<!-- source-tree:begin -->
+### 目录结构
+
+`bench/` 下的全部文件，不含构建产物。数字为按上述规则统计的代码行，“测试”为其中属于测试代码的部分。
+
+```text
+bench/
+├── src/
+│   ├── btree/
+│   │   ├── mod.rs  (8 行代码)
+│   │   ├── node.rs  (362 行代码)
+│   │   ├── ops.rs  (554 行代码)
+│   │   └── walk.rs  (97 行代码)
+│   ├── format/
+│   │   ├── geometry.rs  (284 行代码)
+│   │   ├── inode.rs  (313 行代码)
+│   │   ├── meta.rs  (130 行代码)
+│   │   ├── mod.rs  (182 行代码，测试 29)
+│   │   └── records.rs  (155 行代码)
+│   ├── fs/
+│   │   ├── data/
+│   │   │   ├── mod.rs  (107 行代码)
+│   │   │   ├── range.rs  (288 行代码)
+│   │   │   ├── read.rs  (132 行代码)
+│   │   │   └── write.rs  (328 行代码)
+│   │   ├── handles.rs  (179 行代码)
+│   │   ├── mod.rs  (487 行代码)
+│   │   ├── namespace.rs  (697 行代码)
+│   │   ├── ops.rs  (551 行代码)
+│   │   └── xattr.rs  (285 行代码)
+│   ├── alloc.rs  (254 行代码)
+│   ├── bin_fsck.rs  (37 行代码)
+│   ├── cache.rs  (253 行代码)
+│   ├── check.rs  (427 行代码)
+│   ├── crc.rs  (93 行代码，测试 18)
+│   ├── dev.rs  (109 行代码)
+│   ├── devlock.rs  (22 行代码)
+│   ├── extmap.rs  (259 行代码)
+│   ├── image.rs  (128 行代码)
+│   ├── lib.rs  (14 行代码)
+│   ├── main.rs  (89 行代码)
+│   ├── mkfs.rs  (70 行代码)
+│   ├── prof.rs  (49 行代码)
+│   └── store.rs  (243 行代码)
+├── tests/
+│   ├── common/
+│   │   └── mod.rs  (65 行代码，测试 65)
+│   ├── basic.rs  (408 行代码，测试 408)
+│   ├── btree.rs  (138 行代码，测试 138)
+│   ├── concurrent.rs  (172 行代码，测试 172)
+│   ├── corrupt.rs  (138 行代码，测试 138)
+│   ├── crash.rs  (220 行代码，测试 220)
+│   ├── faults.rs  (184 行代码，测试 184)
+│   ├── model.rs  (713 行代码，测试 713)
+│   └── spec.rs  (542 行代码，测试 542)
+├── Cargo.toml
+└── README.md
+```
+<!-- source-tree:end -->
+
 ## 生成时间与活动量
 
 | 指标 | 值 |
@@ -222,9 +282,7 @@ Profile: `perf-nvme`
 
 ## 评测范围与溯源
 
-[JSON](../data/core/opus-5.5-high-cc.json)
-
-各 profile 原始结果独立保留；索引另列未测项暂计 0 的派生总分。JSON 保留逐 profile 的运行、manifest、报告、候选及固定评测面身份，并标明已记录的执行后端；不同后端不视为完全相同的执行条件。
+各 profile 原始结果独立保留；索引另列未测项暂计 0 的派生总分。每个 profile 列出其运行，并标明已记录的执行后端；不同后端不视为完全相同的执行条件。
 
 `valid` 表示该 profile 的证据有效，不等于全部用例通过或全维度发布合格。`candidate-failed` 是候选失败，不是基础设施错误。`diagnostic` 仅诊断；`noneligible` 不具备排名资格。Hyper-V 性能始终为诊断结果。
 
