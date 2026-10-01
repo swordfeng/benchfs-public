@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="750" viewBox="0 0 1120 750" role="img" aria-labelledby="title description">
 <title id="title">BenchFS · AI filesystem benchmark</title>
-<desc id="description">Overall scores, highest first · One development run per model / agent. Opus 5.5 (Claude Code): 64.97; GPT-6 Astra: 64.09; GLM 5.3: 63.89; Kimi K3: 62.57; Fable 5.1 (Claude Code): 61.56; DeepSeek V4 Flash 0731: 61.15; Fable 5.1: 60.81; Gemini 3.8 Flash: 59.85; GPT 5.6 Sol: 59.67; Qwen 3.8 Flash Next: 57.10</desc>
+<desc id="description">Overall scores, highest first · One development run per model / agent. Opus 5.5 · Claude Code: 64.97; GPT-6 Astra · Pi: 64.09; GLM 5.3 · Pi: 63.89; Kimi K3 · Pi: 62.57; Fable 5.1 · Claude Code: 61.56; DeepSeek V4 Flash 0731 · Pi: 61.15; Fable 5.1 · Pi: 60.81; Gemini 3.8 Flash · Pi: 59.85; GPT 5.6 Sol · Pi: 59.67; Qwen 3.8 Flash Next · Pi: 57.10</desc>
 <style>text{font-family:Inter,"Noto Sans CJK SC","Microsoft YaHei",Arial,sans-serif;fill:#172b4d}.muted{fill:#52647d}.name{font-size:16px}.score{font-size:18px;font-weight:700}</style>
 <rect width="1120" height="750" rx="18" fill="#fff"/>
 <text x="32" y="44" font-size="25" font-weight="700">BenchFS · AI filesystem benchmark</text>

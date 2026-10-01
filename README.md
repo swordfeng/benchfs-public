@@ -21,11 +21,11 @@ Dimension scores are out of 100. Under the existing weights, the measured dimens
 
 | Model | Coding agent | Total / 100 | Correctness | Robustness | Applications |
 |---|---|---:|---:|---:|---:|
-| [Opus 5.5 (Claude Code)](results/core/opus-5.5-high-cc.md) | Claude Code | **64.97** | 99.73 | 100.00 | 100.00 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **64.97** | 99.73 | 100.00 | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **64.09** | 97.33 | 100.00 | 83.33 |
 | [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **63.89** | 95.81 | 99.77 | 83.33 |
 | [Kimi K3](results/core/kimi-k3-high.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 |
-| [Fable 5.1 (Claude Code)](results/core/fable-5.1-high-cc.md) | Claude Code | **61.56** | 97.45 | 68.52 | 83.33 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **61.56** | 97.45 | 68.52 | 83.33 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **61.15** | 89.72 | 82.48 | 66.67 |
 | [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **60.81** | 95.52 | 63.43 | 83.33 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **59.85** | 90.57 | 78.59 | 50.00 |
@@ -73,11 +73,11 @@ A filesystem must first handle everyday operations correctly: reading and writin
 <!-- profile-spec-tests:begin -->
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
-| [Opus 5.5 (Claude Code)](results/core/opus-5.5-high-cc.md) | 44 / 44 | 100.00% | 100.00 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [Fable 5.1 (Claude Code)](results/core/fable-5.1-high-cc.md) | 44 / 44 | 100.00% | 100.00 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
@@ -90,11 +90,11 @@ A filesystem must first handle everyday operations correctly: reading and writin
 <!-- profile-pjdfstest-core:begin -->
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
-| [Opus 5.5 (Claude Code)](results/core/opus-5.5-high-cc.md) | 169 / 169 | 100.00% | 100.00 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [Fable 5.1 (Claude Code)](results/core/fable-5.1-high-cc.md) | 169 / 169 | 100.00% | 100.00 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 168 / 169 | 99.41% | 99.26 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
@@ -107,11 +107,11 @@ A filesystem must first handle everyday operations correctly: reading and writin
 <!-- profile-xfstests-core:begin -->
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
-| [Opus 5.5 (Claude Code)](results/core/opus-5.5-high-cc.md) | 189 / 194 | 97.42% | 98.90 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 189 / 194 | 97.42% | 98.90 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 179 / 194 | 92.27% | 89.31 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 183 / 194 | 94.33% | 89.17 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 186 / 194 | 95.88% | 89.75 |
-| [Fable 5.1 (Claude Code)](results/core/fable-5.1-high-cc.md) | 188 / 194 | 96.91% | 94.36 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 188 / 194 | 96.91% | 94.36 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 167 / 194 | 86.08% | 84.02 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 183 / 194 | 94.33% | 87.35 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 175 / 194 | 90.21% | 84.61 |
@@ -126,11 +126,11 @@ Being able to read a file does not guarantee that the data on disk is organized 
 <!-- profile-canonical-format:begin -->
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
-| [Opus 5.5 (Claude Code)](results/core/opus-5.5-high-cc.md) | 479 / 479 | 100.00% | 100.00 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 479 / 479 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 417 / 479 | 87.06% | 94.05 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 410 / 479 | 85.59% | 84.17 |
-| [Fable 5.1 (Claude Code)](results/core/fable-5.1-high-cc.md) | 431 / 479 | 89.98% | 95.45 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 431 / 479 | 89.98% | 95.45 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 388 / 479 | 81.00% | 74.86 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 431 / 479 | 89.98% | 95.45 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 419 / 479 | 87.47% | 77.66 |
@@ -145,11 +145,11 @@ A filesystem also has to handle resource pressure and failed operations. These t
 <!-- profile-robustness:begin -->
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
-| [Opus 5.5 (Claude Code)](results/core/opus-5.5-high-cc.md) | 47 / 47 | 100.00% | 100.00 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 47 / 47 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 46 / 47 | 97.87% | 97.50 |
-| [Fable 5.1 (Claude Code)](results/core/fable-5.1-high-cc.md) | 47 / 47 | 100.00% | 100.00 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 47 / 47 | 100.00% | 100.00 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 35 / 47 | 74.47% | 69.58 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 44 / 47 | 93.62% | 90.28 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 43 / 47 | 91.49% | 89.58 |
@@ -164,11 +164,11 @@ After an unexpected interruption, the filesystem must handle the state left on d
 <!-- profile-crash-core:begin -->
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
-| [Opus 5.5 (Claude Code)](results/core/opus-5.5-high-cc.md) | 216 / 216 | 100.00% | 100.00 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 216 / 216 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 215 / 216 | 99.54% | 99.54 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 205 / 216 | 94.91% | 94.91 |
-| [Fable 5.1 (Claude Code)](results/core/fable-5.1-high-cc.md) | 80 / 216 | 37.04% | 37.04 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 80 / 216 | 37.04% | 37.04 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 206 / 216 | 95.37% | 95.37 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 79 / 216 | 36.57% | 36.57 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 146 / 216 | 67.59% | 67.59 |
@@ -183,11 +183,11 @@ Finally, real applications use the filesystem. These tests check whether applica
 <!-- profile-real-world:begin -->
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
-| [Opus 5.5 (Claude Code)](results/core/opus-5.5-high-cc.md) | 4 / 4 | 100.00% | 100.00 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 4 / 4 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 3 / 4 | 75.00% | 66.67 |
-| [Fable 5.1 (Claude Code)](results/core/fable-5.1-high-cc.md) | 3 / 4 | 75.00% | 83.33 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 3 / 4 | 75.00% | 83.33 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 2 / 4 | 50.00% | 66.67 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 2 / 4 | 50.00% | 50.00 |
@@ -203,11 +203,11 @@ The submitted source is rebuilt and SDK smoke checks are run before evaluation. 
 <!-- profile-sdk-smoke:begin -->
 | Model / Agent | Passed / applicable | Pass rate |
 |---|---:|---:|
-| [Opus 5.5 (Claude Code)](results/core/opus-5.5-high-cc.md) | 59 / 59 | 100.00% |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 59 / 59 | 100.00% |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | — | — |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | — | — |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | — | — |
-| [Fable 5.1 (Claude Code)](results/core/fable-5.1-high-cc.md) | 54 / 54 | 100.00% |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 54 / 54 | 100.00% |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | — | — |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | — | — |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | — | — |
