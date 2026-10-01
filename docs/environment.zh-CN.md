@@ -1,41 +1,33 @@
-# 执行环境
+# 实验环境
 
-[English](environment.md)
+[English](environment.md) · [返回首页](../README.zh-CN.md)
 
-## 冻结的 pilot 环境
+模型在 Linux 虚拟机中完成开发，交付源码随后在独立的评测虚拟机中重新构建。两阶段分开，可以避免将开发过程留下的文件和配置当作实现的一部分。
 
-| 组件 | 值 |
+## 开发配置
+
+| 组件 | 配置 |
 |---|---|
-| Guest OS | Ubuntu Server 24.04.4 LTS，x86-64 |
-| Guest kernel | Ubuntu GA 6.8（冻结 pilot 镜像为 `6.8.0-138-generic`） |
-| VM 资源 | 8 vCPU、16 GiB static RAM、禁用 swap、禁用 ballooning |
-| 数据设备 | 两个独立的 64 GiB disposable device，分别用于 test 和 scratch |
+| 系统 | Ubuntu Server 24.04.4 LTS，x86-64 |
+| 内核 | Ubuntu GA 6.8；基础镜像版本为 `6.8.0-138-generic` |
+| VM 资源 | 8 vCPU、16 GiB 固定内存，禁用 swap 和内存气球 |
+| 数据设备 | test、scratch 各一个独立的 64 GiB 设备 |
 | Rust | 1.97.1 |
 | libfuse | 3.18.2 |
 | Node.js | 22.23.2 |
-| Coding agent | Pi Coding Agent 0.84.3 |
+| Pi Coding Agent | 0.84.3 |
+| Claude Code | 2.1.283；在成绩表中单独标注 |
 
-每条正式结果必须给出精确的镜像 digest。软件包版本、firmware、VM 启动配置、公开代码和工具配置由对应 benchmark release 冻结，不能只根据本页摘要推断。
+每个模型 / Agent 组合运行一次，采用 High effort。开发预算为最长 12 小时；活跃计时和实际经过时间分别记录，详情见各模型报告。
 
-## 隔离
+## 工具与人工参与
 
-开发和评测使用从冻结镜像创建的、相互独立的 disposable VM。
+Agent 使用文件操作、终端和本地开发工具，自行构建、测试和调试。运行配置禁用 subagent、MCP、记忆和内建 Web 工具。Claude Code 保留 Bash、Read、Edit、Write 四个工具；其任务完成判断方式与 Pi 不同。
 
-- Dev VM 只包含 agent 可见材料和公开反馈测试。
-- Dev VM 中不存在 hidden evaluator 资产。
-- 开发期网络只允许访问 release allowlist 和 model endpoint proxy。
-- Eval 在干净 VM 中重新构建留档源码，不向 agent 返回 hidden feedback。
-- 计分执行前锁定 Eval 网络。
-- 拉取运行记录后销毁 Eval VM 和数据设备。
+操作者提供初始任务并管理环境，不修改候选代码，也不提供技术指导。开发网络限制为所需依赖来源及模型服务。各次运行的具体配置与恢复记录保存在相应报告中。
 
-## 可复现元数据
+## 独立评测
 
-一条发布结果至少包含：
+开发 VM 提供任务材料与反馈测试，完整评测材料只在测试阶段使用。评测从交付源码重新构建，在执行测试前锁定网络，结果不返回开发过程。
 
-- guest 镜像和 benchmark commit identity；
-- harness、model、toolchain 和 library 版本；
-- VM CPU、内存、磁盘角色和 backend 配置；
-- 公开代码和 suite manifest identity；
-- 开始/结束时间、运行次数、基础设施状态和人工干预状态。
-
-性能结果还必须标识 physical host、CPU isolation、frequency policy、NUMA placement、storage device、host kernel 和 controller 版本。不同硬件池的原始性能数据不得直接合并。
+测试通过实际的参与者格式化程序和文件系统进程执行。各测试组所用的资源、数据设备和虚拟化后端按运行记录保留；开发配置不能替代每次评测的具体设置。已有报告分别标注 Hyper-V 或 KVM。

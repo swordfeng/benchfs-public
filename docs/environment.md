@@ -1,41 +1,33 @@
-# Execution Environment
+# Experimental environment
 
-[中文](environment.zh-CN.md)
+[中文](environment.zh-CN.md) · [Back to overview](../README.md)
 
-## Frozen pilot environment
+Models develop in Linux VMs. Submitted source is rebuilt in separate evaluation VMs, so files and configuration left behind during development are not treated as part of the implementation.
 
-| Component | Value |
+## Development configuration
+
+| Component | Configuration |
 |---|---|
-| Guest OS | Ubuntu Server 24.04.4 LTS, x86-64 |
-| Guest kernel | Ubuntu GA 6.8 (`6.8.0-138-generic` for the frozen pilot image) |
-| VM resources | 8 vCPU, 16 GiB static RAM, swap disabled, ballooning disabled |
-| Data devices | Two independent 64 GiB disposable devices for test and scratch roles |
+| OS | Ubuntu Server 24.04.4 LTS, x86-64 |
+| Kernel | Ubuntu GA 6.8; base image version `6.8.0-138-generic` |
+| VM resources | 8 vCPU, 16 GiB fixed RAM; swap and ballooning disabled |
+| Data devices | Separate 64 GiB test and scratch devices |
 | Rust | 1.97.1 |
 | libfuse | 3.18.2 |
 | Node.js | 22.23.2 |
-| Coding agent | Pi Coding Agent 0.84.3 |
+| Pi Coding Agent | 0.84.3 |
+| Claude Code | 2.1.283; labeled separately in results |
 
-Every formal result must name the exact image digest. Package versions, firmware, VM launch configuration, public code, and tool configuration are frozen by the corresponding benchmark release rather than inferred from this summary.
+Each model / agent combination runs once, at High effort. The development budget is up to 12 hours. Active time and elapsed time are recorded separately; individual reports provide details.
 
-## Isolation
+## Tools and human involvement
 
-Development and evaluation use separate disposable VMs created from the frozen image.
+Agents use file operations, shell access, and local development tools to build, test, and debug. Subagents, MCP, memory, and built-in web tools are disabled. Claude Code retains Bash, Read, Edit, and Write, and uses a different task-completion mechanism from Pi.
 
-- The development VM contains only agent-visible materials and public feedback tests.
-- Hidden evaluator assets are absent from the development VM.
-- Development network access is restricted to the release allowlist and the model endpoint proxy.
-- Evaluation rebuilds the archived source in a clean VM and does not return hidden feedback to the agent.
-- Evaluation network access is locked before scored execution.
-- VM and data devices are destroyed after evaluation; artifacts are pulled into the run record first.
+The operator provides the initial task and manages the environment, without editing candidate code or giving technical guidance. Development network access is limited to required dependency sources and model services. Individual reports retain run-specific settings and recovery records.
 
-## Reproducibility metadata
+## Independent evaluation
 
-A released result includes, at minimum:
+Development VMs contain task materials and feedback tests; the full evaluation material is used only during testing. Evaluation rebuilds the submitted source and locks network access before executing tests. Its feedback does not enter development.
 
-- guest image and benchmark commit identities;
-- harness, model, toolchain, and library versions;
-- VM CPU, memory, disk-role, and backend configuration;
-- public-code and suite-manifest identities;
-- start/end time, run count, infrastructure status, and human-intervention status.
-
-Performance results additionally identify the physical host, CPU isolation, frequency policy, NUMA placement, storage device, host kernel, and controller version. Raw performance from different hardware pools is not directly combined.
+Tests run against actual participant formatting and filesystem binaries. Resources, data devices, and virtualization backends are retained per test run; the development configuration is not a substitute for those settings. Existing reports identify Hyper-V or KVM separately.

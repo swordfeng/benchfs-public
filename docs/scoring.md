@@ -1,79 +1,46 @@
-# Testing and Scoring Method
+# Scoring
 
-[中文](scoring.zh-CN.md)
+[中文](scoring.zh-CN.md) · [Back to results](../README.md#results)
 
-## Evaluation flow
+BenchFS scores executable behavior: completed operations, correct data, and responses to abnormal conditions that meet the task requirements. The overview shows overall and individual test scores.
 
-1. Freeze the benchmark, public-code, harness, environment, suite-manifest, and scoring-policy identities.
-2. Run one autonomous development trajectory in an isolated Dev VM.
-3. Archive the final source once; development binaries and local test results are non-authoritative.
-4. Rebuild the archive in a fresh Eval VM with the frozen dependency policy.
-5. Exercise build, format, mount, correctness, robustness, variant, conformance, and qualified performance profiles.
-6. Validate report completeness and infrastructure state before publishing aggregates.
+## Pass rates and profile scores
 
-Human technical intervention after generation starts is not allowed. A recovery from genuine infrastructure failure follows a predeclared rule and is recorded.
+```text
+pass rate = (pass + expected fail) / applicable tests
+applicable tests = pass + expected fail + fail + unexpected pass + timeout + missing required functionality
+```
 
-## Case outcomes
+N/A tests are excluded. Timeouts and missing required functionality count as failures. When a test requires an operation to be rejected, an expected failure counts as meeting that requirement.
 
-Each test case receives one terminal outcome:
+Semantic tests, pjdfstest, xfstests, robustness, crash consistency, and applications use an **equal-weight category average**: calculate each category's pass rate, average the categories with applicable tests, and multiply by 100. Categories with more tests do not receive more weight simply because of their size.
 
-- **pass** — required observation succeeded;
-- **fail** — required observation failed;
-- **skip N/A** — frozen profile classification says the case is not applicable;
-- **skip implementation** — the implementation did not provide a required capability; counted as failure;
-- **infrastructure error** — the evaluator could not produce a valid verdict.
+**The format profile uses its native conformance score.** Its check pass rate is supplementary and does not replace that score. Build and SDK smoke checks are unscored.
 
-N/A cases are excluded from scoring denominators. An infrastructure error invalidates the affected run rather than becoming a candidate failure.
+## Overall score
 
-## Correctness aggregates
+| Dimension | Calculation | Overall weight |
+|---|---|---:|
+| Correctness C | Mean of semantic, pjdfstest, xfstests, and format scores | 35% |
+| Robustness R | Mean of robustness and crash-consistency scores | 20% |
+| Applications W | Application score | 10% |
 
-For a valid profile:
+The overall score retains the weights and transformation in `core-overall-v1-zero-fill`. First aggregate each dimension, then apply the utility function U below, and finally take the weighted sum.
 
-$$
-\text{raw pass rate} = \frac{\text{pass}}{\text{pass} + \text{fail} + \text{skip implementation}}
-$$
+| Dimension score x | 0 | 20 | 40 | 60 | 80 | 100 |
+|---|---:|---:|---:|---:|---:|---:|
+| U(x) | 0 | 45 | 68 | 83 | 93 | 100 |
 
-The report also publishes an equal-weight macro average across frozen semantic categories. Raw pass rate and macro average remain separate; one does not hide weakness in the other. Mandatory-manifest 100% is required for the “fully conforming” label.
+U interpolates linearly between adjacent points. Current scores are calculated as:
 
-## Published dimensions
+```text
+total = 0.35 × U(C) + 0.20 × U(R) + 0.10 × U(W)
+```
 
-BenchFS publishes multiple dimensions rather than collapsing everything into one score:
+Measured components account for 65 points. The other 35 points in the existing rule—code review (20%), performance (10%), and maintainability (5%)—are unmeasured and contribute zero. Existing scores have not been reweighted or rescaled to 100. The overview does not score implementations through subjective code commentary or convert source size into quality points.
 
-- build, format, mount, and lifecycle status;
-- Core semantic correctness;
-- POSIX conformance;
-- robustness and safety;
-- format conformance;
-- Journal/COW crash consistency, when applicable;
-- real-world scenario completion, integrity, reopen behavior, and error handling;
-- synthetic performance, resource use, and I/O amplification;
-- post-run code-review findings;
-- objective maintainability metrics.
+Missing inputs contribute zero only when calculating totals; profile tables show “—” to distinguish them from measured zeroes. A partially measured dimension keeps its original denominator and is marked with `*`. Calculations retain source precision and display two decimals. Ordering uses unrounded totals.
 
-Agent wall time, provider tokens, cost, tool calls, and human-intervention events are audit metadata, not correctness points.
+## Development statistics
 
-## Synthetic performance measurement
-
-Performance is reported as two independent profiles: memory-backed software overhead and dedicated persistent-storage end-to-end behavior. Timed workload families cover bulk sequential I/O, small random I/O, buffered synchronized writes, and metadata/concurrency activity. Integrity verification occurs outside the timed window.
-
-Every timed workload uses a warm-up, a fixed measurement window, cold/warm cache labels, and repeated samples. Reports retain every sample plus median, median absolute deviation, and coefficient of variation. Outputs include throughput, IOPS, latency percentiles, candidate CPU, candidate peak memory, BlockDevice read/write/flush counts, space use, and applicable lifecycle timing.
-
-Candidate RAM is measured from the filesystem daemon's isolated resource group; the workload generator and evaluator are excluded. Write amplification uses BlockDevice bytes written divided by application logical bytes written, with both values retained. Metadata workloads report absolute storage traffic per operation instead of a misleading ratio.
-
-## Real-world workload assessment
-
-The separate real-world suite is scored from application-level completion, integrity, reopen behavior, and error handling. Its result is not inferred from, or merged into, synthetic throughput and latency measurements. Exact applications and scenario oracles remain evaluator-only.
-
-## Crash-test method
-
-Crash evaluation runs after the agent trajectory. It interrupts frozen workloads without a clean shutdown, restarts from the resulting persistent state, and evaluates mount/recovery, required durable state, and structural validity under the selected Variant's policy. Infrastructure failure is distinct from a candidate crash-test failure. Exact crash workloads, interruption points, persistence selections, seeds, traces, and expected states remain evaluator-only.
-
-## Performance qualification
-
-Performance remains visible for every valid run, but enters formal comparison only after the frozen correctness and safety gates are met. The current policy requires complete build/mount/smoke and critical safety success, complete applicable durability-fence success, at least 95% POSIX semantic-category macro average, at least 80% in every major category, and at least 95% non-critical seeded robustness/recovery success.
-
-Results from different variants, tracks, benchmark versions, or non-equivalent hardware pools are not merged.
-
-## Result validity
-
-A published result states whether it is formal, pilot, non-eligible, or infrastructure-invalid. Pilot data never enters the formal leaderboard. Reports include hashes for the frozen inputs and preserve machine-readable aggregates and audit artifacts; public narrative documents do not expose individual hidden cases or implementation-specific failure details.
+Time, token usage, cost, and source size are reported separately. They do not affect scores or break ties. Each entry represents one development run, rather than an average across runs, and identifies both the model and its coding agent.
