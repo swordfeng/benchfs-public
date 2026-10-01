@@ -19,23 +19,23 @@ These results cover the Core filesystem task: file operations, on-disk format, r
 
 Dimension scores are out of 100. Under the existing weights, the measured dimensions account for **65 points** of the overall score; unmeasured components contribute zero. Click a model for its report.
 
-| Model | Coding agent | Total / 100 | Correctness | Robustness | Applications | Active time | Est. cost (USD) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **64.97** | 99.73 | 100.00 | 100.00 | 3:07:09 | $39.28 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) | Pi | **64.10** | 97.45 | 100.00 | 83.33 | 7:14:12 | $12.87 |
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **64.09** | 97.33 | 100.00 | 83.33 | 3:52:51 | $77.86 |
-| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **63.89** | 95.81 | 99.77 | 83.33 | 7:32:19 | $62.99 |
-| [Kimi K3](results/core/kimi-k3-high.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 | 6:52:08 | $90.50 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **61.56** | 97.45 | 68.52 | 83.33 | 2:59:12 | $40.69 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **61.15** | 89.72 | 82.48 | 66.67 | ≥12:19:49 | $3.26 |
-| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **60.81** | 95.52 | 63.43 | 83.33 | 5:16:10 | $72.41 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **59.85** | 90.57 | 78.59 | 50.00 | 3:05:17 | $31.62 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | **59.67** | 95.44 | 88.45 | 33.33 | 2:42:57 | $7.81 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | **57.10** | 89.21 | 67.85 | 33.33 | ≥12:00:54 | $3.29 |
+| Model | Coding agent | Total / 100 | Correctness | Robustness | Applications | Active time | Output tokens | Est. cost (USD) |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **64.97** | 99.73 | 100.00 | 100.00 | 3:07:09 | 472,273 | $39.28 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) | Pi | **64.10** | 97.45 | 100.00 | 83.33 | 7:14:12 | 184,515 | $12.87 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **64.09** | 97.33 | 100.00 | 83.33 | 3:52:51 | 199,142 | $77.86 |
+| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **63.89** | 95.81 | 99.77 | 83.33 | 7:32:19 | 541,837 | $62.99 |
+| [Kimi K3](results/core/kimi-k3-high.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 | 6:52:08 | 478,897 | $90.50 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **61.56** | 97.45 | 68.52 | 83.33 | 2:59:12 | 340,562 | $40.69 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **61.15** | 89.72 | 82.48 | 66.67 | ≥12:19:49 | 518,078 | $3.26 |
+| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **60.81** | 95.52 | 63.43 | 83.33 | 5:16:10 | 298,429 | $72.41 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **59.85** | 90.57 | 78.59 | 50.00 | 3:05:17 | 267,908 | $31.62 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | **59.67** | 95.44 | 88.45 | 33.33 | 2:42:57 | 87,220 | $7.81 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | **57.10** | 89.21 | 67.85 | 33.33 | ≥12:00:54 | 734,568 | $3.29 |
 
 Each row represents one development run. Agent configurations are described below, with separate entries for different agents. See [scoring](docs/scoring.md) for the formula.
 
-Time is the agent-recorded active duration (h:mm:ss); ≥ marks the last record when no final completion time was recorded. Costs use the API prices and cache usage documented in each report, including task-completion checks for Claude Code. Subscription runs are also estimated at API prices. Time and cost do not affect scores; token usage and calculations are in the reports.
+Time is the agent-recorded active duration (h:mm:ss); ≥ marks the last record when no final completion time was recorded. Output tokens cover the main model and include reasoning. Costs use the API prices and cache usage documented in each report, including task-completion checks for Claude Code. Subscription runs are also estimated at API prices. Time, tokens, and cost do not affect scores; full usage and calculations are in the reports.
 
 <details>
 <summary>Reference implementation</summary>

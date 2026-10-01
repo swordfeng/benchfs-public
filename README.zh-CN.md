@@ -19,23 +19,23 @@
 
 分项满分均为 100。总分沿用现有权重，当前已测项目合计占 **65 分**；其余项目尚未测量，按 0 计入总分。点击模型名称可查看详细报告。
 
-| 模型 | 编程 Agent | 总分 / 100 | 正确性 | 稳健性 | 真实应用 | 开发耗时 | 估算费用（美元） |
-|---|---|---:|---:|---:|---:|---:|---:|
-| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) | Claude Code | **64.97** | 99.73 | 100.00 | 100.00 | 3:07:09 | $39.28 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) | Pi | **64.10** | 97.45 | 100.00 | 83.33 | 7:14:12 | $12.87 |
-| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) | Pi | **64.09** | 97.33 | 100.00 | 83.33 | 3:52:51 | $77.86 |
-| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) | Pi | **63.89** | 95.81 | 99.77 | 83.33 | 7:32:19 | $62.99 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 | 6:52:08 | $90.50 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) | Claude Code | **61.56** | 97.45 | 68.52 | 83.33 | 2:59:12 | $40.69 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) | Pi | **61.15** | 89.72 | 82.48 | 66.67 | ≥12:19:49 | $3.26 |
-| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) | Pi | **60.81** | 95.52 | 63.43 | 83.33 | 5:16:10 | $72.41 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) | Pi | **59.85** | 90.57 | 78.59 | 50.00 | 3:05:17 | $31.62 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) | Pi | **59.67** | 95.44 | 88.45 | 33.33 | 2:42:57 | $7.81 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) | Pi | **57.10** | 89.21 | 67.85 | 33.33 | ≥12:00:54 | $3.29 |
+| 模型 | 编程 Agent | 总分 / 100 | 正确性 | 稳健性 | 真实应用 | 开发活跃时长 | 输出 tokens | 估算费用（美元） |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) | Claude Code | **64.97** | 99.73 | 100.00 | 100.00 | 3:07:09 | 472,273 | $39.28 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) | Pi | **64.10** | 97.45 | 100.00 | 83.33 | 7:14:12 | 184,515 | $12.87 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) | Pi | **64.09** | 97.33 | 100.00 | 83.33 | 3:52:51 | 199,142 | $77.86 |
+| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) | Pi | **63.89** | 95.81 | 99.77 | 83.33 | 7:32:19 | 541,837 | $62.99 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 | 6:52:08 | 478,897 | $90.50 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) | Claude Code | **61.56** | 97.45 | 68.52 | 83.33 | 2:59:12 | 340,562 | $40.69 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) | Pi | **61.15** | 89.72 | 82.48 | 66.67 | ≥12:19:49 | 518,078 | $3.26 |
+| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) | Pi | **60.81** | 95.52 | 63.43 | 83.33 | 5:16:10 | 298,429 | $72.41 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) | Pi | **59.85** | 90.57 | 78.59 | 50.00 | 3:05:17 | 267,908 | $31.62 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) | Pi | **59.67** | 95.44 | 88.45 | 33.33 | 2:42:57 | 87,220 | $7.81 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) | Pi | **57.10** | 89.21 | 67.85 | 33.33 | ≥12:00:54 | 734,568 | $3.29 |
 
 每行对应一次独立开发。Agent 配置见下文；不同 Agent 的结果分别列出。总分的计算方式见[评分方法](docs/scoring.zh-CN.md)。
 
-开发耗时采用 Agent 记录的活跃时长（时:分:秒）；“≥”表示仅有最后一次记录，未记录最终完成时间。费用按各报告注明的 API 标价和缓存用量估算，Claude Code 包含任务完成判断所用模型的开销；订阅运行同样按 API 标价折算。耗时和费用均不参与评分，token 用量与计算依据见详细报告。
+开发活跃时长采用 Agent 的累计计时（时:分:秒）；“≥”表示仅有最后一次记录，未记录最终完成时间。输出 tokens 统计主模型用量，包含推理。费用按各报告注明的 API 标价和缓存用量估算，Claude Code 包含任务完成判断所用模型的开销；订阅运行同样按 API 标价折算。耗时、token 用量和费用均不参与评分，完整用量与计算依据见详细报告。
 
 <details>
 <summary>参考实现</summary>
