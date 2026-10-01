@@ -35,14 +35,13 @@
 每行对应一次独立开发。Agent 配置见下文；不同 Agent 的结果分别列出。总分的计算方式见[评分方法](docs/scoring.zh-CN.md)。
 
 <details>
-<summary>参考实现与其他测试记录</summary>
+<summary>参考实现</summary>
 
-Reference 为参考实现；Luna 仅有测试记录。原有成绩和报告保留如下。
+Reference 为参考实现，成绩和报告如下。
 
 | 实现 | 总分 / 100 | 正确性 | 稳健性 | 真实应用 |
 |---|---:|---:|---:|---:|
 | [Reference](results/eval-only/reference-calibration.zh-CN.md) | 61.50 | 74.87 | 97.82 | 100.00 |
-| [GPT 5.6 Luna](results/eval-only/gpt-5.6-luna-eval-only.zh-CN.md) | 0.00 | 0.00* | 0.00 | 0.00 |
 
 </details>
 <!-- core-results:end -->

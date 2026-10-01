@@ -35,14 +35,13 @@ Dimension scores are out of 100. Under the existing weights, the measured dimens
 Each row represents one development run. Agent configurations are described below, with separate entries for different agents. See [scoring](docs/scoring.md) for the formula.
 
 <details>
-<summary>Reference implementation and additional test records</summary>
+<summary>Reference implementation</summary>
 
-Reference is a calibration implementation; Luna has evaluation records only. Their scores and reports are retained below.
+Reference is a calibration implementation. Its scores and report are listed below.
 
 | Implementation | Total / 100 | Correctness | Robustness | Applications |
 |---|---:|---:|---:|---:|
 | [Reference](results/eval-only/reference-calibration.md) | 61.50 | 74.87 | 97.82 | 100.00 |
-| [GPT 5.6 Luna](results/eval-only/gpt-5.6-luna-eval-only.md) | 0.00 | 0.00* | 0.00 | 0.00 |
 
 </details>
 <!-- core-results:end -->
