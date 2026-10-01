@@ -1,6 +1,6 @@
 # BenchFS: Can AI build a reliable filesystem on its own?
 
-[中文](README.zh-CN.md) · [Results](#results) · [Methods](#methods) · [Experimental setup](#setup) · [Time and cost](#cost)
+[中文](README.zh-CN.md) · [Results](#results) · [Methods](#methods) · [Experimental setup](#setup)
 
 Saving a file looks simple. Behind that operation, a filesystem must find free space, write the data, update its metadata, and make sure the file is still intact the next time it is opened. Concurrent access, a nearly full disk, and an unexpected interruption make the job harder.
 
@@ -19,20 +19,23 @@ These results cover the Core filesystem task: file operations, on-disk format, r
 
 Dimension scores are out of 100. Under the existing weights, the measured dimensions account for **65 points** of the overall score; unmeasured components contribute zero. Click a model for its report.
 
-| Model | Coding agent | Total / 100 | Correctness | Robustness | Applications |
-|---|---|---:|---:|---:|---:|
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **64.97** | 99.73 | 100.00 | 100.00 |
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **64.09** | 97.33 | 100.00 | 83.33 |
-| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **63.89** | 95.81 | 99.77 | 83.33 |
-| [Kimi K3](results/core/kimi-k3-high.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **61.56** | 97.45 | 68.52 | 83.33 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **61.15** | 89.72 | 82.48 | 66.67 |
-| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **60.81** | 95.52 | 63.43 | 83.33 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **59.85** | 90.57 | 78.59 | 50.00 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | **59.67** | 95.44 | 88.45 | 33.33 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | **57.10** | 89.21 | 67.85 | 33.33 |
+| Model | Coding agent | Total / 100 | Correctness | Robustness | Applications | Active time | Est. cost (USD) |
+|---|---|---:|---:|---:|---:|---:|---:|
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **64.97** | 99.73 | 100.00 | 100.00 | 3:07:09 | $39.28 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) | Pi | **64.10** | 97.45 | 100.00 | 83.33 | 7:14:12 | $12.87 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **64.09** | 97.33 | 100.00 | 83.33 | 3:52:51 | $77.86 |
+| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **63.89** | 95.81 | 99.77 | 83.33 | 7:32:19 | $62.99 |
+| [Kimi K3](results/core/kimi-k3-high.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 | 6:52:08 | $90.50 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **61.56** | 97.45 | 68.52 | 83.33 | 2:59:12 | $40.69 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **61.15** | 89.72 | 82.48 | 66.67 | ≥12:19:49 | $3.26 |
+| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **60.81** | 95.52 | 63.43 | 83.33 | 5:16:10 | $72.41 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **59.85** | 90.57 | 78.59 | 50.00 | 3:05:17 | $31.62 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | **59.67** | 95.44 | 88.45 | 33.33 | 2:42:57 | $7.81 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | **57.10** | 89.21 | 67.85 | 33.33 | ≥12:00:54 | $3.29 |
 
 Each row represents one development run. Agent configurations are described below, with separate entries for different agents. See [scoring](docs/scoring.md) for the formula.
+
+Time is the agent-recorded active duration (h:mm:ss); ≥ marks the last record when no final completion time was recorded. Costs use the API prices and cache usage documented in each report, including task-completion checks for Claude Code. Subscription runs are also estimated at API prices. Time and cost do not affect scores; token usage and calculations are in the reports.
 
 <details>
 <summary>Reference implementation</summary>
@@ -74,6 +77,7 @@ A filesystem must first handle everyday operations correctly: reading and writin
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
@@ -91,6 +95,7 @@ A filesystem must first handle everyday operations correctly: reading and writin
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
@@ -108,6 +113,7 @@ A filesystem must first handle everyday operations correctly: reading and writin
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 189 / 194 | 97.42% | 98.90 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 187 / 194 | 96.39% | 89.81 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 179 / 194 | 92.27% | 89.31 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 183 / 194 | 94.33% | 89.17 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 186 / 194 | 95.88% | 89.75 |
@@ -127,6 +133,7 @@ Being able to read a file does not guarantee that the data on disk is organized 
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 479 / 479 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 417 / 479 | 87.06% | 94.05 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 410 / 479 | 85.59% | 84.17 |
@@ -146,6 +153,7 @@ A filesystem also has to handle resource pressure and failed operations. These t
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 47 / 47 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 46 / 47 | 97.87% | 97.50 |
@@ -165,6 +173,7 @@ After an unexpected interruption, the filesystem must handle the state left on d
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 216 / 216 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 215 / 216 | 99.54% | 99.54 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 205 / 216 | 94.91% | 94.91 |
@@ -184,6 +193,7 @@ Finally, real applications use the filesystem. These tests check whether applica
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 4 / 4 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 3 / 4 | 75.00% | 66.67 |
@@ -194,28 +204,6 @@ Finally, real applications use the filesystem. These tests check whether applica
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 2 / 4 | 50.00% | 33.33 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 2 / 4 | 50.00% | 33.33 |
 <!-- profile-real-world:end -->
-
-<details>
-<summary>Build and SDK checks (unscored)</summary>
-
-The submitted source is rebuilt and SDK smoke checks are run before evaluation. Implementations may include different numbers of their own tests, so those counts are not used to compare scores.
-
-<!-- profile-sdk-smoke:begin -->
-| Model / Agent | Passed / applicable | Pass rate |
-|---|---:|---:|
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 59 / 59 | 100.00% |
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | — | — |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | — | — |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | — | — |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 54 / 54 | 100.00% |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | — | — |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | — | — |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | — | — |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | — | — |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | — | — |
-<!-- profile-sdk-smoke:end -->
-
-</details>
 
 <a id="setup"></a>
 
@@ -231,33 +219,12 @@ Models receive the same Core task materials. Development and evaluation take pla
 | Toolchain | Rust 1.97.1, libfuse 3.18.2 |
 | Coding agent | Pi 0.84.3; entries labeled Claude Code use 2.1.283 |
 | Reasoning setting | High effort; one development run per model / agent combination |
-| Development budget | Up to 12 hours; recorded durations are listed below |
+| Development budget | Up to 12 hours; recorded durations are listed in the results table |
 | Tools | File access, shell, and local development tools; no subagents, MCP, or built-in web tools |
 | Human involvement | Initial task and environment operation; no code edits or technical guidance |
 | Evaluation | Rebuild in a fresh VM; network locked before tests; resources and execution backends are recorded in model reports |
 
 Pi and Claude Code differ in tool configuration and how task completion is determined, and are labeled separately in the results. See the [environment](docs/environment.md) and individual reports for details.
-
-<a id="cost"></a>
-
-## Development time and cost
-
-How much time and computation does the task take? This table lists recorded active development time, main-model output tokens, and estimated API cost. Costs use the prices and cache usage documented in each report. These measurements do not contribute to scores.
-
-| Model | Coding agent | Active time | Output tokens | Estimated cost (USD) |
-|---|---|---:|---:|---:|
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | 3h 7m 9s | 472,273 | $39.28 |
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | 3h 52m 51s | 199,142 | $77.86 |
-| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | 7h 32m 19s | 541,837 | $62.99 |
-| [Kimi K3](results/core/kimi-k3-high.md) | Pi | 6h 52m 8s | 478,897 | $90.50 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | 2h 59m 12s | 340,562 | $40.69 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | ≥12h 19m 49s | 518,078 | $3.26 |
-| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | 5h 16m 10s | 298,429 | $72.41 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | 3h 5m 17s | 267,908 | $31.62 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | 2h 42m 57s | 87,220 | $7.81 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | ≥12h 0m 54s | 734,568 | $3.29 |
-
-“≥” marks the last recorded active time where a final completion time was not recorded. Output tokens include reasoning. Claude Code costs include the model used to assess task completion; subscription runs are also estimated at API prices, rather than actual subscription expenditure. Each report documents its calculation.
 
 ## Reports and resources
 

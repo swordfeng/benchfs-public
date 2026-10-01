@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "submissions": {
+    "core-opus-5.5-cc": {
+      "active_seconds": 11229,
+      "active_time_lower_bound": false,
+      "output_tokens": 472273,
+      "estimated_cost_usd": 39.28
+    },
+    "core-gpt-6-astra": {
+      "active_seconds": 13971,
+      "active_time_lower_bound": false,
+      "output_tokens": 199142,
+      "estimated_cost_usd": 77.86
+    },
+    "core-glm-5.3": {
+      "active_seconds": 27139,
+      "active_time_lower_bound": false,
+      "output_tokens": 541837,
+      "estimated_cost_usd": 62.99
+    },
+    "core-kimi-k3": {
+      "active_seconds": 24728,
+      "active_time_lower_bound": false,
+      "output_tokens": 478897,
+      "estimated_cost_usd": 90.5
+    },
+    "core-fable-5.1-cc": {
+      "active_seconds": 10752,
+      "active_time_lower_bound": false,
+      "output_tokens": 340562,
+      "estimated_cost_usd": 40.69
+    },
+    "core-deepseek-v4-flash-0731": {
+      "active_seconds": 44389,
+      "active_time_lower_bound": true,
+      "output_tokens": 518078,
+      "estimated_cost_usd": 3.26
+    },
+    "core-fable-5.1": {
+      "active_seconds": 18970,
+      "active_time_lower_bound": false,
+      "output_tokens": 298429,
+      "estimated_cost_usd": 72.41
+    },
+    "core-gemini-3.8-flash": {
+      "active_seconds": 11117,
+      "active_time_lower_bound": false,
+      "output_tokens": 267908,
+      "estimated_cost_usd": 31.62
+    },
+    "core-gpt-5.6-sol-v2": {
+      "active_seconds": 9777,
+      "active_time_lower_bound": false,
+      "output_tokens": 87220,
+      "estimated_cost_usd": 7.81
+    },
+    "core-qwen-3.8-flash-next": {
+      "active_seconds": 43254,
+      "active_time_lower_bound": true,
+      "output_tokens": 734568,
+      "estimated_cost_usd": 3.29
+    },
+    "core-gpt-6.1-sol": {
+      "active_seconds": 26052.273,
+      "active_time_lower_bound": false,
+      "output_tokens": 184515,
+      "estimated_cost_usd": 12.87
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # BenchFS：AI 能独立写出一个可靠的文件系统吗？
 
-[English](README.md) · [评测结果](#results) · [测试方法](#methods) · [实验设置](#setup) · [开发耗时与成本](#cost)
+[English](README.md) · [评测结果](#results) · [测试方法](#methods) · [实验设置](#setup)
 
 把一个文件存进电脑，看起来只是一次点击。文件系统却要在背后完成一连串工作：找到可用空间，写入数据，更新目录，并确保下一次打开时，文件仍然完好。多个程序同时读写、磁盘接近写满、运行突然中断，都会让这件事变得更复杂。
 
@@ -19,20 +19,23 @@
 
 分项满分均为 100。总分沿用现有权重，当前已测项目合计占 **65 分**；其余项目尚未测量，按 0 计入总分。点击模型名称可查看详细报告。
 
-| 模型 | 编程 Agent | 总分 / 100 | 正确性 | 稳健性 | 真实应用 |
-|---|---|---:|---:|---:|---:|
-| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) | Claude Code | **64.97** | 99.73 | 100.00 | 100.00 |
-| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) | Pi | **64.09** | 97.33 | 100.00 | 83.33 |
-| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) | Pi | **63.89** | 95.81 | 99.77 | 83.33 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) | Claude Code | **61.56** | 97.45 | 68.52 | 83.33 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) | Pi | **61.15** | 89.72 | 82.48 | 66.67 |
-| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) | Pi | **60.81** | 95.52 | 63.43 | 83.33 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) | Pi | **59.85** | 90.57 | 78.59 | 50.00 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) | Pi | **59.67** | 95.44 | 88.45 | 33.33 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) | Pi | **57.10** | 89.21 | 67.85 | 33.33 |
+| 模型 | 编程 Agent | 总分 / 100 | 正确性 | 稳健性 | 真实应用 | 开发耗时 | 估算费用（美元） |
+|---|---|---:|---:|---:|---:|---:|---:|
+| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) | Claude Code | **64.97** | 99.73 | 100.00 | 100.00 | 3:07:09 | $39.28 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) | Pi | **64.10** | 97.45 | 100.00 | 83.33 | 7:14:12 | $12.87 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) | Pi | **64.09** | 97.33 | 100.00 | 83.33 | 3:52:51 | $77.86 |
+| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) | Pi | **63.89** | 95.81 | 99.77 | 83.33 | 7:32:19 | $62.99 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 | 6:52:08 | $90.50 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) | Claude Code | **61.56** | 97.45 | 68.52 | 83.33 | 2:59:12 | $40.69 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) | Pi | **61.15** | 89.72 | 82.48 | 66.67 | ≥12:19:49 | $3.26 |
+| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) | Pi | **60.81** | 95.52 | 63.43 | 83.33 | 5:16:10 | $72.41 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) | Pi | **59.85** | 90.57 | 78.59 | 50.00 | 3:05:17 | $31.62 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) | Pi | **59.67** | 95.44 | 88.45 | 33.33 | 2:42:57 | $7.81 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) | Pi | **57.10** | 89.21 | 67.85 | 33.33 | ≥12:00:54 | $3.29 |
 
 每行对应一次独立开发。Agent 配置见下文；不同 Agent 的结果分别列出。总分的计算方式见[评分方法](docs/scoring.zh-CN.md)。
+
+开发耗时采用 Agent 记录的活跃时长（时:分:秒）；“≥”表示仅有最后一次记录，未记录最终完成时间。费用按各报告注明的 API 标价和缓存用量估算，Claude Code 包含任务完成判断所用模型的开销；订阅运行同样按 API 标价折算。耗时和费用均不参与评分，token 用量与计算依据见详细报告。
 
 <details>
 <summary>参考实现</summary>
@@ -74,6 +77,7 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
@@ -91,6 +95,7 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
@@ -108,6 +113,7 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 189 / 194 | 97.42% | 98.90 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 187 / 194 | 96.39% | 89.81 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 179 / 194 | 92.27% | 89.31 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 183 / 194 | 94.33% | 89.17 |
 | [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 186 / 194 | 95.88% | 89.75 |
@@ -127,6 +133,7 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 479 / 479 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 417 / 479 | 87.06% | 94.05 |
 | [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 410 / 479 | 85.59% | 84.17 |
@@ -146,6 +153,7 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 47 / 47 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 46 / 47 | 97.87% | 97.50 |
@@ -165,6 +173,7 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 216 / 216 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 215 / 216 | 99.54% | 99.54 |
 | [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 205 / 216 | 94.91% | 94.91 |
@@ -184,6 +193,7 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 4 / 4 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 66.67 |
@@ -194,28 +204,6 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 2 / 4 | 50.00% | 33.33 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 2 / 4 | 50.00% | 33.33 |
 <!-- profile-real-world:end -->
-
-<details>
-<summary>构建与 SDK 检查（不计分）</summary>
-
-评测前先重新构建交付的源码，并运行 SDK smoke 检查。实现自带的测试数量可能不同，因此这些数量不用于比较成绩。
-
-<!-- profile-sdk-smoke:begin -->
-| 模型 / Agent | 通过 / 适用 | 通过率 |
-|---|---:|---:|
-| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 59 / 59 | 100.00% |
-| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | — | — |
-| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | — | — |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | — | — |
-| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 54 / 54 | 100.00% |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | — | — |
-| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | — | — |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | — | — |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | — | — |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | — | — |
-<!-- profile-sdk-smoke:end -->
-
-</details>
 
 <a id="setup"></a>
 
@@ -231,33 +219,12 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 工具链 | Rust 1.97.1、libfuse 3.18.2 |
 | 编程 Agent | Pi 0.84.3；标注 Claude Code 的提交使用 2.1.283 |
 | 推理设置 | High effort；每个模型 / Agent 组合开发一次 |
-| 开发预算 | 最长 12 小时；具体记录时长见下表 |
+| 开发预算 | 最长 12 小时；具体记录时长见成绩表 |
 | 开发工具 | 文件读写、终端和本地开发工具；不使用 subagent、MCP 或内建 Web 工具 |
 | 人工参与 | 提供初始任务并管理运行环境，不提供代码修改或技术指导 |
 | 测试环境 | 新 VM 重新构建源码，执行测试前锁定网络；具体资源和执行后端见模型报告 |
 
 Pi 与 Claude Code 的工具配置和任务结束判断有所不同，成绩中分别标注。详细设置见[实验环境](docs/environment.zh-CN.md)和各模型报告。
-
-<a id="cost"></a>
-
-## 开发耗时与成本
-
-完成这项工程需要多少时间和计算资源？下表汇总各次开发的记录时长、主模型输出 token 和费用估算。时间采用 agent 记录的活跃时长，费用按各报告注明的 API 标价估算，包含已记录的缓存用量；这些数据不参与评分。
-
-| 模型 | 编程 Agent | 活跃时长 | 输出 tokens | 估算费用（美元） |
-|---|---|---:|---:|---:|
-| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) | Claude Code | 3 小时 7 分 9 秒 | 472,273 | $39.28 |
-| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) | Pi | 3 小时 52 分 51 秒 | 199,142 | $77.86 |
-| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) | Pi | 7 小时 32 分 19 秒 | 541,837 | $62.99 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) | Pi | 6 小时 52 分 8 秒 | 478,897 | $90.50 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) | Claude Code | 2 小时 59 分 12 秒 | 340,562 | $40.69 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) | Pi | ≥12 小时 19 分 49 秒 | 518,078 | $3.26 |
-| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) | Pi | 5 小时 16 分 10 秒 | 298,429 | $72.41 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) | Pi | 3 小时 5 分 17 秒 | 267,908 | $31.62 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) | Pi | 2 小时 42 分 57 秒 | 87,220 | $7.81 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) | Pi | ≥12 小时 0 分 54 秒 | 734,568 | $3.29 |
-
-“≥”表示最后记录的活跃时长，未记录最终完成时间。输出 tokens 包含推理用量。Claude Code 的费用包含任务完成判断所用模型的开销；订阅运行也按 API 标价估算，实际支出可能不同。各项计算依据见对应报告。
 
 ## 详细报告与资料
 

@@ -1,73 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="750" viewBox="0 0 1120 750" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="804" viewBox="0 0 1120 804" role="img" aria-labelledby="title description">
 <title id="title">BenchFS · AI filesystem benchmark</title>
-<desc id="description">Overall scores, highest first · One development run per model / agent. Opus 5.5 · Claude Code: 64.97; GPT-6 Astra · Pi: 64.09; GLM 5.3 · Pi: 63.89; Kimi K3 · Pi: 62.57; Fable 5.1 · Claude Code: 61.56; DeepSeek V4 Flash 0731 · Pi: 61.15; Fable 5.1 · Pi: 60.81; Gemini 3.8 Flash · Pi: 59.85; GPT 5.6 Sol · Pi: 59.67; Qwen 3.8 Flash Next · Pi: 57.10</desc>
+<desc id="description">Overall scores, highest first · One development run per model / agent. Opus 5.5 · Claude Code: 64.97; GPT 6.1 Sol · Pi: 64.10; GPT-6 Astra · Pi: 64.09; GLM 5.3 · Pi: 63.89; Kimi K3 · Pi: 62.57; Fable 5.1 · Claude Code: 61.56; DeepSeek V4 Flash 0731 · Pi: 61.15; Fable 5.1 · Pi: 60.81; Gemini 3.8 Flash · Pi: 59.85; GPT 5.6 Sol · Pi: 59.67; Qwen 3.8 Flash Next · Pi: 57.10</desc>
 <style>text{font-family:Inter,"Noto Sans CJK SC","Microsoft YaHei",Arial,sans-serif;fill:#172b4d}.muted{fill:#52647d}.name{font-size:16px}.score{font-size:18px;font-weight:700}</style>
-<rect width="1120" height="750" rx="18" fill="#fff"/>
+<rect width="1120" height="804" rx="18" fill="#fff"/>
 <text x="32" y="44" font-size="25" font-weight="700">BenchFS · AI filesystem benchmark</text>
 <text x="32" y="76" font-size="14" class="muted">Overall scores, highest first · One development run per model / agent</text>
-<line x1="340.0" y1="120" x2="340.0" y2="664" stroke="#e6ebf2"/>
-<text x="340.0" y="690" text-anchor="middle" font-size="13" class="muted">0</text>
-<line x1="480.0" y1="120" x2="480.0" y2="664" stroke="#e6ebf2"/>
-<text x="480.0" y="690" text-anchor="middle" font-size="13" class="muted">20</text>
-<line x1="620.0" y1="120" x2="620.0" y2="664" stroke="#e6ebf2"/>
-<text x="620.0" y="690" text-anchor="middle" font-size="13" class="muted">40</text>
-<line x1="760.0" y1="120" x2="760.0" y2="664" stroke="#e6ebf2"/>
-<text x="760.0" y="690" text-anchor="middle" font-size="13" class="muted">60</text>
-<line x1="900.0" y1="120" x2="900.0" y2="664" stroke="#e6ebf2"/>
-<text x="900.0" y="690" text-anchor="middle" font-size="13" class="muted">80</text>
-<line x1="1040.0" y1="120" x2="1040.0" y2="664" stroke="#e6ebf2"/>
-<text x="1040.0" y="690" text-anchor="middle" font-size="13" class="muted">100</text>
-<line x1="795.0" y1="120" x2="795.0" y2="664" stroke="#7890ad" stroke-dasharray="4 5"/>
+<line x1="340.0" y1="120" x2="340.0" y2="718" stroke="#e6ebf2"/>
+<text x="340.0" y="744" text-anchor="middle" font-size="13" class="muted">0</text>
+<line x1="480.0" y1="120" x2="480.0" y2="718" stroke="#e6ebf2"/>
+<text x="480.0" y="744" text-anchor="middle" font-size="13" class="muted">20</text>
+<line x1="620.0" y1="120" x2="620.0" y2="718" stroke="#e6ebf2"/>
+<text x="620.0" y="744" text-anchor="middle" font-size="13" class="muted">40</text>
+<line x1="760.0" y1="120" x2="760.0" y2="718" stroke="#e6ebf2"/>
+<text x="760.0" y="744" text-anchor="middle" font-size="13" class="muted">60</text>
+<line x1="900.0" y1="120" x2="900.0" y2="718" stroke="#e6ebf2"/>
+<text x="900.0" y="744" text-anchor="middle" font-size="13" class="muted">80</text>
+<line x1="1040.0" y1="120" x2="1040.0" y2="718" stroke="#e6ebf2"/>
+<text x="1040.0" y="744" text-anchor="middle" font-size="13" class="muted">100</text>
+<line x1="795.0" y1="120" x2="795.0" y2="718" stroke="#7890ad" stroke-dasharray="4 5"/>
 <text x="795.0" y="108" text-anchor="middle" font-size="12" class="muted">Measured components: up to 65 points</text>
 <text x="32" y="146" class="name">Opus 5.5</text>
 <text x="32" y="164" font-size="12" class="muted">Claude Code</text>
 <rect x="340" y="132" width="454.7648" height="32" rx="5" fill="#2563a6"/>
 <rect x="803.7648" y="137" width="58" height="23" fill="#fff"/>
 <text x="806.7648" y="154" class="score">64.97</text>
-<text x="32" y="200" class="name">GPT-6 Astra</text>
+<text x="32" y="200" class="name">GPT 6.1 Sol</text>
 <text x="32" y="218" font-size="12" class="muted">Pi</text>
-<rect x="340" y="186" width="448.6251" height="32" rx="5" fill="#2563a6"/>
-<rect x="797.6251" y="191" width="58" height="23" fill="#fff"/>
-<text x="800.6251" y="208" class="score">64.09</text>
-<text x="32" y="254" class="name">GLM 5.3</text>
+<rect x="340" y="186" width="448.7326" height="32" rx="5" fill="#2563a6"/>
+<rect x="797.7326" y="191" width="58" height="23" fill="#fff"/>
+<text x="800.7326" y="208" class="score">64.10</text>
+<text x="32" y="254" class="name">GPT-6 Astra</text>
 <text x="32" y="272" font-size="12" class="muted">Pi</text>
-<rect x="340" y="240" width="447.2060" height="32" rx="5" fill="#2563a6"/>
-<rect x="796.2060" y="245" width="58" height="23" fill="#fff"/>
-<text x="799.2060" y="262" class="score">63.89</text>
-<text x="32" y="308" class="name">Kimi K3</text>
+<rect x="340" y="240" width="448.6251" height="32" rx="5" fill="#2563a6"/>
+<rect x="797.6251" y="245" width="58" height="23" fill="#fff"/>
+<text x="800.6251" y="262" class="score">64.09</text>
+<text x="32" y="308" class="name">GLM 5.3</text>
 <text x="32" y="326" font-size="12" class="muted">Pi</text>
-<rect x="340" y="294" width="437.9822" height="32" rx="5" fill="#2563a6"/>
-<rect x="786.9822" y="299" width="58" height="23" fill="#fff"/>
-<text x="789.9822" y="316" class="score">62.57</text>
-<text x="32" y="362" class="name">Fable 5.1</text>
-<text x="32" y="380" font-size="12" class="muted">Claude Code</text>
-<rect x="340" y="348" width="430.8956" height="32" rx="5" fill="#2563a6"/>
-<rect x="779.8956" y="353" width="58" height="23" fill="#fff"/>
-<text x="782.8956" y="370" class="score">61.56</text>
-<text x="32" y="416" class="name">DeepSeek V4 Flash 0731</text>
-<text x="32" y="434" font-size="12" class="muted">Pi</text>
-<rect x="340" y="402" width="428.0322" height="32" rx="5" fill="#2563a6"/>
-<rect x="777.0322" y="407" width="58" height="23" fill="#fff"/>
-<text x="780.0322" y="424" class="score">61.15</text>
-<text x="32" y="470" class="name">Fable 5.1</text>
+<rect x="340" y="294" width="447.2060" height="32" rx="5" fill="#2563a6"/>
+<rect x="796.2060" y="299" width="58" height="23" fill="#fff"/>
+<text x="799.2060" y="316" class="score">63.89</text>
+<text x="32" y="362" class="name">Kimi K3</text>
+<text x="32" y="380" font-size="12" class="muted">Pi</text>
+<rect x="340" y="348" width="437.9822" height="32" rx="5" fill="#2563a6"/>
+<rect x="786.9822" y="353" width="58" height="23" fill="#fff"/>
+<text x="789.9822" y="370" class="score">62.57</text>
+<text x="32" y="416" class="name">Fable 5.1</text>
+<text x="32" y="434" font-size="12" class="muted">Claude Code</text>
+<rect x="340" y="402" width="430.8956" height="32" rx="5" fill="#2563a6"/>
+<rect x="779.8956" y="407" width="58" height="23" fill="#fff"/>
+<text x="782.8956" y="424" class="score">61.56</text>
+<text x="32" y="470" class="name">DeepSeek V4 Flash 0731</text>
 <text x="32" y="488" font-size="12" class="muted">Pi</text>
-<rect x="340" y="456" width="425.6700" height="32" rx="5" fill="#2563a6"/>
-<rect x="774.6700" y="461" width="58" height="23" fill="#fff"/>
-<text x="777.6700" y="478" class="score">60.81</text>
-<text x="32" y="524" class="name">Gemini 3.8 Flash</text>
+<rect x="340" y="456" width="428.0322" height="32" rx="5" fill="#2563a6"/>
+<rect x="777.0322" y="461" width="58" height="23" fill="#fff"/>
+<text x="780.0322" y="478" class="score">61.15</text>
+<text x="32" y="524" class="name">Fable 5.1</text>
 <text x="32" y="542" font-size="12" class="muted">Pi</text>
-<rect x="340" y="510" width="418.9732" height="32" rx="5" fill="#2563a6"/>
-<rect x="767.9732" y="515" width="58" height="23" fill="#fff"/>
-<text x="770.9732" y="532" class="score">59.85</text>
-<text x="32" y="578" class="name">GPT 5.6 Sol</text>
+<rect x="340" y="510" width="425.6700" height="32" rx="5" fill="#2563a6"/>
+<rect x="774.6700" y="515" width="58" height="23" fill="#fff"/>
+<text x="777.6700" y="532" class="score">60.81</text>
+<text x="32" y="578" class="name">Gemini 3.8 Flash</text>
 <text x="32" y="596" font-size="12" class="muted">Pi</text>
-<rect x="340" y="564" width="417.6667" height="32" rx="5" fill="#2563a6"/>
-<rect x="766.6667" y="569" width="58" height="23" fill="#fff"/>
-<text x="769.6667" y="586" class="score">59.67</text>
-<text x="32" y="632" class="name">Qwen 3.8 Flash Next</text>
+<rect x="340" y="564" width="418.9732" height="32" rx="5" fill="#2563a6"/>
+<rect x="767.9732" y="569" width="58" height="23" fill="#fff"/>
+<text x="770.9732" y="586" class="score">59.85</text>
+<text x="32" y="632" class="name">GPT 5.6 Sol</text>
 <text x="32" y="650" font-size="12" class="muted">Pi</text>
-<rect x="340" y="618" width="399.6767" height="32" rx="5" fill="#2563a6"/>
-<rect x="748.6767" y="623" width="58" height="23" fill="#fff"/>
-<text x="751.6767" y="640" class="score">57.10</text>
-<text x="32" y="728" font-size="13" class="muted">Overall score out of 100; unmeasured components contribute zero. See the README for methods and breakdowns.</text>
+<rect x="340" y="618" width="417.6667" height="32" rx="5" fill="#2563a6"/>
+<rect x="766.6667" y="623" width="58" height="23" fill="#fff"/>
+<text x="769.6667" y="640" class="score">59.67</text>
+<text x="32" y="686" class="name">Qwen 3.8 Flash Next</text>
+<text x="32" y="704" font-size="12" class="muted">Pi</text>
+<rect x="340" y="672" width="399.6767" height="32" rx="5" fill="#2563a6"/>
+<rect x="748.6767" y="677" width="58" height="23" fill="#fff"/>
+<text x="751.6767" y="694" class="score">57.10</text>
+<text x="32" y="782" font-size="13" class="muted">Overall score out of 100; unmeasured components contribute zero. See the README for methods and breakdowns.</text>
 </svg>
