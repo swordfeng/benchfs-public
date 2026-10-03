@@ -19,19 +19,19 @@ These results cover the Core filesystem task: file operations, on-disk format, r
 
 Dimension scores are out of 100. Under the existing weights, the measured dimensions account for **75 points** of the overall score; unmeasured components contribute zero. Click a model for its report.
 
-| Model | Coding agent | Total / 100 | Correctness | Robustness | Applications | Active time | Output tokens | Est. cost (USD) |
-|---|---|---:|---:|---:|---:|---:|---:|---:|
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **72.28** | 99.73 | 100.00 | 100.00 | 3:07:09 | 472,273 | $39.28 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) | Pi | **71.24** | 97.45 | 100.00 | 83.33 | 7:14:12 | 184,515 | $12.87 |
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **71.20** | 97.33 | 100.00 | 83.33 | 3:52:51 | 199,142 | $77.86 |
-| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **70.48** | 95.81 | 99.77 | 83.33 | 7:32:19 | 541,837 | $62.99 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **69.10** | 97.45 | 68.52 | 83.33 | 2:59:12 | 340,562 | $40.69 |
-| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **68.20** | 95.52 | 63.43 | 83.33 | 5:16:10 | 298,429 | $72.41 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **67.93** | 89.72 | 82.48 | 66.67 | ≥12:19:49 | 518,078 | $3.26 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **66.60** | 90.57 | 78.59 | 50.00 | 3:05:17 | 267,908 | $31.62 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | **64.32** | 95.44 | 88.45 | 33.33 | 2:42:57 | 87,220 | $7.81 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | **64.03** | 89.21 | 67.85 | 33.33 | ≥12:00:54 | 734,568 | $3.29 |
-| [Kimi K3](results/core/kimi-k3-high.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 | 6:52:08 | 478,897 | $90.50 |
+| Model | Coding agent | Total / 100 | Correctness | Robustness | Applications | Performance | Active time | Output tokens | Est. cost (USD) |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **72.28** | 99.73 | 100.00 | 100.00 | 46.81 | 3:07:09 | 472,273 | $39.28 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) | Pi | **71.24** | 97.45 | 100.00 | 83.33 | 44.52 | 7:14:12 | 184,515 | $12.87 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **71.20** | 97.33 | 100.00 | 83.33 | 44.09 | 3:52:51 | 199,142 | $77.86 |
+| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **70.48** | 95.81 | 99.77 | 83.33 | 38.23 | 7:32:19 | 541,837 | $62.99 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **69.10** | 97.45 | 68.52 | 83.33 | 49.90 | 2:59:12 | 340,562 | $40.69 |
+| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **68.20** | 95.52 | 63.43 | 83.33 | 47.82 | 5:16:10 | 298,429 | $72.41 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **67.93** | 89.72 | 82.48 | 66.67 | 39.87 | ≥12:19:49 | 518,078 | $3.26 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **66.60** | 90.57 | 78.59 | 50.00 | 39.52 | 3:05:17 | 267,908 | $31.62 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | **64.32** | 95.44 | 88.45 | 33.33 | 21.36 | 2:42:57 | 87,220 | $7.81 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | **64.03** | 89.21 | 67.85 | 33.33 | 41.81 | ≥12:00:54 | 734,568 | $3.29 |
+| [Kimi K3](results/core/kimi-k3-high.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 | 0.00 | 6:52:08 | 478,897 | $90.50 |
 
 Each row represents one development run. Agent configurations are described below, with separate entries for different agents. See [scoring](docs/scoring.md) for the formula.
 
@@ -42,9 +42,9 @@ Time is the agent-recorded active duration (h:mm:ss); ≥ marks the last record 
 
 Reference is a calibration implementation. Its scores and report are listed below.
 
-| Implementation | Total / 100 | Correctness | Robustness | Applications |
-|---|---:|---:|---:|---:|
-| [Reference](results/eval-only/reference-calibration.md) | 61.50 | 74.87 | 97.82 | 100.00 |
+| Implementation | Total / 100 | Correctness | Robustness | Applications | Performance |
+|---|---:|---:|---:|---:|---:|
+| [Reference](results/eval-only/reference-calibration.md) | 61.50 | 74.87 | 97.82 | 100.00 | — |
 
 </details>
 <!-- core-results:end -->
