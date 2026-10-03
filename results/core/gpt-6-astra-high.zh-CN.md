@@ -224,19 +224,555 @@ Run: `core-realworld-astra-20260925-r2`
 
 Profile: `perf-cpu`
 
-尚无可发布的评测结果（`not-run`），不是实测零分；索引暂计总分时按缺失项填 0。
+结果：`candidate-failed`；评测分类：`diagnostic`。
+
+
+#### buffered-synchronized-writes / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 3 |
+| Median | 2016.7 |
+| MAD | 0.2999999999999545 |
+| CV | 0.0016040386251332393 |
+| Candidate-failed samples | 0 |
+
+#### buffered-synchronized-writes / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 3 |
+| Median | 1991.3 |
+| MAD | 2.599999999999909 |
+| CV | 0.0017173621670573643 |
+| Candidate-failed samples | 0 |
+
+#### bulk-sequential-io / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | throughput_bytes_per_second |
+| Samples | 3 |
+| Median | 451928156.0 |
+| MAD | 5810374.0 |
+| CV | 0.014364658586838205 |
+| Candidate-failed samples | 0 |
+
+#### bulk-sequential-io / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | throughput_bytes_per_second |
+| Samples | 5 |
+| Median | 464158179.0 |
+| MAD | 5323742.0 |
+| CV | 0.014495788642839362 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 3 |
+| Median | 1758.2609705597276 |
+| MAD | 2.0559501672280476 |
+| CV | 0.009187993408699576 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 1 |
+| Median | 7538.223321581903 |
+| MAD | 0.0 |
+| CV | 0.0 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 1 |
+| Median | 1270.62371379296 |
+| MAD | 0.0 |
+| CV | 0.0 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 3 |
+| Median | 2147.481219639872 |
+| MAD | 2.8163670490880577 |
+| CV | 0.003712315712767811 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 2 |
+| Median | 1432.7695538869039 |
+| MAD | 3.905264338112943 |
+| CV | 0.0027256751286475244 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 2 |
+| Median | 1423.1512633525172 |
+| MAD | 5.054072325070251 |
+| CV | 0.0035513247644276226 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | — |
+| Median | — |
+| MAD | — |
+| CV | — |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 3 |
+| Median | 1752.746466213993 |
+| MAD | 4.409546022942777 |
+| CV | 0.00935607902584648 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 1 |
+| Median | 7552.04451299252 |
+| MAD | 0.0 |
+| CV | 0.0 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 1 |
+| Median | 1272.383842158545 |
+| MAD | 0.0 |
+| CV | 0.0 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 2 |
+| Median | 2139.140253771102 |
+| MAD | 1.2582492346450636 |
+| CV | 0.0005882032430678116 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 2 |
+| Median | 1431.3321704910556 |
+| MAD | 10.544233985417804 |
+| CV | 0.007366727446502045 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 2 |
+| Median | 1417.4988892396577 |
+| MAD | 0.2870635966826285 |
+| CV | 0.00020251415987818414 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | — |
+| Median | — |
+| MAD | — |
+| CV | — |
+| Candidate-failed samples | 0 |
+
+#### small-random-io / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | iops |
+| Samples | 3 |
+| Median | 3622.1377869999997 |
+| MAD | 1.3998600000004444 |
+| CV | 0.0025856585250151475 |
+| Candidate-failed samples | 0 |
+
+#### small-random-io / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | iops |
+| Samples | 5 |
+| Median | 6682.563487 |
+| MAD | 767.5914569999995 |
+| CV | 0.23103473547156247 |
+| Candidate-failed samples | 0 |
+
+#### small-random-io / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | iops |
+| Samples | 4 |
+| Median | 7227.674524 |
+| MAD | 87.24115600000005 |
+| CV | 0.022769829486477957 |
+| Candidate-failed samples | 0 |
+
+#### small-random-io / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | iops |
+| Samples | 5 |
+| Median | 3615.638437 |
+| MAD | 22.697729999999865 |
+| CV | 0.025382836941608786 |
+| Candidate-failed samples | 0 |
+
+#### small-random-io / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | iops |
+| Samples | 5 |
+| Median | 4710.586824 |
+| MAD | 867.15551 |
+| CV | 0.2948379051394322 |
+| Candidate-failed samples | 0 |
+
+#### small-random-io / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | iops |
+| Samples | 3 |
+| Median | 7420.857564000001 |
+| MAD | 30.796810000000733 |
+| CV | 0.003728010622902506 |
+| Candidate-failed samples | 0 |
+
+Run: `perf-v2-core-gpt-6-astra-perf-cpu-r2`
+执行后端: `hyperv`
 
 ### NVMe 性能
 
 Profile: `perf-nvme`
 
-尚无可发布的评测结果（`not-run`），不是实测零分；索引暂计总分时按缺失项填 0。
+结果：`candidate-failed`；评测分类：`diagnostic`。
+
+
+#### buffered-synchronized-writes / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 3 |
+| Median | 1235.2 |
+| MAD | 1.0 |
+| CV | 0.004949493692009951 |
+| Candidate-failed samples | 0 |
+
+#### buffered-synchronized-writes / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 3 |
+| Median | 1228.4 |
+| MAD | 2.0 |
+| CV | 0.001815326944709353 |
+| Candidate-failed samples | 0 |
+
+#### bulk-sequential-io / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | throughput_bytes_per_second |
+| Samples | 3 |
+| Median | 282044897.0 |
+| MAD | 266057.0 |
+| CV | 0.001065887481201038 |
+| Candidate-failed samples | 0 |
+
+#### bulk-sequential-io / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | throughput_bytes_per_second |
+| Samples | 3 |
+| Median | 282044804.0 |
+| MAD | 1167145.0 |
+| CV | 0.0038862443388754096 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 2 |
+| Median | 920.8479870629533 |
+| MAD | 1.7648198287055834 |
+| CV | 0.0019165159217369636 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 3 |
+| Median | 7503.956113803032 |
+| MAD | 25.07623462317588 |
+| CV | 0.002763677507763717 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 1 |
+| Median | 591.9719803062826 |
+| MAD | 0.0 |
+| CV | 0.0 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 1 |
+| Median | 1055.8225514762546 |
+| MAD | 0.0 |
+| CV | 0.0 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 1 |
+| Median | 539.1769512254937 |
+| MAD | 0.0 |
+| CV | 0.0 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 2 |
+| Median | 518.366037248936 |
+| MAD | 5.048444848338875 |
+| CV | 0.009739150495144129 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | — |
+| Median | — |
+| MAD | — |
+| CV | — |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 1 |
+| Median | 923.8369433916258 |
+| MAD | 0.0 |
+| CV | 0.0 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 3 |
+| Median | 7555.86094464924 |
+| MAD | 13.395035170756273 |
+| CV | 0.001870328018302804 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 1 |
+| Median | 594.8331170075235 |
+| MAD | 0.0 |
+| CV | 0.0 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 1 |
+| Median | 1052.5801694084232 |
+| MAD | 0.0 |
+| CV | 0.0 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 1 |
+| Median | 536.1030019075382 |
+| MAD | 0.0 |
+| CV | 0.0 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | 2 |
+| Median | 510.552692474307 |
+| MAD | 2.044866826399641 |
+| CV | 0.004005202316120479 |
+| Candidate-failed samples | 0 |
+
+#### metadata-concurrency / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | operations_per_second |
+| Samples | — |
+| Median | — |
+| MAD | — |
+| CV | — |
+| Candidate-failed samples | 0 |
+
+#### small-random-io / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | iops |
+| Samples | 3 |
+| Median | 1969.50305 |
+| MAD | 18.698131000000103 |
+| CV | 0.008062528581553638 |
+| Candidate-failed samples | 0 |
+
+#### small-random-io / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | iops |
+| Samples | 5 |
+| Median | 3140.671826 |
+| MAD | 130.0739050000002 |
+| CV | 0.1692574973276818 |
+| Candidate-failed samples | 0 |
+
+#### small-random-io / cold
+
+| Metric | Value |
+|---|---:|
+| Primary metric | iops |
+| Samples | 5 |
+| Median | 3224.6549889999997 |
+| MAD | 12.239954999999554 |
+| CV | 0.013261892719316585 |
+| Candidate-failed samples | 0 |
+
+#### small-random-io / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | iops |
+| Samples | 3 |
+| Median | 1966.80332 |
+| MAD | 2.3997600000000148 |
+| CV | 0.007649854477454516 |
+| Candidate-failed samples | 0 |
+
+#### small-random-io / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | iops |
+| Samples | 5 |
+| Median | 1925.3511429999999 |
+| MAD | 24.72289099999989 |
+| CV | 0.07292572986824569 |
+| Candidate-failed samples | 0 |
+
+#### small-random-io / warm
+
+| Metric | Value |
+|---|---:|
+| Primary metric | iops |
+| Samples | 5 |
+| Median | 3102.4654219999998 |
+| MAD | 67.48725300000024 |
+| CV | 0.031087582168994043 |
+| Candidate-failed samples | 0 |
+
+Run: `perf-v2-core-gpt-6-astra-perf-nvme-r2`
+执行后端: `hyperv`
 
 ## 评测范围与溯源
 
 各 profile 原始结果独立保留；索引另列未测项暂计 0 的派生总分。每个 profile 列出其运行，并标明已记录的执行后端；不同后端不视为完全相同的执行条件。
 
-`valid` 表示该 profile 的证据有效，不等于全部用例通过或全维度发布合格。`candidate-failed` 是候选失败，不是基础设施错误。`diagnostic` 仅诊断；`noneligible` 不具备排名资格。Hyper-V 性能始终为诊断结果。
+`valid` 表示该 profile 的证据有效，不等于全部用例通过或全维度发布合格。`candidate-failed` 是候选失败，不是基础设施错误。`diagnostic` 仅诊断；`noneligible` 不具备排名资格。Hyper-V 性能不具备发布/排名资格；协议 v2 在固定 VHDX/内存设备上的 Hyper-V 运行单独组成 `hyperv-fixed-vhdx` 比较池计入暂计总分，与 KVM/raw-NVMe 分数不可比。
 
 安全审查与可维护性评分尚未评定。Reference 单列为校准基线，不是模型生成条目。
 <!-- core-results:end -->

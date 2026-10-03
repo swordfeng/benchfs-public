@@ -17,21 +17,21 @@
 <!-- core-results:begin -->
 ![模型成绩，按总分从高到低排列](assets/core-results.zh-CN.svg)
 
-分项满分均为 100。总分沿用现有权重，当前已测项目合计占 **65 分**；其余项目尚未测量，按 0 计入总分。点击模型名称可查看详细报告。
+分项满分均为 100。总分沿用现有权重，当前已测项目合计占 **75 分**；其余项目尚未测量，按 0 计入总分。点击模型名称可查看详细报告。
 
 | 模型 | 编程 Agent | 总分 / 100 | 正确性 | 稳健性 | 真实应用 | 开发活跃时长 | 输出 tokens | 估算费用（美元） |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) | Claude Code | **64.97** | 99.73 | 100.00 | 100.00 | 3:07:09 | 472,273 | $39.28 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) | Pi | **64.10** | 97.45 | 100.00 | 83.33 | 7:14:12 | 184,515 | $12.87 |
-| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) | Pi | **64.09** | 97.33 | 100.00 | 83.33 | 3:52:51 | 199,142 | $77.86 |
-| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) | Pi | **63.89** | 95.81 | 99.77 | 83.33 | 7:32:19 | 541,837 | $62.99 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) | Claude Code | **72.28** | 99.73 | 100.00 | 100.00 | 3:07:09 | 472,273 | $39.28 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) | Pi | **71.24** | 97.45 | 100.00 | 83.33 | 7:14:12 | 184,515 | $12.87 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) | Pi | **71.20** | 97.33 | 100.00 | 83.33 | 3:52:51 | 199,142 | $77.86 |
+| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) | Pi | **70.48** | 95.81 | 99.77 | 83.33 | 7:32:19 | 541,837 | $62.99 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) | Claude Code | **69.10** | 97.45 | 68.52 | 83.33 | 2:59:12 | 340,562 | $40.69 |
+| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) | Pi | **68.20** | 95.52 | 63.43 | 83.33 | 5:16:10 | 298,429 | $72.41 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) | Pi | **67.93** | 89.72 | 82.48 | 66.67 | ≥12:19:49 | 518,078 | $3.26 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) | Pi | **66.60** | 90.57 | 78.59 | 50.00 | 3:05:17 | 267,908 | $31.62 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) | Pi | **64.32** | 95.44 | 88.45 | 33.33 | 2:42:57 | 87,220 | $7.81 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) | Pi | **64.03** | 89.21 | 67.85 | 33.33 | ≥12:00:54 | 734,568 | $3.29 |
 | [Kimi K3](results/core/kimi-k3-high.zh-CN.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 | 6:52:08 | 478,897 | $90.50 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) | Claude Code | **61.56** | 97.45 | 68.52 | 83.33 | 2:59:12 | 340,562 | $40.69 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) | Pi | **61.15** | 89.72 | 82.48 | 66.67 | ≥12:19:49 | 518,078 | $3.26 |
-| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) | Pi | **60.81** | 95.52 | 63.43 | 83.33 | 5:16:10 | 298,429 | $72.41 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) | Pi | **59.85** | 90.57 | 78.59 | 50.00 | 3:05:17 | 267,908 | $31.62 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) | Pi | **59.67** | 95.44 | 88.45 | 33.33 | 2:42:57 | 87,220 | $7.81 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) | Pi | **57.10** | 89.21 | 67.85 | 33.33 | ≥12:00:54 | 734,568 | $3.29 |
 
 每行对应一次独立开发。Agent 配置见下文；不同 Agent 的结果分别列出。总分的计算方式见[评分方法](docs/scoring.zh-CN.md)。
 
@@ -80,13 +80,13 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 <!-- profile-spec-tests:end -->
 
 **pjdfstest。** 通过系统调用检查文件操作的 POSIX 语义，包括权限、元数据和错误处理。
@@ -98,13 +98,13 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 168 / 169 | 99.41% | 99.26 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 <!-- profile-pjdfstest-core:end -->
 
 **xfstests。** 使用上游文件系统测试，进一步检查操作组合、数据完整性和较复杂的使用场景。
@@ -116,13 +116,13 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 187 / 194 | 96.39% | 89.81 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 179 / 194 | 92.27% | 89.31 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 183 / 194 | 94.33% | 89.17 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 186 / 194 | 95.88% | 89.75 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 188 / 194 | 96.91% | 94.36 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 167 / 194 | 86.08% | 84.02 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 183 / 194 | 94.33% | 87.35 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 167 / 194 | 86.08% | 84.02 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 175 / 194 | 90.21% | 84.61 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 184 / 194 | 94.85% | 89.62 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 168 / 194 | 86.60% | 81.52 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 186 / 194 | 95.88% | 89.75 |
 <!-- profile-xfstests-core:end -->
 
 ### 磁盘格式
@@ -136,13 +136,13 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 417 / 479 | 87.06% | 94.05 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 410 / 479 | 85.59% | 84.17 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 431 / 479 | 89.98% | 95.45 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 388 / 479 | 81.00% | 74.86 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 431 / 479 | 89.98% | 95.45 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 388 / 479 | 81.00% | 74.86 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 419 / 479 | 87.47% | 77.66 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 442 / 479 | 92.28% | 92.15 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 368 / 479 | 76.83% | 75.33 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 410 / 479 | 85.59% | 84.17 |
 <!-- profile-canonical-format:end -->
 
 ### 稳健性
@@ -156,13 +156,13 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 47 / 47 | 100.00% | 100.00 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 46 / 47 | 97.87% | 97.50 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 47 / 47 | 100.00% | 100.00 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 35 / 47 | 74.47% | 69.58 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 44 / 47 | 93.62% | 90.28 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 35 / 47 | 74.47% | 69.58 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 43 / 47 | 91.49% | 89.58 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 40 / 47 | 85.11% | 78.75 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 32 / 47 | 68.09% | 66.25 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 46 / 47 | 97.87% | 97.50 |
 <!-- profile-robustness:end -->
 
 ### 崩溃恢复
@@ -176,13 +176,13 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 215 / 216 | 99.54% | 99.54 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 205 / 216 | 94.91% | 94.91 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 80 / 216 | 37.04% | 37.04 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 206 / 216 | 95.37% | 95.37 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 79 / 216 | 36.57% | 36.57 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 206 / 216 | 95.37% | 95.37 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 146 / 216 | 67.59% | 67.59 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 212 / 216 | 98.15% | 98.15 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 150 / 216 | 69.44% | 69.44 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 205 / 216 | 94.91% | 94.91 |
 <!-- profile-crash-core:end -->
 
 ### 真实应用
@@ -196,13 +196,13 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 83.33 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 66.67 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 3 / 4 | 75.00% | 83.33 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 2 / 4 | 50.00% | 66.67 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 83.33 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 2 / 4 | 50.00% | 66.67 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 2 / 4 | 50.00% | 50.00 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 2 / 4 | 50.00% | 33.33 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 2 / 4 | 50.00% | 33.33 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 66.67 |
 <!-- profile-real-world:end -->
 
 <a id="setup"></a>
