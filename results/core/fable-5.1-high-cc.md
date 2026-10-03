@@ -239,270 +239,34 @@ Profile: `perf-cpu`
 
 Outcome: `pass`; classification: `diagnostic`.
 
+Performance score: **47.69** (comparison pool `hyperv-fixed-vhdx`).
 
-#### buffered-synchronized-writes / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 2617.4 |
-| MAD | 6.199999999999818 |
-| CV | 0.002156524933516879 |
-| Candidate-failed samples | 0 |
-
-#### buffered-synchronized-writes / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 2623.6 |
-| MAD | 9.900000000000091 |
-| CV | 0.00515889650400869 |
-| Candidate-failed samples | 0 |
-
-#### bulk-sequential-io / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | throughput_bytes_per_second |
-| Samples | 3 |
-| Median | 663229770.0 |
-| MAD | 452552.0 |
-| CV | 0.001430398928274522 |
-| Candidate-failed samples | 0 |
-
-#### bulk-sequential-io / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | throughput_bytes_per_second |
-| Samples | 3 |
-| Median | 663091738.0 |
-| MAD | 767028.0 |
-| CV | 0.0019216564033058328 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 2520.566695229238 |
-| MAD | 2.0437547503261158 |
-| CV | 0.0007194559703006928 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 8881.62978207766 |
-| MAD | 8.229633208944506 |
-| CV | 0.0025140446024537926 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 2323.3228920848264 |
-| MAD | 1.1501304265998442 |
-| CV | 0.0007255470343804981 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 3943.653915612569 |
-| MAD | 9.84813999928565 |
-| CV | 0.002764986682358649 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 3993.606857359076 |
-| MAD | 9.275483183784672 |
-| CV | 0.0032730776646312503 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 5 |
-| Median | 1659.855573808711 |
-| MAD | 37.02359481160215 |
-| CV | 0.03132452260091629 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 4 |
-| Median | 574.2013438183078 |
-| MAD | 6.134111679144951 |
-| CV | 0.018814661444055567 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 2514.997944505803 |
-| MAD | 5.011247083901253 |
-| CV | 0.002158919349629883 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 8923.75958601744 |
-| MAD | 8.046263871419796 |
-| CV | 0.0018739039728974717 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 2317.107873307504 |
-| MAD | 1.5824318823360954 |
-| CV | 0.0021852075263055094 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 3940.5707643434166 |
-| MAD | 5.576277663736164 |
-| CV | 0.0016573597215927757 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 3991.378464458183 |
-| MAD | 12.119869787248717 |
-| CV | 0.0026325200217930615 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 1697.446211991743 |
-| MAD | 13.53500507546164 |
-| CV | 0.007954565986577938 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 573.5312352566627 |
-| MAD | 1.0339476982022688 |
-| CV | 0.014467774375759109 |
-| Candidate-failed samples | 0 |
-
-#### small-random-io / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | iops |
-| Samples | 3 |
-| Median | 5092.9907 |
-| MAD | 11.598841999999422 |
-| CV | 0.0031602864831115278 |
-| Candidate-failed samples | 0 |
-
-#### small-random-io / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | iops |
-| Samples | 5 |
-| Median | 15168.083191 |
-| MAD | 11.698829999999361 |
-| CV | 0.0019024454349214272 |
-| Candidate-failed samples | 0 |
-
-#### small-random-io / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | iops |
-| Samples | 5 |
-| Median | 10482.857343 |
-| MAD | 53.59422000000086 |
-| CV | 0.005538779766629728 |
-| Candidate-failed samples | 0 |
-
-#### small-random-io / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | iops |
-| Samples | 3 |
-| Median | 5088.59114 |
-| MAD | 3.8996100000003935 |
-| CV | 0.0013482720652897395 |
-| Candidate-failed samples | 0 |
-
-#### small-random-io / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | iops |
-| Samples | 5 |
-| Median | 15116.688331 |
-| MAD | 15.298469999999725 |
-| CV | 0.00224780389635648 |
-| Candidate-failed samples | 0 |
-
-#### small-random-io / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | iops |
-| Samples | 5 |
-| Median | 10514.952894 |
-| MAD | 13.998781000000236 |
-| CV | 0.004234300412694501 |
-| Candidate-failed samples | 0 |
+| Family | Cache | Primary metric | Samples | Median | MAD | CV | Candidate-failed samples |
+|---|---|---|---:|---:|---:|---:|---:|
+| buffered-synchronized-writes | cold | operations_per_second | 3 | 2,617.4 | 6.2 | 0.2% | 0 |
+| buffered-synchronized-writes | warm | operations_per_second | 3 | 2,623.6 | 9.9 | 0.5% | 0 |
+| bulk-sequential-io | cold | MiB/s | 3 | 632.5 | 0.4 | 0.1% | 0 |
+| bulk-sequential-io | warm | MiB/s | 3 | 632.4 | 0.7 | 0.2% | 0 |
+| metadata-concurrency | cold | operations_per_second | 3 | 2,520.6 | 2.0 | 0.1% | 0 |
+| metadata-concurrency | cold | operations_per_second | 3 | 8,881.6 | 8.2 | 0.3% | 0 |
+| metadata-concurrency | cold | operations_per_second | 3 | 2,323.3 | 1.2 | 0.1% | 0 |
+| metadata-concurrency | cold | operations_per_second | 3 | 3,943.7 | 9.8 | 0.3% | 0 |
+| metadata-concurrency | cold | operations_per_second | 3 | 3,993.6 | 9.3 | 0.3% | 0 |
+| metadata-concurrency | cold | operations_per_second | 5 | 1,659.9 | 37.0 | 3.1% | 0 |
+| metadata-concurrency | cold | operations_per_second | 4 | 574.2 | 6.1 | 1.9% | 0 |
+| metadata-concurrency | warm | operations_per_second | 3 | 2,515.0 | 5.0 | 0.2% | 0 |
+| metadata-concurrency | warm | operations_per_second | 3 | 8,923.8 | 8.0 | 0.2% | 0 |
+| metadata-concurrency | warm | operations_per_second | 3 | 2,317.1 | 1.6 | 0.2% | 0 |
+| metadata-concurrency | warm | operations_per_second | 3 | 3,940.6 | 5.6 | 0.2% | 0 |
+| metadata-concurrency | warm | operations_per_second | 3 | 3,991.4 | 12.1 | 0.3% | 0 |
+| metadata-concurrency | warm | operations_per_second | 3 | 1,697.4 | 13.5 | 0.8% | 0 |
+| metadata-concurrency | warm | operations_per_second | 3 | 573.5 | 1.0 | 1.4% | 0 |
+| small-random-io | cold | iops | 3 | 5,093.0 | 11.6 | 0.3% | 0 |
+| small-random-io | cold | iops | 5 | 15,168.1 | 11.7 | 0.2% | 0 |
+| small-random-io | cold | iops | 5 | 10,482.9 | 53.6 | 0.6% | 0 |
+| small-random-io | warm | iops | 3 | 5,088.6 | 3.9 | 0.1% | 0 |
+| small-random-io | warm | iops | 5 | 15,116.7 | 15.3 | 0.2% | 0 |
+| small-random-io | warm | iops | 5 | 10,515.0 | 14.0 | 0.4% | 0 |
 
 Run: `perf-v2-core-fable-5-1-cc-perf-cpu-r2`
 Execution backend: `hyperv`
@@ -513,270 +277,34 @@ Profile: `perf-nvme`
 
 Outcome: `pass`; classification: `diagnostic`.
 
+Performance score: **52.11** (comparison pool `hyperv-fixed-vhdx`).
 
-#### buffered-synchronized-writes / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 1796.7 |
-| MAD | 1.0 |
-| CV | 0.0026814992436282473 |
-| Candidate-failed samples | 0 |
-
-#### buffered-synchronized-writes / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 3 |
-| Median | 1797.1 |
-| MAD | 8.0 |
-| CV | 0.004859381718694354 |
-| Candidate-failed samples | 0 |
-
-#### bulk-sequential-io / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | throughput_bytes_per_second |
-| Samples | 4 |
-| Median | 339550260.5 |
-| MAD | 638874.5 |
-| CV | 0.002004299081712309 |
-| Candidate-failed samples | 0 |
-
-#### bulk-sequential-io / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | throughput_bytes_per_second |
-| Samples | 4 |
-| Median | 343314215.0 |
-| MAD | 733820.0 |
-| CV | 0.0033348989381004265 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 2213.646119182525 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 8849.27480737184 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 2333.3149485226368 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 3640.2142536774622 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 3309.6472728144977 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 566.8200762250782 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 376.51933552921923 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 2218.094903937058 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 8897.255151107376 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 2342.7710044084242 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 3779.8803141532235 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 3275.6845577979366 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 629.9713107159278 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### metadata-concurrency / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | operations_per_second |
-| Samples | 1 |
-| Median | 380.0190108310358 |
-| MAD | 0.0 |
-| CV | 0.0 |
-| Candidate-failed samples | 0 |
-
-#### small-random-io / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | iops |
-| Samples | 3 |
-| Median | 3377.262274 |
-| MAD | 18.898110000000543 |
-| CV | 0.006704731134428055 |
-| Candidate-failed samples | 0 |
-
-#### small-random-io / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | iops |
-| Samples | 3 |
-| Median | 8226.777322 |
-| MAD | 2.188243999999031 |
-| CV | 0.000679602392263032 |
-| Candidate-failed samples | 0 |
-
-#### small-random-io / cold
-
-| Metric | Value |
-|---|---:|
-| Primary metric | iops |
-| Samples | 5 |
-| Median | 4872.227219 |
-| MAD | 0.5999400000000605 |
-| CV | 0.0018768747001215403 |
-| Candidate-failed samples | 0 |
-
-#### small-random-io / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | iops |
-| Samples | 3 |
-| Median | 3414.458554 |
-| MAD | 4.699530000000323 |
-| CV | 0.008129203086701066 |
-| Candidate-failed samples | 0 |
-
-#### small-random-io / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | iops |
-| Samples | 3 |
-| Median | 8183.572375 |
-| MAD | 16.389092999999775 |
-| CV | 0.0022061817198056883 |
-| Candidate-failed samples | 0 |
-
-#### small-random-io / warm
-
-| Metric | Value |
-|---|---:|
-| Primary metric | iops |
-| Samples | 5 |
-| Median | 4880.750448 |
-| MAD | 13.864868999999999 |
-| CV | 0.00479385331846954 |
-| Candidate-failed samples | 0 |
+| Family | Cache | Primary metric | Samples | Median | MAD | CV | Candidate-failed samples |
+|---|---|---|---:|---:|---:|---:|---:|
+| buffered-synchronized-writes | cold | operations_per_second | 3 | 1,796.7 | 1.0 | 0.3% | 0 |
+| buffered-synchronized-writes | warm | operations_per_second | 3 | 1,797.1 | 8.0 | 0.5% | 0 |
+| bulk-sequential-io | cold | MiB/s | 4 | 323.8 | 0.6 | 0.2% | 0 |
+| bulk-sequential-io | warm | MiB/s | 4 | 327.4 | 0.7 | 0.3% | 0 |
+| metadata-concurrency | cold | operations_per_second | 1 | 2,213.6 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | cold | operations_per_second | 1 | 8,849.3 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | cold | operations_per_second | 1 | 2,333.3 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | cold | operations_per_second | 1 | 3,640.2 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | cold | operations_per_second | 1 | 3,309.6 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | cold | operations_per_second | 1 | 566.8 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | cold | operations_per_second | 1 | 376.5 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | warm | operations_per_second | 1 | 2,218.1 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | warm | operations_per_second | 1 | 8,897.3 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | warm | operations_per_second | 1 | 2,342.8 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | warm | operations_per_second | 1 | 3,779.9 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | warm | operations_per_second | 1 | 3,275.7 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | warm | operations_per_second | 1 | 630.0 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | warm | operations_per_second | 1 | 380.0 | 0.0 | 0.0% | 0 |
+| small-random-io | cold | iops | 3 | 3,377.3 | 18.9 | 0.7% | 0 |
+| small-random-io | cold | iops | 3 | 8,226.8 | 2.2 | 0.1% | 0 |
+| small-random-io | cold | iops | 5 | 4,872.2 | 0.6 | 0.2% | 0 |
+| small-random-io | warm | iops | 3 | 3,414.5 | 4.7 | 0.8% | 0 |
+| small-random-io | warm | iops | 3 | 8,183.6 | 16.4 | 0.2% | 0 |
+| small-random-io | warm | iops | 5 | 4,880.8 | 13.9 | 0.5% | 0 |
 
 Run: `perf-v2-core-fable-5-1-cc-perf-nvme-r1`
 Execution backend: `hyperv`
