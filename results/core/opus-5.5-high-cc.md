@@ -247,15 +247,19 @@ Outcome: `pass`; classification: `diagnostic`.
 | Pass rate | 100.00% |
 | Category macro average | 100.00% |
 
-R uses observed capability scores; the table above retains raw end-to-end outcomes.
+The table above summarizes whether cases meet all requirements. The table below scores each verified capability for robustness R.
 
-| Capability | Score / 100 | Met | Failed | Unproved (zero-filled) |
+| Check | Score / 100 | Requirements met | Requirements not met | Not verified (scores 0) |
 |---|---:|---:|---:|---:|
-| Structural safety | 100.00 | 216 | 0 | 0 |
-| Content and durability | 100.00 | 216 | 0 | 0 |
-| Clean lifecycle | 100.00 | 216 | 0 | 0 |
+| Disk structure | 100.00 | 216 | 0 | 0 |
+| Data correctness | 100.00 | 216 | 0 | 0 |
+| Unmount and reopen | 100.00 | 216 | 0 | 0 |
 
-Derived crash score **100.00**; structure / content / clean budgets: 40% / 40% / 20%. Lawful safe rejections: 59; two lifecycles observed: 157; second lifecycle blocked: 0; first unobserved: 0. Safe rejection credits contract compliance, not recovered content; a blocked second lifecycle is not a pass.
+Crash score: **100.00**. Weights: disk structure 40%, data correctness 40%, unmount and reopen 20%.
+
+Permitted safe rejections: 59. Two rounds tested: 157. Reopen tests not run after failure: 0. First round not tested: 0.
+
+Each round includes mount, checks, and unmount. Safe rejection meets requirements but does not prove data recovery. Reopen not tested after an earlier failure does not count as a pass. See [scoring](../../docs/scoring.md) for the meaning of each check.
 
 Run: `cc-opus-crash-oracle6-r2`
 Execution backend: `hyperv`

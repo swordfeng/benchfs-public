@@ -50,11 +50,13 @@ Reference is a calibration implementation. Its scores and report are listed belo
 
 Current rule: `core-overall-v3-zero-fill`, a direct weighted sum with logarithmic performance scores against a fixed ext4/XFS/Btrfs production target. [Scores and calibration identity](results/overall-score-v3.json) retain the v2 scores.
 
-### Crash-contract capability scores
+### Reliability after a crash
 
-The crash budget in R is 40% structure, 40% content/durability, and 20% clean lifecycle. Lawful safe rejection credits contract compliance; unexecuted reopen remains blocked. Raw end-to-end outcomes stay separate.
+The full test score measures whether each case meets all requirements. The crash score combines verified capabilities for robustness R. Weights: disk structure 40%, data correctness 40%, unmount and reopen 20%.
 
-| Model / Agent | Raw end-to-end | Structure | Content/durability | Clean | Derived crash | Reopen blocked |
+Permitted safe rejection also meets requirements. Reopen not tested after an earlier failure does not count as a pass. All scores are out of 100. See [scoring](docs/scoring.md) for the meaning of each check.
+
+| Model / Agent | Full test score | Disk structure | Data correctness | Unmount and reopen | Crash score | Untested reopen after failure (cases) |
 |---|---:|---:|---:|---:|---:|---:|
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |

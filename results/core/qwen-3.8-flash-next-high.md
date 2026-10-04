@@ -192,15 +192,19 @@ Outcome: `candidate-failed`; classification: `diagnostic`.
 | Pass rate | 69.44% |
 | Category macro average | 69.44% |
 
-R uses observed capability scores; the table above retains raw end-to-end outcomes.
+The table above summarizes whether cases meet all requirements. The table below scores each verified capability for robustness R.
 
-| Capability | Score / 100 | Met | Failed | Unproved (zero-filled) |
+| Check | Score / 100 | Requirements met | Requirements not met | Not verified (scores 0) |
 |---|---:|---:|---:|---:|
-| Structural safety | 69.44 | 150 | 5 | 61 |
-| Content and durability | 71.76 | 155 | 1 | 60 |
-| Clean lifecycle | 69.44 | 150 | 18 | 48 |
+| Disk structure | 69.44 | 150 | 5 | 61 |
+| Data correctness | 71.76 | 155 | 1 | 60 |
+| Unmount and reopen | 69.44 | 150 | 18 | 48 |
 
-Derived crash score **70.37**; structure / content / clean budgets: 40% / 40% / 20%. Lawful safe rejections: 18; two lifecycles observed: 132; second lifecycle blocked: 66; first unobserved: 48. Safe rejection credits contract compliance, not recovered content; a blocked second lifecycle is not a pass.
+Crash score: **70.37**. Weights: disk structure 40%, data correctness 40%, unmount and reopen 20%.
+
+Permitted safe rejections: 18. Two rounds tested: 132. Reopen tests not run after failure: 66. First round not tested: 48.
+
+Each round includes mount, checks, and unmount. Safe rejection meets requirements but does not prove data recovery. Reopen not tested after an earlier failure does not count as a pass. See [scoring](../../docs/scoring.md) for the meaning of each check.
 
 Run: `case-correction-core-qwen-3.8-flash-next-crash-core`
 

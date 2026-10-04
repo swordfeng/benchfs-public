@@ -28,7 +28,7 @@ total = 0.35 × C + 0.20 × R + 0.20 × S + 0.10 × W + 0.10 × P + 0.05 × M
 | Dimension | Calculation | Overall weight | Reason for internal budgets |
 |---|---|---:|---|
 | Correctness C | 30% semantic + 30% pjdfstest + 15% xfstests + 25% format | 35% | Semantics retain 75%; overlapping Linux regressions receive a smaller share than contract and broad POSIX tests |
-| Robustness R | 40% robustness + 60% observed crash capabilities | 20% | Persisted-state commitments receive priority; contract-valid safe rejection still passes |
+| Robustness R | 40% robustness tests + 60% crash score | 20% | Persisted-state commitments receive priority; contract-valid safe rejection still passes |
 | Code review S | Confirmed, deduplicated defect burden curve below | 20% | Severity reflects harm and reach; no second utility transform |
 | Applications W | 25% version control + 50% database + 25% archive | 10% | Concurrent database content and crash/reopen each consume half of the database budget |
 | Performance P | Equal CPU/NVMe shares; each is 80% speed + 20% RAM | 10% | Both device scenarios and resource costs retain fixed budgets |
@@ -40,17 +40,23 @@ Missing inputs contribute zero only when calculating provisional totals; tables 
 
 [New and historical scores](../results/overall-score-v3.json) retain the v2 totals and dimension inputs. [Frozen numerical calibration](../results/scoring-calibration-v3.json) supplies every weight and anchor. These parameters are engineering and policy judgements, not a statistically fitted optimum. No cohort z-score, variance equalization or distribution scaling is applied; adding another submission cannot change an existing score.
 
-## Crash capability scale in R
+## Reliability after a crash
 
-The crash share uses a fixed linear budget: **40% structural safety, 40% content and durability, 20% clean lifecycle**. The first two protect persisted data; the last measures valid clean publication and any observed fresh reopening. The 80/20 split distinguishes data harm from lifecycle usability. These are explicit policy judgements, declared before recalculation, rather than weights fitted to model rankings. The 40/60 robustness/crash split and all main-axis weights remain fixed.
+The **full test score** measures whether each case meets all requirements. The **crash score** combines verified capabilities for robustness R:
 
-Each case receives one budget per capability. Independent offline checks prove structure, online intent/fence oracles prove content and durability, and lifecycle results plus independently checked clean state prove clean lifecycle. An observed failure in either lifecycle overrides a pass for that capability; differing content across reopening fails content. Repeated observations never add budget. G0–G8 retain equal weight, with 24 cases per category.
+| Check | Weight | Requirement |
+|---|---:|---|
+| Disk structure | 40% | An independent check confirms that the disk structure is valid |
+| Data correctness | 40% | Content and data covered by prior durability promises are correct |
+| Unmount and reopen | 20% | Unmount leaves a valid filesystem and clears the dirty flag; reopen must succeed if tested |
 
-An accepted, unchanged safe rejection fulfills the original contract and receives full compliance credit. It is counted separately and proves no recovered content. A dirty marker after successful unmount still fails clean lifecycle; proved structure and content retain their own shares. Structural corruption can fail both structure and valid-clean publication. This mapping applies uniformly to every submission and does not count or forgive root causes.
+The first two checks protect data. The last checks normal operation. These weights were set before recalculation and apply to all submissions. R remains 40% robustness tests and 60% crash score. All main-axis weights remain fixed.
 
-A domain with no proof receives zero in its original share, with an unproved count and a `*` on R. A successor blocked after an earlier failure remains unobserved; it neither adds a pass nor cancels an existing independent proof. The score measures **observed contract capabilities**, with coverage reported separately, and does not establish two-lifecycle reliability for blocked cases. Raw case failures, category macro averages and end-to-end recovery/safe-rejection counts remain unchanged.
+Each check has one weight per case. A failure in either round fails that check. Changed data after reopen fails data correctness. G0–G8 have equal weight, with 24 cases each. A dirty flag after successful unmount loses the unmount and reopen share. Disk corruption can fail both disk structure and unmount and reopen.
 
-The README and model reports show the new components alongside raw outcomes and blocked reopening counts. [The r1 scores](../results/overall-score-v3-r1.json), [r1 parameters](../results/scoring-calibration-v3-r1.json) and [r1 audit](../results/scoring-audit-v3-r1.json) remain frozen for comparison. No benchmarks or reviews were rerun.
+Permitted safe rejection without disk changes also meets requirements. It does not prove data recovery. A check without evidence keeps its weight and scores 0; R has a `*` mark. Reopen not tested after an earlier failure does not count as a pass. It does not cancel independent checks already completed. First-round and reopen counts can overlap.
+
+Original failure counts and full test results remain unchanged. [The r1 scores](../results/overall-score-v3-r1.json), [r1 parameters](../results/scoring-calibration-v3-r1.json), and [r1 audit](../results/scoring-audit-v3-r1.json) remain available for comparison. This revision only recalculates existing records.
 
 ## Performance scale
 
