@@ -4,7 +4,7 @@
     "database": 0.5,
     "vcs": 0.25
   },
-  "calibration_sha256": "84217d891f20c9de3ab7ae54a84c47a7d0b3e5ac4d65afc22d51a486f3565088",
+  "calibration_sha256": "1ad4f68392c5b2e5fb662c37c5450743ab1a76896f173adafef7eae2258c50af",
   "crash_capabilities": {
     "cases_per_category": 24,
     "categories": [
@@ -235,162 +235,6 @@
       "cold": 0.5,
       "warm": 0.5
     },
-    "metadata_anchors": {
-      "perf-cpu": {
-        "create-stat-unlink": {
-          "cold": [
-            882.4349882977632,
-            88243.49882977632
-          ],
-          "warm": [
-            855.8842848199906,
-            85588.42848199906
-          ]
-        },
-        "deep-large-lookup": {
-          "cold": [
-            3650.710249458811,
-            365071.0249458811
-          ],
-          "warm": [
-            3591.600405185706,
-            359160.04051857063
-          ]
-        },
-        "different-dir-concurrent-create": {
-          "cold": [
-            688.1071246049358,
-            68810.71246049358
-          ],
-          "warm": [
-            693.0265827851482,
-            69302.65827851482
-          ]
-        },
-        "near-enospc-reclaim": {
-          "cold": [
-            38.005007613317474,
-            3800.500761331747
-          ],
-          "warm": [
-            40.0485455900963,
-            4004.85455900963
-          ]
-        },
-        "parallel-fsync": {
-          "cold": [
-            8.656001812501643,
-            865.6001812501643
-          ],
-          "warm": [
-            8.70123127103533,
-            870.1231271035329
-          ]
-        },
-        "same-dir-concurrent-mutate": {
-          "cold": [
-            928.5333347909018,
-            92853.33347909017
-          ],
-          "warm": [
-            906.5758305234741,
-            90657.58305234741
-          ]
-        },
-        "same-dir-rename": {
-          "cold": [
-            489.35865520179766,
-            48935.86552017977
-          ],
-          "warm": [
-            496.7447926367084,
-            49674.47926367084
-          ]
-        }
-      },
-      "perf-nvme": {
-        "create-stat-unlink": {
-          "cold": [
-            882.4349882977632,
-            88243.49882977632
-          ],
-          "warm": [
-            855.8842848199906,
-            85588.42848199906
-          ]
-        },
-        "deep-large-lookup": {
-          "cold": [
-            3650.710249458811,
-            365071.0249458811
-          ],
-          "warm": [
-            3591.600405185706,
-            359160.04051857063
-          ]
-        },
-        "different-dir-concurrent-create": {
-          "cold": [
-            688.1071246049358,
-            68810.71246049358
-          ],
-          "warm": [
-            693.0265827851482,
-            69302.65827851482
-          ]
-        },
-        "near-enospc-reclaim": {
-          "cold": [
-            38.005007613317474,
-            3800.500761331747
-          ],
-          "warm": [
-            40.0485455900963,
-            4004.85455900963
-          ]
-        },
-        "parallel-fsync": {
-          "cold": [
-            8.656001812501643,
-            865.6001812501643
-          ],
-          "warm": [
-            8.70123127103533,
-            870.1231271035329
-          ]
-        },
-        "same-dir-concurrent-mutate": {
-          "cold": [
-            928.5333347909018,
-            92853.33347909017
-          ],
-          "warm": [
-            906.5758305234741,
-            90657.58305234741
-          ]
-        },
-        "same-dir-rename": {
-          "cold": [
-            489.35865520179766,
-            48935.86552017977
-          ],
-          "warm": [
-            496.7447926367084,
-            49674.47926367084
-          ]
-        }
-      }
-    },
-    "metadata_floor_ratio": 0.01,
-    "metadata_weights": {
-      "create-stat-unlink": 0.2,
-      "deep-large-lookup": 0.15,
-      "different-dir-concurrent-create": 0.15,
-      "near-enospc-reclaim": 0.1,
-      "parallel-fsync": 0.15,
-      "same-dir-concurrent-mutate": 0.15,
-      "same-dir-rename": 0.1
-    },
     "mode": "log-production-target",
     "paired_environment_ratio": false,
     "ram_anchors": [
@@ -415,12 +259,7 @@
     "reference_sha256": "a244277df5cf411c25b5820a3a22a561d606a038314733af72a47b07015cd3db",
     "resource_weights": {
       "ram": 0.2,
-      "speed": 0.7,
-      "write_amplification": 0.1
-    },
-    "speed_group_weights": {
-      "fio": 0.75,
-      "metadata": 0.25
+      "speed": 0.8
     },
     "workload_weights": {
       "bulk-sequential": 0.3,
@@ -428,14 +267,6 @@
       "random-4k-shared-regions": 0.1,
       "random-4k-single": 0.2,
       "sync-overwrite": 0.3
-    },
-    "write_amplification": {
-      "anchors": [
-        1,
-        4,
-        16
-      ],
-      "scale": "inverse-log"
     }
   },
   "profile_weights": {
@@ -461,7 +292,7 @@
     "low": 1,
     "medium": 5
   },
-  "revision": "2026-10-04-r3",
+  "revision": "2026-10-04-r2",
   "rule": "core-overall-v3-zero-fill",
   "schema_version": 1
 }

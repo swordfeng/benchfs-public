@@ -15,37 +15,37 @@
   "covariance": {
     "C/C": 8.680699142102718,
     "C/M": 13.319359224610368,
-    "C/P": 9.78547952180491,
+    "C/P": 8.86189206593193,
     "C/R": 22.750017329781343,
     "C/S": 59.66608410314584,
     "C/W": 36.98919327027669,
     "M/C": 13.319359224610368,
     "M/M": 51.756961758096054,
-    "M/P": 51.25785110745104,
+    "M/P": 42.62944481767256,
     "M/R": 27.760967918060764,
     "M/S": 92.63112141013868,
     "M/W": 92.27384754140486,
-    "P/C": 9.78547952180491,
-    "P/M": 51.25785110745104,
-    "P/P": 113.99665438428809,
-    "P/R": 8.182412297880928,
-    "P/S": 122.94118548927065,
-    "P/W": 97.66836765347367,
+    "P/C": 8.86189206593193,
+    "P/M": 42.62944481767256,
+    "P/P": 76.49437681252586,
+    "P/R": 6.87523685707828,
+    "P/S": 96.16132444420184,
+    "P/W": 83.69427000335334,
     "R/C": 22.750017329781343,
     "R/M": 27.760967918060764,
-    "R/P": 8.182412297880928,
+    "R/P": 6.87523685707828,
     "R/R": 89.7272727272727,
     "R/S": 159.54520721308873,
     "R/W": 107.19696969696972,
     "S/C": 59.66608410314584,
     "S/M": 92.63112141013868,
-    "S/P": 122.94118548927065,
+    "S/P": 96.16132444420184,
     "S/R": 159.54520721308873,
     "S/S": 666.2648249272456,
     "S/W": 241.8003479731026,
     "W/C": 36.98919327027669,
     "W/M": 92.27384754140486,
-    "W/P": 97.66836765347367,
+    "W/P": 83.69427000335334,
     "W/R": 107.19696969696972,
     "W/S": 241.8003479731026,
     "W/W": 237.60330578512395
@@ -53,57 +53,57 @@
   "independent_validation": false,
   "median_plus_minus_mad_sensitivity": {
     "core-deepseek-v4-flash-0731": {
-      "high": 65.75345725582275,
-      "low": 65.71853098060417
+      "high": 66.00864851012209,
+      "low": 65.98572814200989
     },
     "core-fable-5.1": {
-      "high": 77.28150314717647,
-      "low": 77.27178253347978
+      "high": 77.52893238355136,
+      "low": 77.52053233530926
     },
     "core-fable-5.1-cc": {
-      "high": 79.85135945736053,
-      "low": 79.84460084875354
+      "high": 80.10011342498137,
+      "low": 80.09499558878422
     },
     "core-gemini-3.8-flash": {
-      "high": 65.13102694845804,
-      "low": 65.12124587744312
+      "high": 65.59687949950715,
+      "low": 65.58994173562341
     },
     "core-glm-5.3": {
-      "high": 75.25590197908073,
-      "low": 75.19504063987267
+      "high": 75.67721680881179,
+      "low": 75.63689685644597
     },
     "core-gpt-5.6-sol-v2": {
-      "high": 69.41901960517151,
-      "low": 69.33602643577993
+      "high": 70.44671720664854,
+      "low": 70.38636820737943
     },
     "core-gpt-6-astra": {
-      "high": 90.07465960719665,
-      "low": 90.02935026528888
+      "high": 90.060564282951,
+      "low": 90.02973787708781
     },
     "core-gpt-6.1-sol": {
-      "high": 89.23423596363422,
-      "low": 89.21837929699167
+      "high": 89.59202028033168,
+      "low": 89.58081169929288
     },
     "core-kimi-k3": {
-      "high": 74.4677720733838,
-      "low": 74.44954266445896
+      "high": 75.03599127629042,
+      "low": 75.02228107893443
     },
     "core-opus-5.5-cc": {
-      "high": 88.31562574655787,
-      "low": 88.3030375370388
+      "high": 88.6339366896328,
+      "low": 88.62343996523504
     },
     "core-qwen-3.8-flash-next": {
-      "high": 63.45719909765192,
-      "low": 63.44122063238643
+      "high": 63.78682692300677,
+      "low": 63.77400665750648
     }
   },
   "performance_noise": {
     "max_cv": 1.1429010483335227,
-    "measured_cells": 220,
-    "median_cv": 0.006193205727282304,
-    "single_sample_cells": 2
+    "measured_cells": 496,
+    "median_cv": 0.003512249968150781,
+    "single_sample_cells": 133
   },
-  "revision": "2026-10-04-r2",
+  "revision": "2026-10-04-r3",
   "rule": "core-overall-v3-zero-fill",
   "saturation": {
     "C": {
@@ -155,17 +155,17 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 65.75666364982271,
-        "core-fable-5.1": 78.03776484664243,
-        "core-fable-5.1-cc": 80.60354081350592,
-        "core-gemini-3.8-flash": 65.24839287157553,
-        "core-glm-5.3": 75.22823980532968,
-        "core-gpt-5.6-sol-v2": 69.39593413294617,
-        "core-gpt-6-astra": 90.05306739694016,
-        "core-gpt-6.1-sol": 89.22633506198366,
-        "core-kimi-k3": 74.50037208743848,
-        "core-opus-5.5-cc": 88.30934712384575,
-        "core-qwen-3.8-flash-next": 63.463129572603265
+        "core-deepseek-v4-flash-0731": 66.01743673396234,
+        "core-fable-5.1": 78.28585446759732,
+        "core-fable-5.1-cc": 80.85311419217845,
+        "core-gemini-3.8-flash": 65.71565709533056,
+        "core-glm-5.3": 75.65887395477066,
+        "core-gpt-5.6-sol-v2": 70.43536769241999,
+        "core-gpt-6-astra": 90.04584977432368,
+        "core-gpt-6.1-sol": 89.58643483288498,
+        "core-kimi-k3": 75.07083934329071,
+        "core-opus-5.5-cc": 88.62870298997065,
+        "core-qwen-3.8-flash-next": 63.7943318362377
       }
     },
     "clean-lifecycle-budget-0.3": {
@@ -184,17 +184,17 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 65.71777476093382,
-        "core-fable-5.1": 76.51554262442022,
-        "core-fable-5.1-cc": 79.0924297023948,
-        "core-gemini-3.8-flash": 65.00394842713108,
-        "core-glm-5.3": 75.22823980532968,
-        "core-gpt-5.6-sol-v2": 69.35704524405728,
-        "core-gpt-6-astra": 90.05306739694016,
-        "core-gpt-6.1-sol": 89.22633506198366,
-        "core-kimi-k3": 74.41703875410514,
-        "core-opus-5.5-cc": 88.30934712384575,
-        "core-qwen-3.8-flash-next": 63.435351794825486
+        "core-deepseek-v4-flash-0731": 65.97854784507345,
+        "core-fable-5.1": 76.7636322453751,
+        "core-fable-5.1-cc": 79.34200308106733,
+        "core-gemini-3.8-flash": 65.4712126508861,
+        "core-glm-5.3": 75.65887395477066,
+        "core-gpt-5.6-sol-v2": 70.3964788035311,
+        "core-gpt-6-astra": 90.04584977432368,
+        "core-gpt-6.1-sol": 89.58643483288498,
+        "core-kimi-k3": 74.98750600995737,
+        "core-opus-5.5-cc": 88.62870298997065,
+        "core-qwen-3.8-flash-next": 63.766554058459924
       }
     },
     "crash-budget-0.5": {
@@ -213,17 +213,17 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 65.19555253871161,
-        "core-fable-5.1": 77.33591299479059,
-        "core-fable-5.1-cc": 80.09983710980221,
-        "core-gemini-3.8-flash": 65.40302250120516,
-        "core-glm-5.3": 75.23749906458895,
-        "core-gpt-5.6-sol-v2": 68.96260079961283,
-        "core-gpt-6-astra": 90.05306739694016,
-        "core-gpt-6.1-sol": 89.22633506198366,
-        "core-kimi-k3": 74.4550017170681,
-        "core-opus-5.5-cc": 88.30934712384575,
-        "core-qwen-3.8-flash-next": 63.36683327630697
+        "core-deepseek-v4-flash-0731": 65.45632562285124,
+        "core-fable-5.1": 77.58400261574548,
+        "core-fable-5.1-cc": 80.34941048847475,
+        "core-gemini-3.8-flash": 65.87028672496018,
+        "core-glm-5.3": 75.66813321402992,
+        "core-gpt-5.6-sol-v2": 70.00203435908665,
+        "core-gpt-6-astra": 90.04584977432368,
+        "core-gpt-6.1-sol": 89.58643483288498,
+        "core-kimi-k3": 75.02546897292034,
+        "core-opus-5.5-cc": 88.62870298997065,
+        "core-qwen-3.8-flash-next": 63.69803553994141
       }
     },
     "crash-budget-0.7": {
@@ -242,17 +242,17 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 66.27888587204494,
-        "core-fable-5.1": 77.21739447627206,
-        "core-fable-5.1-cc": 79.5961334060985,
-        "core-gemini-3.8-flash": 64.84931879750145,
-        "core-glm-5.3": 75.21898054607043,
-        "core-gpt-5.6-sol-v2": 69.79037857739061,
-        "core-gpt-6-astra": 90.05306739694016,
-        "core-gpt-6.1-sol": 89.22633506198366,
-        "core-kimi-k3": 74.46240912447551,
-        "core-opus-5.5-cc": 88.30934712384575,
-        "core-qwen-3.8-flash-next": 63.53164809112179
+        "core-deepseek-v4-flash-0731": 66.53965895618457,
+        "core-fable-5.1": 77.46548409722695,
+        "core-fable-5.1-cc": 79.84570678477104,
+        "core-gemini-3.8-flash": 65.31658302125648,
+        "core-glm-5.3": 75.6496146955114,
+        "core-gpt-5.6-sol-v2": 70.82981213686443,
+        "core-gpt-6-astra": 90.04584977432368,
+        "core-gpt-6.1-sol": 89.58643483288498,
+        "core-kimi-k3": 75.03287638032775,
+        "core-opus-5.5-cc": 88.62870298997065,
+        "core-qwen-3.8-flash-next": 63.862850354756226
       }
     },
     "database-budget-0.333": {
@@ -271,17 +271,17 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 67.40388587204494,
-        "core-fable-5.1": 78.10998706886465,
-        "core-fable-5.1-cc": 80.68131859128368,
-        "core-gemini-3.8-flash": 65.12617064935331,
-        "core-glm-5.3": 76.06157313866302,
-        "core-gpt-5.6-sol-v2": 67.70982302183506,
-        "core-gpt-6-astra": 90.8864007302735,
-        "core-gpt-6.1-sol": 90.05966839531699,
-        "core-kimi-k3": 73.62537208743848,
-        "core-opus-5.5-cc": 88.30934712384575,
-        "core-qwen-3.8-flash-next": 61.782574017047715
+        "core-deepseek-v4-flash-0731": 67.66465895618457,
+        "core-fable-5.1": 78.35807668981954,
+        "core-fable-5.1-cc": 80.93089196995622,
+        "core-gemini-3.8-flash": 65.59343487310834,
+        "core-glm-5.3": 76.492207288104,
+        "core-gpt-5.6-sol-v2": 68.74925658130888,
+        "core-gpt-6-astra": 90.87918310765701,
+        "core-gpt-6.1-sol": 90.4197681662183,
+        "core-kimi-k3": 74.19583934329071,
+        "core-opus-5.5-cc": 88.62870298997065,
+        "core-qwen-3.8-flash-next": 62.11377628068215
       }
     },
     "database-budget-0.600": {
@@ -300,17 +300,17 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 64.73721920537827,
-        "core-fable-5.1": 76.77665373553133,
-        "core-fable-5.1-cc": 79.34798525795036,
-        "core-gemini-3.8-flash": 65.12617064935331,
-        "core-glm-5.3": 74.72823980532968,
-        "core-gpt-5.6-sol-v2": 70.37648968850172,
-        "core-gpt-6-astra": 89.55306739694016,
-        "core-gpt-6.1-sol": 88.72633506198366,
-        "core-kimi-k3": 74.9587054207718,
-        "core-opus-5.5-cc": 88.30934712384575,
-        "core-qwen-3.8-flash-next": 64.44924068371438
+        "core-deepseek-v4-flash-0731": 64.9979922895179,
+        "core-fable-5.1": 77.02474335648621,
+        "core-fable-5.1-cc": 79.59755863662289,
+        "core-gemini-3.8-flash": 65.59343487310834,
+        "core-glm-5.3": 75.15887395477066,
+        "core-gpt-5.6-sol-v2": 71.41592324797554,
+        "core-gpt-6-astra": 89.54584977432368,
+        "core-gpt-6.1-sol": 89.08643483288498,
+        "core-kimi-k3": 75.52917267662404,
+        "core-opus-5.5-cc": 88.62870298997065,
+        "core-qwen-3.8-flash-next": 64.78044294734882
       }
     },
     "linux-regression-budget-0.1": {
@@ -329,17 +329,17 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 66.0168169065277,
-        "core-fable-5.1": 77.49152805342288,
-        "core-fable-5.1-cc": 79.94673133945507,
-        "core-gemini-3.8-flash": 65.39543658456752,
-        "core-glm-5.3": 75.41777742288454,
-        "core-gpt-5.6-sol-v2": 69.55807276060204,
-        "core-gpt-6-astra": 90.2401363624574,
-        "core-gpt-6.1-sol": 89.40462659803381,
-        "core-kimi-k3": 74.63809413550536,
-        "core-opus-5.5-cc": 88.328547750805,
-        "core-qwen-3.8-flash-next": 63.77263410064228
+        "core-deepseek-v4-flash-0731": 66.27758999066732,
+        "core-fable-5.1": 77.73961767437777,
+        "core-fable-5.1-cc": 80.1963047181276,
+        "core-gemini-3.8-flash": 65.86270080832254,
+        "core-glm-5.3": 75.84841157232552,
+        "core-gpt-5.6-sol-v2": 70.59750632007584,
+        "core-gpt-6-astra": 90.23291873984093,
+        "core-gpt-6.1-sol": 89.76472636893513,
+        "core-kimi-k3": 75.20856139135759,
+        "core-opus-5.5-cc": 88.6479036169299,
+        "core-qwen-3.8-flash-next": 64.10383636427672
       }
     },
     "linux-regression-budget-0.2": {
@@ -358,17 +358,17 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 65.45762150422885,
-        "core-fable-5.1": 77.06177941763977,
-        "core-fable-5.1-cc": 79.74923917644567,
-        "core-gemini-3.8-flash": 64.85690471413909,
-        "core-glm-5.3": 75.03870218777483,
-        "core-gpt-5.6-sol-v2": 69.1949066164014,
-        "core-gpt-6-astra": 89.86599843142292,
-        "core-gpt-6.1-sol": 89.04804352593351,
-        "core-kimi-k3": 74.27931670603827,
-        "core-opus-5.5-cc": 88.2901464968865,
-        "core-qwen-3.8-flash-next": 63.12584726678648
+        "core-deepseek-v4-flash-0731": 65.71839458836848,
+        "core-fable-5.1": 77.30986903859466,
+        "core-fable-5.1-cc": 79.9988125551182,
+        "core-gemini-3.8-flash": 65.32416893789411,
+        "core-glm-5.3": 75.46933633721581,
+        "core-gpt-5.6-sol-v2": 70.23434017587522,
+        "core-gpt-6-astra": 89.85878080880644,
+        "core-gpt-6.1-sol": 89.40814329683482,
+        "core-kimi-k3": 74.84978396189051,
+        "core-opus-5.5-cc": 88.6095023630114,
+        "core-qwen-3.8-flash-next": 63.45704953042092
       }
     },
     "maintenance-v2-budgets": {
@@ -387,17 +387,133 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 65.80858926641264,
-        "core-fable-5.1": 77.30720929108688,
-        "core-fable-5.1-cc": 79.71641355954016,
-        "core-gemini-3.8-flash": 65.36511676662748,
-        "core-glm-5.3": 75.22823980532968,
-        "core-gpt-5.6-sol-v2": 69.40170600494177,
-        "core-gpt-6-astra": 90.08883550583661,
-        "core-gpt-6.1-sol": 89.27393607208467,
-        "core-kimi-k3": 74.3280285160454,
-        "core-opus-5.5-cc": 88.3031137578281,
-        "core-qwen-3.8-flash-next": 63.427897705488455
+        "core-deepseek-v4-flash-0731": 66.06936235055227,
+        "core-fable-5.1": 77.55529891204176,
+        "core-fable-5.1-cc": 79.9659869382127,
+        "core-gemini-3.8-flash": 65.8323809903825,
+        "core-glm-5.3": 75.65887395477066,
+        "core-gpt-5.6-sol-v2": 70.44113956441558,
+        "core-gpt-6-astra": 90.08161788322013,
+        "core-gpt-6.1-sol": 89.63403584298598,
+        "core-kimi-k3": 74.89849577189764,
+        "core-opus-5.5-cc": 88.622469623953,
+        "core-qwen-3.8-flash-next": 63.75909996912289
+      }
+    },
+    "metadata-speed-budget-0.15": {
+      "max_absolute_score_change": 0.1551752185411317,
+      "ordering": [
+        "core-gpt-6-astra",
+        "core-gpt-6.1-sol",
+        "core-opus-5.5-cc",
+        "core-fable-5.1-cc",
+        "core-fable-5.1",
+        "core-glm-5.3",
+        "core-kimi-k3",
+        "core-gpt-5.6-sol-v2",
+        "core-deepseek-v4-flash-0731",
+        "core-gemini-3.8-flash",
+        "core-qwen-3.8-flash-next"
+      ],
+      "totals": {
+        "core-deepseek-v4-flash-0731": 66.09860235240451,
+        "core-fable-5.1": 77.62282608182076,
+        "core-fable-5.1-cc": 80.1847147296428,
+        "core-gemini-3.8-flash": 65.67238303734044,
+        "core-glm-5.3": 75.70323741603555,
+        "core-gpt-5.6-sol-v2": 70.29037972045401,
+        "core-gpt-6-astra": 90.20102499286482,
+        "core-gpt-6.1-sol": 89.65432710521067,
+        "core-kimi-k3": 75.059475601176,
+        "core-opus-5.5-cc": 88.69661228409538,
+        "core-qwen-3.8-flash-next": 63.87804271632363
+      }
+    },
+    "metadata-speed-budget-0.35": {
+      "max_absolute_score_change": 0.1551752185411317,
+      "ordering": [
+        "core-gpt-6-astra",
+        "core-gpt-6.1-sol",
+        "core-opus-5.5-cc",
+        "core-fable-5.1-cc",
+        "core-fable-5.1",
+        "core-glm-5.3",
+        "core-kimi-k3",
+        "core-gpt-5.6-sol-v2",
+        "core-deepseek-v4-flash-0731",
+        "core-gemini-3.8-flash",
+        "core-qwen-3.8-flash-next"
+      ],
+      "totals": {
+        "core-deepseek-v4-flash-0731": 65.89738222663128,
+        "core-fable-5.1": 77.42666063115168,
+        "core-fable-5.1-cc": 80.01040254360298,
+        "core-gemini-3.8-flash": 65.51448670887623,
+        "core-glm-5.3": 75.61451049350576,
+        "core-gpt-5.6-sol-v2": 70.54146677549707,
+        "core-gpt-6-astra": 89.89067455578255,
+        "core-gpt-6.1-sol": 89.51854256055928,
+        "core-kimi-k3": 74.99886975207208,
+        "core-opus-5.5-cc": 88.5607936958459,
+        "core-qwen-3.8-flash-next": 63.682843178374014
+      }
+    },
+    "metadata-zero-time-ratio-200": {
+      "max_absolute_score_change": 0.1531807440582611,
+      "ordering": [
+        "core-gpt-6-astra",
+        "core-gpt-6.1-sol",
+        "core-opus-5.5-cc",
+        "core-fable-5.1-cc",
+        "core-fable-5.1",
+        "core-glm-5.3",
+        "core-kimi-k3",
+        "core-gpt-5.6-sol-v2",
+        "core-deepseek-v4-flash-0731",
+        "core-gemini-3.8-flash",
+        "core-qwen-3.8-flash-next"
+      ],
+      "totals": {
+        "core-deepseek-v4-flash-0731": 66.1346690425598,
+        "core-fable-5.1": 77.6365138275914,
+        "core-fable-5.1-cc": 80.23385442545202,
+        "core-gemini-3.8-flash": 65.72008424715511,
+        "core-glm-5.3": 75.81205469882892,
+        "core-gpt-5.6-sol-v2": 70.48306095228978,
+        "core-gpt-6-astra": 90.19483056303984,
+        "core-gpt-6.1-sol": 89.73158368770666,
+        "core-kimi-k3": 75.15346142938348,
+        "core-opus-5.5-cc": 88.76371256272522,
+        "core-qwen-3.8-flash-next": 63.88759864239534
+      }
+    },
+    "metadata-zero-time-ratio-50": {
+      "max_absolute_score_change": 0.1965849119929004,
+      "ordering": [
+        "core-gpt-6-astra",
+        "core-gpt-6.1-sol",
+        "core-opus-5.5-cc",
+        "core-fable-5.1-cc",
+        "core-fable-5.1",
+        "core-glm-5.3",
+        "core-kimi-k3",
+        "core-gpt-5.6-sol-v2",
+        "core-deepseek-v4-flash-0731",
+        "core-gemini-3.8-flash",
+        "core-qwen-3.8-flash-next"
+      ],
+      "totals": {
+        "core-deepseek-v4-flash-0731": 65.95064765454971,
+        "core-fable-5.1": 77.37336504728349,
+        "core-fable-5.1-cc": 79.9129640307275,
+        "core-gemini-3.8-flash": 65.50625321926556,
+        "core-glm-5.3": 75.57939784311219,
+        "core-gpt-5.6-sol-v2": 70.32499411381025,
+        "core-gpt-6-astra": 89.91731586075248,
+        "core-gpt-6.1-sol": 89.38984992089208,
+        "core-kimi-k3": 74.860840011837,
+        "core-opus-5.5-cc": 88.44585039350503,
+        "core-qwen-3.8-flash-next": 63.639783959428186
       }
     },
     "review-scale-200": {
@@ -416,17 +532,17 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 68.04948981562904,
-        "core-fable-5.1": 80.69415089646148,
-        "core-fable-5.1-cc": 83.26327632127207,
-        "core-gemini-3.8-flash": 67.6153481385308,
-        "core-glm-5.3": 78.3544239659966,
-        "core-gpt-5.6-sol-v2": 72.6471477419422,
-        "core-gpt-6-astra": 90.91886826274103,
-        "core-gpt-6.1-sol": 90.43968187694827,
-        "core-kimi-k3": 77.55693760593674,
-        "core-opus-5.5-cc": 91.19396250846113,
-        "core-qwen-3.8-flash-next": 65.80435497602562
+        "core-deepseek-v4-flash-0731": 68.31026289976867,
+        "core-fable-5.1": 80.94224051741637,
+        "core-fable-5.1-cc": 83.51284969994461,
+        "core-gemini-3.8-flash": 68.08261236228583,
+        "core-glm-5.3": 78.78505811543758,
+        "core-gpt-5.6-sol-v2": 73.68658130141603,
+        "core-gpt-6-astra": 90.91165064012455,
+        "core-gpt-6.1-sol": 90.79978164784958,
+        "core-kimi-k3": 78.12740486178897,
+        "core-opus-5.5-cc": 91.51331837458602,
+        "core-qwen-3.8-flash-next": 66.13555723966006
       }
     },
     "review-scale-50": {
@@ -445,21 +561,21 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 64.28052879493433,
-        "core-fable-5.1": 74.35315497938018,
-        "core-fable-5.1-cc": 76.65972221328875,
-        "core-gemini-3.8-flash": 63.515526391650226,
-        "core-glm-5.3": 72.91844768662037,
-        "core-gpt-5.6-sol-v2": 66.83599699385516,
-        "core-gpt-6-astra": 88.53791588178865,
-        "core-gpt-6.1-sol": 87.21964609877296,
-        "core-kimi-k3": 72.1879513968621,
-        "core-opus-5.5-cc": 84.90025621475483,
-        "core-qwen-3.8-flash-next": 61.9562664448385
+        "core-deepseek-v4-flash-0731": 64.54130187907396,
+        "core-fable-5.1": 74.60124460033506,
+        "core-fable-5.1-cc": 76.90929559196128,
+        "core-gemini-3.8-flash": 63.98279061540526,
+        "core-glm-5.3": 73.34908183606134,
+        "core-gpt-5.6-sol-v2": 67.87543055332895,
+        "core-gpt-6-astra": 88.53069825917217,
+        "core-gpt-6.1-sol": 87.57974586967427,
+        "core-kimi-k3": 72.75841865271434,
+        "core-opus-5.5-cc": 85.21961208087973,
+        "core-qwen-3.8-flash-next": 62.287468708472936
       }
     },
     "speed-floor-times-0.5": {
-      "max_absolute_score_change": 0.6023895820132878,
+      "max_absolute_score_change": 0.39531816319622237,
       "ordering": [
         "core-gpt-6-astra",
         "core-gpt-6.1-sol",
@@ -474,21 +590,21 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 66.08869785460162,
-        "core-fable-5.1": 77.78905005162329,
-        "core-fable-5.1-cc": 80.32688006026362,
-        "core-gemini-3.8-flash": 65.46009156317001,
-        "core-glm-5.3": 75.70045370734135,
-        "core-gpt-5.6-sol-v2": 69.71238315983942,
-        "core-gpt-6-astra": 90.61898327752507,
-        "core-gpt-6.1-sol": 89.78086596988875,
-        "core-kimi-k3": 74.99616667502009,
-        "core-opus-5.5-cc": 88.81975214518033,
-        "core-qwen-3.8-flash-next": 64.05163026572767
+        "core-deepseek-v4-flash-0731": 66.22865015307072,
+        "core-fable-5.1": 77.86100343892157,
+        "core-fable-5.1-cc": 80.41183335064098,
+        "core-gemini-3.8-flash": 65.81257047280054,
+        "core-glm-5.3": 75.96876432796583,
+        "core-gpt-5.6-sol-v2": 70.63635333854091,
+        "core-gpt-6-astra": 90.41723207095752,
+        "core-gpt-6.1-sol": 89.9503457411977,
+        "core-kimi-k3": 75.38188162472449,
+        "core-opus-5.5-cc": 88.96365628522146,
+        "core-qwen-3.8-flash-next": 64.17576111054504
       }
     },
     "speed-floor-times-2": {
-      "max_absolute_score_change": 0.82806180704479,
+      "max_absolute_score_change": 0.543415560873143,
       "ordering": [
         "core-gpt-6-astra",
         "core-gpt-6.1-sol",
@@ -503,21 +619,21 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 65.2852869315135,
-        "core-fable-5.1": 76.57542959624668,
-        "core-fable-5.1-cc": 79.19606464993205,
-        "core-gemini-3.8-flash": 64.69359221924525,
-        "core-glm-5.3": 74.77738264217042,
-        "core-gpt-5.6-sol-v2": 69.11652636835433,
-        "core-gpt-6-astra": 89.28389210032856,
-        "core-gpt-6.1-sol": 88.46639628661471,
-        "core-kimi-k3": 74.03135051579594,
-        "core-opus-5.5-cc": 87.60899404139644,
-        "core-qwen-3.8-flash-next": 62.62117887666959
+        "core-deepseek-v4-flash-0731": 65.70141173479415,
+        "core-fable-5.1": 77.06456501508066,
+        "core-fable-5.1-cc": 79.66973573761089,
+        "core-gemini-3.8-flash": 65.30955527834992,
+        "core-glm-5.3": 75.3629989414474,
+        "core-gpt-5.6-sol-v2": 70.2453223191288,
+        "core-gpt-6-astra": 89.54107848592231,
+        "core-gpt-6.1-sol": 89.08772501154911,
+        "core-kimi-k3": 74.74872102023363,
+        "core-opus-5.5-cc": 88.16909627961329,
+        "core-qwen-3.8-flash-next": 63.237027386475674
       }
     },
     "synchronized-write-budget-0.2": {
-      "max_absolute_score_change": 0.41489039392945415,
+      "max_absolute_score_change": 0.27116272966222255,
       "ordering": [
         "core-gpt-6-astra",
         "core-gpt-6.1-sol",
@@ -532,21 +648,21 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 65.36597134370109,
-        "core-fable-5.1": 76.94461944757397,
-        "core-fable-5.1-cc": 79.52476447065561,
-        "core-gemini-3.8-flash": 64.71128025542386,
-        "core-glm-5.3": 74.86501343657237,
-        "core-gpt-5.6-sol-v2": 69.37809735204081,
-        "core-gpt-6-astra": 89.68797895079764,
-        "core-gpt-6.1-sol": 88.84690791521585,
-        "core-kimi-k3": 74.09132077631382,
-        "core-opus-5.5-cc": 87.92794862316737,
-        "core-qwen-3.8-flash-next": 63.042721656284336
+        "core-deepseek-v4-flash-0731": 65.75436088029225,
+        "core-fable-5.1": 77.30759094037087,
+        "core-fable-5.1-cc": 79.88655344725942,
+        "core-gemini-3.8-flash": 65.32227214344611,
+        "core-glm-5.3": 75.42048604594126,
+        "core-gpt-5.6-sol-v2": 70.49098665418657,
+        "core-gpt-6-astra": 89.80626048154267,
+        "core-gpt-6.1-sol": 89.33946561851634,
+        "core-kimi-k3": 74.78917691205092,
+        "core-opus-5.5-cc": 88.37944678924055,
+        "core-qwen-3.8-flash-next": 63.514764222243386
       }
     },
     "synchronized-write-budget-0.4": {
-      "max_absolute_score_change": 0.41489039392943994,
+      "max_absolute_score_change": 0.27116272966222255,
       "ordering": [
         "core-gpt-6-astra",
         "core-gpt-6.1-sol",
@@ -561,33 +677,149 @@
         "core-qwen-3.8-flash-next"
       ],
       "totals": {
-        "core-deepseek-v4-flash-0731": 66.10846706705544,
-        "core-fable-5.1": 77.60868802348867,
-        "core-fable-5.1-cc": 80.17120604524509,
-        "core-gemini-3.8-flash": 65.54106104328275,
-        "core-glm-5.3": 75.59146617408697,
-        "core-gpt-5.6-sol-v2": 69.37488202496266,
-        "core-gpt-6-astra": 90.41815584308269,
-        "core-gpt-6.1-sol": 89.60576220875146,
-        "core-kimi-k3": 74.82609006522979,
-        "core-opus-5.5-cc": 88.69074562452413,
-        "core-qwen-3.8-flash-next": 63.85575971114442
+        "core-deepseek-v4-flash-0731": 66.24162369874355,
+        "core-fable-5.1": 77.74189577260155,
+        "core-fable-5.1-cc": 80.30856382598637,
+        "core-gemini-3.8-flash": 65.86459760277056,
+        "core-glm-5.3": 75.89726186360005,
+        "core-gpt-5.6-sol-v2": 70.34085984176451,
+        "core-gpt-6-astra": 90.28543906710472,
+        "core-gpt-6.1-sol": 89.83340404725361,
+        "core-kimi-k3": 75.26916844119717,
+        "core-opus-5.5-cc": 88.87795919070074,
+        "core-qwen-3.8-flash-next": 64.04612167245426
+      }
+    },
+    "write-amplification-zero-32": {
+      "max_absolute_score_change": 0.041707865890600715,
+      "ordering": [
+        "core-gpt-6-astra",
+        "core-gpt-6.1-sol",
+        "core-opus-5.5-cc",
+        "core-fable-5.1-cc",
+        "core-fable-5.1",
+        "core-glm-5.3",
+        "core-kimi-k3",
+        "core-gpt-5.6-sol-v2",
+        "core-deepseek-v4-flash-0731",
+        "core-gemini-3.8-flash",
+        "core-qwen-3.8-flash-next"
+      ],
+      "totals": {
+        "core-deepseek-v4-flash-0731": 66.0330766577558,
+        "core-fable-5.1": 77.52570128037712,
+        "core-fable-5.1-cc": 80.09822993455352,
+        "core-gemini-3.8-flash": 65.59410032792071,
+        "core-glm-5.3": 75.69397612050514,
+        "core-gpt-5.6-sol-v2": 70.45763111386614,
+        "core-gpt-6-astra": 90.0809341425616,
+        "core-gpt-6.1-sol": 89.58787060443366,
+        "core-kimi-k3": 75.02984639640272,
+        "core-opus-5.5-cc": 88.62941665803382,
+        "core-qwen-3.8-flash-next": 63.781126415896125
+      }
+    },
+    "write-amplification-zero-8": {
+      "max_absolute_score_change": 0.058503609557476466,
+      "ordering": [
+        "core-gpt-6-astra",
+        "core-gpt-6.1-sol",
+        "core-opus-5.5-cc",
+        "core-fable-5.1-cc",
+        "core-fable-5.1",
+        "core-glm-5.3",
+        "core-kimi-k3",
+        "core-gpt-5.6-sol-v2",
+        "core-deepseek-v4-flash-0731",
+        "core-gemini-3.8-flash",
+        "core-qwen-3.8-flash-next"
+      ],
+      "totals": {
+        "core-deepseek-v4-flash-0731": 65.93951834245472,
+        "core-fable-5.1": 77.52314681666805,
+        "core-fable-5.1-cc": 80.09643980673853,
+        "core-gemini-3.8-flash": 65.59232578175435,
+        "core-glm-5.3": 75.60037034521318,
+        "core-gpt-5.6-sol-v2": 70.39191487096204,
+        "core-gpt-6-astra": 89.98737582726051,
+        "core-gpt-6.1-sol": 89.58404188030384,
+        "core-kimi-k3": 75.02804981032624,
+        "core-opus-5.5-cc": 88.62751354319869,
+        "core-qwen-3.8-flash-next": 63.779303833103306
+      }
+    },
+    "write-efficiency-budget-0.05": {
+      "max_absolute_score_change": 0.34641520363766176,
+      "ordering": [
+        "core-gpt-6-astra",
+        "core-gpt-6.1-sol",
+        "core-opus-5.5-cc",
+        "core-fable-5.1-cc",
+        "core-fable-5.1",
+        "core-glm-5.3",
+        "core-kimi-k3",
+        "core-gpt-5.6-sol-v2",
+        "core-deepseek-v4-flash-0731",
+        "core-gemini-3.8-flash",
+        "core-qwen-3.8-flash-next"
+      ],
+      "totals": {
+        "core-deepseek-v4-flash-0731": 65.72387708618149,
+        "core-fable-5.1": 77.26058036695943,
+        "core-fable-5.1-cc": 79.84826324297246,
+        "core-gemini-3.8-flash": 65.24701966947067,
+        "core-glm-5.3": 75.38018050681461,
+        "core-gpt-5.6-sol-v2": 70.07555436469795,
+        "core-gpt-6-astra": 89.82777970200173,
+        "core-gpt-6.1-sol": 89.30939598696904,
+        "core-kimi-k3": 74.70064915648082,
+        "core-opus-5.5-cc": 88.37201177958714,
+        "core-qwen-3.8-flash-next": 63.47541357413902
+      }
+    },
+    "write-efficiency-budget-0.15": {
+      "max_absolute_score_change": 0.34641520363766176,
+      "ordering": [
+        "core-gpt-6-astra",
+        "core-gpt-6.1-sol",
+        "core-opus-5.5-cc",
+        "core-fable-5.1-cc",
+        "core-fable-5.1",
+        "core-glm-5.3",
+        "core-kimi-k3",
+        "core-gpt-5.6-sol-v2",
+        "core-deepseek-v4-flash-0731",
+        "core-gemini-3.8-flash",
+        "core-qwen-3.8-flash-next"
+      ],
+      "totals": {
+        "core-deepseek-v4-flash-0731": 66.27210749285432,
+        "core-fable-5.1": 77.78890634601301,
+        "core-fable-5.1-cc": 80.34685403027333,
+        "core-gemini-3.8-flash": 65.939850076746,
+        "core-glm-5.3": 75.93756740272671,
+        "core-gpt-5.6-sol-v2": 70.75629213125313,
+        "core-gpt-6-astra": 90.26391984664563,
+        "core-gpt-6.1-sol": 89.86347367880093,
+        "core-kimi-k3": 75.35769619676726,
+        "core-opus-5.5-cc": 88.88539420035414,
+        "core-qwen-3.8-flash-next": 64.08547232055862
       }
     }
   },
   "sigma": {
     "C": 2.946302622288267,
     "M": 7.194231144333358,
-    "P": 10.676921578071466,
+    "P": 8.74610638012858,
     "R": 9.47244808522447,
     "S": 25.812106169920455,
     "W": 15.4143863252847
   },
-  "source_sha256": "625bb761b265af095a12805bb47552583d34bcc8dc64ecbf769b0e5dd42e2e31",
+  "source_sha256": "ad902e456cfc2f749b99eb08e5a25b12a867893fcd21811de8159c9943b135d1",
   "weighted_sigma": {
     "C": 1.0312059178008934,
     "M": 0.3597115572166679,
-    "P": 1.0676921578071468,
+    "P": 0.8746106380128581,
     "R": 1.894489617044894,
     "S": 5.162421233984091,
     "W": 1.5414386325284701

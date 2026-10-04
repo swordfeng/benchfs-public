@@ -240,34 +240,39 @@ Profile: `perf-cpu`
 
 Outcome: `candidate-failed`; classification: `diagnostic`.
 
-Performance score: **56.88** (comparison pool `hyperv-fixed-vhdx`).
+Performance score: **57.29** (comparison pool `hyperv-fixed-vhdx`). Assessed budget: 100.0%. The range allowed by missing inputs is 57.29–57.29, not a confidence interval.
 
-| Family | Cache | Primary metric | Samples | Median | MAD | CV | Candidate-failed samples |
-|---|---|---|---:|---:|---:|---:|---:|
-| buffered-synchronized-writes | cold | operations_per_second | 3 | 2,016.7 | 0.3 | 0.2% | 0 |
-| buffered-synchronized-writes | warm | operations_per_second | 3 | 1,991.3 | 2.6 | 0.2% | 0 |
-| bulk-sequential-io | cold | MiB/s | 3 | 431.0 | 5.5 | 1.4% | 0 |
-| bulk-sequential-io | warm | MiB/s | 5 | 442.7 | 5.1 | 1.4% | 0 |
-| metadata-concurrency | cold | operations_per_second | 3 | 1,758.3 | 2.1 | 0.9% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 7,538.2 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 1,270.6 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 3 | 2,147.5 | 2.8 | 0.4% | 0 |
-| metadata-concurrency | cold | operations_per_second | 2 | 1,432.8 | 3.9 | 0.3% | 0 |
-| metadata-concurrency | cold | operations_per_second | 2 | 1,423.2 | 5.1 | 0.4% | 0 |
-| metadata-concurrency | cold | operations_per_second | — | — | — | — | 0 |
-| metadata-concurrency | warm | operations_per_second | 3 | 1,752.7 | 4.4 | 0.9% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 7,552.0 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 1,272.4 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 2 | 2,139.1 | 1.3 | 0.1% | 0 |
-| metadata-concurrency | warm | operations_per_second | 2 | 1,431.3 | 10.5 | 0.7% | 0 |
-| metadata-concurrency | warm | operations_per_second | 2 | 1,417.5 | 0.3 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | — | — | — | — | 0 |
-| small-random-io | cold | iops | 3 | 3,622.1 | 1.4 | 0.3% | 0 |
-| small-random-io | cold | iops | 5 | 6,682.6 | 767.6 | 23.1% | 0 |
-| small-random-io | cold | iops | 4 | 7,227.7 | 87.2 | 2.3% | 0 |
-| small-random-io | warm | iops | 5 | 3,615.6 | 22.7 | 2.5% | 0 |
-| small-random-io | warm | iops | 5 | 4,710.6 | 867.2 | 29.5% | 0 |
-| small-random-io | warm | iops | 3 | 7,420.9 | 30.8 | 0.4% | 0 |
+Components (out of 100): File I/O 46.11; Metadata 27.64; RAM 100.00; Write efficiency 82.46.
+Peak RAM: 41.2 MiB. Metadata: 12 cells have valid rates, 2 candidate failures, 0 unmeasured.
+
+Write amplification = controller write bytes / application logical write bytes in the timed window; it is not SSD-internal amplification. This ratio does not apply to metadata operations. A dash is not zero. Candidate failures score 0; unmeasured cells retain their budget and provisionally contribute 0. * marks an unassessed share.
+
+| Workload | Cache | Samples | Rate | MAD | CV | Candidate-failed samples | Write amplification | Speed score / 100 |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Sequential I/O | cold | 3 | 431.0 MiB/s | 5.5 | 1.4% | 0 | 1.004× | 43.40 |
+| Sequential I/O | warm | 5 | 442.7 MiB/s | 5.1 | 1.4% | 0 | 1.004× | 44.27 |
+| Random I/O, single thread | cold | 3 | 3,622.1 IOPS | 1.4 | 0.3% | 0 | 2.000× | 25.02 |
+| Random I/O, single thread | warm | 5 | 3,615.6 IOPS | 22.7 | 2.5% | 0 | 2.000× | 24.93 |
+| Random I/O, multiple threads | cold | 5 | 6,682.6 IOPS | 767.6 | 23.1% | 0 | 2.000× | 24.86 |
+| Random I/O, multiple threads | warm | 5 | 4,710.6 IOPS | 867.2 | 29.5% | 0 | 2.000× | 17.66 |
+| Random I/O, shared regions | cold | 4 | 7,227.7 IOPS | 87.2 | 2.3% | 0 | 2.000× | 38.40 |
+| Random I/O, shared regions | warm | 3 | 7,420.9 IOPS | 30.8 | 0.4% | 0 | 2.000× | 38.89 |
+| Synchronized overwrite | cold | 3 | 2,016.7 ops/s | 0.3 | 0.2% | 0 | 2.000× | 73.37 |
+| Synchronized overwrite | warm | 3 | 1,991.3 ops/s | 2.6 | 0.2% | 0 | 2.000× | 73.09 |
+| Create, stat and unlink | cold | 3 | 1,758.3 ops/s | 2.1 | 0.9% | 0 | — | 14.97 |
+| Create, stat and unlink | warm | 3 | 1,752.7 ops/s | 4.4 | 0.9% | 0 | — | 15.57 |
+| Deep and large-directory lookup | cold | 1 | 7,538.2 ops/s | 0.0 | 0.0% | 0 | — | 15.74 |
+| Deep and large-directory lookup | warm | 1 | 7,552.0 ops/s | 0.0 | 0.0% | 0 | — | 16.14 |
+| Same-directory rename | cold | 1 | 1,270.6 ops/s | 0.0 | 0.0% | 0 | — | 20.72 |
+| Same-directory rename | warm | 1 | 1,272.4 ops/s | 0.0 | 0.0% | 0 | — | 20.42 |
+| Same-directory concurrent mutation | cold | 3 | 2,147.5 ops/s | 2.8 | 0.4% | 0 | — | 18.21 |
+| Same-directory concurrent mutation | warm | 2 | 2,139.1 ops/s | 1.3 | 0.1% | 0 | — | 18.64 |
+| Concurrent creation in different directories | cold | 2 | 1,432.8 ops/s | 3.9 | 0.3% | 0 | — | 15.93 |
+| Concurrent creation in different directories | warm | 2 | 1,431.3 ops/s | 10.5 | 0.7% | 0 | — | 15.75 |
+| Parallel fsync | cold | 2 | 1,423.2 ops/s | 5.1 | 0.4% | 0 | — | 100.00 |
+| Parallel fsync | warm | 2 | 1,417.5 ops/s | 0.3 | 0.0% | 0 | — | 100.00 |
+| Reclamation near full capacity | cold | 0 | — | — | — | 0 | — | 0.00 |
+| Reclamation near full capacity | warm | 0 | — | — | — | 0 | — | 0.00 |
 
 Run: `perf-v2-core-gpt-6-astra-perf-cpu-r2`
 Execution backend: `hyperv`
@@ -278,34 +283,39 @@ Profile: `perf-nvme`
 
 Outcome: `candidate-failed`; classification: `diagnostic`.
 
-Performance score: **54.13** (comparison pool `hyperv-fixed-vhdx`).
+Performance score: **53.58** (comparison pool `hyperv-fixed-vhdx`). Assessed budget: 100.0%. The range allowed by missing inputs is 53.58–53.58, not a confidence interval.
 
-| Family | Cache | Primary metric | Samples | Median | MAD | CV | Candidate-failed samples |
-|---|---|---|---:|---:|---:|---:|---:|
-| buffered-synchronized-writes | cold | operations_per_second | 3 | 1,235.2 | 1.0 | 0.5% | 0 |
-| buffered-synchronized-writes | warm | operations_per_second | 3 | 1,228.4 | 2.0 | 0.2% | 0 |
-| bulk-sequential-io | cold | MiB/s | 3 | 269.0 | 0.3 | 0.1% | 0 |
-| bulk-sequential-io | warm | MiB/s | 3 | 269.0 | 1.1 | 0.4% | 0 |
-| metadata-concurrency | cold | operations_per_second | 2 | 920.8 | 1.8 | 0.2% | 0 |
-| metadata-concurrency | cold | operations_per_second | 3 | 7,504.0 | 25.1 | 0.3% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 592.0 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 1,055.8 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 539.2 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 2 | 518.4 | 5.0 | 1.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | — | — | — | — | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 923.8 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 3 | 7,555.9 | 13.4 | 0.2% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 594.8 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 1,052.6 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 536.1 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 2 | 510.6 | 2.0 | 0.4% | 0 |
-| metadata-concurrency | warm | operations_per_second | — | — | — | — | 0 |
-| small-random-io | cold | iops | 3 | 1,969.5 | 18.7 | 0.8% | 0 |
-| small-random-io | cold | iops | 5 | 3,140.7 | 130.1 | 16.9% | 0 |
-| small-random-io | cold | iops | 5 | 3,224.7 | 12.2 | 1.3% | 0 |
-| small-random-io | warm | iops | 3 | 1,966.8 | 2.4 | 0.8% | 0 |
-| small-random-io | warm | iops | 5 | 1,925.4 | 24.7 | 7.3% | 0 |
-| small-random-io | warm | iops | 5 | 3,102.5 | 67.5 | 3.1% | 0 |
+Components (out of 100): File I/O 42.67; Metadata 16.79; RAM 100.00; Write efficiency 82.46.
+Peak RAM: 97.1 MiB. Metadata: 12 cells have valid rates, 2 candidate failures, 0 unmeasured.
+
+Write amplification = controller write bytes / application logical write bytes in the timed window; it is not SSD-internal amplification. This ratio does not apply to metadata operations. A dash is not zero. Candidate failures score 0; unmeasured cells retain their budget and provisionally contribute 0. * marks an unassessed share.
+
+| Workload | Cache | Samples | Rate | MAD | CV | Candidate-failed samples | Write amplification | Speed score / 100 |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Sequential I/O | cold | 3 | 269.0 MiB/s | 0.3 | 0.1% | 0 | 1.004× | 41.45 |
+| Sequential I/O | warm | 3 | 269.0 MiB/s | 1.1 | 0.4% | 0 | 1.004× | 41.51 |
+| Random I/O, single thread | cold | 3 | 1,969.5 IOPS | 18.7 | 0.8% | 0 | 2.000× | 23.48 |
+| Random I/O, single thread | warm | 3 | 1,966.8 IOPS | 2.4 | 0.8% | 0 | 2.000× | 23.42 |
+| Random I/O, multiple threads | cold | 5 | 3,140.7 IOPS | 130.1 | 16.9% | 0 | 2.000× | 20.64 |
+| Random I/O, multiple threads | warm | 5 | 1,925.4 IOPS | 24.7 | 7.3% | 0 | 2.000× | 11.81 |
+| Random I/O, shared regions | cold | 5 | 3,224.7 IOPS | 12.2 | 1.3% | 0 | 2.000× | 31.90 |
+| Random I/O, shared regions | warm | 5 | 3,102.5 IOPS | 67.5 | 3.1% | 0 | 2.000× | 31.22 |
+| Synchronized overwrite | cold | 3 | 1,235.2 ops/s | 1.0 | 0.5% | 0 | 2.000× | 69.23 |
+| Synchronized overwrite | warm | 3 | 1,228.4 ops/s | 2.0 | 0.2% | 0 | 2.000× | 69.12 |
+| Create, stat and unlink | cold | 2 | 920.8 ops/s | 1.8 | 0.2% | 0 | — | 0.93 |
+| Create, stat and unlink | warm | 1 | 923.8 ops/s | 0.0 | 0.0% | 0 | — | 1.66 |
+| Deep and large-directory lookup | cold | 3 | 7,504.0 ops/s | 25.1 | 0.3% | 0 | — | 15.65 |
+| Deep and large-directory lookup | warm | 3 | 7,555.9 ops/s | 13.4 | 0.2% | 0 | — | 16.15 |
+| Same-directory rename | cold | 1 | 592.0 ops/s | 0.0 | 0.0% | 0 | — | 4.13 |
+| Same-directory rename | warm | 1 | 594.8 ops/s | 0.0 | 0.0% | 0 | — | 3.91 |
+| Same-directory concurrent mutation | cold | 1 | 1,055.8 ops/s | 0.0 | 0.0% | 0 | — | 2.79 |
+| Same-directory concurrent mutation | warm | 1 | 1,052.6 ops/s | 0.0 | 0.0% | 0 | — | 3.24 |
+| Concurrent creation in different directories | cold | 1 | 539.2 ops/s | 0.0 | 0.0% | 0 | — | 0.00 |
+| Concurrent creation in different directories | warm | 1 | 536.1 ops/s | 0.0 | 0.0% | 0 | — | 0.00 |
+| Parallel fsync | cold | 2 | 518.4 ops/s | 5.0 | 1.0% | 0 | — | 88.87 |
+| Parallel fsync | warm | 2 | 510.6 ops/s | 2.0 | 0.4% | 0 | — | 88.42 |
+| Reclamation near full capacity | cold | 0 | — | — | — | 0 | — | 0.00 |
+| Reclamation near full capacity | warm | 0 | — | — | — | 0 | — | 0.00 |
 
 Run: `perf-v2-core-gpt-6-astra-perf-nvme-r2`
 Execution backend: `hyperv`

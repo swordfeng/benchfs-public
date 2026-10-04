@@ -229,34 +229,39 @@ Profile: `perf-cpu`
 
 结果：`pass`；评测分类：`diagnostic`。
 
-性能分：**47.10**（比较池 `hyperv-fixed-vhdx`）。
+性能分：**51.93**（比较池 `hyperv-fixed-vhdx`）。已判定预算 100.0%；未测项对应的得分范围 51.93–51.93，不是置信区间。
 
-| 类别 | 缓存 | 主指标 | 样本数 | 中位数 | MAD | CV | 候选失败样本 |
-|---|---|---|---:|---:|---:|---:|---:|
-| buffered-synchronized-writes | cold | operations_per_second | 3 | 2,635.4 | 2.3 | 0.3% | 0 |
-| buffered-synchronized-writes | warm | operations_per_second | 3 | 2,623.5 | 4.9 | 0.5% | 0 |
-| bulk-sequential-io | cold | MiB/s | 4 | 34.8 | 0.3 | 0.9% | 0 |
-| bulk-sequential-io | warm | MiB/s | 4 | 34.9 | 0.2 | 0.8% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 1,275.0 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 7,964.6 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 875.3 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 1,401.1 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 905.6 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 2 | 1,080.2 | 20.2 | 1.9% | 0 |
-| metadata-concurrency | cold | operations_per_second | 4 | 64.7 | 1.0 | 2.1% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 1,274.2 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 8,185.5 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 871.0 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 1,396.6 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 906.3 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 1,080.0 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 4 | 63.1 | 0.8 | 1.9% | 0 |
-| small-random-io | cold | iops | 3 | 4,574.7 | 3.0 | 0.1% | 0 |
-| small-random-io | cold | iops | 4 | 6,187.4 | 14.6 | 0.3% | 0 |
-| small-random-io | cold | iops | 3 | 2,846.8 | 15.2 | 1.8% | 0 |
-| small-random-io | warm | iops | 3 | 4,573.3 | 0.1 | 0.2% | 0 |
-| small-random-io | warm | iops | 4 | 6,174.6 | 14.0 | 0.2% | 0 |
-| small-random-io | warm | iops | 3 | 2,941.4 | 4.7 | 0.3% | 0 |
+分项（满分 100）：文件读写 33.88；元数据 23.85；RAM 100.00；写入效率 99.67。
+RAM 峰值：24.2 MiB。元数据：14 项有有效速率，0 项候选失败，0 项未测。
+
+写入放大 = 计时窗口内控制器写入字节数 ÷ 应用逻辑写入字节数；不是 SSD 内部写入放大。元数据操作不使用这个比值。“—”不代表零；候选失败得 0，未测项保留预算并暂计 0。* 表示部分预算未判定。
+
+| 负载 | 缓存 | 样本数 | 速率 | MAD | CV | 候选失败样本 | 写入放大 | 速度分 / 100 |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| 顺序读写 | cold | 4 | 34.8 MiB/s | 0.3 | 0.9% | 0 | 1.000× | 0.00 |
+| 顺序读写 | warm | 4 | 34.9 MiB/s | 0.2 | 0.8% | 0 | 1.000× | 0.00 |
+| 随机读写（单线程） | cold | 3 | 4,574.7 IOPS | 3.0 | 0.1% | 0 | 1.000× | 29.56 |
+| 随机读写（单线程） | warm | 3 | 4,573.3 IOPS | 0.1 | 0.2% | 0 | 1.000× | 29.49 |
+| 随机读写（多线程） | cold | 4 | 6,187.4 IOPS | 14.6 | 0.3% | 0 | 1.000× | 23.28 |
+| 随机读写（多线程） | warm | 4 | 6,174.6 IOPS | 14.0 | 0.2% | 0 | 1.000× | 23.23 |
+| 随机读写（共享区域） | cold | 3 | 2,846.8 IOPS | 15.2 | 1.8% | 0 | 1.000× | 20.31 |
+| 随机读写（共享区域） | warm | 3 | 2,941.4 IOPS | 4.7 | 0.3% | 0 | 1.000× | 20.93 |
+| 同步覆盖写 | cold | 3 | 2,635.4 ops/s | 2.3 | 0.3% | 0 | 1.031× | 78.68 |
+| 同步覆盖写 | warm | 3 | 2,623.5 ops/s | 4.9 | 0.5% | 0 | 1.031× | 78.56 |
+| 创建、查询并删除 | cold | 1 | 1,275.0 ops/s | 0.0 | 0.0% | 0 | — | 7.99 |
+| 创建、查询并删除 | warm | 1 | 1,274.2 ops/s | 0.0 | 0.0% | 0 | — | 8.64 |
+| 深层与大目录查找 | cold | 1 | 7,964.6 ops/s | 0.0 | 0.0% | 0 | — | 16.94 |
+| 深层与大目录查找 | warm | 1 | 8,185.5 ops/s | 0.0 | 0.0% | 0 | — | 17.89 |
+| 目录内重命名 | cold | 1 | 875.3 ops/s | 0.0 | 0.0% | 0 | — | 12.63 |
+| 目录内重命名 | warm | 1 | 871.0 ops/s | 0.0 | 0.0% | 0 | — | 12.19 |
+| 同目录并发修改 | cold | 1 | 1,401.1 ops/s | 0.0 | 0.0% | 0 | — | 8.93 |
+| 同目录并发修改 | warm | 1 | 1,396.6 ops/s | 0.0 | 0.0% | 0 | — | 9.38 |
+| 跨目录并发创建 | cold | 1 | 905.6 ops/s | 0.0 | 0.0% | 0 | — | 5.96 |
+| 跨目录并发创建 | warm | 1 | 906.3 ops/s | 0.0 | 0.0% | 0 | — | 5.83 |
+| 并发同步落盘 | cold | 2 | 1,080.2 ops/s | 20.2 | 1.9% | 0 | — | 100.00 |
+| 并发同步落盘 | warm | 1 | 1,080.0 ops/s | 0.0 | 0.0% | 0 | — | 100.00 |
+| 接近满盘时回收空间 | cold | 4 | 64.7 ops/s | 1.0 | 2.1% | 0 | — | 11.55 |
+| 接近满盘时回收空间 | warm | 4 | 63.1 ops/s | 0.8 | 1.9% | 0 | — | 9.88 |
 
 Run: `perf-v2-core-gemini-3-8-flash-perf-cpu-r1`
 执行后端: `hyperv`
@@ -267,34 +272,39 @@ Profile: `perf-nvme`
 
 结果：`pass`；评测分类：`diagnostic`。
 
-性能分：**46.02**（比较池 `hyperv-fixed-vhdx`）。
+性能分：**50.55**（比较池 `hyperv-fixed-vhdx`）。已判定预算 100.0%；未测项对应的得分范围 50.55–50.55，不是置信区间。
 
-| 类别 | 缓存 | 主指标 | 样本数 | 中位数 | MAD | CV | 候选失败样本 |
-|---|---|---|---:|---:|---:|---:|---:|
-| buffered-synchronized-writes | cold | operations_per_second | 2 | 1,804.8 | 5.1 | 0.3% | 0 |
-| buffered-synchronized-writes | warm | operations_per_second | 2 | 1,789.3 | 42.1 | 2.4% | 0 |
-| bulk-sequential-io | cold | MiB/s | 2 | 15.7 | 0.1 | 0.8% | 0 |
-| bulk-sequential-io | warm | MiB/s | 2 | 15.7 | 0.0 | 0.2% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 565.0 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 6,454.8 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 382.3 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 563.9 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 354.3 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 1 | 354.1 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | cold | operations_per_second | 3 | 28.9 | 0.1 | 0.8% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 565.4 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 260,338.7 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 377.5 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 565.1 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 356.5 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 1 | 358.6 | 0.0 | 0.0% | 0 |
-| metadata-concurrency | warm | operations_per_second | 3 | 28.4 | 0.0 | 1.4% | 0 |
-| small-random-io | cold | iops | 2 | 2,653.1 | 25.8 | 1.0% | 0 |
-| small-random-io | cold | iops | 2 | 3,309.0 | 7.9 | 0.2% | 0 |
-| small-random-io | cold | iops | 2 | 1,609.5 | 8.0 | 0.5% | 0 |
-| small-random-io | warm | iops | 2 | 2,666.8 | 9.4 | 0.4% | 0 |
-| small-random-io | warm | iops | 2 | 3,293.4 | 1.2 | 0.0% | 0 |
-| small-random-io | warm | iops | 2 | 1,607.3 | 10.4 | 0.6% | 0 |
+分项（满分 100）：文件读写 32.53；元数据 20.00；RAM 100.00；写入效率 99.67。
+RAM 峰值：19.5 MiB。元数据：14 项有有效速率，0 项候选失败，0 项未测。
+
+写入放大 = 计时窗口内控制器写入字节数 ÷ 应用逻辑写入字节数；不是 SSD 内部写入放大。元数据操作不使用这个比值。“—”不代表零；候选失败得 0，未测项保留预算并暂计 0。* 表示部分预算未判定。
+
+| 负载 | 缓存 | 样本数 | 速率 | MAD | CV | 候选失败样本 | 写入放大 | 速度分 / 100 |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| 顺序读写 | cold | 2 | 15.7 MiB/s | 0.1 | 0.8% | 0 | 1.000× | 0.00 |
+| 顺序读写 | warm | 2 | 15.7 MiB/s | 0.0 | 0.2% | 0 | 1.000× | 0.00 |
+| 随机读写（单线程） | cold | 2 | 2,653.1 IOPS | 25.8 | 1.0% | 0 | 1.000× | 28.59 |
+| 随机读写（单线程） | warm | 2 | 2,666.8 IOPS | 9.4 | 0.4% | 0 | 1.000× | 28.62 |
+| 随机读写（多线程） | cold | 2 | 3,309.0 IOPS | 7.9 | 0.2% | 0 | 1.000× | 21.58 |
+| 随机读写（多线程） | warm | 2 | 3,293.4 IOPS | 1.2 | 0.0% | 0 | 1.000× | 21.49 |
+| 随机读写（共享区域） | cold | 2 | 1,609.5 IOPS | 8.0 | 0.5% | 0 | 1.000× | 20.01 |
+| 随机读写（共享区域） | warm | 2 | 1,607.3 IOPS | 10.4 | 0.6% | 0 | 1.000× | 19.97 |
+| 同步覆盖写 | cold | 2 | 1,804.8 ops/s | 5.1 | 0.3% | 0 | 1.031× | 75.60 |
+| 同步覆盖写 | warm | 2 | 1,789.3 ops/s | 42.1 | 2.4% | 0 | 1.031× | 75.44 |
+| 创建、查询并删除 | cold | 1 | 565.0 ops/s | 0.0 | 0.0% | 0 | — | 0.00 |
+| 创建、查询并删除 | warm | 1 | 565.4 ops/s | 0.0 | 0.0% | 0 | — | 0.00 |
+| 深层与大目录查找 | cold | 1 | 6,454.8 ops/s | 0.0 | 0.0% | 0 | — | 12.38 |
+| 深层与大目录查找 | warm | 1 | 260,338.7 ops/s | 0.0 | 0.0% | 0 | — | 93.01 |
+| 目录内重命名 | cold | 1 | 382.3 ops/s | 0.0 | 0.0% | 0 | — | 0.00 |
+| 目录内重命名 | warm | 1 | 377.5 ops/s | 0.0 | 0.0% | 0 | — | 0.00 |
+| 同目录并发修改 | cold | 1 | 563.9 ops/s | 0.0 | 0.0% | 0 | — | 0.00 |
+| 同目录并发修改 | warm | 1 | 565.1 ops/s | 0.0 | 0.0% | 0 | — | 0.00 |
+| 跨目录并发创建 | cold | 1 | 354.3 ops/s | 0.0 | 0.0% | 0 | — | 0.00 |
+| 跨目录并发创建 | warm | 1 | 356.5 ops/s | 0.0 | 0.0% | 0 | — | 0.00 |
+| 并发同步落盘 | cold | 1 | 354.1 ops/s | 0.0 | 0.0% | 0 | — | 80.59 |
+| 并发同步落盘 | warm | 1 | 358.6 ops/s | 0.0 | 0.0% | 0 | — | 80.75 |
+| 接近满盘时回收空间 | cold | 3 | 28.9 ops/s | 0.1 | 0.8% | 0 | — | 0.00 |
+| 接近满盘时回收空间 | warm | 3 | 28.4 ops/s | 0.0 | 1.4% | 0 | — | 0.00 |
 
 Run: `perf-v2-core-gemini-3-8-flash-perf-nvme-r5`
 执行后端: `hyperv`

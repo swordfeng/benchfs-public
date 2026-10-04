@@ -15,23 +15,23 @@ A filesystem's components have to work together. A local change can affect anoth
 These results cover the Core filesystem task: file operations, on-disk format, robustness, crash recovery, and real applications. Entries are ordered by overall score, highest first.
 
 <!-- core-results:begin -->
-![Model scores, highest first](assets/core-results.9fd25b0e33294a32.svg)
+![Model scores, highest first](assets/core-results.7582c984a8f620b1.svg)
 
 Dimension scores are out of 100. Under the existing weights, measured components cover up to **100 points** of the overall score; missing components contribute zero per implementation. Click a model for its report.
 
 | Model | Coding agent | Total / 100 | Correctness | Robustness | Code review | Applications | Performance | Maintainability | Active time | Output tokens | Est. cost (USD) |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **90.05** | 98.40 | 100.00 | 90.91 | 75.00 | 55.51 | 87.63 | 3:52:51 | 199,142 | $77.86 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) | Pi | **89.23** | 98.47 | 100.00 | 86.96 | 75.00 | 57.04 | 83.32 | 7:14:12 | 184,515 | $12.87 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **88.31** | 99.84 | 100.00 | 62.50 | 100.00 | 60.58 | 96.17 | 3:07:09 | 472,273 | $39.28 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **79.85** | 98.02 | 92.44 | 44.84 | 75.00 | 62.33 | 87.02 | 2:59:12 | 340,562 | $40.69 |
-| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **77.28** | 96.74 | 88.50 | 38.31 | 75.00 | 60.15 | 90.76 | 5:16:10 | 298,429 | $72.41 |
-| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **75.23** | 96.89 | 99.72* | 27.47 | 75.00 | 42.64 | 82.30 | 7:32:19 | 541,837 | $62.99 |
-| [Kimi K3](results/core/kimi-k3-high.md) | Pi | **74.46** | 94.51 | 97.61* | 26.88 | 75.00 | 47.45 | 84.78 | 6:52:08 | 478,897 | $90.50 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | **69.38** | 96.48 | 91.17 | 31.15 | 50.00 | 23.60 | 75.69 | 2:42:57 | 87,220 | $7.81 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **65.74** | 91.32 | 85.83* | 15.95 | 50.00 | 44.98 | 78.42 | ≥12:19:49 | 518,078 | $3.26 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **65.13** | 92.11 | 81.28* | 17.86 | 50.00 | 46.56 | 68.11 | 3:05:17 | 267,908 | $31.62 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | **63.45** | 91.06 | 68.72* | 16.39 | 50.00 | 53.71 | 83.67 | ≥12:00:54 | 734,568 | $3.29 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **90.05** | 98.40 | 100.00 | 90.91 | 75.00 | 55.44 | 87.63 | 3:52:51 | 199,142 | $77.86 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) | Pi | **89.59** | 98.47 | 100.00 | 86.96 | 75.00 | 60.64 | 83.32 | 7:14:12 | 184,515 | $12.87 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **88.63** | 99.84 | 100.00 | 62.50 | 100.00 | 63.78 | 96.17 | 3:07:09 | 472,273 | $39.28 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **80.10** | 98.02 | 92.44 | 44.84 | 75.00 | 64.83 | 87.02 | 2:59:12 | 340,562 | $40.69 |
+| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **77.52** | 96.74 | 88.50 | 38.31 | 75.00 | 62.63 | 90.76 | 5:16:10 | 298,429 | $72.41 |
+| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **75.66** | 96.89 | 99.72* | 27.47 | 75.00 | 46.94 | 82.30 | 7:32:19 | 541,837 | $62.99 |
+| [Kimi K3](results/core/kimi-k3-high.md) | Pi | **75.03** | 94.51 | 97.61* | 26.88 | 75.00 | 53.15 | 84.78 | 6:52:08 | 478,897 | $90.50 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | **70.42** | 96.48 | 91.17 | 31.15 | 50.00 | 33.99* | 75.69 | 2:42:57 | 87,220 | $7.81 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **66.00** | 91.32 | 85.83* | 15.95 | 50.00 | 47.59 | 78.42 | ≥12:19:49 | 518,078 | $3.26 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **65.59** | 92.11 | 81.28* | 17.86 | 50.00 | 51.24 | 68.11 | 3:05:17 | 267,908 | $31.62 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | **63.78** | 91.06 | 68.72* | 16.39 | 50.00 | 57.02 | 83.67 | ≥12:00:54 | 734,568 | $3.29 |
 
 Each row represents one development run. Agent configurations are described below, with separate entries for different agents. See [scoring](docs/scoring.md) for the formula.
 
@@ -44,7 +44,7 @@ Reference is a calibration implementation. Its scores and report are listed belo
 
 | Implementation | Total / 100 | Correctness | Robustness | Code review | Applications | Performance | Maintainability |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [Reference](results/eval-only/reference-calibration.md) | 59.30 | 74.92 | 98.56 | — | 100.00 | — | 67.39 |
+| [Reference](results/eval-only/reference-calibration.md) | 74.15 | 99.18 | 100.00 | — | 100.00 | 60.62 | 67.39 |
 
 </details>
 
@@ -205,45 +205,45 @@ Finally, real applications use the filesystem. These tests check whether applica
 
 ### Performance
 
-Performance tests run fio and metadata workloads on a memory-backed device (`perf-cpu`) and a disk device (`perf-nvme`), each from a cold and a warm cache. Each workload's result is the median of its counted samples, and each column combines them by geometric mean: sequential read and write use 1 MiB requests, random read and write use 4 KiB requests in three access patterns, and metadata covers seven workloads. Reads and writes in each fio workload run concurrently, so a column is not a single-direction peak. The speed index is the geometric mean of the five columns; ratios between models do not depend on the units. The score uses the v3 logarithmic scale toward the fixed ext4/XFS/Btrfs production target, with 80% for speed and 20% for RAM; synchronized overwrites are not shown but count toward it. Write amplification is measured but has no separate score. Both device scenarios use this common target, rather than a paired same-device reference experiment. A dash marks a value with an unmeasured or failed workload; scores from different comparison pools are not comparable.
+Performance tests run fio and metadata workloads on a memory-backed device (`perf-cpu`) and a disk device (`perf-nvme`), each from a cold and a warm cache. Each workload's result is the median of its counted samples, and each column combines them by geometric mean: sequential read and write use 1 MiB requests, random read and write use 4 KiB requests in three access patterns, and metadata covers seven workloads. Reads and writes in each fio workload run concurrently, so a column is not a single-direction peak. The speed index is the geometric mean of the five columns; ratios between models do not depend on the units. The score uses the v3 logarithmic scale toward the fixed ext4/XFS/Btrfs production target, with 70% for speed, 20% for RAM and 10% for write efficiency; synchronized overwrites are not shown but count toward it. Speed splits into 75% file I/O and 25% metadata. Metadata scores retain each measured cell's fixed share; coverage is the assessed budget, including candidate failures. Write efficiency scores amplification; ratios are in model details. * marks an unassessed share. Both device scenarios use this common target, rather than a paired same-device reference experiment. A dash marks a value with an unmeasured or failed workload; scores from different comparison pools are not comparable.
 
 <!-- profile-perf-cpu:begin -->
 **CPU performance** (`perf-cpu`) · comparison pool `hyperv-fixed-vhdx`
 
-| Model / Agent | Seq read (MiB/s) | Seq write (MiB/s) | Random read (IOPS) | Random write (IOPS) | Metadata (ops/s) | Speed index | Score / 100 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 218.5 | 218.3 | 3,564 | 130 | — | — | 56.88 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 163.5 | 163.3 | 4,844 | 108 | 2,068 | 492.56 | 57.17 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 191.0 | 190.9 | 4,556 | 3,776 | 2,574 | 1,100.61 | 61.96 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 316.0 | 316.4 | 5,493 | 3,343 | 2,593 | 1,366.30 | 64.06 |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 202.9 | 202.7 | 5,302 | 445 | — | — | 60.37 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 30.8 | 30.2 | 2,002 | 289 | 1,121 | 227.06 | 43.58 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 39.1 | 37.9 | 2,586 | 1,061 | — | — | 47.59 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 14.4 | 14.3 | 1,013 | 39 | — | — | 26.68 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 17.4 | 17.4 | 3,617 | 151 | 731 | 164.40 | 46.18 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 17.5 | 17.4 | 2,208 | 1,891 | 966 | 261.63 | 47.10 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 122.2 | 122.2 | 2,589 | 1,894 | — | — | 53.90 |
+| Model / Agent | Seq read (MiB/s) | Seq write (MiB/s) | Random read (IOPS) | Random write (IOPS) | Metadata (ops/s) | Speed index | Metadata score (coverage) | Write efficiency score | Score / 100 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 218.5 | 218.3 | 3,564 | 130 | — | — | 27.64 (100%) | 82.46 | 57.29 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 163.5 | 163.3 | 4,844 | 108 | 2,068 | 492.56 | 38.54 (100%) | 99.23 | 61.06 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 191.0 | 190.9 | 4,556 | 3,776 | 2,574 | 1,100.61 | 42.54 (100%) | 99.62 | 64.94 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 316.0 | 316.4 | 5,493 | 3,343 | 2,593 | 1,366.30 | 42.21 (100%) | 99.67 | 66.27 |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 202.9 | 202.7 | 5,302 | 445 | — | — | 36.80 (100%) | 99.55 | 62.89 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 30.8 | 30.2 | 2,002 | 289 | 1,121 | 227.06 | 25.42 (100%) | 82.44 | 48.16 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 39.1 | 37.9 | 2,586 | 1,061 | — | — | 32.17 (100%) | 99.66 | 53.30 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 14.4 | 14.3 | 1,013 | 39 | — | — | 29.60 (100%) | 85.59 | 38.12 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 17.4 | 17.4 | 3,617 | 151 | 731 | 164.40 | 18.51 (100%) | 82.46 | 48.67 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 17.5 | 17.4 | 2,208 | 1,891 | 966 | 261.63 | 23.85 (100%) | 99.67 | 51.93 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 122.2 | 122.2 | 2,589 | 1,894 | — | — | 31.96 (100%) | 99.66 | 57.80 |
 <!-- profile-perf-cpu:end -->
 
 <!-- profile-perf-nvme:begin -->
 **NVMe performance** (`perf-nvme`) · comparison pool `hyperv-fixed-vhdx`
 
-| Model / Agent | Seq read (MiB/s) | Seq write (MiB/s) | Random read (IOPS) | Random write (IOPS) | Metadata (ops/s) | Speed index | Score / 100 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 134.5 | 134.5 | 1,348 | 71 | — | — | 54.13 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 136.0 | 136.1 | 2,107 | 78 | 1,652 | 347.37 | 56.91 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 137.7 | 137.8 | 1,880 | 1,639 | 2,033 | 653.07 | 59.21 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 162.8 | 162.8 | 3,007 | 1,892 | 1,998 | 786.63 | 60.61 |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 165.6 | 165.7 | 2,825 | 141 | — | — | 59.93 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 14.6 | 14.2 | 1,185 | 213 | 688 | 129.04 | 41.70 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 19.3 | 18.5 | 1,089 | 958 | — | — | 47.30 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 9.7 | 8.5 | 157 | 34 | — | — | 20.51 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 7.9 | 7.8 | 470 | 345 | 451 | 85.04 | 43.78 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 7.9 | 7.8 | 1,200 | 1,096 | 563 | 135.55 | 46.02 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 88.8 | 88.9 | 1,315 | 1,030 | — | — | 53.52 |
-| *ext4 (kernel reference)* | 929.7 | 1,791.1 | 131,472 | 128,606 | 36,877 | 15,968.56 | — |
-| *XFS (kernel reference)* | 944.2 | 1,773.1 | 133,655 | 131,359 | 41,531 | 16,493.88 | — |
-| *Btrfs (kernel reference)* | 3,146.4 | 111.7 | 105,942 | 3,892 | 21,106 | 4,978.23 | — |
+| Model / Agent | Seq read (MiB/s) | Seq write (MiB/s) | Random read (IOPS) | Random write (IOPS) | Metadata (ops/s) | Speed index | Metadata score (coverage) | Write efficiency score | Score / 100 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 134.5 | 134.5 | 1,348 | 71 | — | — | 16.79 (100%) | 82.46 | 53.58 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 136.0 | 136.1 | 2,107 | 78 | 1,652 | 347.37 | 34.66 (100%) | 99.33 | 60.22 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 137.7 | 137.8 | 1,880 | 1,639 | 2,033 | 653.07 | 39.51 (100%) | 99.67 | 62.61 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 162.8 | 162.8 | 3,007 | 1,892 | 1,998 | 786.63 | 38.72 (100%) | 99.66 | 63.39 |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 165.6 | 165.7 | 2,825 | 141 | — | — | 35.56 (100%) | 99.50 | 62.38 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 14.6 | 14.2 | 1,185 | 213 | 688 | 129.04 | 18.50 (100%) | 82.46 | 45.72 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 19.3 | 18.5 | 1,089 | 958 | — | — | 29.26 (100%) | 99.66 | 53.00 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 9.7 | 8.5 | 157 | 34 | — | — | 16.75 (85%) | 70.00 | 29.86* |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 7.9 | 7.8 | 470 | 345 | 451 | 85.04 | 15.20 (100%) | 82.46 | 46.52 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 7.9 | 7.8 | 1,200 | 1,096 | 563 | 135.55 | 20.00 (100%) | 99.67 | 50.55 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 88.8 | 88.9 | 1,315 | 1,030 | — | — | 24.43 (100%) | 99.66 | 56.24 |
+| *ext4 (kernel reference)* | 929.7 | 1,791.1 | 131,472 | 128,606 | 36,877 | 15,968.56 | — | — | — |
+| *XFS (kernel reference)* | 944.2 | 1,773.1 | 133,655 | 131,359 | 41,531 | 16,493.88 | — | — | — |
+| *Btrfs (kernel reference)* | 3,146.4 | 111.7 | 105,942 | 3,892 | 21,106 | 4,978.23 | — | — | — |
 
 Kernel reference rows: ext4/XFS/Btrfs mounted directly with default options on the same host drive and 64 GiB VHDX, without FUSE or the NBD controller; one repetition per cell with 120 s fio windows (candidates: 10 s windows, median of protocol-v2 adaptive samples); `near-enospc-reclaim` uses the 64 GiB geometry. They are diagnostic references: unscored and unranked.
 

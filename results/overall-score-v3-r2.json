@@ -1,0 +1,1380 @@
+{
+  "calibration_sha256": "1ad4f68392c5b2e5fb662c37c5450743ab1a76896f173adafef7eae2258c50af",
+  "derivation_sha256": "cc83c53e379b92852fdb6962276f5727a78485795ce4b36cbcf4661eed744470",
+  "previous_revision": "2026-10-04-r1",
+  "revision": "2026-10-04-r2",
+  "rule": "core-overall-v3-zero-fill",
+  "schema_version": 1,
+  "scorer_sha256": "3f9dc0ce7c18b0e556cf8e5e4e8a8342fc0c99413a01a97770b676ac6588cd50",
+  "source_sha256": "625bb761b265af095a12805bb47552583d34bcc8dc64ecbf769b0e5dd42e2e31",
+  "submissions": {
+    "core-deepseek-v4-flash-0731": {
+      "previous_score": {
+        "dimensions": {
+          "C": 89.72033154729056,
+          "M": 79.85158305568623,
+          "P": 39.866399623418424,
+          "R": 82.47685185185185,
+          "S": 15.94896331738437,
+          "W": 66.66666666666666
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 79.85158305568623,
+          "S": 15.94896331738437,
+          "canonical-format": 74.85833768341509,
+          "crash-core": 95.37037037037037,
+          "perf-cpu": 39.633818631377196,
+          "perf-nvme": 40.09898061545965,
+          "pjdfstest-core": 100.0,
+          "real-world": 66.66666666666666,
+          "robustness": 69.58333333333333,
+          "spec-tests": 100.0,
+          "xfstests-core": 84.02298850574714
+        },
+        "rule": "core-overall-v2-zero-fill",
+        "status": "provisional",
+        "total": 79.75541260341429,
+        "utility": {
+          "C": 96.4021160415517,
+          "M": 92.92579152784312,
+          "P": 67.84635956693118,
+          "R": 93.86689814814815,
+          "S": 35.885167464114836,
+          "W": 86.33333333333333
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      },
+      "score": {
+        "crash_capabilities": {
+          "components": {
+            "clean_lifecycle": 95.37037037037037,
+            "content": 98.61111111111111,
+            "structure": 95.37037037037037
+          },
+          "counts": {
+            "clean_lifecycle": {
+              "fail": 10,
+              "pass": 206,
+              "unknown": 0
+            },
+            "content": {
+              "fail": 1,
+              "pass": 213,
+              "unknown": 2
+            },
+            "structure": {
+              "fail": 7,
+              "pass": 206,
+              "unknown": 3
+            }
+          },
+          "coverage": {
+            "first_lifecycle_unobserved": 0,
+            "safe_rejection": 64,
+            "second_lifecycle_blocked": 10,
+            "total": 216,
+            "two_lifecycles_observed": 142
+          },
+          "end_to_end": 95.37037037037037,
+          "rule": "crash-observed-capabilities-v1",
+          "score": 96.66666666666666
+        },
+        "dimensions": {
+          "C": 91.31803269671583,
+          "M": 78.42418183499879,
+          "P": 44.982393396342495,
+          "R": 85.83333333333333,
+          "S": 15.94896331738437,
+          "W": 50.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 78.42418183499879,
+          "S": 15.94896331738437,
+          "canonical-format": 74.85833768341509,
+          "crash-core": 96.66666666666666,
+          "perf-cpu": 46.17980200735791,
+          "perf-nvme": 43.78498478532708,
+          "pjdfstest-core": 100.0,
+          "real-world": 50.0,
+          "robustness": 69.58333333333333,
+          "spec-tests": 100.0,
+          "xfstests-core": 84.02298850574714
+        },
+        "rule": "core-overall-v3-zero-fill",
+        "status": "provisional",
+        "total": 65.73721920537827,
+        "utility": {
+          "C": 91.31803269671583,
+          "M": 78.42418183499879,
+          "P": 44.982393396342495,
+          "R": 85.83333333333333,
+          "S": 15.94896331738437,
+          "W": 50.0
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": [
+          "R"
+        ]
+      }
+    },
+    "core-fable-5.1": {
+      "previous_score": {
+        "dimensions": {
+          "C": 95.51622547312202,
+          "M": 91.37269841269841,
+          "P": 47.82102527789603,
+          "R": 63.425925925925924,
+          "S": 38.31417624521073,
+          "W": 83.33333333333334
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 91.37269841269841,
+          "S": 38.31417624521073,
+          "canonical-format": 95.45454545454544,
+          "crash-core": 36.57407407407407,
+          "perf-cpu": 44.78212435537047,
+          "perf-nvme": 50.859926200421576,
+          "pjdfstest-core": 99.25925925925925,
+          "real-world": 83.33333333333334,
+          "robustness": 90.27777777777779,
+          "spec-tests": 100.0,
+          "xfstests-core": 87.35109717868337
+        },
+        "rule": "core-overall-v2-zero-fill",
+        "status": "provisional",
+        "total": 86.2578565341796,
+        "utility": {
+          "C": 98.43067891559271,
+          "M": 96.98044444444444,
+          "P": 73.86576895842202,
+          "R": 84.71296296296296,
+          "S": 66.06130268199234,
+          "W": 94.16666666666667
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      },
+      "score": {
+        "crash_capabilities": {
+          "components": {
+            "clean_lifecycle": 36.574074074074076,
+            "content": 100.0,
+            "structure": 100.0
+          },
+          "counts": {
+            "clean_lifecycle": {
+              "fail": 137,
+              "pass": 79,
+              "unknown": 0
+            },
+            "content": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            },
+            "structure": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            }
+          },
+          "coverage": {
+            "first_lifecycle_unobserved": 0,
+            "safe_rejection": 66,
+            "second_lifecycle_blocked": 137,
+            "total": 216,
+            "two_lifecycles_observed": 13
+          },
+          "end_to_end": 36.574074074074076,
+          "rule": "crash-observed-capabilities-v1",
+          "score": 87.31481481481481
+        },
+        "dimensions": {
+          "C": 96.74407871821664,
+          "M": 90.7615873015873,
+          "P": 60.15311570033984,
+          "R": 88.5,
+          "S": 38.31417624521073,
+          "W": 75.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 90.7615873015873,
+          "S": 38.31417624521073,
+          "canonical-format": 95.45454545454544,
+          "crash-core": 87.31481481481481,
+          "perf-cpu": 60.37258183432894,
+          "perf-nvme": 59.93364956635073,
+          "pjdfstest-core": 99.25925925925925,
+          "real-world": 75.0,
+          "robustness": 90.27777777777779,
+          "spec-tests": 100.0,
+          "xfstests-core": 87.35109717868337
+        },
+        "rule": "core-overall-v3-zero-fill",
+        "status": "provisional",
+        "total": 77.27665373553133,
+        "utility": {
+          "C": 96.74407871821664,
+          "M": 90.7615873015873,
+          "P": 60.15311570033984,
+          "R": 88.5,
+          "S": 38.31417624521073,
+          "W": 75.0
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      }
+    },
+    "core-fable-5.1-cc": {
+      "previous_score": {
+        "dimensions": {
+          "C": 97.45297805642632,
+          "M": 84.38882258850337,
+          "P": 49.89845862280825,
+          "R": 68.51851851851852,
+          "S": 44.84304932735426,
+          "W": 83.33333333333334
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 84.38882258850337,
+          "S": 44.84304932735426,
+          "canonical-format": 95.45454545454544,
+          "crash-core": 37.03703703703704,
+          "perf-cpu": 47.68900236608711,
+          "perf-nvme": 52.10791487952938,
+          "pjdfstest-core": 100.0,
+          "real-world": 83.33333333333334,
+          "robustness": 100.0,
+          "spec-tests": 100.0,
+          "xfstests-core": 94.35736677115986
+        },
+        "rule": "core-overall-v2-zero-fill",
+        "status": "provisional",
+        "total": 88.15215452154332,
+        "utility": {
+          "C": 99.1085423197492,
+          "M": 94.53608790597617,
+          "P": 75.4238439671062,
+          "R": 87.25925925925927,
+          "S": 71.6322869955157,
+          "W": 94.16666666666667
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      },
+      "score": {
+        "crash_capabilities": {
+          "components": {
+            "clean_lifecycle": 37.03703703703704,
+            "content": 100.0,
+            "structure": 100.0
+          },
+          "counts": {
+            "clean_lifecycle": {
+              "fail": 136,
+              "pass": 80,
+              "unknown": 0
+            },
+            "content": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            },
+            "structure": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            }
+          },
+          "coverage": {
+            "first_lifecycle_unobserved": 0,
+            "safe_rejection": 68,
+            "second_lifecycle_blocked": 136,
+            "total": 216,
+            "two_lifecycles_observed": 12
+          },
+          "end_to_end": 37.03703703703704,
+          "rule": "crash-observed-capabilities-v1",
+          "score": 87.4074074074074
+        },
+        "dimensions": {
+          "C": 98.01724137931033,
+          "M": 87.02025655670737,
+          "P": 62.334391929966415,
+          "R": 92.44444444444444,
+          "S": 44.84304932735426,
+          "W": 75.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 87.02025655670737,
+          "S": 44.84304932735426,
+          "canonical-format": 95.45454545454544,
+          "crash-core": 87.4074074074074,
+          "perf-cpu": 64.05931279824932,
+          "perf-nvme": 60.6094710616835,
+          "pjdfstest-core": 100.0,
+          "real-world": 75.0,
+          "robustness": 100.0,
+          "spec-tests": 100.0,
+          "xfstests-core": 94.35736677115986
+        },
+        "rule": "core-overall-v3-zero-fill",
+        "status": "provisional",
+        "total": 79.84798525795036,
+        "utility": {
+          "C": 98.01724137931033,
+          "M": 87.02025655670737,
+          "P": 62.334391929966415,
+          "R": 92.44444444444444,
+          "S": 44.84304932735426,
+          "W": 75.0
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      }
+    },
+    "core-gemini-3.8-flash": {
+      "previous_score": {
+        "dimensions": {
+          "C": 90.56745489084419,
+          "M": 72.89373649194289,
+          "P": 39.51964883073816,
+          "R": 78.58796296296298,
+          "S": 17.857142857142858,
+          "W": 50.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 72.89373649194289,
+          "S": 17.857142857142858,
+          "canonical-format": 77.65644443276022,
+          "crash-core": 67.59259259259261,
+          "perf-cpu": 38.83305663817105,
+          "perf-nvme": 40.20624102330527,
+          "pjdfstest-core": 100.0,
+          "real-world": 50.0,
+          "robustness": 89.58333333333334,
+          "spec-tests": 100.0,
+          "xfstests-core": 84.6133751306165
+        },
+        "rule": "core-overall-v2-zero-fill",
+        "status": "provisional",
+        "total": 79.10612683397245,
+        "utility": {
+          "C": 96.69860921179547,
+          "M": 89.44686824597144,
+          "P": 67.44759615534889,
+          "R": 92.2939814814815,
+          "S": 40.17857142857143,
+          "W": 75.5
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      },
+      "score": {
+        "crash_capabilities": {
+          "components": {
+            "clean_lifecycle": 67.59259259259258,
+            "content": 87.96296296296296,
+            "structure": 67.59259259259258
+          },
+          "counts": {
+            "clean_lifecycle": {
+              "fail": 70,
+              "pass": 146,
+              "unknown": 0
+            },
+            "content": {
+              "fail": 0,
+              "pass": 190,
+              "unknown": 26
+            },
+            "structure": {
+              "fail": 44,
+              "pass": 146,
+              "unknown": 26
+            }
+          },
+          "coverage": {
+            "first_lifecycle_unobserved": 0,
+            "safe_rejection": 23,
+            "second_lifecycle_blocked": 70,
+            "total": 216,
+            "two_lifecycles_observed": 123
+          },
+          "end_to_end": 67.59259259259258,
+          "rule": "crash-observed-capabilities-v1",
+          "score": 75.74074074074073
+        },
+        "dimensions": {
+          "C": 92.10611737778254,
+          "M": 68.11481414645952,
+          "P": 46.56304732822317,
+          "R": 81.27777777777777,
+          "S": 17.857142857142858,
+          "W": 50.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 68.11481414645952,
+          "S": 17.857142857142858,
+          "canonical-format": 77.65644443276022,
+          "crash-core": 75.74074074074073,
+          "perf-cpu": 47.102646088519066,
+          "perf-nvme": 46.023448567927275,
+          "pjdfstest-core": 100.0,
+          "real-world": 50.0,
+          "robustness": 89.58333333333334,
+          "spec-tests": 100.0,
+          "xfstests-core": 84.6133751306165
+        },
+        "rule": "core-overall-v3-zero-fill",
+        "status": "provisional",
+        "total": 65.12617064935331,
+        "utility": {
+          "C": 92.10611737778254,
+          "M": 68.11481414645952,
+          "P": 46.56304732822317,
+          "R": 81.27777777777777,
+          "S": 17.857142857142858,
+          "W": 50.0
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": [
+          "R"
+        ]
+      }
+    },
+    "core-glm-5.3": {
+      "previous_score": {
+        "dimensions": {
+          "C": 95.80502028397567,
+          "M": 82.29773164167628,
+          "P": 38.230491011284215,
+          "R": 99.76851851851853,
+          "S": 27.47252747252747,
+          "W": 83.33333333333334
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 82.29773164167628,
+          "S": 27.47252747252747,
+          "canonical-format": 94.05080213903744,
+          "crash-core": 99.53703703703705,
+          "perf-cpu": 36.88662758733334,
+          "perf-nvme": 39.57435443523509,
+          "pjdfstest-core": 100.0,
+          "real-world": 83.33333333333334,
+          "robustness": 100.0,
+          "spec-tests": 100.0,
+          "xfstests-core": 89.1692789968652
+        },
+        "rule": "core-overall-v2-zero-fill",
+        "status": "provisional",
+        "total": 85.89197603645832,
+        "utility": {
+          "C": 98.53175709939148,
+          "M": 93.8042060745867,
+          "P": 65.96506466297684,
+          "R": 99.91898148148148,
+          "S": 53.59340659340659,
+          "W": 94.16666666666667
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      },
+      "score": {
+        "crash_capabilities": {
+          "components": {
+            "clean_lifecycle": 99.53703703703702,
+            "content": 99.53703703703702,
+            "structure": 99.53703703703702
+          },
+          "counts": {
+            "clean_lifecycle": {
+              "fail": 1,
+              "pass": 215,
+              "unknown": 0
+            },
+            "content": {
+              "fail": 1,
+              "pass": 215,
+              "unknown": 0
+            },
+            "structure": {
+              "fail": 0,
+              "pass": 215,
+              "unknown": 1
+            }
+          },
+          "coverage": {
+            "first_lifecycle_unobserved": 0,
+            "safe_rejection": 83,
+            "second_lifecycle_blocked": 1,
+            "total": 216,
+            "two_lifecycles_observed": 132
+          },
+          "end_to_end": 99.53703703703702,
+          "rule": "crash-observed-capabilities-v1",
+          "score": 99.53703703703702
+        },
+        "dimensions": {
+          "C": 96.88809238428914,
+          "M": 82.29773164167628,
+          "P": 42.63570949794735,
+          "R": 99.72222222222221,
+          "S": 27.47252747252747,
+          "W": 75.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 82.29773164167628,
+          "S": 27.47252747252747,
+          "canonical-format": 94.05080213903744,
+          "crash-core": 99.53703703703702,
+          "perf-cpu": 43.57560225677845,
+          "perf-nvme": 41.69581673911625,
+          "pjdfstest-core": 100.0,
+          "real-world": 75.0,
+          "robustness": 100.0,
+          "spec-tests": 100.0,
+          "xfstests-core": 89.1692789968652
+        },
+        "rule": "core-overall-v3-zero-fill",
+        "status": "provisional",
+        "total": 75.22823980532968,
+        "utility": {
+          "C": 96.88809238428914,
+          "M": 82.29773164167628,
+          "P": 42.63570949794735,
+          "R": 99.72222222222221,
+          "S": 27.47252747252747,
+          "W": 75.0
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": [
+          "R"
+        ]
+      }
+    },
+    "core-gpt-5.6-sol-v2": {
+      "previous_score": {
+        "dimensions": {
+          "C": 95.44415694710614,
+          "M": 76.19302101359705,
+          "P": 21.364496799075795,
+          "R": 88.44907407407408,
+          "S": 31.152647975077883,
+          "W": 33.33333333333333
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 76.19302101359705,
+          "S": 31.152647975077883,
+          "canonical-format": 92.15280333701386,
+          "crash-core": 98.14814814814815,
+          "perf-cpu": 22.92338927312434,
+          "perf-nvme": 19.805604325027254,
+          "pjdfstest-core": 100.0,
+          "real-world": 33.33333333333333,
+          "robustness": 78.75,
+          "spec-tests": 100.0,
+          "xfstests-core": 89.62382445141066
+        },
+        "rule": "core-overall-v2-zero-fill",
+        "status": "provisional",
+        "total": 80.44352943604058,
+        "utility": {
+          "C": 98.40545493148714,
+          "M": 91.09651050679852,
+          "P": 46.569171318937165,
+          "R": 95.95717592592592,
+          "S": 57.82554517133956,
+          "W": 60.33333333333333
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      },
+      "score": {
+        "crash_capabilities": {
+          "components": {
+            "clean_lifecycle": 98.14814814814815,
+            "content": 100.0,
+            "structure": 99.53703703703702
+          },
+          "counts": {
+            "clean_lifecycle": {
+              "fail": 4,
+              "pass": 212,
+              "unknown": 0
+            },
+            "content": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            },
+            "structure": {
+              "fail": 1,
+              "pass": 215,
+              "unknown": 0
+            }
+          },
+          "coverage": {
+            "first_lifecycle_unobserved": 0,
+            "safe_rejection": 38,
+            "second_lifecycle_blocked": 2,
+            "total": 216,
+            "two_lifecycles_observed": 176
+          },
+          "end_to_end": 98.14814814814815,
+          "rule": "crash-observed-capabilities-v1",
+          "score": 99.44444444444444
+        },
+        "dimensions": {
+          "C": 96.48177450196508,
+          "M": 75.68869468479605,
+          "P": 23.59570950225242,
+          "R": 91.16666666666666,
+          "S": 31.152647975077883,
+          "W": 50.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 75.68869468479605,
+          "S": 31.152647975077883,
+          "canonical-format": 92.15280333701386,
+          "crash-core": 99.44444444444444,
+          "perf-cpu": 26.6794136814449,
+          "perf-nvme": 20.512005323059938,
+          "pjdfstest-core": 100.0,
+          "real-world": 50.0,
+          "robustness": 78.75,
+          "spec-tests": 100.0,
+          "xfstests-core": 89.62382445141066
+        },
+        "rule": "core-overall-v3-zero-fill",
+        "status": "provisional",
+        "total": 69.37648968850172,
+        "utility": {
+          "C": 96.48177450196508,
+          "M": 75.68869468479605,
+          "P": 23.59570950225242,
+          "R": 91.16666666666666,
+          "S": 31.152647975077883,
+          "W": 50.0
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      }
+    },
+    "core-gpt-6-astra": {
+      "previous_score": {
+        "dimensions": {
+          "C": 97.32758620689656,
+          "M": 88.34724679954627,
+          "P": 44.08981937882531,
+          "R": 100.0,
+          "S": 90.9090909090909,
+          "W": 83.33333333333334
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 88.34724679954627,
+          "S": 90.9090909090909,
+          "canonical-format": 100.0,
+          "crash-core": 100.0,
+          "perf-cpu": 42.719899420437606,
+          "perf-nvme": 45.459739337213016,
+          "pjdfstest-core": 100.0,
+          "real-world": 83.33333333333334,
+          "robustness": 100.0,
+          "spec-tests": 100.0,
+          "xfstests-core": 89.31034482758622
+        },
+        "rule": "core-overall-v2-zero-fill",
+        "status": "provisional",
+        "total": 95.35574561305182,
+        "utility": {
+          "C": 99.0646551724138,
+          "M": 95.9215363798412,
+          "P": 71.06736453411898,
+          "R": 100.0,
+          "S": 96.81818181818181,
+          "W": 94.16666666666667
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      },
+      "score": {
+        "crash_capabilities": {
+          "components": {
+            "clean_lifecycle": 100.0,
+            "content": 100.0,
+            "structure": 100.0
+          },
+          "counts": {
+            "clean_lifecycle": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            },
+            "content": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            },
+            "structure": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            }
+          },
+          "coverage": {
+            "first_lifecycle_unobserved": 0,
+            "safe_rejection": 206,
+            "second_lifecycle_blocked": 0,
+            "total": 216,
+            "two_lifecycles_observed": 10
+          },
+          "end_to_end": 100.0,
+          "rule": "crash-observed-capabilities-v1",
+          "score": 100.0
+        },
+        "dimensions": {
+          "C": 98.39655172413794,
+          "M": 87.63188462161725,
+          "P": 55.508618805928364,
+          "R": 100.0,
+          "S": 90.9090909090909,
+          "W": 75.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 87.63188462161725,
+          "S": 90.9090909090909,
+          "canonical-format": 100.0,
+          "crash-core": 100.0,
+          "perf-cpu": 56.884206935276914,
+          "perf-nvme": 54.133030676579814,
+          "pjdfstest-core": 100.0,
+          "real-world": 75.0,
+          "robustness": 100.0,
+          "spec-tests": 100.0,
+          "xfstests-core": 89.31034482758622
+        },
+        "rule": "core-overall-v3-zero-fill",
+        "status": "provisional",
+        "total": 90.05306739694016,
+        "utility": {
+          "C": 98.39655172413794,
+          "M": 87.63188462161725,
+          "P": 55.508618805928364,
+          "R": 100.0,
+          "S": 90.9090909090909,
+          "W": 75.0
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      }
+    },
+    "core-gpt-6.1-sol": {
+      "previous_score": {
+        "dimensions": {
+          "C": 97.45297805642633,
+          "M": 84.27161616161617,
+          "P": 44.51585817114106,
+          "R": 100.0,
+          "S": 86.95652173913044,
+          "W": 83.33333333333334
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 84.27161616161617,
+          "S": 86.95652173913044,
+          "canonical-format": 100.0,
+          "crash-core": 100.0,
+          "perf-cpu": 42.4417631607411,
+          "perf-nvme": 46.58995318154102,
+          "pjdfstest-core": 100.0,
+          "real-world": 83.33333333333334,
+          "robustness": 100.0,
+          "spec-tests": 100.0,
+          "xfstests-core": 89.81191222570533
+        },
+        "rule": "core-overall-v2-zero-fill",
+        "status": "provisional",
+        "total": 95.0550556459819,
+        "utility": {
+          "C": 99.10854231974922,
+          "M": 94.49506565656566,
+          "P": 71.38689362835579,
+          "R": 100.0,
+          "S": 95.43478260869566,
+          "W": 94.16666666666667
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      },
+      "score": {
+        "crash_capabilities": {
+          "components": {
+            "clean_lifecycle": 100.0,
+            "content": 100.0,
+            "structure": 100.0
+          },
+          "counts": {
+            "clean_lifecycle": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            },
+            "content": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            },
+            "structure": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            }
+          },
+          "coverage": {
+            "first_lifecycle_unobserved": 0,
+            "safe_rejection": 204,
+            "second_lifecycle_blocked": 0,
+            "total": 216,
+            "two_lifecycles_observed": 12
+          },
+          "end_to_end": 100.0,
+          "rule": "crash-observed-capabilities-v1",
+          "score": 100.0
+        },
+        "dimensions": {
+          "C": 98.4717868338558,
+          "M": 83.31959595959597,
+          "P": 57.03925524328237,
+          "R": 100.0,
+          "S": 86.95652173913044,
+          "W": 75.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 83.31959595959597,
+          "S": 86.95652173913044,
+          "canonical-format": 100.0,
+          "crash-core": 100.0,
+          "perf-cpu": 57.17070254966127,
+          "perf-nvme": 56.907807936903474,
+          "pjdfstest-core": 100.0,
+          "real-world": 75.0,
+          "robustness": 100.0,
+          "spec-tests": 100.0,
+          "xfstests-core": 89.81191222570533
+        },
+        "rule": "core-overall-v3-zero-fill",
+        "status": "provisional",
+        "total": 89.22633506198366,
+        "utility": {
+          "C": 98.4717868338558,
+          "M": 83.31959595959597,
+          "P": 57.03925524328237,
+          "R": 100.0,
+          "S": 86.95652173913044,
+          "W": 75.0
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      }
+    },
+    "core-kimi-k3": {
+      "previous_score": {
+        "dimensions": {
+          "C": 93.47996755210912,
+          "M": 82.16340000141997,
+          "P": 41.02787489031151,
+          "R": 96.2037037037037,
+          "S": 26.881720430107528,
+          "W": 66.66666666666666
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 82.16340000141997,
+          "S": 26.881720430107528,
+          "canonical-format": 84.17065390749602,
+          "crash-core": 94.90740740740739,
+          "perf-cpu": 39.653339288860664,
+          "perf-nvme": 42.40241049176236,
+          "pjdfstest-core": 100.0,
+          "real-world": 66.66666666666666,
+          "robustness": 97.5,
+          "spec-tests": 100.0,
+          "xfstests-core": 89.74921630094043
+        },
+        "rule": "core-overall-v2-zero-fill",
+        "status": "provisional",
+        "total": 84.71663443344889,
+        "utility": {
+          "C": 97.71798864323819,
+          "M": 93.75719000049699,
+          "P": 68.77090616773363,
+          "R": 98.67129629629629,
+          "S": 52.913978494623656,
+          "W": 86.33333333333333
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      },
+      "score": {
+        "crash_capabilities": {
+          "components": {
+            "clean_lifecycle": 94.90740740740742,
+            "content": 99.53703703703704,
+            "structure": 97.22222222222223
+          },
+          "counts": {
+            "clean_lifecycle": {
+              "fail": 11,
+              "pass": 205,
+              "unknown": 0
+            },
+            "content": {
+              "fail": 0,
+              "pass": 215,
+              "unknown": 1
+            },
+            "structure": {
+              "fail": 5,
+              "pass": 210,
+              "unknown": 1
+            }
+          },
+          "coverage": {
+            "first_lifecycle_unobserved": 0,
+            "safe_rejection": 61,
+            "second_lifecycle_blocked": 11,
+            "total": 216,
+            "two_lifecycles_observed": 144
+          },
+          "end_to_end": 94.90740740740742,
+          "rule": "crash-observed-capabilities-v1",
+          "score": 97.68518518518519
+        },
+        "dimensions": {
+          "C": 94.50504592201506,
+          "M": 84.77693809594808,
+          "P": 47.44526135025404,
+          "R": 97.61111111111111,
+          "S": 26.881720430107528,
+          "W": 75.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 84.77693809594808,
+          "S": 26.881720430107528,
+          "canonical-format": 84.17065390749602,
+          "crash-core": 97.68518518518519,
+          "perf-cpu": 47.594047060847025,
+          "perf-nvme": 47.296475639661054,
+          "pjdfstest-core": 100.0,
+          "real-world": 75.0,
+          "robustness": 97.5,
+          "spec-tests": 100.0,
+          "xfstests-core": 89.74921630094043
+        },
+        "rule": "core-overall-v3-zero-fill",
+        "status": "provisional",
+        "total": 74.4587054207718,
+        "utility": {
+          "C": 94.50504592201506,
+          "M": 84.77693809594808,
+          "P": 47.44526135025404,
+          "R": 97.61111111111111,
+          "S": 26.881720430107528,
+          "W": 75.0
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": [
+          "R"
+        ]
+      }
+    },
+    "core-opus-5.5-cc": {
+      "previous_score": {
+        "dimensions": {
+          "C": 99.7257053291536,
+          "M": 96.04590345453212,
+          "P": 46.80938708056871,
+          "R": 100.0,
+          "S": 62.5,
+          "W": 100.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 96.04590345453212,
+          "S": 62.5,
+          "canonical-format": 100.0,
+          "crash-core": 100.0,
+          "perf-cpu": 45.431951068631555,
+          "perf-nvme": 48.18682309250587,
+          "pjdfstest-core": 100.0,
+          "real-world": 100.0,
+          "robustness": 100.0,
+          "spec-tests": 100.0,
+          "xfstests-core": 98.9028213166144
+        },
+        "rule": "core-overall-v2-zero-fill",
+        "status": "provisional",
+        "total": 94.05790624431827,
+        "utility": {
+          "C": 99.90399686520377,
+          "M": 98.61606620908624,
+          "P": 73.10704031042653,
+          "R": 100.0,
+          "S": 84.25,
+          "W": 100.0
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      },
+      "score": {
+        "crash_capabilities": {
+          "components": {
+            "clean_lifecycle": 100.0,
+            "content": 100.0,
+            "structure": 100.0
+          },
+          "counts": {
+            "clean_lifecycle": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            },
+            "content": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            },
+            "structure": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            }
+          },
+          "coverage": {
+            "first_lifecycle_unobserved": 0,
+            "safe_rejection": 59,
+            "second_lifecycle_blocked": 0,
+            "total": 216,
+            "two_lifecycles_observed": 157
+          },
+          "end_to_end": 100.0,
+          "rule": "crash-observed-capabilities-v1",
+          "score": 100.0
+        },
+        "dimensions": {
+          "C": 99.83542319749216,
+          "M": 96.1705707748851,
+          "P": 60.58420465979235,
+          "R": 100.0,
+          "S": 62.5,
+          "W": 100.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 96.1705707748851,
+          "S": 62.5,
+          "canonical-format": 100.0,
+          "crash-core": 100.0,
+          "perf-cpu": 61.960973268850324,
+          "perf-nvme": 59.20743605073438,
+          "pjdfstest-core": 100.0,
+          "real-world": 100.0,
+          "robustness": 100.0,
+          "spec-tests": 100.0,
+          "xfstests-core": 98.9028213166144
+        },
+        "rule": "core-overall-v3-zero-fill",
+        "status": "provisional",
+        "total": 88.30934712384575,
+        "utility": {
+          "C": 99.83542319749216,
+          "M": 96.1705707748851,
+          "P": 60.58420465979235,
+          "R": 100.0,
+          "S": 62.5,
+          "W": 100.0
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      }
+    },
+    "core-qwen-3.8-flash-next": {
+      "previous_score": {
+        "dimensions": {
+          "C": 89.21319056886963,
+          "M": 83.24626867915075,
+          "P": 41.807250092795655,
+          "R": 67.8472222222222,
+          "S": 16.39344262295082,
+          "W": 33.33333333333333
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 83.24626867915075,
+          "S": 16.39344262295082,
+          "canonical-format": 75.33238609992996,
+          "crash-core": 69.44444444444443,
+          "perf-cpu": 40.37802545499423,
+          "perf-nvme": 43.23647473059709,
+          "pjdfstest-core": 100.0,
+          "real-world": 33.33333333333333,
+          "robustness": 66.24999999999999,
+          "spec-tests": 100.0,
+          "xfstests-core": 81.52037617554858
+        },
+        "rule": "core-overall-v2-zero-fill",
+        "status": "provisional",
+        "total": 76.11607403941476,
+        "utility": {
+          "C": 96.22461669910437,
+          "M": 94.13619403770277,
+          "P": 69.35543756959675,
+          "R": 86.9236111111111,
+          "S": 36.885245901639344,
+          "W": 60.33333333333333
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
+      },
+      "score": {
+        "crash_capabilities": {
+          "components": {
+            "clean_lifecycle": 69.44444444444444,
+            "content": 71.75925925925925,
+            "structure": 69.44444444444444
+          },
+          "counts": {
+            "clean_lifecycle": {
+              "fail": 18,
+              "pass": 150,
+              "unknown": 48
+            },
+            "content": {
+              "fail": 1,
+              "pass": 155,
+              "unknown": 60
+            },
+            "structure": {
+              "fail": 5,
+              "pass": 150,
+              "unknown": 61
+            }
+          },
+          "coverage": {
+            "first_lifecycle_unobserved": 48,
+            "safe_rejection": 18,
+            "second_lifecycle_blocked": 66,
+            "total": 216,
+            "two_lifecycles_observed": 132
+          },
+          "end_to_end": 69.44444444444444,
+          "rule": "crash-observed-capabilities-v1",
+          "score": 70.37037037037038
+        },
+        "dimensions": {
+          "C": 91.06115295131478,
+          "M": 83.67312824366923,
+          "P": 53.71047769536135,
+          "R": 68.72222222222223,
+          "S": 16.39344262295082,
+          "W": 50.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 83.67312824366923,
+          "S": 16.39344262295082,
+          "canonical-format": 75.33238609992996,
+          "crash-core": 70.37037037037038,
+          "perf-cpu": 53.89715888384032,
+          "perf-nvme": 53.523796506882384,
+          "pjdfstest-core": 100.0,
+          "real-world": 50.0,
+          "robustness": 66.24999999999999,
+          "spec-tests": 100.0,
+          "xfstests-core": 81.52037617554858
+        },
+        "rule": "core-overall-v3-zero-fill",
+        "status": "provisional",
+        "total": 63.44924068371438,
+        "utility": {
+          "C": 91.06115295131478,
+          "M": 83.67312824366923,
+          "P": 53.71047769536135,
+          "R": 68.72222222222223,
+          "S": 16.39344262295082,
+          "W": 50.0
+        },
+        "zero_imputed": [],
+        "zero_imputed_dimensions": [
+          "R"
+        ]
+      }
+    },
+    "core-reference": {
+      "previous_score": {
+        "dimensions": {
+          "C": 74.87079701120797,
+          "M": 69.10538278030796,
+          "P": 0.0,
+          "R": 97.82407407407408,
+          "S": 0.0,
+          "W": 100.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 69.10538278030796,
+          "S": null,
+          "canonical-format": 0.0,
+          "crash-core": 98.14814814814814,
+          "perf-cpu": null,
+          "perf-nvme": null,
+          "pjdfstest-core": 100.0,
+          "real-world": 100.0,
+          "robustness": 97.5,
+          "spec-tests": 100.0,
+          "xfstests-core": 99.48318804483188
+        },
+        "rule": "core-overall-v2-zero-fill",
+        "status": "provisional",
+        "total": 65.87770923165428,
+        "utility": {
+          "C": 90.43539850560398,
+          "M": 87.55269139015398,
+          "P": 0.0,
+          "R": 99.23842592592592,
+          "S": 0.0,
+          "W": 100.0
+        },
+        "zero_imputed": [
+          "S",
+          "perf-cpu",
+          "perf-nvme"
+        ],
+        "zero_imputed_dimensions": [
+          "S",
+          "P"
+        ]
+      },
+      "score": {
+        "crash_capabilities": {
+          "components": {
+            "clean_lifecycle": 98.14814814814815,
+            "content": 100.0,
+            "structure": 99.07407407407408
+          },
+          "counts": {
+            "clean_lifecycle": {
+              "fail": 4,
+              "pass": 212,
+              "unknown": 0
+            },
+            "content": {
+              "fail": 0,
+              "pass": 216,
+              "unknown": 0
+            },
+            "structure": {
+              "fail": 2,
+              "pass": 214,
+              "unknown": 0
+            }
+          },
+          "coverage": {
+            "first_lifecycle_unobserved": 0,
+            "safe_rejection": 39,
+            "second_lifecycle_blocked": 2,
+            "total": 216,
+            "two_lifecycles_observed": 175
+          },
+          "end_to_end": 98.14814814814815,
+          "rule": "crash-observed-capabilities-v1",
+          "score": 99.25925925925927
+        },
+        "dimensions": {
+          "C": 74.92247820672478,
+          "M": 67.39447408371286,
+          "P": 0.0,
+          "R": 98.55555555555556,
+          "S": 0,
+          "W": 100.0
+        },
+        "eligible": false,
+        "hard_gates": "not-assessed",
+        "inputs": {
+          "M": 67.39447408371286,
+          "S": null,
+          "canonical-format": 0.0,
+          "crash-core": 99.25925925925927,
+          "perf-cpu": null,
+          "perf-nvme": null,
+          "pjdfstest-core": 100.0,
+          "real-world": 100.0,
+          "robustness": 97.5,
+          "spec-tests": 100.0,
+          "xfstests-core": 99.48318804483188
+        },
+        "rule": "core-overall-v3-zero-fill",
+        "status": "provisional",
+        "total": 59.30370218765043,
+        "utility": {
+          "C": 74.92247820672478,
+          "M": 67.39447408371286,
+          "P": 0.0,
+          "R": 98.55555555555556,
+          "S": 0,
+          "W": 100.0
+        },
+        "zero_imputed": [
+          "S",
+          "perf-cpu",
+          "perf-nvme"
+        ],
+        "zero_imputed_dimensions": [
+          "S",
+          "P"
+        ]
+      }
+    }
+  }
+}

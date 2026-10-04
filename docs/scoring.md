@@ -19,7 +19,7 @@ Semantic tests, pjdfstest, xfstests, robustness, crash consistency, and applicat
 
 ## Overall score
 
-The current rule is `core-overall-v3-zero-fill`, revision `2026-10-04-r2`. Each dimension is scored on its own justified scale, then combined directly:
+The current rule is `core-overall-v3-zero-fill`, revision `2026-10-04-r3`. Each dimension is scored on its own justified scale, then combined directly:
 
 ```text
 total = 0.35 × C + 0.20 × R + 0.20 × S + 0.10 × W + 0.10 × P + 0.05 × M
@@ -31,7 +31,7 @@ total = 0.35 × C + 0.20 × R + 0.20 × S + 0.10 × W + 0.10 × P + 0.05 × M
 | Robustness R | 40% robustness tests + 60% crash score | 20% | Persisted-state commitments receive priority; contract-valid safe rejection still passes |
 | Code review S | Confirmed, deduplicated defect burden curve below | 20% | Severity reflects harm and reach; no second utility transform |
 | Applications W | 25% version control + 50% database + 25% archive | 10% | Concurrent database content and crash/reopen each consume half of the database budget |
-| Performance P | Equal CPU/NVMe shares; each is 80% speed + 20% RAM | 10% | Both device scenarios and resource costs retain fixed budgets |
+| Performance P | Equal CPU/NVMe shares; each is 70% speed + 20% RAM + 10% write efficiency | 10% | Both device scenarios and resource costs retain fixed budgets |
 | Maintainability M | Eleven static proxies grouped into six risk budgets | 5% | Related indicators share a budget; syntactic diagnostics have a limited share |
 
 The former shared utility function U is removed. The profile tables continue to show their native results; weighted dimensions can differ from their equal-category profile scores. Scores are retrospective measurements of existing evidence. Agent-facing instructions, generated implementations, finalized reviews and raw benchmark outcomes are unchanged.
@@ -69,7 +69,7 @@ speed_score = 100 × clamp(log(candidate_rate / floor) / log(reference / floor),
 
 Equal multiplicative improvements receive equal increments. Reaching the production target scores 100; faster rates are retained but scores cap at 100. The three-filesystem portfolio is fixed rather than selecting a favorable reference for each candidate. A portfolio target of 100 does not mean every member scores 100 in every cell.
 
-Speed budgets are sequential I/O 30%, random I/O 40% (single/multi/shared: 20/10/10%), and synchronized overwrite 30%; cold and warm share each budget equally. Metadata measurements remain separate diagnostics. Minimum rates are declared deployment targets, independent of the candidate distribution:
+Speed splits into 75% file I/O and 25% metadata. File I/O retains sequential I/O 30%, random I/O 40% (single/multi/shared: 20/10/10%), and synchronized overwrite 30%; cold and warm share each budget equally. Minimum rates are declared deployment targets, independent of the candidate distribution:
 
 | Workload | CPU floor | NVMe floor |
 |---|---:|---:|
@@ -83,7 +83,13 @@ These floors retain the published operating envelope: sequential floors budget r
 
 RAM uses an absolute, piecewise linear budget: 512 MiB or less scores 100, 2 GiB scores 50, 8 GiB or more scores 0. These represent roughly 1.56%, 6.25% and 25% of the 32 GiB guest. The maximum retained candidate cgroup peak includes initialization and resident charges; it is not compared to kernel-filesystem memory. A failed speed cell scores zero; an unmeasured cell remains missing. RAM earns no bonus unless the full fio load was observed.
 
-Write amplification is measured but has no separate weight in the performance score. It is controller write bytes divided by application logical write bytes during the timed window. This measures extra filesystem writes, not amplification inside the SSD. Speed can reflect some write cost but does not replace a measure of write volume or device wear.
+Write efficiency contributes 10% of each performance score. Write amplification is controller write bytes / application logical write bytes in the timed window. At most 1× scores 100, 4× scores 50, and at least 16× scores 0; each doubling costs 25 points on a logarithmic scale. Each file-I/O workload is scored separately under its fixed weight, so byte volume does not silently change the budget. These are write-volume policy limits, not SSD-internal amplification or measured device lifetime. Preparation, warmup and writes after the window are excluded. A cell with no logical write bytes remains missing, not zero amplification.
+
+Metadata uses the corresponding ext4/XFS/Btrfs portfolio target: the target scores 100, ten times slower scores 50, and one hundred times slower scores 0, on a logarithmic scale. Create/stat/unlink receives 20%; deep/large lookup, same-directory concurrent mutation, different-directory concurrent creation and parallel fsync each receive 15%; rename and near-full reclamation each receive 10%. These budgets reflect everyday operations, scaling and durability throughput. Capacity pressure has a smaller share because it is less frequent and overlaps robustness R. File I/O remains the main performance purpose; metadata speed and correctness are separate measurements.
+
+Each cell retains its fixed budget. Valid measurements contribute independently. Candidate failures score 0; unmeasured cells remain marked and provisionally contribute 0, with no redistribution to measured cells. For example, 12 of 14 equal-weight cells averaging 70, with two unmeasured, earn 60 with 85.7% coverage; the complete result could range from 60 to 74.3. Actual weights follow the budgets above. Assessed coverage includes observed failures. Bounds describe missing inputs, not confidence intervals. Model details show per-cell rates and amplification, peak RAM and component scores. The raw full speed index still requires the complete workload set.
+
+[r2 scores](../results/overall-score-v3-r2.json), [calibration](../results/scoring-calibration-v3-r2.json) and [audit](../results/scoring-audit-v3-r2.json) remain frozen. This revision only recomputes existing evidence; all six main weights and agent-facing instructions stay unchanged.
 
 ## Maintainability scale
 
