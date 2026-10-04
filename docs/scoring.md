@@ -83,6 +83,8 @@ These floors retain the published operating envelope: sequential floors budget r
 
 RAM uses an absolute, piecewise linear budget: 512 MiB or less scores 100, 2 GiB scores 50, 8 GiB or more scores 0. These represent roughly 1.56%, 6.25% and 25% of the 32 GiB guest. The maximum retained candidate cgroup peak includes initialization and resident charges; it is not compared to kernel-filesystem memory. A failed speed cell scores zero; an unmeasured cell remains missing. RAM earns no bonus unless the full fio load was observed.
 
+Write amplification is measured but has no separate weight in the performance score. It is controller write bytes divided by application logical write bytes during the timed window. This measures extra filesystem writes, not amplification inside the SSD. Speed can reflect some write cost but does not replace a measure of write volume or device wear.
+
 ## Maintainability scale
 
 `maint-v3-policy` reuses the frozen `maint-v2-rev5` raw extraction and thresholds. It changes the aggregation: local complexity 30%, architecture 10%, duplication 15%, unsafe proof obligations 15%, error paths 20%, and diagnostic tooling 10%. Documentation of unsafe receives more weight than its mere occurrence; error-handling proxies receive more than syntactic lint counts. These are maintenance-risk proxies, not confirmed defects.

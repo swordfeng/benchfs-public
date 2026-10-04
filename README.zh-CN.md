@@ -67,7 +67,7 @@ Agent 自主开发、测试和调试
 
 Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 将 Linux 文件操作转交给实现。开发期间，agent 可以使用提供的反馈测试。完整评测在提交之后进行，agent 不会根据评测结果继续修改实现。
 
-下表均沿用总表顺序。“通过 / 适用”表示满足测试要求的项目数与参与统计的项目数，包含符合预期的失败；不适用项不计入分母，超时计失败。除磁盘格式外，各项得分按测试类别等权平均，因此可能与按项目计数的通过率不同。磁盘格式按专门的规则计分。[完整评分说明](docs/scoring.zh-CN.md)
+下表均沿用总表顺序。“通过 / 适用”表示满足测试要求的项目数与参与统计的项目数，包含符合预期的失败；不适用项不计入分母，超时计失败。文件操作、稳健性和完整崩溃测试分按类别等权，可能与通过率不同。其他得分使用各自规则。[完整评分说明](docs/scoring.zh-CN.md)
 
 ### 文件操作
 
@@ -75,57 +75,25 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 
 **BenchFS 语义测试。** 按任务规格检查文件系统应提供的行为，覆盖基本操作及其边界情况。
 
-<!-- profile-spec-tests:begin -->
-| 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
-|---|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
-| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-<!-- profile-spec-tests:end -->
-
 **pjdfstest。** 通过系统调用检查文件操作的 POSIX 语义，包括权限、元数据和错误处理。
-
-<!-- profile-pjdfstest-core:begin -->
-| 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
-|---|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
-| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 168 / 169 | 99.41% | 99.26 |
-| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-<!-- profile-pjdfstest-core:end -->
 
 **xfstests。** 使用上游文件系统测试，进一步检查操作组合、数据完整性和较复杂的使用场景。
 
-<!-- profile-xfstests-core:begin -->
-| 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
-|---|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 179 / 194 | 92.27% | 89.31 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 187 / 194 | 96.39% | 89.81 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 189 / 194 | 97.42% | 98.90 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 188 / 194 | 96.91% | 94.36 |
-| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 183 / 194 | 94.33% | 87.35 |
-| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 183 / 194 | 94.33% | 89.17 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 186 / 194 | 95.88% | 89.75 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 184 / 194 | 94.85% | 89.62 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 167 / 194 | 86.08% | 84.02 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 175 / 194 | 90.21% | 84.61 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 168 / 194 | 86.60% | 81.52 |
-<!-- profile-xfstests-core:end -->
+<!-- file-operations:begin -->
+| 模型 / Agent | BenchFS 通过 / 适用 | BenchFS 分 | pjdfstest 通过 / 适用 | pjdfstest 分 | xfstests 通过 / 适用 | xfstests 分 |
+|---|---:|---:|---:|---:|---:|---:|
+| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 179 / 194 | 89.31 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 187 / 194 | 89.81 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 189 / 194 | 98.90 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 188 / 194 | 94.36 |
+| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 44 / 44 | 100.00 | 168 / 169 | 99.26 | 183 / 194 | 87.35 |
+| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 183 / 194 | 89.17 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 186 / 194 | 89.75 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 184 / 194 | 89.62 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 167 / 194 | 84.02 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 175 / 194 | 84.61 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 168 / 194 | 81.52 |
+<!-- file-operations:end -->
 
 ### 磁盘格式
 
@@ -171,43 +139,25 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 
 运行意外中断后，文件系统需要处理磁盘上留下的状态。我们中断正在运行的操作，再尝试重新启动文件系统，检查它是否按照任务要求处理恢复、保留应当持久化的数据，并维持结构完整。
 
-<!-- profile-crash-core:begin -->
-| 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
-|---|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 216 / 216 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 216 / 216 | 100.00% | 100.00 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 216 / 216 | 100.00% | 100.00 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 80 / 216 | 37.04% | 37.04 |
-| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 79 / 216 | 36.57% | 36.57 |
-| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 215 / 216 | 99.54% | 99.54 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 205 / 216 | 94.91% | 94.91 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 212 / 216 | 98.15% | 98.15 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 206 / 216 | 95.37% | 95.37 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 146 / 216 | 67.59% | 67.59 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 150 / 216 | 69.44% | 69.44 |
-<!-- profile-crash-core:end -->
-
-#### 崩溃分明细
-
 <!-- crash-score:begin -->
 
 完整测试分按用例是否满足全部要求计算。崩溃分分别计入已验证的能力，用于稳健性 R。权重：磁盘结构 40%、数据正确性 40%、卸载与重开 20%。
 
 按规则安全拒绝挂载也计满足要求。前一步失败导致未测试的再次打开不计通过。所有分数满分 100。各检查项目的含义见[评分方法](docs/scoring.zh-CN.md)。
 
-| 模型 / Agent | 完整测试分 | 磁盘结构 | 数据正确性 | 卸载与重开 | 崩溃分 | 失败后未再次打开（项） |
-|---|---:|---:|---:|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 37.04 | 100.00 | 100.00 | 37.04 | 87.41 | 136 |
-| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 36.57 | 100.00 | 100.00 | 36.57 | 87.31 | 137 |
-| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 99.54 | 99.54 | 99.54 | 99.54 | 99.54 | 1 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 94.91 | 97.22 | 99.54 | 94.91 | 97.69 | 11 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 98.15 | 99.54 | 100.00 | 98.15 | 99.44 | 2 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 95.37 | 95.37 | 98.61 | 95.37 | 96.67 | 10 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 67.59 | 67.59 | 87.96 | 67.59 | 75.74 | 70 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 69.44 | 69.44 | 71.76 | 69.44 | 70.37 | 66 |
+| 模型 / Agent | 完整通过 / 适用 | 完整测试分 | 磁盘结构 | 数据正确性 | 卸载与重开 | 崩溃分 | 失败后未再次打开（项） |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 216 / 216 | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 216 / 216 | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 216 / 216 | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 80 / 216 | 37.04 | 100.00 | 100.00 | 37.04 | 87.41 | 136 |
+| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 79 / 216 | 36.57 | 100.00 | 100.00 | 36.57 | 87.31 | 137 |
+| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 215 / 216 | 99.54 | 99.54 | 99.54 | 99.54 | 99.54 | 1 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 205 / 216 | 94.91 | 97.22 | 99.54 | 94.91 | 97.69 | 11 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 212 / 216 | 98.15 | 99.54 | 100.00 | 98.15 | 99.44 | 2 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 206 / 216 | 95.37 | 95.37 | 98.61 | 95.37 | 96.67 | 10 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 146 / 216 | 67.59 | 67.59 | 87.96 | 67.59 | 75.74 | 70 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 150 / 216 | 69.44 | 69.44 | 71.76 | 69.44 | 70.37 | 66 |
 <!-- crash-score:end -->
 
 ### Agent 代码评审
@@ -255,7 +205,7 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 
 ### 性能
 
-性能测试在内存设备（`perf-cpu`）和磁盘设备（`perf-nvme`）上运行 fio 与元数据负载，冷缓存和热缓存各测一次。每个负载取其计入样本的中位数，各列再按几何平均合并：顺序读写使用 1 MiB 请求，随机读写使用 4 KiB 请求、覆盖三种访问模式，元数据涵盖七种负载。每个 fio 负载中的读和写同时进行，因此各列并非单一方向的峰值。速度指数为五列的几何平均，模型之间的比值与单位无关。得分采用 v3 对数尺度，对照 ext4/XFS/Btrfs 固定组合的生产目标，并计入绝对 RAM 预算；同步覆盖写未单独列出，但计入得分。两种设备场景共用此目标，不声称同设备的成对参照实验。“—”表示有负载未测得或失败；不同比较池的得分不可比较。
+性能测试在内存设备（`perf-cpu`）和磁盘设备（`perf-nvme`）上运行 fio 与元数据负载，冷缓存和热缓存各测一次。每个负载取其计入样本的中位数，各列再按几何平均合并：顺序读写使用 1 MiB 请求，随机读写使用 4 KiB 请求、覆盖三种访问模式，元数据涵盖七种负载。每个 fio 负载中的读和写同时进行，因此各列并非单一方向的峰值。速度指数为五列的几何平均，模型之间的比值与单位无关。得分采用 v3 对数尺度，对照 ext4/XFS/Btrfs 固定组合的生产目标，速度占性能分 80%，RAM 占 20%；同步覆盖写未单独列出，但计入得分。写入放大已测量，但尚未单独计分。两种设备场景共用此目标，不声称同设备的成对参照实验。“—”表示有负载未测得或失败；不同比较池的得分不可比较。
 
 <!-- profile-perf-cpu:begin -->
 **CPU 性能**（`perf-cpu`）· 比较池 `hyperv-fixed-vhdx`

@@ -67,7 +67,7 @@ Independent tests and aggregate scores
 
 The agent implements the filesystem's storage and operation logic. A fixed FUSE adapter connects Linux file operations to that implementation. Development feedback tests are available to the agent; the full evaluation runs after submission, without sending results back into development.
 
-The tables below follow the overall score order. “Passed / applicable” counts tests that met their expectations, including expected failures. N/A tests are excluded and timeouts count as failures. Except for the format score, scores weight test categories equally, so they can differ from the overall case pass rate. The format profile uses its own conformance score. See [scoring](docs/scoring.md) for details.
+The tables below follow the overall score order. “Passed / applicable” counts tests that met their expectations, including expected failures. N/A tests are excluded and timeouts count as failures. File operations, robustness, and full crash test scores weight categories equally and can differ from pass rates. Other scores use their own rules. See [scoring](docs/scoring.md) for details.
 
 ### File operations
 
@@ -75,57 +75,25 @@ A filesystem must first handle everyday operations correctly: reading and writin
 
 **BenchFS semantic tests.** These check behavior required by the task specification, including basic operations and boundary conditions.
 
-<!-- profile-spec-tests:begin -->
-| Model / Agent | Passed / applicable | Pass rate | Score / 100 |
-|---|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-<!-- profile-spec-tests:end -->
-
 **pjdfstest.** System-call tests check POSIX file semantics, including permissions, metadata, and error handling.
-
-<!-- profile-pjdfstest-core:begin -->
-| Model / Agent | Passed / applicable | Pass rate | Score / 100 |
-|---|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 168 / 169 | 99.41% | 99.26 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-<!-- profile-pjdfstest-core:end -->
 
 **xfstests.** Upstream filesystem tests exercise operation sequences, data integrity, and more involved usage scenarios.
 
-<!-- profile-xfstests-core:begin -->
-| Model / Agent | Passed / applicable | Pass rate | Score / 100 |
-|---|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 179 / 194 | 92.27% | 89.31 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 187 / 194 | 96.39% | 89.81 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 189 / 194 | 97.42% | 98.90 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 188 / 194 | 96.91% | 94.36 |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 183 / 194 | 94.33% | 87.35 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 183 / 194 | 94.33% | 89.17 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 186 / 194 | 95.88% | 89.75 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 184 / 194 | 94.85% | 89.62 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 167 / 194 | 86.08% | 84.02 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 175 / 194 | 90.21% | 84.61 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 168 / 194 | 86.60% | 81.52 |
-<!-- profile-xfstests-core:end -->
+<!-- file-operations:begin -->
+| Model / Agent | BenchFS passed / applicable | BenchFS score | pjdfstest passed / applicable | pjdfstest score | xfstests passed / applicable | xfstests score |
+|---|---:|---:|---:|---:|---:|---:|
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 179 / 194 | 89.31 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 187 / 194 | 89.81 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 189 / 194 | 98.90 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 188 / 194 | 94.36 |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 44 / 44 | 100.00 | 168 / 169 | 99.26 | 183 / 194 | 87.35 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 183 / 194 | 89.17 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 186 / 194 | 89.75 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 184 / 194 | 89.62 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 167 / 194 | 84.02 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 175 / 194 | 84.61 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 44 / 44 | 100.00 | 169 / 169 | 100.00 | 168 / 194 | 81.52 |
+<!-- file-operations:end -->
 
 ### On-disk format
 
@@ -171,43 +139,25 @@ A filesystem also has to handle resource pressure and failed operations. These t
 
 After an unexpected interruption, the filesystem must handle the state left on disk. We interrupt running operations, attempt to restart the filesystem, and check its recovery behavior, required durable data, and structural integrity against the task requirements.
 
-<!-- profile-crash-core:begin -->
-| Model / Agent | Passed / applicable | Pass rate | Score / 100 |
-|---|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 216 / 216 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 216 / 216 | 100.00% | 100.00 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 216 / 216 | 100.00% | 100.00 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 80 / 216 | 37.04% | 37.04 |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 79 / 216 | 36.57% | 36.57 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 215 / 216 | 99.54% | 99.54 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 205 / 216 | 94.91% | 94.91 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 212 / 216 | 98.15% | 98.15 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 206 / 216 | 95.37% | 95.37 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 146 / 216 | 67.59% | 67.59 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 150 / 216 | 69.44% | 69.44 |
-<!-- profile-crash-core:end -->
-
-#### Crash score breakdown
-
 <!-- crash-score:begin -->
 
 The full test score measures whether each case meets all requirements. The crash score combines verified capabilities for robustness R. Weights: disk structure 40%, data correctness 40%, unmount and reopen 20%.
 
 Permitted safe rejection also meets requirements. Reopen not tested after an earlier failure does not count as a pass. All scores are out of 100. See [scoring](docs/scoring.md) for the meaning of each check.
 
-| Model / Agent | Full test score | Disk structure | Data correctness | Unmount and reopen | Crash score | Untested reopen after failure (cases) |
-|---|---:|---:|---:|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 37.04 | 100.00 | 100.00 | 37.04 | 87.41 | 136 |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 36.57 | 100.00 | 100.00 | 36.57 | 87.31 | 137 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 99.54 | 99.54 | 99.54 | 99.54 | 99.54 | 1 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 94.91 | 97.22 | 99.54 | 94.91 | 97.69 | 11 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 98.15 | 99.54 | 100.00 | 98.15 | 99.44 | 2 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 95.37 | 95.37 | 98.61 | 95.37 | 96.67 | 10 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 67.59 | 67.59 | 87.96 | 67.59 | 75.74 | 70 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 69.44 | 69.44 | 71.76 | 69.44 | 70.37 | 66 |
+| Model / Agent | Full passes / applicable | Full test score | Disk structure | Data correctness | Unmount and reopen | Crash score | Untested reopen after failure (cases) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 216 / 216 | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 216 / 216 | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 216 / 216 | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 80 / 216 | 37.04 | 100.00 | 100.00 | 37.04 | 87.41 | 136 |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 79 / 216 | 36.57 | 100.00 | 100.00 | 36.57 | 87.31 | 137 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 215 / 216 | 99.54 | 99.54 | 99.54 | 99.54 | 99.54 | 1 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 205 / 216 | 94.91 | 97.22 | 99.54 | 94.91 | 97.69 | 11 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 212 / 216 | 98.15 | 99.54 | 100.00 | 98.15 | 99.44 | 2 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 206 / 216 | 95.37 | 95.37 | 98.61 | 95.37 | 96.67 | 10 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 146 / 216 | 67.59 | 67.59 | 87.96 | 67.59 | 75.74 | 70 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 150 / 216 | 69.44 | 69.44 | 71.76 | 69.44 | 70.37 | 66 |
 <!-- crash-score:end -->
 
 ### Agent code review
@@ -255,7 +205,7 @@ Finally, real applications use the filesystem. These tests check whether applica
 
 ### Performance
 
-Performance tests run fio and metadata workloads on a memory-backed device (`perf-cpu`) and a disk device (`perf-nvme`), each from a cold and a warm cache. Each workload's result is the median of its counted samples, and each column combines them by geometric mean: sequential read and write use 1 MiB requests, random read and write use 4 KiB requests in three access patterns, and metadata covers seven workloads. Reads and writes in each fio workload run concurrently, so a column is not a single-direction peak. The speed index is the geometric mean of the five columns; ratios between models do not depend on the units. The score uses the v3 logarithmic scale toward the fixed ext4/XFS/Btrfs production target, plus absolute RAM budgets; synchronized overwrites are not shown but count toward it. Both device scenarios use this common target, rather than a paired same-device reference experiment. A dash marks a value with an unmeasured or failed workload; scores from different comparison pools are not comparable.
+Performance tests run fio and metadata workloads on a memory-backed device (`perf-cpu`) and a disk device (`perf-nvme`), each from a cold and a warm cache. Each workload's result is the median of its counted samples, and each column combines them by geometric mean: sequential read and write use 1 MiB requests, random read and write use 4 KiB requests in three access patterns, and metadata covers seven workloads. Reads and writes in each fio workload run concurrently, so a column is not a single-direction peak. The speed index is the geometric mean of the five columns; ratios between models do not depend on the units. The score uses the v3 logarithmic scale toward the fixed ext4/XFS/Btrfs production target, with 80% for speed and 20% for RAM; synchronized overwrites are not shown but count toward it. Write amplification is measured but has no separate score. Both device scenarios use this common target, rather than a paired same-device reference experiment. A dash marks a value with an unmeasured or failed workload; scores from different comparison pools are not comparable.
 
 <!-- profile-perf-cpu:begin -->
 **CPU performance** (`perf-cpu`) · comparison pool `hyperv-fixed-vhdx`
