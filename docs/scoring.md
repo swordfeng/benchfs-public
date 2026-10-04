@@ -19,30 +19,71 @@ Semantic tests, pjdfstest, xfstests, robustness, crash consistency, and applicat
 
 ## Overall score
 
-| Dimension | Calculation | Overall weight |
-|---|---|---:|
-| Correctness C | Mean of semantic, pjdfstest, xfstests, and format scores | 35% |
-| Robustness R | Mean of robustness and crash-consistency scores | 20% |
-| Code review S | Diminishing curve of confirmed, deduplicated defect burden (below) | 20% |
-| Applications W | Application score | 10% |
-| Performance P | Mean of the CPU and NVMe performance scores | 10% |
-| Maintainability M | Static `maint-v2` score of the submission's own source (see the README) | 5% |
-
-The provisional overall score uses `core-overall-v2-zero-fill`. It retains the existing weights and utility transformation and includes the available diagnostic code-review scores. First aggregate each dimension, then apply the utility function U below, and finally take the weighted sum.
-
-| Dimension score x | 0 | 20 | 40 | 60 | 80 | 100 |
-|---|---:|---:|---:|---:|---:|---:|
-| U(x) | 0 | 45 | 68 | 83 | 93 | 100 |
-
-U interpolates linearly between adjacent points. Current scores are calculated as:
+The current rule is `core-overall-v3-zero-fill`. Each dimension is scored on its own justified scale, then combined directly:
 
 ```text
-total = 0.35 × U(C) + 0.20 × U(R) + 0.20 × U(S) + 0.10 × U(W) + 0.10 × U(P) + 0.05 × U(M)
+total = 0.35 × C + 0.20 × R + 0.20 × S + 0.10 × W + 0.10 × P + 0.05 × M
 ```
 
-All six dimensions together account for 100 points. Diagnostic review scores contribute to this provisional summary; their inclusion does not establish release eligibility. Weights are not redistributed when a result is missing, and source size is not converted into quality points.
+| Dimension | Calculation | Overall weight | Reason for internal budgets |
+|---|---|---:|---|
+| Correctness C | 30% semantic + 30% pjdfstest + 15% xfstests + 25% format | 35% | Semantics retain 75%; overlapping Linux regressions receive a smaller share than contract and broad POSIX tests |
+| Robustness R | 40% robustness + 60% crash-contract compliance | 20% | Persisted-state commitments receive priority; contract-valid safe rejection still passes |
+| Code review S | Confirmed, deduplicated defect burden curve below | 20% | Severity reflects harm and reach; no second utility transform |
+| Applications W | 25% version control + 50% database + 25% archive | 10% | Concurrent database content and crash/reopen each consume half of the database budget |
+| Performance P | Equal CPU/NVMe shares; each is 80% speed + 20% RAM | 10% | Both device scenarios and resource costs retain fixed budgets |
+| Maintainability M | Eleven static proxies grouped into six risk budgets | 5% | Related indicators share a budget; syntactic diagnostics have a limited share |
 
-Missing inputs contribute zero only when calculating totals; profile tables show “—” to distinguish them from measured zeroes. A partially measured dimension keeps its original denominator and is marked with `*`. Calculations retain source precision and display two decimals. Ordering uses unrounded totals.
+The former shared utility function U is removed. The profile tables continue to show their native results; weighted dimensions can differ from their equal-category profile scores. Scores are retrospective measurements of existing evidence. Agent-facing instructions, generated implementations, finalized reviews and raw benchmark outcomes are unchanged.
+
+Missing inputs contribute zero only when calculating provisional totals; tables show “—” to distinguish them from measured zeroes. Missing shares retain their original weight, and partially measured dimensions are marked with `*`. Computation retains source precision and ordering uses unrounded totals. Diagnostic evidence keeps its original eligibility status; a provisional total is not a formal release result.
+
+[New and historical scores](../results/overall-score-v3.json) retain the v2 totals and dimension inputs. [Frozen numerical calibration](../results/scoring-calibration-v3.json) supplies every weight and anchor. These parameters are engineering and policy judgements, not a statistically fitted optimum. No cohort z-score, variance equalization or distribution scaling is applied; adding another submission cannot change an existing score.
+
+## Performance scale
+
+The full-score production target for each workload and cache state is the **fixed geometric mean of retained ext4, XFS and Btrfs rates**. Both device scenarios use this common target. This measures progress toward a production capability target, rather than claiming a paired same-device speed experiment: references used one 120-second sample, while candidates use the retained protocol-v2 adaptive samples.
+
+```text
+reference = geometric_mean(ext4_rate, xfs_rate, btrfs_rate)
+speed_score = 100 × clamp(log(candidate_rate / floor) / log(reference / floor), 0, 1)
+```
+
+Equal multiplicative improvements receive equal increments. Reaching the production target scores 100; faster rates are retained but scores cap at 100. The three-filesystem portfolio is fixed rather than selecting a favorable reference for each candidate. A portfolio target of 100 does not mean every member scores 100 in every cell.
+
+Speed budgets are sequential I/O 30%, random I/O 40% (single/multi/shared: 20/10/10%), and synchronized overwrite 30%; cold and warm share each budget equally. Metadata measurements remain separate diagnostics. Minimum rates are declared deployment targets, independent of the candidate distribution:
+
+| Workload | CPU floor | NVMe floor |
+|---|---:|---:|
+| Sequential | 100 MiB/s | 50 MiB/s |
+| Random single | 1000 IOPS | 500 IOPS |
+| Random multi | 2000 IOPS | 1000 IOPS |
+| Random shared | 1000 IOPS | 500 IOPS |
+| Synchronized overwrite | 50 ops/s | 20 ops/s |
+
+These floors retain the published operating envelope: sequential floors budget roughly 10.24/20.48 seconds per GiB of transfer; parallel random has twice the single-request processing target; synchronized floors budget roughly 20/50 ms per completed operation in the stream. They are policy targets, not test deadlines or independently measured user requirements. Synchronized operations/s is not a standalone fsync latency measurement.
+
+RAM uses an absolute, piecewise linear budget: 512 MiB or less scores 100, 2 GiB scores 50, 8 GiB or more scores 0. These represent roughly 1.56%, 6.25% and 25% of the 32 GiB guest. The maximum retained candidate cgroup peak includes initialization and resident charges; it is not compared to kernel-filesystem memory. A failed speed cell scores zero; an unmeasured cell remains missing. RAM earns no bonus unless the full fio load was observed.
+
+## Maintainability scale
+
+`maint-v3-policy` reuses the frozen `maint-v2-rev5` raw extraction and thresholds. It changes the aggregation: local complexity 30%, architecture 10%, duplication 15%, unsafe proof obligations 15%, error paths 20%, and diagnostic tooling 10%. Documentation of unsafe receives more weight than its mere occurrence; error-handling proxies receive more than syntactic lint counts. These are maintenance-risk proxies, not confirmed defects.
+
+| Proxy | Weight | Raw anchors for 100 / 60 / 0 points |
+|---|---:|---|
+| Function SLOC p95 | 10% | 40 / 100 / 250 |
+| Branching p95 | 15% | 8 / 15 / 30 |
+| Nesting p95 | 5% | 3 / 5 / 8 |
+| File SLOC p95 | 5% | 600 / 1500 / 3000 |
+| Dependency cycle share | 5% | .25 / .50 / .80 |
+| Duplication % | 15% | 3 / 10 / 25 |
+| Unsafe / KLOC | 5% | 2 / 10 / 30 |
+| Undocumented unsafe / KLOC | 10% | 1 / 5 / 15 |
+| Error risk / KLOC | 20% | 2 / 10 / 30 |
+| Lint / KLOC | 5% | 1 / 5 / 15 |
+| Suppressions / KLOC | 5% | .5 / 2 / 6 |
+
+Each component interpolates linearly between anchors and saturates outside them. Size and branching represent increasing local reasoning scope; dependency cycles represent propagation; repetition represents coordinated repair sites; unsafe and error paths represent proof obligations; diagnostics have a small budget because they are noisy and correlated. Threshold locations are explicit engineering warning bands and have not been validated against independent maintenance tasks.
 
 ## Agent code review
 
@@ -53,9 +94,13 @@ burden = 40 × critical + 15 × high + 5 × medium + low
 S = 10000 / (100 + burden)
 ```
 
-This is `agent-review-score-v2`: burden 0 gives 100, burden 100 gives 50, and burden 500 gives 16.67. Additional defects always lower the score, with diminishing deductions. A complete review with no confirmed defects scores 100; it is not proof of correctness. An incomplete or unperformed review has no S score, not a zero-defect result.
+This is `agent-review-score-v2`: burden 0 gives 100, burden 100 gives 50, and burden 500 gives 16.67. Additional defects always lower the score, with diminishing deductions. Severity weights are policy equivalents: five low roots equal one medium, three medium equal one high, and eight medium equal one critical; they are not measured risk probabilities. Scale 100 sets twenty medium-equivalent roots at half score. A complete review with no confirmed defects scores 100; it is not proof of correctness. An incomplete or unperformed review has no S score, not a zero-defect result.
 
 The README and model reports publish completion status, severity counts and diagnostic scores. [Aggregate JSON](../results/agent-review.json) also includes opaque evidence hashes. Detailed findings and agent conversations remain private.
+
+## Calibration sensitivity
+
+Current submissions are an audit cohort, not an independent validation set. The [aggregate audit](../results/scoring-audit-v3.json) retains per-axis standard deviations, covariance, saturation, performance noise and parameter sensitivity. No distribution scaling is justified by the available repeatability evidence. Changing the review scale from 100 to 200 makes Opus lead in the sensitivity scenario; the first-place ranking is therefore conditional on the stated risk policy. Median ± MAD perturbations are descriptive checks, not confidence intervals.
 
 ## Development statistics
 

@@ -1,0 +1,277 @@
+{
+  "application_weights": {
+    "archive": 0.25,
+    "database": 0.5,
+    "vcs": 0.25
+  },
+  "calibration_sha256": "ffcb93d5e4121c18ca6e794e5b4afec5a887c49d0507e27f901cf377bbb1aa54",
+  "distribution_scaling": "none",
+  "main_weights": {
+    "C": 0.35,
+    "M": 0.05,
+    "P": 0.1,
+    "R": 0.2,
+    "S": 0.2,
+    "W": 0.1
+  },
+  "maintainability": {
+    "cc_v2_p95": {
+      "anchors": [
+        8,
+        15,
+        30
+      ],
+      "weight": 0.15
+    },
+    "dup_pct": {
+      "anchors": [
+        3,
+        10,
+        25
+      ],
+      "weight": 0.15
+    },
+    "err_risk_per_kloc": {
+      "anchors": [
+        2,
+        10,
+        30
+      ],
+      "weight": 0.2
+    },
+    "file_sloc_p95": {
+      "anchors": [
+        600,
+        1500,
+        3000
+      ],
+      "weight": 0.05
+    },
+    "fn_sloc_p95": {
+      "anchors": [
+        40,
+        100,
+        250
+      ],
+      "weight": 0.1
+    },
+    "lint_per_kloc": {
+      "anchors": [
+        1,
+        5,
+        15
+      ],
+      "weight": 0.05
+    },
+    "nesting_p95": {
+      "anchors": [
+        3,
+        5,
+        8
+      ],
+      "weight": 0.05
+    },
+    "scc_share": {
+      "anchors": [
+        0.25,
+        0.5,
+        0.8
+      ],
+      "weight": 0.05
+    },
+    "suppress_per_kloc": {
+      "anchors": [
+        0.5,
+        2,
+        6
+      ],
+      "weight": 0.05
+    },
+    "unsafe_per_kloc": {
+      "anchors": [
+        2,
+        10,
+        30
+      ],
+      "weight": 0.05
+    },
+    "unsafe_undoc_per_kloc": {
+      "anchors": [
+        1,
+        5,
+        15
+      ],
+      "weight": 0.1
+    }
+  },
+  "performance": {
+    "anchors": {
+      "perf-cpu": {
+        "bulk-sequential": {
+          "cold": [
+            104857600,
+            3037424396.966678
+          ],
+          "warm": [
+            104857600,
+            3019457161.0479655
+          ]
+        },
+        "random-4k-multi": {
+          "cold": [
+            2000,
+            255940.41195891684
+          ],
+          "warm": [
+            2000,
+            256028.84643462911
+          ]
+        },
+        "random-4k-shared-regions": {
+          "cold": [
+            1000,
+            172487.89779089892
+          ],
+          "warm": [
+            1000,
+            173102.282239315
+          ]
+        },
+        "random-4k-single": {
+          "cold": [
+            1000,
+            171467.6833881213
+          ],
+          "warm": [
+            1000,
+            173362.60697785145
+          ]
+        },
+        "sync-overwrite": {
+          "cold": [
+            50,
+            7717.901988413142
+          ],
+          "warm": [
+            50,
+            7730.622401206041
+          ]
+        }
+      },
+      "perf-nvme": {
+        "bulk-sequential": {
+          "cold": [
+            52428800,
+            3037424396.966678
+          ],
+          "warm": [
+            52428800,
+            3019457161.0479655
+          ]
+        },
+        "random-4k-multi": {
+          "cold": [
+            1000,
+            255940.41195891684
+          ],
+          "warm": [
+            1000,
+            256028.84643462911
+          ]
+        },
+        "random-4k-shared-regions": {
+          "cold": [
+            500,
+            172487.89779089892
+          ],
+          "warm": [
+            500,
+            173102.282239315
+          ]
+        },
+        "random-4k-single": {
+          "cold": [
+            500,
+            171467.6833881213
+          ],
+          "warm": [
+            500,
+            173362.60697785145
+          ]
+        },
+        "sync-overwrite": {
+          "cold": [
+            20,
+            7717.901988413142
+          ],
+          "warm": [
+            20,
+            7730.622401206041
+          ]
+        }
+      }
+    },
+    "cache_weights": {
+      "cold": 0.5,
+      "warm": 0.5
+    },
+    "mode": "log-production-target",
+    "paired_environment_ratio": false,
+    "ram_anchors": [
+      [
+        536870912,
+        100
+      ],
+      [
+        2147483648,
+        50
+      ],
+      [
+        8589934592,
+        0
+      ]
+    ],
+    "reference_filesystems": [
+      "ext4",
+      "xfs",
+      "btrfs"
+    ],
+    "reference_sha256": "a244277df5cf411c25b5820a3a22a561d606a038314733af72a47b07015cd3db",
+    "resource_weights": {
+      "ram": 0.2,
+      "speed": 0.8
+    },
+    "workload_weights": {
+      "bulk-sequential": 0.3,
+      "random-4k-multi": 0.1,
+      "random-4k-shared-regions": 0.1,
+      "random-4k-single": 0.2,
+      "sync-overwrite": 0.3
+    }
+  },
+  "profile_weights": {
+    "C": {
+      "canonical-format": 0.25,
+      "pjdfstest-core": 0.3,
+      "spec-tests": 0.3,
+      "xfstests-core": 0.15
+    },
+    "P": {
+      "perf-cpu": 0.5,
+      "perf-nvme": 0.5
+    },
+    "R": {
+      "crash-core": 0.6,
+      "robustness": 0.4
+    }
+  },
+  "review_scale": 100,
+  "review_weights": {
+    "critical": 40,
+    "high": 15,
+    "low": 1,
+    "medium": 5
+  },
+  "rule": "core-overall-v3-zero-fill",
+  "schema_version": 1
+}

@@ -15,23 +15,23 @@ A filesystem's components have to work together. A local change can affect anoth
 These results cover the Core filesystem task: file operations, on-disk format, robustness, crash recovery, and real applications. Entries are ordered by overall score, highest first.
 
 <!-- core-results:begin -->
-![Model scores, highest first](assets/core-results.1eaa2a4121f45fc8.svg)
+![Model scores, highest first](assets/core-results.fd6e5367710ced18.svg)
 
 Dimension scores are out of 100. Under the existing weights, measured components cover up to **100 points** of the overall score; missing components contribute zero per implementation. Click a model for its report.
 
 | Model | Coding agent | Total / 100 | Correctness | Robustness | Code review | Applications | Performance | Maintainability | Active time | Output tokens | Est. cost (USD) |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **95.36** | 97.33 | 100.00 | 90.91 | 83.33 | 44.09 | 88.35 | 3:52:51 | 199,142 | $77.86 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) | Pi | **95.06** | 97.45 | 100.00 | 86.96 | 83.33 | 44.52 | 84.27 | 7:14:12 | 184,515 | $12.87 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **94.06** | 99.73 | 100.00 | 62.50 | 100.00 | 46.81 | 96.05 | 3:07:09 | 472,273 | $39.28 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **88.15** | 97.45 | 68.52 | 44.84 | 83.33 | 49.90 | 84.39 | 2:59:12 | 340,562 | $40.69 |
-| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **86.26** | 95.52 | 63.43 | 38.31 | 83.33 | 47.82 | 91.37 | 5:16:10 | 298,429 | $72.41 |
-| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **85.89** | 95.81 | 99.77 | 27.47 | 83.33 | 38.23 | 82.30 | 7:32:19 | 541,837 | $62.99 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | **80.44** | 95.44 | 88.45 | 31.15 | 33.33 | 21.36 | 76.19 | 2:42:57 | 87,220 | $7.81 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **79.76** | 89.72 | 82.48 | 15.95 | 66.67 | 39.87 | 79.85 | ≥12:19:49 | 518,078 | $3.26 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **79.11** | 90.57 | 78.59 | 17.86 | 50.00 | 39.52 | 72.89 | 3:05:17 | 267,908 | $31.62 |
-| [Kimi K3](results/core/kimi-k3-high.md) | Pi | **77.84** | 93.48 | 96.20 | 26.88 | 66.67 | 0.00 | 82.16 | 6:52:08 | 478,897 | $90.50 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | **76.12** | 89.21 | 67.85 | 16.39 | 33.33 | 41.81 | 83.25 | ≥12:00:54 | 734,568 | $3.29 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **90.05** | 98.40 | 100.00 | 90.91 | 75.00 | 55.51 | 87.63 | 3:52:51 | 199,142 | $77.86 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) | Pi | **89.23** | 98.47 | 100.00 | 86.96 | 75.00 | 57.04 | 83.32 | 7:14:12 | 184,515 | $12.87 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **88.31** | 99.84 | 100.00 | 62.50 | 100.00 | 60.58 | 96.17 | 3:07:09 | 472,273 | $39.28 |
+| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **75.23** | 96.89 | 99.72 | 27.47 | 75.00 | 42.64 | 82.30 | 7:32:19 | 541,837 | $62.99 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **73.80** | 98.02 | 62.22 | 44.84 | 75.00 | 62.33 | 87.02 | 2:59:12 | 340,562 | $40.69 |
+| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **71.19** | 96.74 | 58.06 | 38.31 | 75.00 | 60.15 | 90.76 | 5:16:10 | 298,429 | $72.41 |
+| [Kimi K3](results/core/kimi-k3-high.md) | Pi | **69.38** | 94.51 | 95.94 | 26.88 | 75.00 | 0.00 | 84.78 | 6:52:08 | 478,897 | $90.50 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | **69.22** | 96.48 | 90.39 | 31.15 | 50.00 | 23.60 | 75.69 | 2:42:57 | 87,220 | $7.81 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **65.58** | 91.32 | 85.06 | 15.95 | 50.00 | 44.98 | 78.42 | ≥12:19:49 | 518,078 | $3.26 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **64.15** | 92.11 | 76.39 | 17.86 | 50.00 | 46.56 | 68.11 | 3:05:17 | 267,908 | $31.62 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | **63.34** | 91.06 | 68.17 | 16.39 | 50.00 | 53.71 | 83.67 | ≥12:00:54 | 734,568 | $3.29 |
 
 Each row represents one development run. Agent configurations are described below, with separate entries for different agents. See [scoring](docs/scoring.md) for the formula.
 
@@ -44,9 +44,11 @@ Reference is a calibration implementation. Its scores and report are listed belo
 
 | Implementation | Total / 100 | Correctness | Robustness | Code review | Applications | Performance | Maintainability |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [Reference](results/eval-only/reference-calibration.md) | 65.88 | 74.87 | 97.82 | — | 100.00 | — | 69.11 |
+| [Reference](results/eval-only/reference-calibration.md) | 59.17 | 74.92 | 97.89 | — | 100.00 | — | 67.39 |
 
 </details>
+
+Current rule: `core-overall-v3-zero-fill`, a direct weighted sum with logarithmic performance scores against a fixed ext4/XFS/Btrfs production target. [Scores and calibration identity](results/overall-score-v3.json) retain the v2 scores.
 
 ### Agent code review
 
@@ -57,13 +59,13 @@ Diagnostic results after independent reviews, root-cause deduplication and align
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | `complete` | 0 | 0 | 2 | 0 | 90.91 |
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | `complete` | 0 | 1 | 0 | 0 | 86.96 |
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | `complete` | 0 | 1 | 9 | 0 | 62.50 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | `complete` | 1 | 6 | 25 | 9 | 27.47 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | `complete` | 1 | 0 | 16 | 3 | 44.84 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | `complete` | 0 | 6 | 13 | 6 | 38.31 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | `complete` | 1 | 6 | 25 | 9 | 27.47 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | `complete` | 4 | 3 | 13 | 2 | 26.88 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | `complete` | 2 | 5 | 13 | 1 | 31.15 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | `complete` | 5 | 11 | 31 | 7 | 15.95 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | `complete` | 8 | 1 | 23 | 10 | 17.86 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | `complete` | 4 | 3 | 13 | 2 | 26.88 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | `complete` | 8 | 3 | 29 | 0 | 16.39 |
 | [Reference](results/eval-only/reference-calibration.md) | `incomplete` | — | — | — | — | — |
 
@@ -100,13 +102,13 @@ A filesystem must first handle everyday operations correctly: reading and writin
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 <!-- profile-spec-tests:end -->
 
@@ -118,13 +120,13 @@ A filesystem must first handle everyday operations correctly: reading and writin
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 168 / 169 | 99.41% | 99.26 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 <!-- profile-pjdfstest-core:end -->
 
@@ -136,13 +138,13 @@ A filesystem must first handle everyday operations correctly: reading and writin
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 179 / 194 | 92.27% | 89.31 |
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 187 / 194 | 96.39% | 89.81 |
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 189 / 194 | 97.42% | 98.90 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 183 / 194 | 94.33% | 89.17 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 188 / 194 | 96.91% | 94.36 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 183 / 194 | 94.33% | 87.35 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 183 / 194 | 94.33% | 89.17 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 186 / 194 | 95.88% | 89.75 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 184 / 194 | 94.85% | 89.62 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 167 / 194 | 86.08% | 84.02 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 175 / 194 | 90.21% | 84.61 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 186 / 194 | 95.88% | 89.75 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 168 / 194 | 86.60% | 81.52 |
 <!-- profile-xfstests-core:end -->
 
@@ -156,13 +158,13 @@ Being able to read a file does not guarantee that the data on disk is organized 
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 479 / 479 | 100.00% | 100.00 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 417 / 479 | 87.06% | 94.05 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 431 / 479 | 89.98% | 95.45 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 431 / 479 | 89.98% | 95.45 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 417 / 479 | 87.06% | 94.05 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 410 / 479 | 85.59% | 84.17 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 442 / 479 | 92.28% | 92.15 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 388 / 479 | 81.00% | 74.86 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 419 / 479 | 87.47% | 77.66 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 410 / 479 | 85.59% | 84.17 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 368 / 479 | 76.83% | 75.33 |
 <!-- profile-canonical-format:end -->
 
@@ -176,13 +178,13 @@ A filesystem also has to handle resource pressure and failed operations. These t
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 47 / 47 | 100.00% | 100.00 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 47 / 47 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 44 / 47 | 93.62% | 90.28 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 46 / 47 | 97.87% | 97.50 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 40 / 47 | 85.11% | 78.75 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 35 / 47 | 74.47% | 69.58 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 43 / 47 | 91.49% | 89.58 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 46 / 47 | 97.87% | 97.50 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 32 / 47 | 68.09% | 66.25 |
 <!-- profile-robustness:end -->
 
@@ -196,13 +198,13 @@ After an unexpected interruption, the filesystem must handle the state left on d
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 216 / 216 | 100.00% | 100.00 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 215 / 216 | 99.54% | 99.54 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 80 / 216 | 37.04% | 37.04 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 79 / 216 | 36.57% | 36.57 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 215 / 216 | 99.54% | 99.54 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 205 / 216 | 94.91% | 94.91 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 212 / 216 | 98.15% | 98.15 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 206 / 216 | 95.37% | 95.37 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 146 / 216 | 67.59% | 67.59 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 205 / 216 | 94.91% | 94.91 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 150 / 216 | 69.44% | 69.44 |
 <!-- profile-crash-core:end -->
 
@@ -213,39 +215,39 @@ Finally, real applications use the filesystem. These tests check whether applica
 <!-- profile-real-world:begin -->
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 3 / 4 | 75.00% | 75.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 3 / 4 | 75.00% | 75.00 |
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 4 / 4 | 100.00% | 100.00 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 3 / 4 | 75.00% | 83.33 |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 2 / 4 | 50.00% | 33.33 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 2 / 4 | 50.00% | 66.67 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 3 / 4 | 75.00% | 75.00 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 3 / 4 | 75.00% | 75.00 |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 3 / 4 | 75.00% | 75.00 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 3 / 4 | 75.00% | 75.00 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 2 / 4 | 50.00% | 50.00 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 2 / 4 | 50.00% | 50.00 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 2 / 4 | 50.00% | 50.00 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 3 / 4 | 75.00% | 66.67 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 2 / 4 | 50.00% | 33.33 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 2 / 4 | 50.00% | 50.00 |
 <!-- profile-real-world:end -->
 
 ### Performance
 
-Performance tests run fio and metadata workloads on a memory-backed device (`perf-cpu`) and a disk device (`perf-nvme`), each from a cold and a warm cache. Each workload's result is the median of its counted samples, and each column combines them by geometric mean: sequential read and write use 1 MiB requests, random read and write use 4 KiB requests in three access patterns, and metadata covers seven workloads. Reads and writes in each fio workload run concurrently, so a column is not a single-direction peak. The speed index is the geometric mean of the five columns; ratios between models do not depend on the units. The score is the profile's performance score; synchronized overwrites are not shown but count toward it. A dash marks a value with an unmeasured or failed workload; scores from different comparison pools are not comparable.
+Performance tests run fio and metadata workloads on a memory-backed device (`perf-cpu`) and a disk device (`perf-nvme`), each from a cold and a warm cache. Each workload's result is the median of its counted samples, and each column combines them by geometric mean: sequential read and write use 1 MiB requests, random read and write use 4 KiB requests in three access patterns, and metadata covers seven workloads. Reads and writes in each fio workload run concurrently, so a column is not a single-direction peak. The speed index is the geometric mean of the five columns; ratios between models do not depend on the units. The score uses the v3 logarithmic scale toward the fixed ext4/XFS/Btrfs production target, plus absolute RAM budgets; synchronized overwrites are not shown but count toward it. Both device scenarios use this common target, rather than a paired same-device reference experiment. A dash marks a value with an unmeasured or failed workload; scores from different comparison pools are not comparable.
 
 <!-- profile-perf-cpu:begin -->
 **CPU performance** (`perf-cpu`) · comparison pool `hyperv-fixed-vhdx`
 
 | Model / Agent | Seq read (MiB/s) | Seq write (MiB/s) | Random read (IOPS) | Random write (IOPS) | Metadata (ops/s) | Speed index | Score / 100 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 218.5 | 218.3 | 3,564 | 130 | — | — | 42.72 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 163.5 | 163.3 | 4,844 | 108 | 2,068 | 492.56 | 42.44 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 191.0 | 190.9 | 4,556 | 3,776 | 2,574 | 1,100.61 | 45.43 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 316.0 | 316.4 | 5,493 | 3,343 | 2,593 | 1,366.30 | 47.69 |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 202.9 | 202.7 | 5,302 | 445 | — | — | 44.78 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 30.8 | 30.2 | 2,002 | 289 | 1,121 | 227.06 | 36.89 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 14.4 | 14.3 | 1,013 | 39 | — | — | 22.92 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 17.4 | 17.4 | 3,617 | 151 | 731 | 164.40 | 39.63 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 17.5 | 17.4 | 2,208 | 1,891 | 966 | 261.63 | 38.83 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 218.5 | 218.3 | 3,564 | 130 | — | — | 56.88 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 163.5 | 163.3 | 4,844 | 108 | 2,068 | 492.56 | 57.17 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 191.0 | 190.9 | 4,556 | 3,776 | 2,574 | 1,100.61 | 61.96 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 30.8 | 30.2 | 2,002 | 289 | 1,121 | 227.06 | 43.58 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 316.0 | 316.4 | 5,493 | 3,343 | 2,593 | 1,366.30 | 64.06 |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 202.9 | 202.7 | 5,302 | 445 | — | — | 60.37 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | — | — | — | — | — | — | 0.00 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 122.2 | 122.2 | 2,589 | 1,894 | — | — | 40.38 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 14.4 | 14.3 | 1,013 | 39 | — | — | 26.68 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 17.4 | 17.4 | 3,617 | 151 | 731 | 164.40 | 46.18 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 17.5 | 17.4 | 2,208 | 1,891 | 966 | 261.63 | 47.10 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 122.2 | 122.2 | 2,589 | 1,894 | — | — | 53.90 |
 <!-- profile-perf-cpu:end -->
 
 <!-- profile-perf-nvme:begin -->
@@ -253,45 +255,47 @@ Performance tests run fio and metadata workloads on a memory-backed device (`per
 
 | Model / Agent | Seq read (MiB/s) | Seq write (MiB/s) | Random read (IOPS) | Random write (IOPS) | Metadata (ops/s) | Speed index | Score / 100 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 134.5 | 134.5 | 1,348 | 71 | — | — | 45.46 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 136.0 | 136.1 | 2,107 | 78 | 1,652 | 347.37 | 46.59 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 137.7 | 137.8 | 1,880 | 1,639 | 2,033 | 653.07 | 48.19 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 162.8 | 162.8 | 3,007 | 1,892 | 1,998 | 786.63 | 52.11 |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 165.6 | 165.7 | 2,825 | 141 | — | — | 50.86 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 14.6 | 14.2 | 1,185 | 213 | 688 | 129.04 | 39.57 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 9.7 | 8.5 | 157 | 34 | — | — | 19.81 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 7.9 | 7.8 | 470 | 345 | 451 | 85.04 | 40.10 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 7.9 | 7.8 | 1,200 | 1,096 | 563 | 135.55 | 40.21 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 134.5 | 134.5 | 1,348 | 71 | — | — | 54.13 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 136.0 | 136.1 | 2,107 | 78 | 1,652 | 347.37 | 56.91 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 137.7 | 137.8 | 1,880 | 1,639 | 2,033 | 653.07 | 59.21 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 14.6 | 14.2 | 1,185 | 213 | 688 | 129.04 | 41.70 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 162.8 | 162.8 | 3,007 | 1,892 | 1,998 | 786.63 | 60.61 |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 165.6 | 165.7 | 2,825 | 141 | — | — | 59.93 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | — | — | — | — | — | — | 0.00 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 88.8 | 88.9 | 1,315 | 1,030 | — | — | 43.24 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 9.7 | 8.5 | 157 | 34 | — | — | 20.51 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 7.9 | 7.8 | 470 | 345 | 451 | 85.04 | 43.78 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 7.9 | 7.8 | 1,200 | 1,096 | 563 | 135.55 | 46.02 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 88.8 | 88.9 | 1,315 | 1,030 | — | — | 53.52 |
 | *ext4 (kernel reference)* | 929.7 | 1,791.1 | 131,472 | 128,606 | 36,877 | 15,968.56 | — |
 | *XFS (kernel reference)* | 944.2 | 1,773.1 | 133,655 | 131,359 | 41,531 | 16,493.88 | — |
 | *Btrfs (kernel reference)* | 3,146.4 | 111.7 | 105,942 | 3,892 | 21,106 | 4,978.23 | — |
 
-Kernel reference rows: ext4/XFS/Btrfs mounted directly with default options on the same host drive and 64 GiB VHDX, without FUSE or the NBD controller; one repetition per cell with 120 s fio windows (candidates: 10 s windows, median of 3–5 samples); `near-enospc-reclaim` uses the 64 GiB geometry. They are diagnostic references: unscored and unranked.
+Kernel reference rows: ext4/XFS/Btrfs mounted directly with default options on the same host drive and 64 GiB VHDX, without FUSE or the NBD controller; one repetition per cell with 120 s fio windows (candidates: 10 s windows, median of protocol-v2 adaptive samples); `near-enospc-reclaim` uses the 64 GiB geometry. They are diagnostic references: unscored and unranked.
+
+V3 uses the fixed geometric mean of these three filesystem rates as the production full-score target, shared by both device scenarios.
 <!-- profile-perf-nvme:end -->
 
 ### Maintainability
 
-Maintainability is measured statically from each submission's own source (`solution/bench/`; the fixed SDK and FUSE adapter are excluded), without compiling it. Eleven components (function size, branching, nesting, file size, module cycles, duplication, `unsafe` density and documentation, error-handling risk sites, syntactic lint findings, and lint suppressions) are each mapped to 0–100 by fixed thresholds and combined with fixed weights. Rates are per thousand lines of code (KLOC). The score is the maintainability dimension M, 5% of the overall score. Its weights are fixed but not yet calibrated against actual maintenance work.
+Maintainability is measured statically from each submission's own source (`solution/bench/`; the fixed SDK and FUSE adapter are excluded), without compiling it. Eleven components (function size, branching, nesting, file size, module cycles, duplication, `unsafe` density and documentation, error-handling risk sites, syntactic lint findings, and lint suppressions) are each mapped to 0–100 by fixed thresholds and combined with fixed weights. Rates are per thousand lines of code (KLOC). The score is the maintainability dimension M, 5% of the overall score. V3 groups the proxies into documented risk budgets, with error paths and safety explanations prioritized over syntactic diagnostics. The thresholds remain engineering warning bands without independent maintenance-task validation.
 
 <!-- maintainability:begin -->
-**Maintainability** · `maint-v2-rev5`
+**Maintainability** · `maint-v3-policy`
 
 | Model / Agent | KLOC | Function SLOC p95 | Branching p95 | Nesting p95 | File SLOC p95 | Cycle share | Duplication % | Unsafe /KLOC | Undocumented unsafe /KLOC | Error-handling risk /KLOC | Lint /KLOC | Suppressions /KLOC | Score / 100 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 4.11 | 74 | 15 | 3 | 1,158 | 0.00 | 0.7 | 0.7 | 0.5 | 4.9 | 0.00 | 0.5 | **88.35** |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 3.96 | 82 | 17 | 4 | 1,288 | 0.00 | 0.6 | 1.5 | 0.3 | 5.8 | 0.76 | 0.8 | **84.27** |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 7.14 | 57 | 11 | 3 | 554 | 0.27 | 0.0 | 0.7 | 0.1 | 0.4 | 0.00 | 0.4 | **96.05** |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 6.35 | 66 | 14 | 3 | 1,912 | 0.58 | 2.2 | 0.9 | 0.0 | 2.5 | 0.00 | 0.5 | **84.39** |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 5.17 | 54 | 14 | 3 | 923 | 0.00 | 0.0 | 0.4 | 0.4 | 4.4 | 0.19 | 0.2 | **91.37** |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 4.11 | 74 | 15 | 3 | 1,158 | 0.00 | 0.7 | 0.7 | 0.5 | 4.9 | 0.00 | 0.5 | **87.63** |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 3.96 | 82 | 17 | 4 | 1,288 | 0.00 | 0.6 | 1.5 | 0.3 | 5.8 | 0.76 | 0.8 | **83.32** |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 7.14 | 57 | 11 | 3 | 554 | 0.27 | 0.0 | 0.7 | 0.1 | 0.4 | 0.00 | 0.4 | **96.17** |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 6.94 | 97 | 18 | 4 | 3,241 | 0.00 | 2.9 | 0.1 | 0.1 | 0.9 | 0.00 | 0.6 | **82.30** |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 3.24 | 103 | 28 | 3 | 2,687 | 0.00 | 0.0 | 0.3 | 0.3 | 4.0 | 0.31 | 0.3 | **76.19** |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 6.23 | 86 | 17 | 3 | 2,337 | 0.13 | 5.2 | 0.2 | 0.2 | 7.7 | 0.00 | 0.0 | **79.85** |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 4.42 | 87 | 14 | 4 | 1,372 | 0.00 | 4.4 | 0.5 | 0.5 | 28.5 | 0.00 | 0.9 | **72.89** |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 6.71 | 77 | 14 | 3 | 3,471 | 0.56 | 2.7 | 0.1 | 0.1 | 0.6 | 0.30 | 0.4 | **82.16** |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 6.84 | 74 | 14 | 3 | 2,392 | 0.42 | 0.9 | 2.6 | 1.3 | 5.3 | 0.29 | 0.3 | **83.25** |
-| *Reference (calibration)* | 4.61 | 132 | 37 | 4 | 3,632 | 0.00 | 2.0 | 1.5 | 1.5 | 7.8 | 0.43 | 0.2 | **69.11** |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 6.35 | 66 | 14 | 3 | 1,912 | 0.58 | 2.2 | 0.9 | 0.0 | 2.5 | 0.00 | 0.5 | **87.02** |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 5.17 | 54 | 14 | 3 | 923 | 0.00 | 0.0 | 0.4 | 0.4 | 4.4 | 0.19 | 0.2 | **90.76** |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 6.71 | 77 | 14 | 3 | 3,471 | 0.56 | 2.7 | 0.1 | 0.1 | 0.6 | 0.30 | 0.4 | **84.78** |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 3.24 | 103 | 28 | 3 | 2,687 | 0.00 | 0.0 | 0.3 | 0.3 | 4.0 | 0.31 | 0.3 | **75.69** |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 6.23 | 86 | 17 | 3 | 2,337 | 0.13 | 5.2 | 0.2 | 0.2 | 7.7 | 0.00 | 0.0 | **78.42** |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 4.42 | 87 | 14 | 4 | 1,372 | 0.00 | 4.4 | 0.5 | 0.5 | 28.5 | 0.00 | 0.9 | **68.11** |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 6.84 | 74 | 14 | 3 | 2,392 | 0.42 | 0.9 | 2.6 | 1.3 | 5.3 | 0.29 | 0.3 | **83.67** |
+| *Reference (calibration)* | 4.61 | 132 | 37 | 4 | 3,632 | 0.00 | 2.0 | 1.5 | 1.5 | 7.8 | 0.43 | 0.2 | **67.39** |
 <!-- maintainability:end -->
 
 <a id="setup"></a>

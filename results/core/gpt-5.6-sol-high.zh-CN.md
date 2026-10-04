@@ -209,7 +209,7 @@ Profile: `perf-cpu`
 
 结果：`candidate-failed`；评测分类：`diagnostic`。
 
-性能分：**22.92**（比较池 `hyperv-fixed-vhdx`）。
+性能分：**26.68**（比较池 `hyperv-fixed-vhdx`）。
 
 | 类别 | 缓存 | 主指标 | 样本数 | 中位数 | MAD | CV | 候选失败样本 |
 |---|---|---|---:|---:|---:|---:|---:|
@@ -247,7 +247,7 @@ Profile: `perf-nvme`
 
 结果：`candidate-failed`；评测分类：`diagnostic`。
 
-性能分：**19.81**（比较池 `hyperv-fixed-vhdx`）。
+性能分：**20.51**（比较池 `hyperv-fixed-vhdx`）。
 
 | 类别 | 缓存 | 主指标 | 样本数 | 中位数 | MAD | CV | 候选失败样本 |
 |---|---|---|---:|---:|---:|---:|---:|
@@ -297,5 +297,5 @@ Scoring rule: `agent-review-score-v2`.
 
 `valid` 表示该 profile 的证据有效，不等于全部用例通过或全维度发布合格。`candidate-failed` 是候选失败，不是基础设施错误。`diagnostic` 仅诊断；`noneligible` 不具备排名资格。Hyper-V 性能不具备发布/排名资格；协议 v2 在固定 VHDX/内存设备上的 Hyper-V 运行单独组成 `hyperv-fixed-vhdx` 比较池计入暂计总分，与 KVM/raw-NVMe 分数不可比。
 
-可维护性（`maint-v2-rev5`，占总分 5%）：**76.19** / 100，各项见 README。Reference 单列为校准基线，不是模型生成条目。
+可维护性（`maint-v3-policy`，占总分 5%）：**75.69** / 100，各项见 README。Reference 单列为校准基线，不是模型生成条目。
 <!-- core-results:end -->

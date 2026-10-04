@@ -125,7 +125,7 @@ Profile: `perf-cpu`
 
 Outcome: `pass`; classification: `diagnostic`.
 
-Performance score: **42.44** (comparison pool `hyperv-fixed-vhdx`).
+Performance score: **57.17** (comparison pool `hyperv-fixed-vhdx`).
 
 | Family | Cache | Primary metric | Samples | Median | MAD | CV | Candidate-failed samples |
 |---|---|---|---:|---:|---:|---:|---:|
@@ -163,7 +163,7 @@ Profile: `perf-nvme`
 
 Outcome: `pass`; classification: `diagnostic`.
 
-Performance score: **46.59** (comparison pool `hyperv-fixed-vhdx`).
+Performance score: **56.91** (comparison pool `hyperv-fixed-vhdx`).
 
 | Family | Cache | Primary metric | Samples | Median | MAD | CV | Candidate-failed samples |
 |---|---|---|---:|---:|---:|---:|---:|
@@ -213,7 +213,7 @@ Original profile results remain independent; the index adds a derived provisiona
 
 `valid` means the profile evidence is valid, not that all cases passed or release eligibility is established. `candidate-failed` is not an infrastructure error. `diagnostic` is diagnostic-only; `noneligible` cannot enter rankings. Hyper-V performance is not release- or ranking-eligible; protocol-v2 Hyper-V runs on the fixed VHDX/memory devices form their own `hyperv-fixed-vhdx` pool, counted in the provisional total and not comparable with KVM/raw-NVMe scores.
 
-Maintainability (`maint-v2-rev5`, 5% of the overall score): **84.27** / 100; components are in the README. Reference is a separate calibration baseline, not a model-generation entry.
+Maintainability (`maint-v3-policy`, 5% of the overall score): **83.32** / 100; components are in the README. Reference is a separate calibration baseline, not a model-generation entry.
 <!-- core-results:end -->
 
 ## Development time
