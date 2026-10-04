@@ -15,7 +15,7 @@ A filesystem's components have to work together. A local change can affect anoth
 These results cover the Core filesystem task: file operations, on-disk format, robustness, crash recovery, and real applications. Entries are ordered by overall score, highest first.
 
 <!-- core-results:begin -->
-![Model scores, highest first](assets/core-results.svg)
+![Model scores, highest first](assets/core-results.acc98f3b472b3312.svg)
 
 Dimension scores are out of 100. Under the existing weights, the measured dimensions account for **80 points** of the overall score; unmeasured components contribute zero. Click a model for its report.
 
