@@ -294,5 +294,5 @@ Run: `perf-v2-core-deepseek-v4-flash-0731-perf-nvme-r6`
 
 `valid` 表示该 profile 的证据有效，不等于全部用例通过或全维度发布合格。`candidate-failed` 是候选失败，不是基础设施错误。`diagnostic` 仅诊断；`noneligible` 不具备排名资格。Hyper-V 性能不具备发布/排名资格；协议 v2 在固定 VHDX/内存设备上的 Hyper-V 运行单独组成 `hyperv-fixed-vhdx` 比较池计入暂计总分，与 KVM/raw-NVMe 分数不可比。
 
-安全审查与可维护性评分尚未评定。Reference 单列为校准基线，不是模型生成条目。
+安全审查尚未评定。可维护性（诊断指标 `maint-v2-rev5`，不计入总分）：**79.85** / 100，各项见 README。Reference 单列为校准基线，不是模型生成条目。
 <!-- core-results:end -->

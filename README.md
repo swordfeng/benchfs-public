@@ -250,6 +250,29 @@ Performance tests run fio and metadata workloads on a memory-backed device (`per
 Kernel reference rows: ext4/XFS/Btrfs mounted directly with default options on the same host drive and 64 GiB VHDX, without FUSE or the NBD controller; one repetition per cell with 120 s fio windows (candidates: 10 s windows, median of 3–5 samples); `near-enospc-reclaim` uses the 64 GiB geometry. They are diagnostic references: unscored and unranked.
 <!-- profile-perf-nvme:end -->
 
+### Maintainability (diagnostic)
+
+Maintainability is measured statically from each submission's own source (`solution/bench/`; the fixed SDK and FUSE adapter are excluded), without compiling it. Eleven components (function size, branching, nesting, file size, module cycles, duplication, `unsafe` density and documentation, error-handling risk sites, syntactic lint findings, and lint suppressions) are each mapped to 0–100 by fixed thresholds and combined with fixed weights. Rates are per thousand lines of code (KLOC). This score is a diagnostic: it is not part of the overall score, and its weights are not yet calibrated against actual maintenance work.
+
+<!-- maintainability:begin -->
+**Maintainability (diagnostic)** · `maint-v2-rev5`
+
+| Model / Agent | KLOC | Function SLOC p95 | Branching p95 | Nesting p95 | File SLOC p95 | Cycle share | Duplication % | Unsafe /KLOC | Undocumented unsafe /KLOC | Error-handling risk /KLOC | Lint /KLOC | Suppressions /KLOC | Score / 100 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 7.14 | 57 | 11 | 3 | 554 | 0.27 | 0.0 | 0.7 | 0.1 | 0.4 | 0.00 | 0.4 | **96.05** |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 3.96 | 82 | 17 | 4 | 1,288 | 0.00 | 0.6 | 1.5 | 0.3 | 5.8 | 0.76 | 0.8 | **84.27** |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 4.11 | 74 | 15 | 3 | 1,158 | 0.00 | 0.7 | 0.7 | 0.5 | 4.9 | 0.00 | 0.5 | **88.35** |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 6.94 | 97 | 18 | 4 | 3,241 | 0.00 | 2.9 | 0.1 | 0.1 | 0.9 | 0.00 | 0.6 | **82.30** |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 6.35 | 66 | 14 | 3 | 1,912 | 0.58 | 2.2 | 0.9 | 0.0 | 2.5 | 0.00 | 0.5 | **84.39** |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 5.17 | 54 | 14 | 3 | 923 | 0.00 | 0.0 | 0.4 | 0.4 | 4.4 | 0.19 | 0.2 | **91.37** |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 6.23 | 86 | 17 | 3 | 2,337 | 0.13 | 5.2 | 0.2 | 0.2 | 7.7 | 0.00 | 0.0 | **79.85** |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 4.42 | 87 | 14 | 4 | 1,372 | 0.00 | 4.4 | 0.5 | 0.5 | 28.5 | 0.00 | 0.9 | **72.89** |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 3.24 | 103 | 28 | 3 | 2,687 | 0.00 | 0.0 | 0.3 | 0.3 | 4.0 | 0.31 | 0.3 | **76.19** |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 6.84 | 74 | 14 | 3 | 2,392 | 0.42 | 0.9 | 2.6 | 1.3 | 5.3 | 0.29 | 0.3 | **83.25** |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 6.71 | 77 | 14 | 3 | 3,471 | 0.56 | 2.7 | 0.1 | 0.1 | 0.6 | 0.30 | 0.4 | **82.16** |
+| *Reference (calibration)* | 4.61 | 132 | 37 | 4 | 3,632 | 0.00 | 2.0 | 1.5 | 1.5 | 7.8 | 0.43 | 0.2 | **69.11** |
+<!-- maintainability:end -->
+
 <a id="setup"></a>
 
 ## Experimental setup

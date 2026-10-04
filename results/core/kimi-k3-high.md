@@ -297,5 +297,5 @@ Original profile results remain independent; the index adds a derived provisiona
 
 `valid` means the profile evidence is valid, not that all cases passed or release eligibility is established. `candidate-failed` is not an infrastructure error. `diagnostic` is diagnostic-only; `noneligible` cannot enter rankings. Hyper-V performance is not release- or ranking-eligible; protocol-v2 Hyper-V runs on the fixed VHDX/memory devices form their own `hyperv-fixed-vhdx` pool, counted in the provisional total and not comparable with KVM/raw-NVMe scores.
 
-Security-review and maintainability scores are not assessed. Reference is a separate calibration baseline, not a model-generation entry.
+Security review is not assessed. Maintainability (diagnostic `maint-v2-rev5`, not part of the total): **82.16** / 100; components are in the README. Reference is a separate calibration baseline, not a model-generation entry.
 <!-- core-results:end -->
