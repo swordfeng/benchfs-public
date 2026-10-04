@@ -24,6 +24,8 @@ Semantic tests, pjdfstest, xfstests, robustness, crash consistency, and applicat
 | Correctness C | Mean of semantic, pjdfstest, xfstests, and format scores | 35% |
 | Robustness R | Mean of robustness and crash-consistency scores | 20% |
 | Applications W | Application score | 10% |
+| Performance P | Mean of the CPU and NVMe performance scores | 10% |
+| Maintainability M | Static `maint-v2` score of the submission's own source (see the README) | 5% |
 
 The overall score retains the weights and transformation in `core-overall-v1-zero-fill`. First aggregate each dimension, then apply the utility function U below, and finally take the weighted sum.
 
@@ -34,10 +36,10 @@ The overall score retains the weights and transformation in `core-overall-v1-zer
 U interpolates linearly between adjacent points. Current scores are calculated as:
 
 ```text
-total = 0.35 × U(C) + 0.20 × U(R) + 0.10 × U(W)
+total = 0.35 × U(C) + 0.20 × U(R) + 0.10 × U(W) + 0.10 × U(P) + 0.05 × U(M)
 ```
 
-Measured components account for 65 points. The other 35 points in the existing rule—code review (20%), performance (10%), and maintainability (5%)—are unmeasured and contribute zero. Existing scores have not been reweighted or rescaled to 100. The overview does not score implementations through subjective code commentary or convert source size into quality points.
+Measured components account for 80 points. The other 20 points in the existing rule—code review (20%)—are unmeasured and contribute zero. Existing scores have not been reweighted or rescaled to 100. The overview does not score implementations through subjective code commentary or convert source size into quality points.
 
 Missing inputs contribute zero only when calculating totals; profile tables show “—” to distinguish them from measured zeroes. A partially measured dimension keeps its original denominator and is marked with `*`. Calculations retain source precision and display two decimals. Ordering uses unrounded totals.
 

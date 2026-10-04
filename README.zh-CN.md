@@ -17,21 +17,21 @@
 <!-- core-results:begin -->
 ![模型成绩，按总分从高到低排列](assets/core-results.zh-CN.svg)
 
-分项满分均为 100。总分沿用现有权重，当前已测项目合计占 **75 分**；其余项目尚未测量，按 0 计入总分。点击模型名称可查看详细报告。
+分项满分均为 100。总分沿用现有权重，当前已测项目合计占 **80 分**；其余项目尚未测量，按 0 计入总分。点击模型名称可查看详细报告。
 
-| 模型 | 编程 Agent | 总分 / 100 | 正确性 | 稳健性 | 真实应用 | 性能 | 开发活跃时长 | 输出 tokens | 估算费用（美元） |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) | Claude Code | **72.28** | 99.73 | 100.00 | 100.00 | 46.81 | 3:07:09 | 472,273 | $39.28 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) | Pi | **71.24** | 97.45 | 100.00 | 83.33 | 44.52 | 7:14:12 | 184,515 | $12.87 |
-| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) | Pi | **71.20** | 97.33 | 100.00 | 83.33 | 44.09 | 3:52:51 | 199,142 | $77.86 |
-| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) | Pi | **70.48** | 95.81 | 99.77 | 83.33 | 38.23 | 7:32:19 | 541,837 | $62.99 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) | Claude Code | **69.10** | 97.45 | 68.52 | 83.33 | 49.90 | 2:59:12 | 340,562 | $40.69 |
-| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) | Pi | **68.20** | 95.52 | 63.43 | 83.33 | 47.82 | 5:16:10 | 298,429 | $72.41 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) | Pi | **67.93** | 89.72 | 82.48 | 66.67 | 39.87 | ≥12:19:49 | 518,078 | $3.26 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) | Pi | **66.60** | 90.57 | 78.59 | 50.00 | 39.52 | 3:05:17 | 267,908 | $31.62 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) | Pi | **64.32** | 95.44 | 88.45 | 33.33 | 21.36 | 2:42:57 | 87,220 | $7.81 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) | Pi | **64.03** | 89.21 | 67.85 | 33.33 | 41.81 | ≥12:00:54 | 734,568 | $3.29 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 | 0.00 | 6:52:08 | 478,897 | $90.50 |
+| 模型 | 编程 Agent | 总分 / 100 | 正确性 | 稳健性 | 真实应用 | 性能 | 可维护性 | 开发活跃时长 | 输出 tokens | 估算费用（美元） |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) | Claude Code | **77.21** | 99.73 | 100.00 | 100.00 | 46.81 | 96.05 | 3:07:09 | 472,273 | $39.28 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) | Pi | **75.99** | 97.33 | 100.00 | 83.33 | 44.09 | 88.35 | 3:52:51 | 199,142 | $77.86 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) | Pi | **75.97** | 97.45 | 100.00 | 83.33 | 44.52 | 84.27 | 7:14:12 | 184,515 | $12.87 |
+| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) | Pi | **75.17** | 95.81 | 99.77 | 83.33 | 38.23 | 82.30 | 7:32:19 | 541,837 | $62.99 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) | Claude Code | **73.83** | 97.45 | 68.52 | 83.33 | 49.90 | 84.39 | 2:59:12 | 340,562 | $40.69 |
+| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) | Pi | **73.05** | 95.52 | 63.43 | 83.33 | 47.82 | 91.37 | 5:16:10 | 298,429 | $72.41 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) | Pi | **72.58** | 89.72 | 82.48 | 66.67 | 39.87 | 79.85 | ≥12:19:49 | 518,078 | $3.26 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) | Pi | **71.07** | 90.57 | 78.59 | 50.00 | 39.52 | 72.89 | 3:05:17 | 267,908 | $31.62 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) | Pi | **68.88** | 95.44 | 88.45 | 33.33 | 21.36 | 76.19 | 2:42:57 | 87,220 | $7.81 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) | Pi | **68.74** | 89.21 | 67.85 | 33.33 | 41.81 | 83.25 | ≥12:00:54 | 734,568 | $3.29 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) | Pi | **67.26** | 93.48 | 96.20 | 66.67 | 0.00 | 82.16 | 6:52:08 | 478,897 | $90.50 |
 
 每行对应一次独立开发。Agent 配置见下文；不同 Agent 的结果分别列出。总分的计算方式见[评分方法](docs/scoring.zh-CN.md)。
 
@@ -42,9 +42,9 @@
 
 Reference 为参考实现，成绩和报告如下。
 
-| 实现 | 总分 / 100 | 正确性 | 稳健性 | 真实应用 | 性能 |
-|---|---:|---:|---:|---:|---:|
-| [Reference](results/eval-only/reference-calibration.zh-CN.md) | 61.50 | 74.87 | 97.82 | 100.00 | — |
+| 实现 | 总分 / 100 | 正确性 | 稳健性 | 真实应用 | 性能 | 可维护性 |
+|---|---:|---:|---:|---:|---:|---:|
+| [Reference](results/eval-only/reference-calibration.zh-CN.md) | 65.88 | 74.87 | 97.82 | 100.00 | — | 69.11 |
 
 </details>
 <!-- core-results:end -->
@@ -77,8 +77,8 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 44 / 44 | 100.00% | 100.00 |
@@ -95,8 +95,8 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 168 / 169 | 99.41% | 99.26 |
@@ -113,8 +113,8 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 189 / 194 | 97.42% | 98.90 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 187 / 194 | 96.39% | 89.81 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 179 / 194 | 92.27% | 89.31 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 187 / 194 | 96.39% | 89.81 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 183 / 194 | 94.33% | 89.17 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 188 / 194 | 96.91% | 94.36 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 183 / 194 | 94.33% | 87.35 |
@@ -133,8 +133,8 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 479 / 479 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 479 / 479 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 417 / 479 | 87.06% | 94.05 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 431 / 479 | 89.98% | 95.45 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 431 / 479 | 89.98% | 95.45 |
@@ -153,8 +153,8 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 47 / 47 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 47 / 47 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 47 / 47 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 44 / 47 | 93.62% | 90.28 |
@@ -173,8 +173,8 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 216 / 216 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 216 / 216 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 215 / 216 | 99.54% | 99.54 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 80 / 216 | 37.04% | 37.04 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 79 / 216 | 36.57% | 36.57 |
@@ -193,8 +193,8 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 通过 / 适用 | 通过率 | 得分 / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 4 / 4 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 83.33 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 3 / 4 | 75.00% | 83.33 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 83.33 |
@@ -215,8 +215,8 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 顺序读（MiB/s） | 顺序写（MiB/s） | 随机读（IOPS） | 随机写（IOPS） | 元数据（ops/s） | 速度指数 | 得分 / 100 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 191.0 | 190.9 | 4,556 | 3,776 | 2,574 | 1,100.61 | 45.43 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 163.5 | 163.3 | 4,844 | 108 | 2,068 | 492.56 | 42.44 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 218.5 | 218.3 | 3,564 | 130 | — | — | 42.72 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 163.5 | 163.3 | 4,844 | 108 | 2,068 | 492.56 | 42.44 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 30.8 | 30.2 | 2,002 | 289 | 1,121 | 227.06 | 36.89 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 316.0 | 316.4 | 5,493 | 3,343 | 2,593 | 1,366.30 | 47.69 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 202.9 | 202.7 | 5,302 | 445 | — | — | 44.78 |
@@ -233,8 +233,8 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | 模型 / Agent | 顺序读（MiB/s） | 顺序写（MiB/s） | 随机读（IOPS） | 随机写（IOPS） | 元数据（ops/s） | 速度指数 | 得分 / 100 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 137.7 | 137.8 | 1,880 | 1,639 | 2,033 | 653.07 | 48.19 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 136.0 | 136.1 | 2,107 | 78 | 1,652 | 347.37 | 46.59 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 134.5 | 134.5 | 1,348 | 71 | — | — | 45.46 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 136.0 | 136.1 | 2,107 | 78 | 1,652 | 347.37 | 46.59 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 14.6 | 14.2 | 1,185 | 213 | 688 | 129.04 | 39.57 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 162.8 | 162.8 | 3,007 | 1,892 | 1,998 | 786.63 | 52.11 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 165.6 | 165.7 | 2,825 | 141 | — | — | 50.86 |
@@ -250,18 +250,18 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 内核参考行：ext4/XFS/Btrfs 以默认选项直接挂载在同一宿主盘、同规格 64 GiB VHDX 上，不经过 FUSE 和 NBD 控制器；每项只测一次，fio 窗口 120 秒（候选为 10 秒、3–5 个样本取中位数）；`near-enospc-reclaim` 使用 64 GiB 几何。它们是诊断参考，没有得分，不参与排名。
 <!-- profile-perf-nvme:end -->
 
-### 可维护性（诊断）
+### 可维护性
 
-可维护性以静态方式测量每个提交自己编写的源码（`solution/bench/`，不含固定的 SDK 和 FUSE 适配层），不编译被测代码。十一个分项（函数长度、分支数、嵌套深度、文件长度、模块循环依赖、代码重复、`unsafe` 密度与说明、错误处理风险点、语法级 lint 发现和 lint 抑制）分别按固定阈值映射到 0–100，再按固定权重合并。比率均按每千行代码（KLOC）计。该分数是诊断指标：不计入总分，权重也尚未用实际维护工作校准。
+可维护性以静态方式测量每个提交自己编写的源码（`solution/bench/`，不含固定的 SDK 和 FUSE 适配层），不编译被测代码。十一个分项（函数长度、分支数、嵌套深度、文件长度、模块循环依赖、代码重复、`unsafe` 密度与说明、错误处理风险点、语法级 lint 发现和 lint 抑制）分别按固定阈值映射到 0–100，再按固定权重合并。比率均按每千行代码（KLOC）计。该分数即可维护性维度 M，占总分 5%。权重固定，但尚未用实际维护工作校准。
 
 <!-- maintainability:begin -->
-**可维护性（诊断）** · `maint-v2-rev5`
+**可维护性** · `maint-v2-rev5`
 
 | 模型 / Agent | 千行 | 函数行数 p95 | 分支数 p95 | 嵌套深度 p95 | 文件行数 p95 | 循环依赖占比 | 重复率 % | unsafe /千行 | 无说明 unsafe /千行 | 错误处理风险 /千行 | lint /千行 | lint 抑制 /千行 | 得分 / 100 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 7.14 | 57 | 11 | 3 | 554 | 0.27 | 0.0 | 0.7 | 0.1 | 0.4 | 0.00 | 0.4 | **96.05** |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 3.96 | 82 | 17 | 4 | 1,288 | 0.00 | 0.6 | 1.5 | 0.3 | 5.8 | 0.76 | 0.8 | **84.27** |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 4.11 | 74 | 15 | 3 | 1,158 | 0.00 | 0.7 | 0.7 | 0.5 | 4.9 | 0.00 | 0.5 | **88.35** |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 3.96 | 82 | 17 | 4 | 1,288 | 0.00 | 0.6 | 1.5 | 0.3 | 5.8 | 0.76 | 0.8 | **84.27** |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 6.94 | 97 | 18 | 4 | 3,241 | 0.00 | 2.9 | 0.1 | 0.1 | 0.9 | 0.00 | 0.6 | **82.30** |
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 6.35 | 66 | 14 | 3 | 1,912 | 0.58 | 2.2 | 0.9 | 0.0 | 2.5 | 0.00 | 0.5 | **84.39** |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 5.17 | 54 | 14 | 3 | 923 | 0.00 | 0.0 | 0.4 | 0.4 | 4.4 | 0.19 | 0.2 | **91.37** |

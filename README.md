@@ -17,21 +17,21 @@ These results cover the Core filesystem task: file operations, on-disk format, r
 <!-- core-results:begin -->
 ![Model scores, highest first](assets/core-results.svg)
 
-Dimension scores are out of 100. Under the existing weights, the measured dimensions account for **75 points** of the overall score; unmeasured components contribute zero. Click a model for its report.
+Dimension scores are out of 100. Under the existing weights, the measured dimensions account for **80 points** of the overall score; unmeasured components contribute zero. Click a model for its report.
 
-| Model | Coding agent | Total / 100 | Correctness | Robustness | Applications | Performance | Active time | Output tokens | Est. cost (USD) |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **72.28** | 99.73 | 100.00 | 100.00 | 46.81 | 3:07:09 | 472,273 | $39.28 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) | Pi | **71.24** | 97.45 | 100.00 | 83.33 | 44.52 | 7:14:12 | 184,515 | $12.87 |
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **71.20** | 97.33 | 100.00 | 83.33 | 44.09 | 3:52:51 | 199,142 | $77.86 |
-| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **70.48** | 95.81 | 99.77 | 83.33 | 38.23 | 7:32:19 | 541,837 | $62.99 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **69.10** | 97.45 | 68.52 | 83.33 | 49.90 | 2:59:12 | 340,562 | $40.69 |
-| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **68.20** | 95.52 | 63.43 | 83.33 | 47.82 | 5:16:10 | 298,429 | $72.41 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **67.93** | 89.72 | 82.48 | 66.67 | 39.87 | ≥12:19:49 | 518,078 | $3.26 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **66.60** | 90.57 | 78.59 | 50.00 | 39.52 | 3:05:17 | 267,908 | $31.62 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | **64.32** | 95.44 | 88.45 | 33.33 | 21.36 | 2:42:57 | 87,220 | $7.81 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | **64.03** | 89.21 | 67.85 | 33.33 | 41.81 | ≥12:00:54 | 734,568 | $3.29 |
-| [Kimi K3](results/core/kimi-k3-high.md) | Pi | **62.57** | 93.48 | 96.20 | 66.67 | 0.00 | 6:52:08 | 478,897 | $90.50 |
+| Model | Coding agent | Total / 100 | Correctness | Robustness | Applications | Performance | Maintainability | Active time | Output tokens | Est. cost (USD) |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) | Claude Code | **77.21** | 99.73 | 100.00 | 100.00 | 46.81 | 96.05 | 3:07:09 | 472,273 | $39.28 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) | Pi | **75.99** | 97.33 | 100.00 | 83.33 | 44.09 | 88.35 | 3:52:51 | 199,142 | $77.86 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) | Pi | **75.97** | 97.45 | 100.00 | 83.33 | 44.52 | 84.27 | 7:14:12 | 184,515 | $12.87 |
+| [GLM 5.3](results/core/glm-5.3-high.md) | Pi | **75.17** | 95.81 | 99.77 | 83.33 | 38.23 | 82.30 | 7:32:19 | 541,837 | $62.99 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) | Claude Code | **73.83** | 97.45 | 68.52 | 83.33 | 49.90 | 84.39 | 2:59:12 | 340,562 | $40.69 |
+| [Fable 5.1](results/core/fable-5.1-high.md) | Pi | **73.05** | 95.52 | 63.43 | 83.33 | 47.82 | 91.37 | 5:16:10 | 298,429 | $72.41 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) | Pi | **72.58** | 89.72 | 82.48 | 66.67 | 39.87 | 79.85 | ≥12:19:49 | 518,078 | $3.26 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) | Pi | **71.07** | 90.57 | 78.59 | 50.00 | 39.52 | 72.89 | 3:05:17 | 267,908 | $31.62 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) | Pi | **68.88** | 95.44 | 88.45 | 33.33 | 21.36 | 76.19 | 2:42:57 | 87,220 | $7.81 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) | Pi | **68.74** | 89.21 | 67.85 | 33.33 | 41.81 | 83.25 | ≥12:00:54 | 734,568 | $3.29 |
+| [Kimi K3](results/core/kimi-k3-high.md) | Pi | **67.26** | 93.48 | 96.20 | 66.67 | 0.00 | 82.16 | 6:52:08 | 478,897 | $90.50 |
 
 Each row represents one development run. Agent configurations are described below, with separate entries for different agents. See [scoring](docs/scoring.md) for the formula.
 
@@ -42,9 +42,9 @@ Time is the agent-recorded active duration (h:mm:ss); ≥ marks the last record 
 
 Reference is a calibration implementation. Its scores and report are listed below.
 
-| Implementation | Total / 100 | Correctness | Robustness | Applications | Performance |
-|---|---:|---:|---:|---:|---:|
-| [Reference](results/eval-only/reference-calibration.md) | 61.50 | 74.87 | 97.82 | 100.00 | — |
+| Implementation | Total / 100 | Correctness | Robustness | Applications | Performance | Maintainability |
+|---|---:|---:|---:|---:|---:|---:|
+| [Reference](results/eval-only/reference-calibration.md) | 65.88 | 74.87 | 97.82 | 100.00 | — | 69.11 |
 
 </details>
 <!-- core-results:end -->
@@ -77,8 +77,8 @@ A filesystem must first handle everyday operations correctly: reading and writin
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 44 / 44 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 44 / 44 | 100.00% | 100.00 |
@@ -95,8 +95,8 @@ A filesystem must first handle everyday operations correctly: reading and writin
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 169 / 169 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 169 / 169 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 168 / 169 | 99.41% | 99.26 |
@@ -113,8 +113,8 @@ A filesystem must first handle everyday operations correctly: reading and writin
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 189 / 194 | 97.42% | 98.90 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 187 / 194 | 96.39% | 89.81 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 179 / 194 | 92.27% | 89.31 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 187 / 194 | 96.39% | 89.81 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 183 / 194 | 94.33% | 89.17 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 188 / 194 | 96.91% | 94.36 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 183 / 194 | 94.33% | 87.35 |
@@ -133,8 +133,8 @@ Being able to read a file does not guarantee that the data on disk is organized 
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 479 / 479 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 479 / 479 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 479 / 479 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 417 / 479 | 87.06% | 94.05 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 431 / 479 | 89.98% | 95.45 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 431 / 479 | 89.98% | 95.45 |
@@ -153,8 +153,8 @@ A filesystem also has to handle resource pressure and failed operations. These t
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 47 / 47 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 47 / 47 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 47 / 47 | 100.00% | 100.00 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 44 / 47 | 93.62% | 90.28 |
@@ -173,8 +173,8 @@ After an unexpected interruption, the filesystem must handle the state left on d
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 216 / 216 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 216 / 216 | 100.00% | 100.00 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 216 / 216 | 100.00% | 100.00 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 215 / 216 | 99.54% | 99.54 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 80 / 216 | 37.04% | 37.04 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 79 / 216 | 36.57% | 36.57 |
@@ -193,8 +193,8 @@ Finally, real applications use the filesystem. These tests check whether applica
 | Model / Agent | Passed / applicable | Pass rate | Score / 100 |
 |---|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 4 / 4 | 100.00% | 100.00 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 3 / 4 | 75.00% | 83.33 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 3 / 4 | 75.00% | 83.33 |
@@ -215,8 +215,8 @@ Performance tests run fio and metadata workloads on a memory-backed device (`per
 | Model / Agent | Seq read (MiB/s) | Seq write (MiB/s) | Random read (IOPS) | Random write (IOPS) | Metadata (ops/s) | Speed index | Score / 100 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 191.0 | 190.9 | 4,556 | 3,776 | 2,574 | 1,100.61 | 45.43 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 163.5 | 163.3 | 4,844 | 108 | 2,068 | 492.56 | 42.44 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 218.5 | 218.3 | 3,564 | 130 | — | — | 42.72 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 163.5 | 163.3 | 4,844 | 108 | 2,068 | 492.56 | 42.44 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 30.8 | 30.2 | 2,002 | 289 | 1,121 | 227.06 | 36.89 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 316.0 | 316.4 | 5,493 | 3,343 | 2,593 | 1,366.30 | 47.69 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 202.9 | 202.7 | 5,302 | 445 | — | — | 44.78 |
@@ -233,8 +233,8 @@ Performance tests run fio and metadata workloads on a memory-backed device (`per
 | Model / Agent | Seq read (MiB/s) | Seq write (MiB/s) | Random read (IOPS) | Random write (IOPS) | Metadata (ops/s) | Speed index | Score / 100 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 137.7 | 137.8 | 1,880 | 1,639 | 2,033 | 653.07 | 48.19 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 136.0 | 136.1 | 2,107 | 78 | 1,652 | 347.37 | 46.59 |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 134.5 | 134.5 | 1,348 | 71 | — | — | 45.46 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 136.0 | 136.1 | 2,107 | 78 | 1,652 | 347.37 | 46.59 |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 14.6 | 14.2 | 1,185 | 213 | 688 | 129.04 | 39.57 |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 162.8 | 162.8 | 3,007 | 1,892 | 1,998 | 786.63 | 52.11 |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 165.6 | 165.7 | 2,825 | 141 | — | — | 50.86 |
@@ -250,18 +250,18 @@ Performance tests run fio and metadata workloads on a memory-backed device (`per
 Kernel reference rows: ext4/XFS/Btrfs mounted directly with default options on the same host drive and 64 GiB VHDX, without FUSE or the NBD controller; one repetition per cell with 120 s fio windows (candidates: 10 s windows, median of 3–5 samples); `near-enospc-reclaim` uses the 64 GiB geometry. They are diagnostic references: unscored and unranked.
 <!-- profile-perf-nvme:end -->
 
-### Maintainability (diagnostic)
+### Maintainability
 
-Maintainability is measured statically from each submission's own source (`solution/bench/`; the fixed SDK and FUSE adapter are excluded), without compiling it. Eleven components (function size, branching, nesting, file size, module cycles, duplication, `unsafe` density and documentation, error-handling risk sites, syntactic lint findings, and lint suppressions) are each mapped to 0–100 by fixed thresholds and combined with fixed weights. Rates are per thousand lines of code (KLOC). This score is a diagnostic: it is not part of the overall score, and its weights are not yet calibrated against actual maintenance work.
+Maintainability is measured statically from each submission's own source (`solution/bench/`; the fixed SDK and FUSE adapter are excluded), without compiling it. Eleven components (function size, branching, nesting, file size, module cycles, duplication, `unsafe` density and documentation, error-handling risk sites, syntactic lint findings, and lint suppressions) are each mapped to 0–100 by fixed thresholds and combined with fixed weights. Rates are per thousand lines of code (KLOC). The score is the maintainability dimension M, 5% of the overall score. Its weights are fixed but not yet calibrated against actual maintenance work.
 
 <!-- maintainability:begin -->
-**Maintainability (diagnostic)** · `maint-v2-rev5`
+**Maintainability** · `maint-v2-rev5`
 
 | Model / Agent | KLOC | Function SLOC p95 | Branching p95 | Nesting p95 | File SLOC p95 | Cycle share | Duplication % | Unsafe /KLOC | Undocumented unsafe /KLOC | Error-handling risk /KLOC | Lint /KLOC | Suppressions /KLOC | Score / 100 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 7.14 | 57 | 11 | 3 | 554 | 0.27 | 0.0 | 0.7 | 0.1 | 0.4 | 0.00 | 0.4 | **96.05** |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 3.96 | 82 | 17 | 4 | 1,288 | 0.00 | 0.6 | 1.5 | 0.3 | 5.8 | 0.76 | 0.8 | **84.27** |
 | [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 4.11 | 74 | 15 | 3 | 1,158 | 0.00 | 0.7 | 0.7 | 0.5 | 4.9 | 0.00 | 0.5 | **88.35** |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 3.96 | 82 | 17 | 4 | 1,288 | 0.00 | 0.6 | 1.5 | 0.3 | 5.8 | 0.76 | 0.8 | **84.27** |
 | [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 6.94 | 97 | 18 | 4 | 3,241 | 0.00 | 2.9 | 0.1 | 0.1 | 0.9 | 0.00 | 0.6 | **82.30** |
 | [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 6.35 | 66 | 14 | 3 | 1,912 | 0.58 | 2.2 | 0.9 | 0.0 | 2.5 | 0.00 | 0.5 | **84.39** |
 | [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 5.17 | 54 | 14 | 3 | 923 | 0.00 | 0.0 | 0.4 | 0.4 | 4.4 | 0.19 | 0.2 | **91.37** |

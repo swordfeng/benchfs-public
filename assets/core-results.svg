@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="804" viewBox="0 0 1120 804" role="img" aria-labelledby="title description">
 <title id="title">BenchFS · AI filesystem benchmark</title>
-<desc id="description">Overall scores, highest first · One development run per model / agent. Opus 5.5 · Claude Code: 72.28; GPT 6.1 Sol · Pi: 71.24; GPT-6 Astra · Pi: 71.20; GLM 5.3 · Pi: 70.48; Fable 5.1 · Claude Code: 69.10; Fable 5.1 · Pi: 68.20; DeepSeek V4 Flash 0731 · Pi: 67.93; Gemini 3.8 Flash · Pi: 66.60; GPT 5.6 Sol · Pi: 64.32; Qwen 3.8 Flash Next · Pi: 64.03; Kimi K3 · Pi: 62.57</desc>
+<desc id="description">Overall scores, highest first · One development run per model / agent. Opus 5.5 · Claude Code: 77.21; GPT-6 Astra · Pi: 75.99; GPT 6.1 Sol · Pi: 75.97; GLM 5.3 · Pi: 75.17; Fable 5.1 · Claude Code: 73.83; Fable 5.1 · Pi: 73.05; DeepSeek V4 Flash 0731 · Pi: 72.58; Gemini 3.8 Flash · Pi: 71.07; GPT 5.6 Sol · Pi: 68.88; Qwen 3.8 Flash Next · Pi: 68.74; Kimi K3 · Pi: 67.26</desc>
 <style>text{font-family:Inter,"Noto Sans CJK SC","Microsoft YaHei",Arial,sans-serif;fill:#172b4d}.muted{fill:#52647d}.name{font-size:16px}.score{font-size:18px;font-weight:700}</style>
 <rect width="1120" height="804" rx="18" fill="#fff"/>
 <text x="32" y="44" font-size="25" font-weight="700">BenchFS · AI filesystem benchmark</text>
@@ -13,6 +13,8 @@
 <text x="376" y="106" font-size="13" class="muted">Applications (10%)</text>
 <rect x="530" y="94" width="14" height="14" rx="3" fill="#8e44ad"/>
 <text x="550" y="106" font-size="13" class="muted">Performance (10%)</text>
+<rect x="696" y="94" width="14" height="14" rx="3" fill="#5b6b7f"/>
+<text x="716" y="106" font-size="13" class="muted">Maintainability (5%)</text>
 <line x1="340.0" y1="120" x2="340.0" y2="718" stroke="#e6ebf2"/>
 <text x="340.0" y="744" text-anchor="middle" font-size="13" class="muted">0</text>
 <line x1="480.0" y1="120" x2="480.0" y2="718" stroke="#e6ebf2"/>
@@ -25,94 +27,105 @@
 <text x="900.0" y="744" text-anchor="middle" font-size="13" class="muted">80</text>
 <line x1="1040.0" y1="120" x2="1040.0" y2="718" stroke="#e6ebf2"/>
 <text x="1040.0" y="744" text-anchor="middle" font-size="13" class="muted">100</text>
-<line x1="865.0" y1="120" x2="865.0" y2="718" stroke="#7890ad" stroke-dasharray="4 5"/>
-<text x="865.0" y="108" text-anchor="middle" font-size="12" class="muted">Measured components: up to 75 points</text>
+<line x1="900.0" y1="120" x2="900.0" y2="718" stroke="#7890ad" stroke-dasharray="4 5"/>
+<text x="900.0" y="108" text-anchor="middle" font-size="12" class="muted">Measured components: up to 80 points</text>
 <text x="32" y="146" class="name">Opus 5.5</text>
 <text x="32" y="164" font-size="12" class="muted">Claude Code</text>
 <rect x="340.0000" y="132" width="244.7648" height="32" fill="#2563a6"/>
 <rect x="584.7648" y="132" width="140.0000" height="32" fill="#3f8f6b"/>
 <rect x="724.7648" y="132" width="70.0000" height="32" fill="#c27c0e"/>
 <rect x="794.7648" y="132" width="51.1749" height="32" fill="#8e44ad"/>
-<rect x="854.9397" y="137" width="58" height="23" fill="#fff"/>
-<text x="857.9397" y="154" class="score">72.28</text>
-<text x="32" y="200" class="name">GPT 6.1 Sol</text>
+<rect x="845.9397" y="132" width="34.5156" height="32" fill="#5b6b7f"/>
+<rect x="889.4553" y="137" width="58" height="23" fill="#fff"/>
+<text x="892.4553" y="154" class="score">77.21</text>
+<text x="32" y="200" class="name">GPT-6 Astra</text>
 <text x="32" y="218" font-size="12" class="muted">Pi</text>
-<rect x="340.0000" y="186" width="242.8159" height="32" fill="#2563a6"/>
-<rect x="582.8159" y="186" width="140.0000" height="32" fill="#3f8f6b"/>
-<rect x="722.8159" y="186" width="65.9167" height="32" fill="#c27c0e"/>
-<rect x="788.7326" y="186" width="49.9708" height="32" fill="#8e44ad"/>
-<rect x="847.7034" y="191" width="58" height="23" fill="#fff"/>
-<text x="850.7034" y="208" class="score">71.24</text>
-<text x="32" y="254" class="name">GPT-6 Astra</text>
+<rect x="340.0000" y="186" width="242.7084" height="32" fill="#2563a6"/>
+<rect x="582.7084" y="186" width="140.0000" height="32" fill="#3f8f6b"/>
+<rect x="722.7084" y="186" width="65.9167" height="32" fill="#c27c0e"/>
+<rect x="788.6251" y="186" width="49.7472" height="32" fill="#8e44ad"/>
+<rect x="838.3722" y="186" width="33.5725" height="32" fill="#5b6b7f"/>
+<rect x="880.9448" y="191" width="58" height="23" fill="#fff"/>
+<text x="883.9448" y="208" class="score">75.99</text>
+<text x="32" y="254" class="name">GPT 6.1 Sol</text>
 <text x="32" y="272" font-size="12" class="muted">Pi</text>
-<rect x="340.0000" y="240" width="242.7084" height="32" fill="#2563a6"/>
-<rect x="582.7084" y="240" width="140.0000" height="32" fill="#3f8f6b"/>
-<rect x="722.7084" y="240" width="65.9167" height="32" fill="#c27c0e"/>
-<rect x="788.6251" y="240" width="49.7472" height="32" fill="#8e44ad"/>
-<rect x="847.3722" y="245" width="58" height="23" fill="#fff"/>
-<text x="850.3722" y="262" class="score">71.20</text>
+<rect x="340.0000" y="240" width="242.8159" height="32" fill="#2563a6"/>
+<rect x="582.8159" y="240" width="140.0000" height="32" fill="#3f8f6b"/>
+<rect x="722.8159" y="240" width="65.9167" height="32" fill="#c27c0e"/>
+<rect x="788.7326" y="240" width="49.9708" height="32" fill="#8e44ad"/>
+<rect x="838.7034" y="240" width="33.0733" height="32" fill="#5b6b7f"/>
+<rect x="880.7767" y="245" width="58" height="23" fill="#fff"/>
+<text x="883.7767" y="262" class="score">75.97</text>
 <text x="32" y="308" class="name">GLM 5.3</text>
 <text x="32" y="326" font-size="12" class="muted">Pi</text>
 <rect x="340.0000" y="294" width="241.4028" height="32" fill="#2563a6"/>
 <rect x="581.4028" y="294" width="139.8866" height="32" fill="#3f8f6b"/>
 <rect x="721.2894" y="294" width="65.9167" height="32" fill="#c27c0e"/>
 <rect x="787.2060" y="294" width="46.1755" height="32" fill="#8e44ad"/>
-<rect x="842.3816" y="299" width="58" height="23" fill="#fff"/>
-<text x="845.3816" y="316" class="score">70.48</text>
+<rect x="833.3816" y="294" width="32.8315" height="32" fill="#5b6b7f"/>
+<rect x="875.2131" y="299" width="58" height="23" fill="#fff"/>
+<text x="878.2131" y="316" class="score">75.17</text>
 <text x="32" y="362" class="name">Fable 5.1</text>
 <text x="32" y="380" font-size="12" class="muted">Claude Code</text>
 <rect x="340.0000" y="348" width="242.8159" height="32" fill="#2563a6"/>
 <rect x="582.8159" y="348" width="122.1630" height="32" fill="#3f8f6b"/>
 <rect x="704.9789" y="348" width="65.9167" height="32" fill="#c27c0e"/>
 <rect x="770.8956" y="348" width="52.7967" height="32" fill="#8e44ad"/>
-<rect x="832.6922" y="353" width="58" height="23" fill="#fff"/>
-<text x="835.6922" y="370" class="score">69.10</text>
+<rect x="823.6922" y="348" width="33.0876" height="32" fill="#5b6b7f"/>
+<rect x="865.7799" y="353" width="58" height="23" fill="#fff"/>
+<text x="868.7799" y="370" class="score">73.83</text>
 <text x="32" y="416" class="name">Fable 5.1</text>
 <text x="32" y="434" font-size="12" class="muted">Pi</text>
 <rect x="340.0000" y="402" width="241.1552" height="32" fill="#2563a6"/>
 <rect x="581.1552" y="402" width="118.5981" height="32" fill="#3f8f6b"/>
 <rect x="699.7533" y="402" width="65.9167" height="32" fill="#c27c0e"/>
 <rect x="765.6700" y="402" width="51.7060" height="32" fill="#8e44ad"/>
-<rect x="826.3760" y="407" width="58" height="23" fill="#fff"/>
-<text x="829.3760" y="424" class="score">68.20</text>
+<rect x="817.3760" y="402" width="33.9432" height="32" fill="#5b6b7f"/>
+<rect x="860.3192" y="407" width="58" height="23" fill="#fff"/>
+<text x="863.3192" y="424" class="score">73.05</text>
 <text x="32" y="470" class="name">DeepSeek V4 Flash 0731</text>
 <text x="32" y="488" font-size="12" class="muted">Pi</text>
 <rect x="340.0000" y="456" width="236.1852" height="32" fill="#2563a6"/>
 <rect x="576.1852" y="456" width="131.4137" height="32" fill="#3f8f6b"/>
 <rect x="707.5988" y="456" width="60.4333" height="32" fill="#c27c0e"/>
 <rect x="768.0322" y="456" width="47.4925" height="32" fill="#8e44ad"/>
-<rect x="824.5246" y="461" width="58" height="23" fill="#fff"/>
-<text x="827.5246" y="478" class="score">67.93</text>
+<rect x="815.5246" y="456" width="32.5240" height="32" fill="#5b6b7f"/>
+<rect x="857.0487" y="461" width="58" height="23" fill="#fff"/>
+<text x="860.0487" y="478" class="score">72.58</text>
 <text x="32" y="524" class="name">Gemini 3.8 Flash</text>
 <text x="32" y="542" font-size="12" class="muted">Pi</text>
 <rect x="340.0000" y="510" width="236.9116" height="32" fill="#2563a6"/>
 <rect x="576.9116" y="510" width="129.2116" height="32" fill="#3f8f6b"/>
 <rect x="706.1232" y="510" width="52.8500" height="32" fill="#c27c0e"/>
 <rect x="758.9732" y="510" width="47.2133" height="32" fill="#8e44ad"/>
-<rect x="815.1865" y="515" width="58" height="23" fill="#fff"/>
-<text x="818.1865" y="532" class="score">66.60</text>
+<rect x="806.1865" y="510" width="31.3064" height="32" fill="#5b6b7f"/>
+<rect x="846.4929" y="515" width="58" height="23" fill="#fff"/>
+<text x="849.4929" y="532" class="score">71.07</text>
 <text x="32" y="578" class="name">GPT 5.6 Sol</text>
 <text x="32" y="596" font-size="12" class="muted">Pi</text>
 <rect x="340.0000" y="564" width="241.0934" height="32" fill="#2563a6"/>
 <rect x="581.0934" y="564" width="134.3400" height="32" fill="#3f8f6b"/>
 <rect x="715.4334" y="564" width="42.2333" height="32" fill="#c27c0e"/>
 <rect x="757.6667" y="564" width="32.5984" height="32" fill="#8e44ad"/>
-<rect x="799.2652" y="569" width="58" height="23" fill="#fff"/>
-<text x="802.2652" y="586" class="score">64.32</text>
+<rect x="790.2652" y="564" width="31.8838" height="32" fill="#5b6b7f"/>
+<rect x="831.1489" y="569" width="58" height="23" fill="#fff"/>
+<text x="834.1489" y="586" class="score">68.88</text>
 <text x="32" y="632" class="name">Qwen 3.8 Flash Next</text>
 <text x="32" y="650" font-size="12" class="muted">Pi</text>
 <rect x="340.0000" y="618" width="235.7503" height="32" fill="#2563a6"/>
 <rect x="575.7503" y="618" width="121.6931" height="32" fill="#3f8f6b"/>
 <rect x="697.4434" y="618" width="42.2333" height="32" fill="#c27c0e"/>
 <rect x="739.6767" y="618" width="48.5488" height="32" fill="#8e44ad"/>
-<rect x="797.2255" y="623" width="58" height="23" fill="#fff"/>
-<text x="800.2255" y="640" class="score">64.03</text>
+<rect x="788.2255" y="618" width="32.9477" height="32" fill="#5b6b7f"/>
+<rect x="830.1732" y="623" width="58" height="23" fill="#fff"/>
+<text x="833.1732" y="640" class="score">68.74</text>
 <text x="32" y="686" class="name">Kimi K3</text>
 <text x="32" y="704" font-size="12" class="muted">Pi</text>
 <rect x="340.0000" y="672" width="239.4091" height="32" fill="#2563a6"/>
 <rect x="579.4091" y="672" width="138.1398" height="32" fill="#3f8f6b"/>
 <rect x="717.5489" y="672" width="60.4333" height="32" fill="#c27c0e"/>
-<rect x="786.9822" y="677" width="58" height="23" fill="#fff"/>
-<text x="789.9822" y="694" class="score">62.57</text>
+<rect x="777.9822" y="672" width="32.8150" height="32" fill="#5b6b7f"/>
+<rect x="819.7972" y="677" width="58" height="23" fill="#fff"/>
+<text x="822.7972" y="694" class="score">67.26</text>
 <text x="32" y="782" font-size="13" class="muted">Overall score out of 100; unmeasured components contribute zero. See the README for methods and breakdowns.</text>
 </svg>
