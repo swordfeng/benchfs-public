@@ -273,36 +273,36 @@ Profile: `perf-nvme`
 
 结果：`candidate-failed`；评测分类：`diagnostic`。
 
-性能分：**0.00**（比较池 `hyperv-fixed-vhdx`）。
+性能分：**47.30**（比较池 `hyperv-fixed-vhdx`）。
 
 | 类别 | 缓存 | 主指标 | 样本数 | 中位数 | MAD | CV | 候选失败样本 |
 |---|---|---|---:|---:|---:|---:|---:|
-| buffered-synchronized-writes | cold | operations_per_second | — | — | — | — | 0 |
-| buffered-synchronized-writes | warm | operations_per_second | — | — | — | — | 0 |
-| bulk-sequential-io | cold | MiB/s | — | — | — | — | 0 |
-| bulk-sequential-io | warm | MiB/s | — | — | — | — | 0 |
-| metadata-concurrency | cold | operations_per_second | 3 | 2,062.5 | 14.2 | 0.7% | 0 |
-| metadata-concurrency | cold | operations_per_second | 3 | 7,324.0 | 17.8 | 0.3% | 0 |
-| metadata-concurrency | cold | operations_per_second | 3 | 1,723.8 | 1.0 | 0.2% | 0 |
-| metadata-concurrency | cold | operations_per_second | 3 | 2,769.1 | 0.5 | 0.1% | 0 |
+| buffered-synchronized-writes | cold | operations_per_second | 3 | 1,701.4 | 14.5 | 0.7% | 0 |
+| buffered-synchronized-writes | warm | operations_per_second | 3 | 1,718.4 | 5.9 | 0.3% | 0 |
+| bulk-sequential-io | cold | MiB/s | 5 | 27.8 | 0.0 | 0.6% | 0 |
+| bulk-sequential-io | warm | MiB/s | 5 | 51.6 | 0.4 | 0.7% | 0 |
+| metadata-concurrency | cold | operations_per_second | 2 | 2,073.7 | 3.0 | 0.1% | 0 |
+| metadata-concurrency | cold | operations_per_second | 1 | 7,361.0 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | cold | operations_per_second | 1 | 1,714.6 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | cold | operations_per_second | 2 | 2,752.5 | 5.8 | 0.2% | 0 |
 | metadata-concurrency | cold | operations_per_second | — | — | — | — | 1 |
-| metadata-concurrency | cold | operations_per_second | 3 | 523.9 | 0.9 | 0.6% | 0 |
-| metadata-concurrency | cold | operations_per_second | 4 | 193.1 | 0.8 | 1.7% | 0 |
-| metadata-concurrency | warm | operations_per_second | 3 | 2,070.8 | 3.3 | 0.1% | 0 |
-| metadata-concurrency | warm | operations_per_second | 3 | 7,656.0 | 33.4 | 0.8% | 0 |
-| metadata-concurrency | warm | operations_per_second | 3 | 1,715.3 | 7.0 | 0.3% | 0 |
-| metadata-concurrency | warm | operations_per_second | 3 | 2,755.3 | 7.1 | 0.4% | 0 |
+| metadata-concurrency | cold | operations_per_second | 1 | 522.2 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | cold | operations_per_second | 4 | 197.1 | 2.5 | 2.0% | 0 |
+| metadata-concurrency | warm | operations_per_second | 2 | 2,057.1 | 10.9 | 0.5% | 0 |
+| metadata-concurrency | warm | operations_per_second | 1 | 7,751.8 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | warm | operations_per_second | 1 | 1,719.4 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | warm | operations_per_second | 2 | 2,745.6 | 11.6 | 0.4% | 0 |
 | metadata-concurrency | warm | operations_per_second | — | — | — | — | 1 |
-| metadata-concurrency | warm | operations_per_second | 3 | 526.0 | 0.2 | 0.1% | 0 |
-| metadata-concurrency | warm | operations_per_second | 4 | 198.1 | 2.9 | 1.6% | 0 |
-| small-random-io | cold | iops | — | — | — | — | 0 |
-| small-random-io | cold | iops | — | — | — | — | 0 |
-| small-random-io | cold | iops | — | — | — | — | 0 |
-| small-random-io | warm | iops | — | — | — | — | 0 |
-| small-random-io | warm | iops | — | — | — | — | 0 |
-| small-random-io | warm | iops | — | — | — | — | 0 |
+| metadata-concurrency | warm | operations_per_second | 1 | 513.2 | 0.0 | 0.0% | 0 |
+| metadata-concurrency | warm | operations_per_second | 5 | 194.3 | 4.2 | 2.9% | 0 |
+| small-random-io | cold | iops | 3 | 2,522.8 | 8.3 | 0.5% | 0 |
+| small-random-io | cold | iops | 5 | 3,145.2 | 20.6 | 2.3% | 0 |
+| small-random-io | cold | iops | 5 | 2,925.0 | 73.4 | 4.1% | 0 |
+| small-random-io | warm | iops | 5 | 3,350.3 | 2.9 | 6.4% | 0 |
+| small-random-io | warm | iops | 5 | 3,352.2 | 35.4 | 1.3% | 0 |
+| small-random-io | warm | iops | 5 | 4,815.4 | 107.2 | 5.0% | 0 |
 
-Run: `perf-v2-k3-no-preallocation-nvme-r1`
+Run: `perf-v2-k3-hdd-template-nvme-r2`
 执行后端: `hyperv`
 
 ### Agent 代码评审
