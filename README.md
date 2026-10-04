@@ -44,7 +44,7 @@ Reference is a calibration implementation. Its scores and report are listed belo
 
 | Implementation | Total / 100 | Correctness | Robustness | Code review | Applications | Performance | Maintainability |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [Reference](results/eval-only/reference-calibration.md) | 74.15 | 99.18 | 100.00 | — | 100.00 | 60.62 | 67.39 |
+| [Reference](results/eval-only/reference-calibration.md) | 75.26 | 99.91 | 100.00 | — | 100.00 | 60.62 | 84.63 |
 
 </details>
 
@@ -270,7 +270,7 @@ Maintainability is measured statically from each submission's own source (`solut
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 6.23 | 86 | 17 | 3 | 2,337 | 0.13 | 5.2 | 0.2 | 0.2 | 7.7 | 0.00 | 0.0 | **78.42** |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 4.42 | 87 | 14 | 4 | 1,372 | 0.00 | 4.4 | 0.5 | 0.5 | 28.5 | 0.00 | 0.9 | **68.11** |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 6.84 | 74 | 14 | 3 | 2,392 | 0.42 | 0.9 | 2.6 | 1.3 | 5.3 | 0.29 | 0.3 | **83.67** |
-| *Reference (calibration)* | 4.61 | 132 | 37 | 4 | 3,632 | 0.00 | 2.0 | 1.5 | 1.5 | 7.8 | 0.43 | 0.2 | **67.39** |
+| *Reference (calibration)* | 4.74 | 76 | 16 | 4 | 1,328 | 0.34 | 0.5 | 1.3 | 0.2 | 4.9 | 0.63 | 0.6 | **84.63** |
 <!-- maintainability:end -->
 
 <a id="setup"></a>

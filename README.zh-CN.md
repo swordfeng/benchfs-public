@@ -44,7 +44,7 @@ Reference 为参考实现，成绩和报告如下。
 
 | 实现 | 总分 / 100 | 正确性 | 稳健性 | 代码评审 | 真实应用 | 性能 | 可维护性 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [Reference](results/eval-only/reference-calibration.zh-CN.md) | 74.15 | 99.18 | 100.00 | — | 100.00 | 60.62 | 67.39 |
+| [Reference](results/eval-only/reference-calibration.zh-CN.md) | 75.26 | 99.91 | 100.00 | — | 100.00 | 60.62 | 84.63 |
 
 </details>
 
@@ -270,7 +270,7 @@ v3 以这三种文件系统速率的固定几何均值作为生产满分目标�
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 6.23 | 86 | 17 | 3 | 2,337 | 0.13 | 5.2 | 0.2 | 0.2 | 7.7 | 0.00 | 0.0 | **78.42** |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 4.42 | 87 | 14 | 4 | 1,372 | 0.00 | 4.4 | 0.5 | 0.5 | 28.5 | 0.00 | 0.9 | **68.11** |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 6.84 | 74 | 14 | 3 | 2,392 | 0.42 | 0.9 | 2.6 | 1.3 | 5.3 | 0.29 | 0.3 | **83.67** |
-| *Reference（校准基线）* | 4.61 | 132 | 37 | 4 | 3,632 | 0.00 | 2.0 | 1.5 | 1.5 | 7.8 | 0.43 | 0.2 | **67.39** |
+| *Reference（校准基线）* | 4.74 | 76 | 16 | 4 | 1,328 | 0.34 | 0.5 | 1.3 | 0.2 | 4.9 | 0.63 | 0.6 | **84.63** |
 <!-- maintainability:end -->
 
 <a id="setup"></a>

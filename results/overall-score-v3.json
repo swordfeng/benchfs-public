@@ -6,7 +6,7 @@
   "rule": "core-overall-v3-zero-fill",
   "schema_version": 1,
   "scorer_sha256": "145cd6e047391ee24b24a4bd81da74a183e77b1f7fd25bbdf636c4c90bd96c13",
-  "source_sha256": "ad902e456cfc2f749b99eb08e5a25b12a867893fcd21811de8159c9943b135d1",
+  "source_sha256": "8cf8d110d66f61670cf8b8e2913bbe587247ff5b505051f59cddcb418391fd51",
   "submissions": {
     "core-deepseek-v4-flash-0731": {
       "previous_score": {
@@ -7789,8 +7789,8 @@
     "core-reference": {
       "previous_score": {
         "dimensions": {
-          "C": 98.63636363636364,
-          "M": 69.10538278030796,
+          "C": 99.85501567398119,
+          "M": 84.62279091591591,
           "P": 43.99442676949701,
           "R": 100.0,
           "S": 0.0,
@@ -7799,7 +7799,7 @@
         "eligible": false,
         "hard_gates": "not-assessed",
         "inputs": {
-          "M": 69.10538278030796,
+          "M": 84.62279091591591,
           "S": null,
           "canonical-format": 100.0,
           "crash-core": 100.0,
@@ -7809,14 +7809,14 @@
           "real-world": 100.0,
           "robustness": 100.0,
           "spec-tests": 100.0,
-          "xfstests-core": 94.54545454545455
+          "xfstests-core": 99.42006269592476
         },
         "rule": "core-overall-v2-zero-fill",
         "status": "provisional",
-        "total": 76.31017112267453,
+        "total": 76.81272026880349,
         "utility": {
-          "C": 99.52272727272728,
-          "M": 87.55269139015398,
+          "C": 99.94925548589342,
+          "M": 94.61797682057058,
           "P": 70.99582007712276,
           "R": 100.0,
           "S": 0.0,
@@ -7855,18 +7855,18 @@
           },
           "coverage": {
             "first_lifecycle_unobserved": 0,
-            "safe_rejection": 206,
+            "safe_rejection": 204,
             "second_lifecycle_blocked": 0,
             "total": 216,
-            "two_lifecycles_observed": 10
+            "two_lifecycles_observed": 12
           },
           "end_to_end": 100.0,
           "rule": "crash-observed-capabilities-v1",
           "score": 100.0
         },
         "dimensions": {
-          "C": 99.18181818181819,
-          "M": 67.39447408371286,
+          "C": 99.91300940438872,
+          "M": 84.62828078078078,
           "P": 60.6223592829625,
           "R": 100.0,
           "S": 0,
@@ -7875,7 +7875,7 @@
         "eligible": false,
         "hard_gates": "not-assessed",
         "inputs": {
-          "M": 67.39447408371286,
+          "M": 84.62828078078078,
           "S": null,
           "canonical-format": 100.0,
           "crash-core": 100.0,
@@ -7885,7 +7885,7 @@
           "real-world": 100.0,
           "robustness": 100.0,
           "spec-tests": 100.0,
-          "xfstests-core": 94.54545454545455
+          "xfstests-core": 99.42006269592476
         },
         "performance_details": {
           "perf-cpu": {
@@ -8483,10 +8483,10 @@
         },
         "rule": "core-overall-v3-zero-fill",
         "status": "provisional",
-        "total": 74.14559599611826,
+        "total": 75.26320325887133,
         "utility": {
-          "C": 99.18181818181819,
-          "M": 67.39447408371286,
+          "C": 99.91300940438872,
+          "M": 84.62828078078078,
           "P": 60.6223592829625,
           "R": 100.0,
           "S": 0,

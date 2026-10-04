@@ -16,9 +16,9 @@ SDK/POSIX and other profiles do not all use the same candidate source, so they a
 
 | Profile | Classification | Pass | Expected fail | Fail | Unexpected pass | Timeout | Skip N/A | Skip impl | Pass rate | Category macro average |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| `sdk-smoke` | `diagnostic` | 77 | 0 | 0 | 0 | 0 | 0 | 0 | 100.00% | — |
+| `sdk-smoke` | `diagnostic` | 82 | 0 | 0 | 0 | 0 | 0 | 0 | 100.00% | — |
 
-`sdk-smoke` run: `reference-fallocate-sdk-20261004-r1`
+`sdk-smoke` run: `reference-review-sdk-20261004-r1`
 
 ### POSIX correctness
 
@@ -26,9 +26,9 @@ SDK/POSIX and other profiles do not all use the same candidate source, so they a
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | `spec-tests` | `diagnostic` | 44 | 0 | 0 | 0 | 0 | 7 | 0 | 100.00% | 100.00% |
 | `pjdfstest-core` | `diagnostic` | 169 | 0 | 0 | 0 | 0 | 48 | 0 | 100.00% | 100.00% |
-| `xfstests-core` | `diagnostic` | 190 | 1 | 0 | 0 | 3 | 473 | 0 | 98.45% | 94.55% |
+| `xfstests-core` | `diagnostic` | 190 | 1 | 2 | 0 | 1 | 473 | 0 | 98.45% | 99.42% |
 
-`spec-tests` run: `case-correction-core-reference-spec-tests`
+`spec-tests` run: `reference-readdir-spec-20261004-r1`
 
 `pjdfstest-core` run: `reference-readdir-pjd-20261004-r1`
 
@@ -51,7 +51,7 @@ Outcome: `pass`; classification: `diagnostic`.
 
 Timeouts count as failures; N/A is excluded; the macro average weights categories equally.
 
-Run: `reference-readdir-robustness-20261004-r1`
+Run: `reference-review-robustness-20261004-r1`
 Execution backend: `hyperv`
 
 ### On-disk format conformance
@@ -99,11 +99,11 @@ The table above summarizes whether cases meet all requirements. The table below 
 
 Crash score: **100.00**. Weights: disk structure 40%, data correctness 40%, unmount and reopen 20%.
 
-Permitted safe rejections: 206. Two rounds tested: 10. Reopen tests not run after failure: 0. First round not tested: 0.
+Permitted safe rejections: 204. Two rounds tested: 12. Reopen tests not run after failure: 0. First round not tested: 0.
 
 Each round includes mount, checks, and unmount. Safe rejection meets requirements but does not prove data recovery. Reopen not tested after an earlier failure does not count as a pass. See [scoring](../../docs/scoring.md) for the meaning of each check.
 
-Run: `reference-fallocate-crash-20261004-r1`
+Run: `reference-readdir-crash-20261004-r1`
 Execution backend: `hyperv`
 
 ### Real-world applications
@@ -121,7 +121,7 @@ Outcome: `pass`; classification: `diagnostic`.
 | Pass rate | 100.00% |
 | Category macro average | 100.00% |
 
-Run: `reference-readdir-realworld-20261004-r1`
+Run: `reference-review-realworld-20261004-r2`
 Execution backend: `hyperv`
 
 ### CPU performance
@@ -222,5 +222,5 @@ Original profile results remain independent; the index adds a derived provisiona
 
 `valid` means the profile evidence is valid, not that all cases passed or release eligibility is established. `candidate-failed` is not an infrastructure error. `diagnostic` is diagnostic-only; `noneligible` cannot enter rankings. Hyper-V performance is not release- or ranking-eligible; protocol-v2 Hyper-V runs on the fixed VHDX/memory devices form their own `hyperv-fixed-vhdx` pool, counted in the provisional total and not comparable with KVM/raw-NVMe scores.
 
-Maintainability (`maint-v3-policy`, 5% of the overall score): **67.39** / 100; components are in the README. Reference is a separate calibration baseline, not a model-generation entry.
+Maintainability (`maint-v3-policy`, 5% of the overall score): **84.63** / 100; components are in the README. Reference is a separate calibration baseline, not a model-generation entry.
 <!-- core-results:end -->

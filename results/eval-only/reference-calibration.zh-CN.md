@@ -16,9 +16,9 @@ SDK/POSIX 与其他 profile 使用的候选源码不完全相同，不能视为�
 
 | Profile | Classification | Pass | Expected fail | Fail | Unexpected pass | Timeout | Skip N/A | Skip impl | Pass rate | Category macro average |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| `sdk-smoke` | `diagnostic` | 77 | 0 | 0 | 0 | 0 | 0 | 0 | 100.00% | — |
+| `sdk-smoke` | `diagnostic` | 82 | 0 | 0 | 0 | 0 | 0 | 0 | 100.00% | — |
 
-`sdk-smoke` run: `reference-fallocate-sdk-20261004-r1`
+`sdk-smoke` run: `reference-review-sdk-20261004-r1`
 
 ### POSIX 正确性
 
@@ -26,9 +26,9 @@ SDK/POSIX 与其他 profile 使用的候选源码不完全相同，不能视为�
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | `spec-tests` | `diagnostic` | 44 | 0 | 0 | 0 | 0 | 7 | 0 | 100.00% | 100.00% |
 | `pjdfstest-core` | `diagnostic` | 169 | 0 | 0 | 0 | 0 | 48 | 0 | 100.00% | 100.00% |
-| `xfstests-core` | `diagnostic` | 190 | 1 | 0 | 0 | 3 | 473 | 0 | 98.45% | 94.55% |
+| `xfstests-core` | `diagnostic` | 190 | 1 | 2 | 0 | 1 | 473 | 0 | 98.45% | 99.42% |
 
-`spec-tests` run: `case-correction-core-reference-spec-tests`
+`spec-tests` run: `reference-readdir-spec-20261004-r1`
 
 `pjdfstest-core` run: `reference-readdir-pjd-20261004-r1`
 
@@ -51,7 +51,7 @@ Profile: `robustness`
 
 超时计失败，N/A 不计入分母，类别宏平均按类别等权。
 
-Run: `reference-readdir-robustness-20261004-r1`
+Run: `reference-review-robustness-20261004-r1`
 执行后端: `hyperv`
 
 ### 磁盘格式一致性
@@ -99,11 +99,11 @@ Profile: `crash-core`
 
 崩溃分 **100.00**。权重：磁盘结构 40%、数据正确性 40%、卸载与重开 20%。
 
-允许的安全拒绝：206 项；两轮已测试：10 项；失败后未再次打开：0 项；首轮未测试：0 项。
+允许的安全拒绝：204 项；两轮已测试：12 项；失败后未再次打开：0 项；首轮未测试：0 项。
 
 每轮包括挂载、检查和卸载。安全拒绝计满足要求，不表示数据已恢复。前一步失败导致未测试的再次打开不计通过。各检查项目的含义见[评分方法](../../docs/scoring.zh-CN.md)。
 
-Run: `reference-fallocate-crash-20261004-r1`
+Run: `reference-readdir-crash-20261004-r1`
 执行后端: `hyperv`
 
 ### 真实应用
@@ -121,7 +121,7 @@ Profile: `real-world`
 | Pass rate | 100.00% |
 | Category macro average | 100.00% |
 
-Run: `reference-readdir-realworld-20261004-r1`
+Run: `reference-review-realworld-20261004-r2`
 执行后端: `hyperv`
 
 ### CPU 性能
@@ -222,5 +222,5 @@ Scoring rule: `agent-review-score-v2`.
 
 `valid` 表示该 profile 的证据有效，不等于全部用例通过或全维度发布合格。`candidate-failed` 是候选失败，不是基础设施错误。`diagnostic` 仅诊断；`noneligible` 不具备排名资格。Hyper-V 性能不具备发布/排名资格；协议 v2 在固定 VHDX/内存设备上的 Hyper-V 运行单独组成 `hyperv-fixed-vhdx` 比较池计入暂计总分，与 KVM/raw-NVMe 分数不可比。
 
-可维护性（`maint-v3-policy`，占总分 5%）：**67.39** / 100，各项见 README。Reference 单列为校准基线，不是模型生成条目。
+可维护性（`maint-v3-policy`，占总分 5%）：**84.63** / 100，各项见 README。Reference 单列为校准基线，不是模型生成条目。
 <!-- core-results:end -->
