@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "scoring_rule": "agent-review-score-v2",
+  "submissions": {
+    "core-deepseek-v4-flash-0731": {
+      "S": 15.94896331738437,
+      "burden": 527,
+      "counts": {
+        "critical": 5,
+        "high": 11,
+        "low": 7,
+        "medium": 31
+      },
+      "eligible": false,
+      "identity": {
+        "complete_sha256": "1dc191b384fdd34179ab34f782a4c90a55d4c6e1eee179059fe1f0a687880c74",
+        "final_sha256": "dcc7def31b67716ec1faf3387ac004a3a49d7cdaaca885d54acce5a974403f5c",
+        "review_input_manifest_sha256": "2b910b7b71ab5ea3371b43df0486198bcf699cfdccd79353bfd5f75c2aaae3ba",
+        "score_sha256": "939297f307a31a57d20adf449813ad00f0b9e7d0f303ad250c4565cab224489f",
+        "source_sha256": "8023b9f62471f02e5570be05621dc7d148743c9a3c45b43f3ceb678b8f1836dc"
+      },
+      "purpose": "diagnostic",
+      "scoring_rule": "agent-review-score-v2",
+      "status": "complete"
+    },
+    "core-fable-5.1": {
+      "S": 38.31417624521073,
+      "burden": 161,
+      "counts": {
+        "critical": 0,
+        "high": 6,
+        "low": 6,
+        "medium": 13
+      },
+      "eligible": false,
+      "identity": {
+        "complete_sha256": "b212b90a4064fbbd68626f50e679dbf9b0bd5379a009e793e0abdd83725beb49",
+        "final_sha256": "8b59ce2a7818b4565bac546fb6e7e9a0756f90bc192d124648420e5fdd2293e7",
+        "review_input_manifest_sha256": "88fbcfc0fbbfa482dde8643d623538152f27b58299a5df76ed549f2c5546c674",
+        "score_sha256": "5778d219736ccb7588659df15dcf152219fcc184b273e385b685cd7558a723c1",
+        "source_sha256": "c9f132bd10af25a8e0c9154102f9f02cd939338d5a33d1f1777b49ed4bc5e7e9"
+      },
+      "purpose": "diagnostic",
+      "scoring_rule": "agent-review-score-v2",
+      "status": "complete"
+    },
+    "core-fable-5.1-cc": {
+      "S": 44.84304932735426,
+      "burden": 123,
+      "counts": {
+        "critical": 1,
+        "high": 0,
+        "low": 3,
+        "medium": 16
+      },
+      "eligible": false,
+      "identity": {
+        "complete_sha256": "7107d0d03195a0b1e234e01b0245482b321ca57097c85b3e38d86cc25154016a",
+        "final_sha256": "9f487cb0b723629ea50ac969468e7fc2b3434e1cec25564e92ff963cf231e861",
+        "review_input_manifest_sha256": "c777b0f879588bf096049364d9e63b9119d87e6cec90da041a191abec6cde074",
+        "score_sha256": "6c0dbad9064dadb2ecb49b60ddcd16160ef50bff05731290403ac8d758847a6a",
+        "source_sha256": "2478140d9bfd2775e575ac00c29bdf4425d57c58866380223836faeb705f8b03"
+      },
+      "purpose": "diagnostic",
+      "scoring_rule": "agent-review-score-v2",
+      "status": "complete"
+    },
+    "core-gemini-3.8-flash": {
+      "S": 17.857142857142858,
+      "burden": 460,
+      "counts": {
+        "critical": 8,
+        "high": 1,
+        "low": 10,
+        "medium": 23
+      },
+      "eligible": false,
+      "identity": {
+        "complete_sha256": "4ee3517f1073c91c5103f2e12305b916766e74eec78179ec0ba99f3524f49b71",
+        "final_sha256": "d404c650049da1b373ac000279414837fb887a6bc77d1e5908d46c167d5ecded",
+        "review_input_manifest_sha256": "8d7328c73c5cf0617c79222eb90fd27ed1ffd8e886a1b0019bd4f4955eceb107",
+        "score_sha256": "23d1e2e69fdb5c4e1653b0444a661befb158afff194bd647910b1ce09c8ae85b",
+        "source_sha256": "cf5da46a7b0b861b50daa484d3079fcf71b7fdd122b18db552d63e4bbc3db2aa"
+      },
+      "purpose": "diagnostic",
+      "scoring_rule": "agent-review-score-v2",
+      "status": "complete"
+    },
+    "core-glm-5.3": {
+      "S": 27.47252747252747,
+      "burden": 264,
+      "counts": {
+        "critical": 1,
+        "high": 6,
+        "low": 9,
+        "medium": 25
+      },
+      "eligible": false,
+      "identity": {
+        "complete_sha256": "a5402d2cc87435b8e3ebc147e0360c5ec988bb65b8c094d7bacd5fbc8235bdea",
+        "final_sha256": "7bf115041f37bb36a819cd276704817c59a1327c92e12a245f58b6126bcd3e84",
+        "review_input_manifest_sha256": "2e4e22b59f95a8ee70296210bb43bd43d3b59164e5b8efc0df45280d5152a289",
+        "score_sha256": "baeb6583d42cae3e241649fc351e8d9ecc1b49beab690220fc712f62c93b9b17",
+        "source_sha256": "02b46028b4978030604c39a8dd965e27beb7a61fa0a1e18a7b4c651973a6d86e"
+      },
+      "purpose": "diagnostic",
+      "scoring_rule": "agent-review-score-v2",
+      "status": "complete"
+    },
+    "core-gpt-5.6-sol-v2": {
+      "S": 31.152647975077883,
+      "burden": 221,
+      "counts": {
+        "critical": 2,
+        "high": 5,
+        "low": 1,
+        "medium": 13
+      },
+      "eligible": false,
+      "identity": {
+        "complete_sha256": "679dc04d99f050e146559caeab899a1e443c8c53267132077efb12e7eed371a5",
+        "final_sha256": "d03d2c0e1a8abecb5938424d69f4677140e97cd3918a1060132d2fb699ff509d",
+        "review_input_manifest_sha256": "7a270ea25825577d75c5e9a3dec013a2c2a767ac0bb8afeb01b33a91ca4e4e8d",
+        "score_sha256": "d146218acd8facce8ac76f5eae6411edec0bbc7b933bea8cebf96bb4ed017286",
+        "source_sha256": "25b0a4758c87047ff80ceac58cd5bd4906cd5f6ddcfe811e02c1909a74ee9783"
+      },
+      "purpose": "diagnostic",
+      "scoring_rule": "agent-review-score-v2",
+      "status": "complete"
+    },
+    "core-gpt-6-astra": {
+      "S": 90.9090909090909,
+      "burden": 10,
+      "counts": {
+        "critical": 0,
+        "high": 0,
+        "low": 0,
+        "medium": 2
+      },
+      "eligible": false,
+      "identity": {
+        "complete_sha256": "8023b5d63bc5894f0441c94296b5ba34ce18fe683378ae7642e6177d8cc56a3a",
+        "final_sha256": "1987860d14cbce70431f5fb3b1100ae91fd16151f0f11b99e83ca34160a4a78f",
+        "review_input_manifest_sha256": "585151866cafc5b756ceaedcdfec0b4ed389f07b7b6a63dab1ac7f5f639f4a0c",
+        "score_sha256": "f6a94cdae555581ea0309e8cbac16af048df9b15e991b77acda6500739356585",
+        "source_sha256": "bcb4f434391b02e4be5f864b1f7ef0c8e7dd053c9a0ba3c783f30c25b3c53826"
+      },
+      "purpose": "diagnostic",
+      "scoring_rule": "agent-review-score-v2",
+      "status": "complete"
+    },
+    "core-gpt-6.1-sol": {
+      "S": 86.95652173913044,
+      "burden": 15,
+      "counts": {
+        "critical": 0,
+        "high": 1,
+        "low": 0,
+        "medium": 0
+      },
+      "eligible": false,
+      "identity": {
+        "complete_sha256": "c73c2ee0dec6731c69b5b737bc79be501735ee9a0e3c4ac65ca5c7c822cfbed7",
+        "final_sha256": "214c513a64aede9d880066f0ce8c21e489dfcf816e5248d64e25cbaae983fae1",
+        "review_input_manifest_sha256": "0aa9d6fc3d1b3c41f51eb308519f25470af990ec9e1b7f5f08ec2bcdaf121ef5",
+        "score_sha256": "ea8eb2dc681a0f333f87715dd6feacc3c4ca31d9869729437938ad4839ea7eb6",
+        "source_sha256": "f5cc521ca2654a56cd940dfa7b85d7362380d4b61feb9c362c02af264023041c"
+      },
+      "purpose": "diagnostic",
+      "scoring_rule": "agent-review-score-v2",
+      "status": "complete"
+    },
+    "core-kimi-k3": {
+      "S": 26.881720430107528,
+      "burden": 272,
+      "counts": {
+        "critical": 4,
+        "high": 3,
+        "low": 2,
+        "medium": 13
+      },
+      "eligible": false,
+      "identity": {
+        "complete_sha256": "4e2df6ec677d31bedd3d7934fa5b1bbfcff7940755a8384cbc577c31857673be",
+        "final_sha256": "5eb783f46da7b080160459f2210b41bde46fbb5d93c8e27c7706029e799a76a5",
+        "review_input_manifest_sha256": "be6c15180c9c8f86fd4c7826847cc72954d631cc513b9ef24df45a287ee7fb49",
+        "score_sha256": "5dd21dc724fd5dce6b2e0ef6646b07167ab171e6bf45d7d47f0270f7847faf1b",
+        "source_sha256": "a5f5e35d07f0d361ec0996e08b144a2f8719b0fe940dd8e9c127f056ba13e94f"
+      },
+      "purpose": "diagnostic",
+      "scoring_rule": "agent-review-score-v2",
+      "status": "complete"
+    },
+    "core-opus-5.5-cc": {
+      "S": 62.5,
+      "burden": 60,
+      "counts": {
+        "critical": 0,
+        "high": 1,
+        "low": 0,
+        "medium": 9
+      },
+      "eligible": false,
+      "identity": {
+        "complete_sha256": "b04c6044337e8fe4e59b7279b3625cfca4f2a223baeb14996007954de82d6efc",
+        "final_sha256": "56544364dd261db6eebb3d029ef8b3eb453dea3023c6d83a184dd205e4950f47",
+        "review_input_manifest_sha256": "18cc356ef29defab1144565f048fcbcc68b1c05deaea2c73047a6ae3d0142ff9",
+        "score_sha256": "6b4586508aeaf88f3434b66998e7229fd22581b61dd779c142506c79d4300cd1",
+        "source_sha256": "92b8268c08745037bcdd758a47664566490c2f0dbf3be520f1368b9304a7a74a"
+      },
+      "purpose": "diagnostic",
+      "scoring_rule": "agent-review-score-v2",
+      "status": "complete"
+    },
+    "core-qwen-3.8-flash-next": {
+      "S": 16.39344262295082,
+      "burden": 510,
+      "counts": {
+        "critical": 8,
+        "high": 3,
+        "low": 0,
+        "medium": 29
+      },
+      "eligible": false,
+      "identity": {
+        "complete_sha256": "51774d4045fb9f8fa954562abaab501209dc36f3f547c72f631861e753b98784",
+        "final_sha256": "9229834afcba166756845910d5d74b57536eb56b9ca1a50b424aa7b8d80bb518",
+        "review_input_manifest_sha256": "5297b50fd286d2bf808897e030b426c9084780e44cac61981885ac4096b5292e",
+        "score_sha256": "9c95b510ee80ce36fedba058c3574606db07935a09bd4d537bd7603f03c873b8",
+        "source_sha256": "f1d5cb73eadf110b553116709294ff280ea40fb32f14bee561ddab295dd6de12"
+      },
+      "purpose": "diagnostic",
+      "scoring_rule": "agent-review-score-v2",
+      "status": "complete"
+    },
+    "core-reference": {
+      "S": null,
+      "burden": null,
+      "counts": null,
+      "eligible": false,
+      "purpose": "diagnostic",
+      "scoring_rule": "agent-review-score-v2",
+      "status": "incomplete"
+    }
+  }
+}

@@ -121,11 +121,17 @@ Profile: `perf-nvme`
 
 No publishable evaluation result yet (`not-run`), not a measured zero; the index provisionally imputes zero.
 
+### Agent code review
+
+Status: `incomplete`; S has no complete result, shown as — and imputed as zero only in the provisional total.
+
+Scoring rule: `agent-review-score-v2`.
+
 ## Scope and provenance
 
 Original profile results remain independent; the index adds a derived provisional total with missing scores imputed as zero. Each profile lists its run and, where recorded, its execution backend; different backends are not treated as identical execution conditions.
 
 `valid` means the profile evidence is valid, not that all cases passed or release eligibility is established. `candidate-failed` is not an infrastructure error. `diagnostic` is diagnostic-only; `noneligible` cannot enter rankings. Hyper-V performance is not release- or ranking-eligible; protocol-v2 Hyper-V runs on the fixed VHDX/memory devices form their own `hyperv-fixed-vhdx` pool, counted in the provisional total and not comparable with KVM/raw-NVMe scores.
 
-Security review is not assessed. Maintainability (`maint-v2-rev5`, 5% of the overall score): **69.11** / 100; components are in the README. Reference is a separate calibration baseline, not a model-generation entry.
+Maintainability (`maint-v2-rev5`, 5% of the overall score): **69.11** / 100; components are in the README. Reference is a separate calibration baseline, not a model-generation entry.
 <!-- core-results:end -->

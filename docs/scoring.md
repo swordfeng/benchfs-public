@@ -2,7 +2,7 @@
 
 [中文](scoring.zh-CN.md) · [Back to results](../README.md#results)
 
-BenchFS scores executable behavior: completed operations, correct data, and responses to abnormal conditions that meet the task requirements. The overview shows overall and individual test scores.
+BenchFS measures executable behavior, confirmed code-review defects, and maintainability. The overview shows the combined score and its individual dimensions.
 
 ## Pass rates and profile scores
 
@@ -23,11 +23,12 @@ Semantic tests, pjdfstest, xfstests, robustness, crash consistency, and applicat
 |---|---|---:|
 | Correctness C | Mean of semantic, pjdfstest, xfstests, and format scores | 35% |
 | Robustness R | Mean of robustness and crash-consistency scores | 20% |
+| Code review S | Diminishing curve of confirmed, deduplicated defect burden (below) | 20% |
 | Applications W | Application score | 10% |
 | Performance P | Mean of the CPU and NVMe performance scores | 10% |
 | Maintainability M | Static `maint-v2` score of the submission's own source (see the README) | 5% |
 
-The overall score retains the weights and transformation in `core-overall-v1-zero-fill`. First aggregate each dimension, then apply the utility function U below, and finally take the weighted sum.
+The provisional overall score uses `core-overall-v2-zero-fill`. It retains the existing weights and utility transformation and includes the available diagnostic code-review scores. First aggregate each dimension, then apply the utility function U below, and finally take the weighted sum.
 
 | Dimension score x | 0 | 20 | 40 | 60 | 80 | 100 |
 |---|---:|---:|---:|---:|---:|---:|
@@ -36,12 +37,25 @@ The overall score retains the weights and transformation in `core-overall-v1-zer
 U interpolates linearly between adjacent points. Current scores are calculated as:
 
 ```text
-total = 0.35 × U(C) + 0.20 × U(R) + 0.10 × U(W) + 0.10 × U(P) + 0.05 × U(M)
+total = 0.35 × U(C) + 0.20 × U(R) + 0.20 × U(S) + 0.10 × U(W) + 0.10 × U(P) + 0.05 × U(M)
 ```
 
-Measured components account for 80 points. The other 20 points in the existing rule—code review (20%)—are unmeasured and contribute zero. Existing scores have not been reweighted or rescaled to 100. The overview does not score implementations through subjective code commentary or convert source size into quality points.
+All six dimensions together account for 100 points. Diagnostic review scores contribute to this provisional summary; their inclusion does not establish release eligibility. Weights are not redistributed when a result is missing, and source size is not converted into quality points.
 
 Missing inputs contribute zero only when calculating totals; profile tables show “—” to distinguish them from measured zeroes. A partially measured dimension keeps its original denominator and is marked with `*`. Calculations retain source precision and display two decimals. Ordering uses unrounded totals.
+
+## Agent code review
+
+Agents independently review each implementation, consolidate duplicate root causes, and discuss findings and severity before confirming the result. Only confirmed, deduplicated defects contribute to S. Rejected or unproven allegations are excluded.
+
+```text
+burden = 40 × critical + 15 × high + 5 × medium + low
+S = 10000 / (100 + burden)
+```
+
+This is `agent-review-score-v2`: burden 0 gives 100, burden 100 gives 50, and burden 500 gives 16.67. Additional defects always lower the score, with diminishing deductions. A complete review with no confirmed defects scores 100; it is not proof of correctness. An incomplete or unperformed review has no S score, not a zero-defect result.
+
+The README and model reports publish completion status, severity counts and diagnostic scores. [Aggregate JSON](../results/agent-review.json) also includes opaque evidence hashes. Detailed findings and agent conversations remain private.
 
 ## Development statistics
 

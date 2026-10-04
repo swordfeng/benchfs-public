@@ -289,11 +289,23 @@ Performance score: **50.86** (comparison pool `hyperv-fixed-vhdx`).
 Run: `perf-v2-core-fable-5-1-perf-nvme-r2`
 Execution backend: `hyperv`
 
+### Agent code review
+
+S: **38.31** / 100; status: `complete`; purpose: `diagnostic`.
+
+| Critical | High | Medium | Low |
+|---:|---:|---:|---:|
+| 0 | 6 | 13 | 6 |
+
+Counts include confirmed, deduplicated root causes; S contributes 20% of the provisional total.
+
+Scoring rule: `agent-review-score-v2`.
+
 ## Scope and provenance
 
 Original profile results remain independent; the index adds a derived provisional total with missing scores imputed as zero. Each profile lists its run and, where recorded, its execution backend; different backends are not treated as identical execution conditions.
 
 `valid` means the profile evidence is valid, not that all cases passed or release eligibility is established. `candidate-failed` is not an infrastructure error. `diagnostic` is diagnostic-only; `noneligible` cannot enter rankings. Hyper-V performance is not release- or ranking-eligible; protocol-v2 Hyper-V runs on the fixed VHDX/memory devices form their own `hyperv-fixed-vhdx` pool, counted in the provisional total and not comparable with KVM/raw-NVMe scores.
 
-Security review is not assessed. Maintainability (`maint-v2-rev5`, 5% of the overall score): **91.37** / 100; components are in the README. Reference is a separate calibration baseline, not a model-generation entry.
+Maintainability (`maint-v2-rev5`, 5% of the overall score): **91.37** / 100; components are in the README. Reference is a separate calibration baseline, not a model-generation entry.
 <!-- core-results:end -->
