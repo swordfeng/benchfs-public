@@ -195,6 +195,16 @@ Outcome: `candidate-failed`; classification: `diagnostic`.
 | Pass rate | 94.91% |
 | Category macro average | 94.91% |
 
+R uses observed capability scores; the table above retains raw end-to-end outcomes.
+
+| Capability | Score / 100 | Met | Failed | Unproved (zero-filled) |
+|---|---:|---:|---:|---:|
+| Structural safety | 97.22 | 210 | 5 | 1 |
+| Content and durability | 99.54 | 215 | 0 | 1 |
+| Clean lifecycle | 94.91 | 205 | 11 | 0 |
+
+Derived crash score **97.69**; structure / content / clean budgets: 40% / 40% / 20%. Lawful safe rejections: 61; two lifecycles observed: 144; second lifecycle blocked: 11; first unobserved: 0. Safe rejection credits contract compliance, not recovered content; a blocked second lifecycle is not a pass.
+
 Run: `case-correction-core-kimi-k3-crash-core`
 
 ### Real-world applications

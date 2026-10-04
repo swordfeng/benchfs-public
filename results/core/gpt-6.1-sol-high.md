@@ -98,6 +98,16 @@ Outcome: `pass`; classification: `valid`.
 | Pass rate | 100.00% |
 | Category macro average | 100.00% |
 
+R uses observed capability scores; the table above retains raw end-to-end outcomes.
+
+| Capability | Score / 100 | Met | Failed | Unproved (zero-filled) |
+|---|---:|---:|---:|---:|
+| Structural safety | 100.00 | 216 | 0 | 0 |
+| Content and durability | 100.00 | 216 | 0 | 0 |
+| Clean lifecycle | 100.00 | 216 | 0 | 0 |
+
+Derived crash score **100.00**; structure / content / clean budgets: 40% / 40% / 20%. Lawful safe rejections: 204; two lifecycles observed: 12; second lifecycle blocked: 0; first unobserved: 0. Safe rejection credits contract compliance, not recovered content; a blocked second lifecycle is not a pass.
+
 Run: `eval-core-gpt-6-1-sol-crash-core-r2`
 Execution backend: `qemu-kvm`
 

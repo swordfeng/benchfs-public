@@ -1,12 +1,10 @@
 {
-  "calibration_sha256": "1ad4f68392c5b2e5fb662c37c5450743ab1a76896f173adafef7eae2258c50af",
-  "derivation_sha256": "cc83c53e379b92852fdb6962276f5727a78485795ce4b36cbcf4661eed744470",
-  "previous_revision": "2026-10-04-r1",
-  "revision": "2026-10-04-r2",
+  "calibration_sha256": "ffcb93d5e4121c18ca6e794e5b4afec5a887c49d0507e27f901cf377bbb1aa54",
+  "derivation_sha256": "19a5c82d39c29f78b5cacda0927318796f2692a82a94ad334fd1b04344820f3e",
   "rule": "core-overall-v3-zero-fill",
   "schema_version": 1,
-  "scorer_sha256": "3f9dc0ce7c18b0e556cf8e5e4e8a8342fc0c99413a01a97770b676ac6588cd50",
-  "source_sha256": "aee02b01397a7756eff191aa217128fd84c0cf7b713df697621a3d67acf4c7c0",
+  "scorer_sha256": "2551cff1df1628ae58e2d02dffce4d778ebd1a7d48c734a3e6a2a68048452f46",
+  "source_sha256": "849b53d463b04e9c2a904190ed0ab0e0e2a86d353e096adc2bfe8935c2ff2f29",
   "submissions": {
     "core-deepseek-v4-flash-0731": {
       "previous_score": {
@@ -48,45 +46,11 @@
         "zero_imputed_dimensions": []
       },
       "score": {
-        "crash_capabilities": {
-          "components": {
-            "clean_lifecycle": 95.37037037037037,
-            "content": 98.61111111111111,
-            "structure": 95.37037037037037
-          },
-          "counts": {
-            "clean_lifecycle": {
-              "fail": 10,
-              "pass": 206,
-              "unknown": 0
-            },
-            "content": {
-              "fail": 1,
-              "pass": 213,
-              "unknown": 2
-            },
-            "structure": {
-              "fail": 7,
-              "pass": 206,
-              "unknown": 3
-            }
-          },
-          "coverage": {
-            "first_lifecycle_unobserved": 0,
-            "safe_rejection": 64,
-            "second_lifecycle_blocked": 10,
-            "total": 216,
-            "two_lifecycles_observed": 142
-          },
-          "end_to_end": 95.37037037037037,
-          "rule": "crash-observed-capabilities-v1",
-          "score": 96.66666666666666
-        },
         "dimensions": {
           "C": 91.31803269671583,
           "M": 78.42418183499879,
           "P": 44.982393396342495,
-          "R": 85.83333333333333,
+          "R": 85.05555555555556,
           "S": 15.94896331738437,
           "W": 50.0
         },
@@ -96,7 +60,7 @@
           "M": 78.42418183499879,
           "S": 15.94896331738437,
           "canonical-format": 74.85833768341509,
-          "crash-core": 96.66666666666666,
+          "crash-core": 95.37037037037037,
           "perf-cpu": 46.17980200735791,
           "perf-nvme": 43.78498478532708,
           "pjdfstest-core": 100.0,
@@ -107,19 +71,17 @@
         },
         "rule": "core-overall-v3-zero-fill",
         "status": "provisional",
-        "total": 65.73721920537827,
+        "total": 65.58166364982272,
         "utility": {
           "C": 91.31803269671583,
           "M": 78.42418183499879,
           "P": 44.982393396342495,
-          "R": 85.83333333333333,
+          "R": 85.05555555555556,
           "S": 15.94896331738437,
           "W": 50.0
         },
         "zero_imputed": [],
-        "zero_imputed_dimensions": [
-          "R"
-        ]
+        "zero_imputed_dimensions": []
       }
     },
     "core-fable-5.1": {
@@ -162,45 +124,11 @@
         "zero_imputed_dimensions": []
       },
       "score": {
-        "crash_capabilities": {
-          "components": {
-            "clean_lifecycle": 36.574074074074076,
-            "content": 100.0,
-            "structure": 100.0
-          },
-          "counts": {
-            "clean_lifecycle": {
-              "fail": 137,
-              "pass": 79,
-              "unknown": 0
-            },
-            "content": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            },
-            "structure": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            }
-          },
-          "coverage": {
-            "first_lifecycle_unobserved": 0,
-            "safe_rejection": 66,
-            "second_lifecycle_blocked": 137,
-            "total": 216,
-            "two_lifecycles_observed": 13
-          },
-          "end_to_end": 36.574074074074076,
-          "rule": "crash-observed-capabilities-v1",
-          "score": 87.31481481481481
-        },
         "dimensions": {
           "C": 96.74407871821664,
           "M": 90.7615873015873,
           "P": 60.15311570033984,
-          "R": 88.5,
+          "R": 58.05555555555556,
           "S": 38.31417624521073,
           "W": 75.0
         },
@@ -210,7 +138,7 @@
           "M": 90.7615873015873,
           "S": 38.31417624521073,
           "canonical-format": 95.45454545454544,
-          "crash-core": 87.31481481481481,
+          "crash-core": 36.57407407407407,
           "perf-cpu": 60.37258183432894,
           "perf-nvme": 59.93364956635073,
           "pjdfstest-core": 99.25925925925925,
@@ -221,12 +149,12 @@
         },
         "rule": "core-overall-v3-zero-fill",
         "status": "provisional",
-        "total": 77.27665373553133,
+        "total": 71.18776484664244,
         "utility": {
           "C": 96.74407871821664,
           "M": 90.7615873015873,
           "P": 60.15311570033984,
-          "R": 88.5,
+          "R": 58.05555555555556,
           "S": 38.31417624521073,
           "W": 75.0
         },
@@ -274,45 +202,11 @@
         "zero_imputed_dimensions": []
       },
       "score": {
-        "crash_capabilities": {
-          "components": {
-            "clean_lifecycle": 37.03703703703704,
-            "content": 100.0,
-            "structure": 100.0
-          },
-          "counts": {
-            "clean_lifecycle": {
-              "fail": 136,
-              "pass": 80,
-              "unknown": 0
-            },
-            "content": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            },
-            "structure": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            }
-          },
-          "coverage": {
-            "first_lifecycle_unobserved": 0,
-            "safe_rejection": 68,
-            "second_lifecycle_blocked": 136,
-            "total": 216,
-            "two_lifecycles_observed": 12
-          },
-          "end_to_end": 37.03703703703704,
-          "rule": "crash-observed-capabilities-v1",
-          "score": 87.4074074074074
-        },
         "dimensions": {
           "C": 98.01724137931033,
           "M": 87.02025655670737,
           "P": 62.334391929966415,
-          "R": 92.44444444444444,
+          "R": 62.22222222222222,
           "S": 44.84304932735426,
           "W": 75.0
         },
@@ -322,7 +216,7 @@
           "M": 87.02025655670737,
           "S": 44.84304932735426,
           "canonical-format": 95.45454545454544,
-          "crash-core": 87.4074074074074,
+          "crash-core": 37.03703703703704,
           "perf-cpu": 64.05931279824932,
           "perf-nvme": 60.6094710616835,
           "pjdfstest-core": 100.0,
@@ -333,12 +227,12 @@
         },
         "rule": "core-overall-v3-zero-fill",
         "status": "provisional",
-        "total": 79.84798525795036,
+        "total": 73.8035408135059,
         "utility": {
           "C": 98.01724137931033,
           "M": 87.02025655670737,
           "P": 62.334391929966415,
-          "R": 92.44444444444444,
+          "R": 62.22222222222222,
           "S": 44.84304932735426,
           "W": 75.0
         },
@@ -386,45 +280,11 @@
         "zero_imputed_dimensions": []
       },
       "score": {
-        "crash_capabilities": {
-          "components": {
-            "clean_lifecycle": 67.59259259259258,
-            "content": 87.96296296296296,
-            "structure": 67.59259259259258
-          },
-          "counts": {
-            "clean_lifecycle": {
-              "fail": 70,
-              "pass": 146,
-              "unknown": 0
-            },
-            "content": {
-              "fail": 0,
-              "pass": 190,
-              "unknown": 26
-            },
-            "structure": {
-              "fail": 44,
-              "pass": 146,
-              "unknown": 26
-            }
-          },
-          "coverage": {
-            "first_lifecycle_unobserved": 0,
-            "safe_rejection": 23,
-            "second_lifecycle_blocked": 70,
-            "total": 216,
-            "two_lifecycles_observed": 123
-          },
-          "end_to_end": 67.59259259259258,
-          "rule": "crash-observed-capabilities-v1",
-          "score": 75.74074074074073
-        },
         "dimensions": {
           "C": 92.10611737778254,
           "M": 68.11481414645952,
           "P": 46.56304732822317,
-          "R": 81.27777777777777,
+          "R": 76.3888888888889,
           "S": 17.857142857142858,
           "W": 50.0
         },
@@ -434,7 +294,7 @@
           "M": 68.11481414645952,
           "S": 17.857142857142858,
           "canonical-format": 77.65644443276022,
-          "crash-core": 75.74074074074073,
+          "crash-core": 67.59259259259261,
           "perf-cpu": 47.102646088519066,
           "perf-nvme": 46.023448567927275,
           "pjdfstest-core": 100.0,
@@ -445,19 +305,17 @@
         },
         "rule": "core-overall-v3-zero-fill",
         "status": "provisional",
-        "total": 65.12617064935331,
+        "total": 64.14839287157552,
         "utility": {
           "C": 92.10611737778254,
           "M": 68.11481414645952,
           "P": 46.56304732822317,
-          "R": 81.27777777777777,
+          "R": 76.3888888888889,
           "S": 17.857142857142858,
           "W": 50.0
         },
         "zero_imputed": [],
-        "zero_imputed_dimensions": [
-          "R"
-        ]
+        "zero_imputed_dimensions": []
       }
     },
     "core-glm-5.3": {
@@ -500,45 +358,11 @@
         "zero_imputed_dimensions": []
       },
       "score": {
-        "crash_capabilities": {
-          "components": {
-            "clean_lifecycle": 99.53703703703702,
-            "content": 99.53703703703702,
-            "structure": 99.53703703703702
-          },
-          "counts": {
-            "clean_lifecycle": {
-              "fail": 1,
-              "pass": 215,
-              "unknown": 0
-            },
-            "content": {
-              "fail": 1,
-              "pass": 215,
-              "unknown": 0
-            },
-            "structure": {
-              "fail": 0,
-              "pass": 215,
-              "unknown": 1
-            }
-          },
-          "coverage": {
-            "first_lifecycle_unobserved": 0,
-            "safe_rejection": 83,
-            "second_lifecycle_blocked": 1,
-            "total": 216,
-            "two_lifecycles_observed": 132
-          },
-          "end_to_end": 99.53703703703702,
-          "rule": "crash-observed-capabilities-v1",
-          "score": 99.53703703703702
-        },
         "dimensions": {
           "C": 96.88809238428914,
           "M": 82.29773164167628,
           "P": 42.63570949794735,
-          "R": 99.72222222222221,
+          "R": 99.72222222222223,
           "S": 27.47252747252747,
           "W": 75.0
         },
@@ -548,7 +372,7 @@
           "M": 82.29773164167628,
           "S": 27.47252747252747,
           "canonical-format": 94.05080213903744,
-          "crash-core": 99.53703703703702,
+          "crash-core": 99.53703703703705,
           "perf-cpu": 43.57560225677845,
           "perf-nvme": 41.69581673911625,
           "pjdfstest-core": 100.0,
@@ -564,14 +388,12 @@
           "C": 96.88809238428914,
           "M": 82.29773164167628,
           "P": 42.63570949794735,
-          "R": 99.72222222222221,
+          "R": 99.72222222222223,
           "S": 27.47252747252747,
           "W": 75.0
         },
         "zero_imputed": [],
-        "zero_imputed_dimensions": [
-          "R"
-        ]
+        "zero_imputed_dimensions": []
       }
     },
     "core-gpt-5.6-sol-v2": {
@@ -614,45 +436,11 @@
         "zero_imputed_dimensions": []
       },
       "score": {
-        "crash_capabilities": {
-          "components": {
-            "clean_lifecycle": 98.14814814814815,
-            "content": 100.0,
-            "structure": 99.53703703703702
-          },
-          "counts": {
-            "clean_lifecycle": {
-              "fail": 4,
-              "pass": 212,
-              "unknown": 0
-            },
-            "content": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            },
-            "structure": {
-              "fail": 1,
-              "pass": 215,
-              "unknown": 0
-            }
-          },
-          "coverage": {
-            "first_lifecycle_unobserved": 0,
-            "safe_rejection": 38,
-            "second_lifecycle_blocked": 2,
-            "total": 216,
-            "two_lifecycles_observed": 176
-          },
-          "end_to_end": 98.14814814814815,
-          "rule": "crash-observed-capabilities-v1",
-          "score": 99.44444444444444
-        },
         "dimensions": {
           "C": 96.48177450196508,
           "M": 75.68869468479605,
           "P": 23.59570950225242,
-          "R": 91.16666666666666,
+          "R": 90.38888888888889,
           "S": 31.152647975077883,
           "W": 50.0
         },
@@ -662,7 +450,7 @@
           "M": 75.68869468479605,
           "S": 31.152647975077883,
           "canonical-format": 92.15280333701386,
-          "crash-core": 99.44444444444444,
+          "crash-core": 98.14814814814815,
           "perf-cpu": 26.6794136814449,
           "perf-nvme": 20.512005323059938,
           "pjdfstest-core": 100.0,
@@ -673,12 +461,12 @@
         },
         "rule": "core-overall-v3-zero-fill",
         "status": "provisional",
-        "total": 69.37648968850172,
+        "total": 69.22093413294618,
         "utility": {
           "C": 96.48177450196508,
           "M": 75.68869468479605,
           "P": 23.59570950225242,
-          "R": 91.16666666666666,
+          "R": 90.38888888888889,
           "S": 31.152647975077883,
           "W": 50.0
         },
@@ -726,40 +514,6 @@
         "zero_imputed_dimensions": []
       },
       "score": {
-        "crash_capabilities": {
-          "components": {
-            "clean_lifecycle": 100.0,
-            "content": 100.0,
-            "structure": 100.0
-          },
-          "counts": {
-            "clean_lifecycle": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            },
-            "content": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            },
-            "structure": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            }
-          },
-          "coverage": {
-            "first_lifecycle_unobserved": 0,
-            "safe_rejection": 206,
-            "second_lifecycle_blocked": 0,
-            "total": 216,
-            "two_lifecycles_observed": 10
-          },
-          "end_to_end": 100.0,
-          "rule": "crash-observed-capabilities-v1",
-          "score": 100.0
-        },
         "dimensions": {
           "C": 98.39655172413794,
           "M": 87.63188462161725,
@@ -838,40 +592,6 @@
         "zero_imputed_dimensions": []
       },
       "score": {
-        "crash_capabilities": {
-          "components": {
-            "clean_lifecycle": 100.0,
-            "content": 100.0,
-            "structure": 100.0
-          },
-          "counts": {
-            "clean_lifecycle": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            },
-            "content": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            },
-            "structure": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            }
-          },
-          "coverage": {
-            "first_lifecycle_unobserved": 0,
-            "safe_rejection": 204,
-            "second_lifecycle_blocked": 0,
-            "total": 216,
-            "two_lifecycles_observed": 12
-          },
-          "end_to_end": 100.0,
-          "rule": "crash-observed-capabilities-v1",
-          "score": 100.0
-        },
         "dimensions": {
           "C": 98.4717868338558,
           "M": 83.31959595959597,
@@ -950,45 +670,11 @@
         "zero_imputed_dimensions": []
       },
       "score": {
-        "crash_capabilities": {
-          "components": {
-            "clean_lifecycle": 94.90740740740742,
-            "content": 99.53703703703704,
-            "structure": 97.22222222222223
-          },
-          "counts": {
-            "clean_lifecycle": {
-              "fail": 11,
-              "pass": 205,
-              "unknown": 0
-            },
-            "content": {
-              "fail": 0,
-              "pass": 215,
-              "unknown": 1
-            },
-            "structure": {
-              "fail": 5,
-              "pass": 210,
-              "unknown": 1
-            }
-          },
-          "coverage": {
-            "first_lifecycle_unobserved": 0,
-            "safe_rejection": 61,
-            "second_lifecycle_blocked": 11,
-            "total": 216,
-            "two_lifecycles_observed": 144
-          },
-          "end_to_end": 94.90740740740742,
-          "rule": "crash-observed-capabilities-v1",
-          "score": 97.68518518518519
-        },
         "dimensions": {
           "C": 94.50504592201506,
           "M": 84.77693809594808,
           "P": 0.0,
-          "R": 97.61111111111111,
+          "R": 95.94444444444443,
           "S": 26.881720430107528,
           "W": 75.0
         },
@@ -998,7 +684,7 @@
           "M": 84.77693809594808,
           "S": 26.881720430107528,
           "canonical-format": 84.17065390749602,
-          "crash-core": 97.68518518518519,
+          "crash-core": 94.90740740740739,
           "perf-cpu": 0.0,
           "perf-nvme": 0.0,
           "pjdfstest-core": 100.0,
@@ -1009,19 +695,17 @@
         },
         "rule": "core-overall-v3-zero-fill",
         "status": "provisional",
-        "total": 69.7141792857464,
+        "total": 69.38084595241305,
         "utility": {
           "C": 94.50504592201506,
           "M": 84.77693809594808,
           "P": 0.0,
-          "R": 97.61111111111111,
+          "R": 95.94444444444443,
           "S": 26.881720430107528,
           "W": 75.0
         },
         "zero_imputed": [],
-        "zero_imputed_dimensions": [
-          "R"
-        ]
+        "zero_imputed_dimensions": []
       }
     },
     "core-opus-5.5-cc": {
@@ -1064,40 +748,6 @@
         "zero_imputed_dimensions": []
       },
       "score": {
-        "crash_capabilities": {
-          "components": {
-            "clean_lifecycle": 100.0,
-            "content": 100.0,
-            "structure": 100.0
-          },
-          "counts": {
-            "clean_lifecycle": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            },
-            "content": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            },
-            "structure": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            }
-          },
-          "coverage": {
-            "first_lifecycle_unobserved": 0,
-            "safe_rejection": 59,
-            "second_lifecycle_blocked": 0,
-            "total": 216,
-            "two_lifecycles_observed": 157
-          },
-          "end_to_end": 100.0,
-          "rule": "crash-observed-capabilities-v1",
-          "score": 100.0
-        },
         "dimensions": {
           "C": 99.83542319749216,
           "M": 96.1705707748851,
@@ -1176,45 +826,11 @@
         "zero_imputed_dimensions": []
       },
       "score": {
-        "crash_capabilities": {
-          "components": {
-            "clean_lifecycle": 69.44444444444444,
-            "content": 71.75925925925925,
-            "structure": 69.44444444444444
-          },
-          "counts": {
-            "clean_lifecycle": {
-              "fail": 18,
-              "pass": 150,
-              "unknown": 48
-            },
-            "content": {
-              "fail": 1,
-              "pass": 155,
-              "unknown": 60
-            },
-            "structure": {
-              "fail": 5,
-              "pass": 150,
-              "unknown": 61
-            }
-          },
-          "coverage": {
-            "first_lifecycle_unobserved": 48,
-            "safe_rejection": 18,
-            "second_lifecycle_blocked": 66,
-            "total": 216,
-            "two_lifecycles_observed": 132
-          },
-          "end_to_end": 69.44444444444444,
-          "rule": "crash-observed-capabilities-v1",
-          "score": 70.37037037037038
-        },
         "dimensions": {
           "C": 91.06115295131478,
           "M": 83.67312824366923,
           "P": 53.71047769536135,
-          "R": 68.72222222222223,
+          "R": 68.16666666666666,
           "S": 16.39344262295082,
           "W": 50.0
         },
@@ -1224,7 +840,7 @@
           "M": 83.67312824366923,
           "S": 16.39344262295082,
           "canonical-format": 75.33238609992996,
-          "crash-core": 70.37037037037038,
+          "crash-core": 69.44444444444443,
           "perf-cpu": 53.89715888384032,
           "perf-nvme": 53.523796506882384,
           "pjdfstest-core": 100.0,
@@ -1235,19 +851,17 @@
         },
         "rule": "core-overall-v3-zero-fill",
         "status": "provisional",
-        "total": 63.44924068371438,
+        "total": 63.338129572603265,
         "utility": {
           "C": 91.06115295131478,
           "M": 83.67312824366923,
           "P": 53.71047769536135,
-          "R": 68.72222222222223,
+          "R": 68.16666666666666,
           "S": 16.39344262295082,
           "W": 50.0
         },
         "zero_imputed": [],
-        "zero_imputed_dimensions": [
-          "R"
-        ]
+        "zero_imputed_dimensions": []
       }
     },
     "core-reference": {
@@ -1297,45 +911,11 @@
         ]
       },
       "score": {
-        "crash_capabilities": {
-          "components": {
-            "clean_lifecycle": 98.14814814814815,
-            "content": 100.0,
-            "structure": 99.07407407407408
-          },
-          "counts": {
-            "clean_lifecycle": {
-              "fail": 4,
-              "pass": 212,
-              "unknown": 0
-            },
-            "content": {
-              "fail": 0,
-              "pass": 216,
-              "unknown": 0
-            },
-            "structure": {
-              "fail": 2,
-              "pass": 214,
-              "unknown": 0
-            }
-          },
-          "coverage": {
-            "first_lifecycle_unobserved": 0,
-            "safe_rejection": 39,
-            "second_lifecycle_blocked": 2,
-            "total": 216,
-            "two_lifecycles_observed": 175
-          },
-          "end_to_end": 98.14814814814815,
-          "rule": "crash-observed-capabilities-v1",
-          "score": 99.25925925925927
-        },
         "dimensions": {
           "C": 74.92247820672478,
           "M": 67.39447408371286,
           "P": 0.0,
-          "R": 98.55555555555556,
+          "R": 97.88888888888889,
           "S": 0,
           "W": 100.0
         },
@@ -1345,7 +925,7 @@
           "M": 67.39447408371286,
           "S": null,
           "canonical-format": 0.0,
-          "crash-core": 99.25925925925927,
+          "crash-core": 98.14814814814814,
           "perf-cpu": null,
           "perf-nvme": null,
           "pjdfstest-core": 100.0,
@@ -1356,12 +936,12 @@
         },
         "rule": "core-overall-v3-zero-fill",
         "status": "provisional",
-        "total": 59.30370218765043,
+        "total": 59.17036885431709,
         "utility": {
           "C": 74.92247820672478,
           "M": 67.39447408371286,
           "P": 0.0,
-          "R": 98.55555555555556,
+          "R": 97.88888888888889,
           "S": 0,
           "W": 100.0
         },

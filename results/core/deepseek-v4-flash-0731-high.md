@@ -192,6 +192,16 @@ Outcome: `candidate-failed`; classification: `diagnostic`.
 | Pass rate | 95.37% |
 | Category macro average | 95.37% |
 
+R uses observed capability scores; the table above retains raw end-to-end outcomes.
+
+| Capability | Score / 100 | Met | Failed | Unproved (zero-filled) |
+|---|---:|---:|---:|---:|
+| Structural safety | 95.37 | 206 | 7 | 3 |
+| Content and durability | 98.61 | 213 | 1 | 2 |
+| Clean lifecycle | 95.37 | 206 | 10 | 0 |
+
+Derived crash score **96.67**; structure / content / clean budgets: 40% / 40% / 20%. Lawful safe rejections: 64; two lifecycles observed: 142; second lifecycle blocked: 10; first unobserved: 0. Safe rejection credits contract compliance, not recovered content; a blocked second lifecycle is not a pass.
+
 Run: `case-correction-core-deepseek-v4-flash-0731-crash-core`
 
 ### Real-world applications

@@ -4,27 +4,7 @@
     "database": 0.5,
     "vcs": 0.25
   },
-  "calibration_sha256": "1ad4f68392c5b2e5fb662c37c5450743ab1a76896f173adafef7eae2258c50af",
-  "crash_capabilities": {
-    "cases_per_category": 24,
-    "categories": [
-      "G0",
-      "G1",
-      "G2",
-      "G3",
-      "G4",
-      "G5",
-      "G6",
-      "G7",
-      "G8"
-    ],
-    "rule": "crash-observed-capabilities-v1",
-    "weights": {
-      "clean_lifecycle": 0.2,
-      "content": 0.4,
-      "structure": 0.4
-    }
-  },
+  "calibration_sha256": "ffcb93d5e4121c18ca6e794e5b4afec5a887c49d0507e27f901cf377bbb1aa54",
   "distribution_scaling": "none",
   "main_weights": {
     "C": 0.35,
@@ -292,7 +272,6 @@
     "low": 1,
     "medium": 5
   },
-  "revision": "2026-10-04-r2",
   "rule": "core-overall-v3-zero-fill",
   "schema_version": 1
 }
