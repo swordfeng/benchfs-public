@@ -49,47 +49,6 @@ Reference is a calibration implementation. Its scores and report are listed belo
 </details>
 
 Current rule: `core-overall-v3-zero-fill`, a direct weighted sum with logarithmic performance scores against a fixed ext4/XFS/Btrfs production target. [Scores and calibration identity](results/overall-score-v3.json) retain the v2 scores.
-
-### Reliability after a crash
-
-The full test score measures whether each case meets all requirements. The crash score combines verified capabilities for robustness R. Weights: disk structure 40%, data correctness 40%, unmount and reopen 20%.
-
-Permitted safe rejection also meets requirements. Reopen not tested after an earlier failure does not count as a pass. All scores are out of 100. See [scoring](docs/scoring.md) for the meaning of each check.
-
-| Model / Agent | Full test score | Disk structure | Data correctness | Unmount and reopen | Crash score | Untested reopen after failure (cases) |
-|---|---:|---:|---:|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 37.04 | 100.00 | 100.00 | 37.04 | 87.41 | 136 |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 36.57 | 100.00 | 100.00 | 36.57 | 87.31 | 137 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 99.54 | 99.54 | 99.54 | 99.54 | 99.54 | 1 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 94.91 | 97.22 | 99.54 | 94.91 | 97.69 | 11 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 98.15 | 99.54 | 100.00 | 98.15 | 99.44 | 2 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 95.37 | 95.37 | 98.61 | 95.37 | 96.67 | 10 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 67.59 | 67.59 | 87.96 | 67.59 | 75.74 | 70 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 69.44 | 69.44 | 71.76 | 69.44 | 70.37 | 66 |
-
-### Agent code review
-
-Diagnostic results after independent reviews, root-cause deduplication and alignment; only aggregate counts are published. S uses `agent-review-score-v2` and contributes 20% of the provisional total.
-
-| Model / Agent | Status | Critical | High | Medium | Low | S / 100 |
-|---|---|---:|---:|---:|---:|---:|
-| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | `complete` | 0 | 0 | 2 | 0 | 90.91 |
-| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | `complete` | 0 | 1 | 0 | 0 | 86.96 |
-| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | `complete` | 0 | 1 | 9 | 0 | 62.50 |
-| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | `complete` | 1 | 0 | 16 | 3 | 44.84 |
-| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | `complete` | 0 | 6 | 13 | 6 | 38.31 |
-| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | `complete` | 1 | 6 | 25 | 9 | 27.47 |
-| [Kimi K3](results/core/kimi-k3-high.md) · Pi | `complete` | 4 | 3 | 13 | 2 | 26.88 |
-| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | `complete` | 2 | 5 | 13 | 1 | 31.15 |
-| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | `complete` | 5 | 11 | 31 | 7 | 15.95 |
-| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | `complete` | 8 | 1 | 23 | 10 | 17.86 |
-| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | `complete` | 8 | 3 | 29 | 0 | 16.39 |
-| [Reference](results/eval-only/reference-calibration.md) | `incomplete` | — | — | — | — | — |
-
-Incomplete or unreviewed results remain missing; they do not imply zero defects.
 <!-- core-results:end -->
 
 <a id="methods"></a>
@@ -227,6 +186,52 @@ After an unexpected interruption, the filesystem must handle the state left on d
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 146 / 216 | 67.59% | 67.59 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 150 / 216 | 69.44% | 69.44 |
 <!-- profile-crash-core:end -->
+
+#### Crash score breakdown
+
+<!-- crash-score:begin -->
+
+The full test score measures whether each case meets all requirements. The crash score combines verified capabilities for robustness R. Weights: disk structure 40%, data correctness 40%, unmount and reopen 20%.
+
+Permitted safe rejection also meets requirements. Reopen not tested after an earlier failure does not count as a pass. All scores are out of 100. See [scoring](docs/scoring.md) for the meaning of each check.
+
+| Model / Agent | Full test score | Disk structure | Data correctness | Unmount and reopen | Crash score | Untested reopen after failure (cases) |
+|---|---:|---:|---:|---:|---:|---:|
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 100.00 | 100.00 | 100.00 | 100.00 | 100.00 | 0 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 37.04 | 100.00 | 100.00 | 37.04 | 87.41 | 136 |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 36.57 | 100.00 | 100.00 | 36.57 | 87.31 | 137 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 99.54 | 99.54 | 99.54 | 99.54 | 99.54 | 1 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | 94.91 | 97.22 | 99.54 | 94.91 | 97.69 | 11 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 98.15 | 99.54 | 100.00 | 98.15 | 99.44 | 2 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 95.37 | 95.37 | 98.61 | 95.37 | 96.67 | 10 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 67.59 | 67.59 | 87.96 | 67.59 | 75.74 | 70 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 69.44 | 69.44 | 71.76 | 69.44 | 70.37 | 66 |
+<!-- crash-score:end -->
+
+### Agent code review
+
+<!-- agent-review:begin -->
+Diagnostic results after independent reviews, root-cause deduplication and alignment; only aggregate counts are published. S uses `agent-review-score-v2` and contributes 20% of the provisional total.
+
+| Model / Agent | Status | Critical | High | Medium | Low | S / 100 |
+|---|---|---:|---:|---:|---:|---:|
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | `complete` | 0 | 0 | 2 | 0 | 90.91 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | `complete` | 0 | 1 | 0 | 0 | 86.96 |
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | `complete` | 0 | 1 | 9 | 0 | 62.50 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | `complete` | 1 | 0 | 16 | 3 | 44.84 |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | `complete` | 0 | 6 | 13 | 6 | 38.31 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | `complete` | 1 | 6 | 25 | 9 | 27.47 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | `complete` | 4 | 3 | 13 | 2 | 26.88 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | `complete` | 2 | 5 | 13 | 1 | 31.15 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | `complete` | 5 | 11 | 31 | 7 | 15.95 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | `complete` | 8 | 1 | 23 | 10 | 17.86 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | `complete` | 8 | 3 | 29 | 0 | 16.39 |
+| [Reference](results/eval-only/reference-calibration.md) | `incomplete` | — | — | — | — | — |
+
+Incomplete or unreviewed results remain missing; they do not imply zero defects.
+<!-- agent-review:end -->
 
 ### Real applications
 
