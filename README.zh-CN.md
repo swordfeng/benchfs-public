@@ -15,7 +15,7 @@
 以下展示 Core 文件系统任务的成绩。测试覆盖文件操作、磁盘格式、稳健性、崩溃恢复和真实应用，按总分从高到低排列。
 
 <!-- core-results:begin -->
-![模型成绩，按总分从高到低排列](assets/core-results.zh-CN.1526297d176ecc17.svg)
+![模型成绩，按总分从高到低排列](assets/core-results.zh-CN.a58f5b193f86009d.svg)
 
 分项满分均为 100。总分沿用现有权重，当前已测项目的权重最高覆盖 **100 分**；各实现缺失的分项按 0 暂计。点击模型名称可查看详细报告。
 
@@ -27,7 +27,7 @@
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) | Claude Code | **79.85** | 98.02 | 92.44 | 44.84 | 75.00 | 62.33 | 87.02 | 2:59:12 | 340,562 | $40.69 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) | Pi | **77.28** | 96.74 | 88.50 | 38.31 | 75.00 | 60.15 | 90.76 | 5:16:10 | 298,429 | $72.41 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) | Pi | **75.23** | 96.89 | 99.72* | 27.47 | 75.00 | 42.64 | 82.30 | 7:32:19 | 541,837 | $62.99 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) | Pi | **69.71** | 94.51 | 97.61* | 26.88 | 75.00 | 0.00 | 84.78 | 6:52:08 | 478,897 | $90.50 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) | Pi | **72.09** | 94.51 | 97.61* | 26.88 | 75.00 | 23.80 | 84.78 | 6:52:08 | 478,897 | $90.50 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) | Pi | **69.38** | 96.48 | 91.17 | 31.15 | 50.00 | 23.60 | 75.69 | 2:42:57 | 87,220 | $7.81 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) | Pi | **65.74** | 91.32 | 85.83* | 15.95 | 50.00 | 44.98 | 78.42 | ≥12:19:49 | 518,078 | $3.26 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) | Pi | **65.13** | 92.11 | 81.28* | 17.86 | 50.00 | 46.56 | 68.11 | 3:05:17 | 267,908 | $31.62 |
@@ -268,7 +268,7 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 316.0 | 316.4 | 5,493 | 3,343 | 2,593 | 1,366.30 | 64.06 |
 | [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 202.9 | 202.7 | 5,302 | 445 | — | — | 60.37 |
 | [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 30.8 | 30.2 | 2,002 | 289 | 1,121 | 227.06 | 43.58 |
-| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | — | — | — | — | — | — | 0.00 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 39.1 | 37.9 | 2,586 | 1,061 | — | — | 47.59 |
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 14.4 | 14.3 | 1,013 | 39 | — | — | 26.68 |
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 17.4 | 17.4 | 3,617 | 151 | 731 | 164.40 | 46.18 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 17.5 | 17.4 | 2,208 | 1,891 | 966 | 261.63 | 47.10 |
