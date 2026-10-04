@@ -243,6 +243,11 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 9.7 | 8.5 | 157 | 34 | — | — | 19.81 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 88.8 | 88.9 | 1,315 | 1,030 | — | — | 43.24 |
 | [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | — | — | — | — | — | — | 0.00 |
+| *ext4（内核参考）* | 929.7 | 1,791.1 | 131,472 | 128,606 | 36,877 | 15,968.56 | — |
+| *XFS（内核参考）* | 944.2 | 1,773.1 | 133,655 | 131,359 | 41,531 | 16,493.88 | — |
+| *Btrfs（内核参考）* | 3,146.4 | 111.7 | 105,942 | 3,892 | 21,106 | 4,978.23 | — |
+
+内核参考行：ext4/XFS/Btrfs 以默认选项直接挂载在同一宿主盘、同规格 64 GiB VHDX 上，不经过 FUSE 和 NBD 控制器；每项只测一次，fio 窗口 120 秒（候选为 10 秒、3–5 个样本取中位数）；`near-enospc-reclaim` 使用 64 GiB 几何。它们是诊断参考，没有得分，不参与排名。
 <!-- profile-perf-nvme:end -->
 
 <a id="setup"></a>

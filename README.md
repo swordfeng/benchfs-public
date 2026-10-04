@@ -243,6 +243,11 @@ Performance tests run fio and metadata workloads on a memory-backed device (`per
 | [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 9.7 | 8.5 | 157 | 34 | — | — | 19.81 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 88.8 | 88.9 | 1,315 | 1,030 | — | — | 43.24 |
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | — | — | — | — | — | — | 0.00 |
+| *ext4 (kernel reference)* | 929.7 | 1,791.1 | 131,472 | 128,606 | 36,877 | 15,968.56 | — |
+| *XFS (kernel reference)* | 944.2 | 1,773.1 | 133,655 | 131,359 | 41,531 | 16,493.88 | — |
+| *Btrfs (kernel reference)* | 3,146.4 | 111.7 | 105,942 | 3,892 | 21,106 | 4,978.23 | — |
+
+Kernel reference rows: ext4/XFS/Btrfs mounted directly with default options on the same host drive and 64 GiB VHDX, without FUSE or the NBD controller; one repetition per cell with 120 s fio windows (candidates: 10 s windows, median of 3–5 samples); `near-enospc-reclaim` uses the 64 GiB geometry. They are diagnostic references: unscored and unranked.
 <!-- profile-perf-nvme:end -->
 
 <a id="setup"></a>
