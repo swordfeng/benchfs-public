@@ -205,6 +205,46 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | 3 / 4 | 75.00% | 66.67 |
 <!-- profile-real-world:end -->
 
+### 性能
+
+性能测试在内存设备（`perf-cpu`）和磁盘设备（`perf-nvme`）上运行 fio 与元数据负载，冷缓存和热缓存各测一次。每个负载取其计入样本的中位数，各列再按几何平均合并：顺序读写使用 1 MiB 请求，随机读写使用 4 KiB 请求、覆盖三种访问模式，元数据涵盖七种负载。每个 fio 负载中的读和写同时进行，因此各列并非单一方向的峰值。速度指数为五列的几何平均，模型之间的比值与单位无关。得分即该 profile 的性能分；同步覆盖写未单独列出，但计入得分。“—”表示有负载未测得或失败；不同比较池的得分不可比较。
+
+<!-- profile-perf-cpu:begin -->
+**CPU 性能**（`perf-cpu`）· 比较池 `hyperv-fixed-vhdx`
+
+| 模型 / Agent | 顺序读（MiB/s） | 顺序写（MiB/s） | 随机读（IOPS） | 随机写（IOPS） | 元数据（ops/s） | 速度指数 | 得分 / 100 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 191.0 | 190.9 | 4,556 | 3,776 | 2,574 | 1,100.61 | 45.43 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 163.5 | 163.3 | 4,844 | 108 | 2,068 | 492.56 | 42.44 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 218.5 | 218.3 | 3,564 | 130 | — | — | 42.72 |
+| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 30.8 | 30.2 | 2,002 | 289 | 1,121 | 227.06 | 36.89 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 316.0 | 316.4 | 5,493 | 3,343 | 2,593 | 1,366.30 | 47.69 |
+| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 202.9 | 202.7 | 5,302 | 445 | — | — | 44.78 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 17.4 | 17.4 | 3,617 | 151 | 731 | 164.40 | 39.63 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 17.5 | 17.4 | 2,208 | 1,891 | 966 | 261.63 | 38.83 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 14.4 | 14.3 | 1,013 | 39 | — | — | 22.92 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 122.2 | 122.2 | 2,589 | 1,894 | — | — | 40.38 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | — | — | — | — | — | — | 0.00 |
+<!-- profile-perf-cpu:end -->
+
+<!-- profile-perf-nvme:begin -->
+**NVMe 性能**（`perf-nvme`）· 比较池 `hyperv-fixed-vhdx`
+
+| 模型 / Agent | 顺序读（MiB/s） | 顺序写（MiB/s） | 随机读（IOPS） | 随机写（IOPS） | 元数据（ops/s） | 速度指数 | 得分 / 100 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| [Opus 5.5](results/core/opus-5.5-high-cc.zh-CN.md) · Claude Code | 137.7 | 137.8 | 1,880 | 1,639 | 2,033 | 653.07 | 48.19 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.zh-CN.md) · Pi | 136.0 | 136.1 | 2,107 | 78 | 1,652 | 347.37 | 46.59 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.zh-CN.md) · Pi | 134.5 | 134.5 | 1,348 | 71 | — | — | 45.46 |
+| [GLM 5.3](results/core/glm-5.3-high.zh-CN.md) · Pi | 14.6 | 14.2 | 1,185 | 213 | 688 | 129.04 | 39.57 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.zh-CN.md) · Claude Code | 162.8 | 162.8 | 3,007 | 1,892 | 1,998 | 786.63 | 52.11 |
+| [Fable 5.1](results/core/fable-5.1-high.zh-CN.md) · Pi | 165.6 | 165.7 | 2,825 | 141 | — | — | 50.86 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | 7.9 | 7.8 | 470 | 345 | 451 | 85.04 | 40.10 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | 7.9 | 7.8 | 1,200 | 1,096 | 563 | 135.55 | 40.21 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.zh-CN.md) · Pi | 9.7 | 8.5 | 157 | 34 | — | — | 19.81 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | 88.8 | 88.9 | 1,315 | 1,030 | — | — | 43.24 |
+| [Kimi K3](results/core/kimi-k3-high.zh-CN.md) · Pi | — | — | — | — | — | — | 0.00 |
+<!-- profile-perf-nvme:end -->
+
 <a id="setup"></a>
 
 ## 实验设置

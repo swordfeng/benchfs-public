@@ -205,6 +205,46 @@ Finally, real applications use the filesystem. These tests check whether applica
 | [Kimi K3](results/core/kimi-k3-high.md) · Pi | 3 / 4 | 75.00% | 66.67 |
 <!-- profile-real-world:end -->
 
+### Performance
+
+Performance tests run fio and metadata workloads on a memory-backed device (`perf-cpu`) and a disk device (`perf-nvme`), each from a cold and a warm cache. Each workload's result is the median of its counted samples, and each column combines them by geometric mean: sequential read and write use 1 MiB requests, random read and write use 4 KiB requests in three access patterns, and metadata covers seven workloads. Reads and writes in each fio workload run concurrently, so a column is not a single-direction peak. The speed index is the geometric mean of the five columns; ratios between models do not depend on the units. The score is the profile's performance score; synchronized overwrites are not shown but count toward it. A dash marks a value with an unmeasured or failed workload; scores from different comparison pools are not comparable.
+
+<!-- profile-perf-cpu:begin -->
+**CPU performance** (`perf-cpu`) · comparison pool `hyperv-fixed-vhdx`
+
+| Model / Agent | Seq read (MiB/s) | Seq write (MiB/s) | Random read (IOPS) | Random write (IOPS) | Metadata (ops/s) | Speed index | Score / 100 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 191.0 | 190.9 | 4,556 | 3,776 | 2,574 | 1,100.61 | 45.43 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 163.5 | 163.3 | 4,844 | 108 | 2,068 | 492.56 | 42.44 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 218.5 | 218.3 | 3,564 | 130 | — | — | 42.72 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 30.8 | 30.2 | 2,002 | 289 | 1,121 | 227.06 | 36.89 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 316.0 | 316.4 | 5,493 | 3,343 | 2,593 | 1,366.30 | 47.69 |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 202.9 | 202.7 | 5,302 | 445 | — | — | 44.78 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 17.4 | 17.4 | 3,617 | 151 | 731 | 164.40 | 39.63 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 17.5 | 17.4 | 2,208 | 1,891 | 966 | 261.63 | 38.83 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 14.4 | 14.3 | 1,013 | 39 | — | — | 22.92 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 122.2 | 122.2 | 2,589 | 1,894 | — | — | 40.38 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | — | — | — | — | — | — | 0.00 |
+<!-- profile-perf-cpu:end -->
+
+<!-- profile-perf-nvme:begin -->
+**NVMe performance** (`perf-nvme`) · comparison pool `hyperv-fixed-vhdx`
+
+| Model / Agent | Seq read (MiB/s) | Seq write (MiB/s) | Random read (IOPS) | Random write (IOPS) | Metadata (ops/s) | Speed index | Score / 100 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| [Opus 5.5](results/core/opus-5.5-high-cc.md) · Claude Code | 137.7 | 137.8 | 1,880 | 1,639 | 2,033 | 653.07 | 48.19 |
+| [GPT 6.1 Sol](results/core/gpt-6.1-sol-high.md) · Pi | 136.0 | 136.1 | 2,107 | 78 | 1,652 | 347.37 | 46.59 |
+| [GPT-6 Astra](results/core/gpt-6-astra-high.md) · Pi | 134.5 | 134.5 | 1,348 | 71 | — | — | 45.46 |
+| [GLM 5.3](results/core/glm-5.3-high.md) · Pi | 14.6 | 14.2 | 1,185 | 213 | 688 | 129.04 | 39.57 |
+| [Fable 5.1](results/core/fable-5.1-high-cc.md) · Claude Code | 162.8 | 162.8 | 3,007 | 1,892 | 1,998 | 786.63 | 52.11 |
+| [Fable 5.1](results/core/fable-5.1-high.md) · Pi | 165.6 | 165.7 | 2,825 | 141 | — | — | 50.86 |
+| [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | 7.9 | 7.8 | 470 | 345 | 451 | 85.04 | 40.10 |
+| [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | 7.9 | 7.8 | 1,200 | 1,096 | 563 | 135.55 | 40.21 |
+| [GPT 5.6 Sol](results/core/gpt-5.6-sol-high.md) · Pi | 9.7 | 8.5 | 157 | 34 | — | — | 19.81 |
+| [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | 88.8 | 88.9 | 1,315 | 1,030 | — | — | 43.24 |
+| [Kimi K3](results/core/kimi-k3-high.md) · Pi | — | — | — | — | — | — | 0.00 |
+<!-- profile-perf-nvme:end -->
+
 <a id="setup"></a>
 
 ## Experimental setup
