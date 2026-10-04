@@ -44,7 +44,7 @@ Reference 为参考实现，成绩和报告如下。
 
 | 实现 | 总分 / 100 | 正确性 | 稳健性 | 代码评审 | 真实应用 | 性能 | 可维护性 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [Reference](results/eval-only/reference-calibration.zh-CN.md) | 75.26 | 99.91 | 100.00 | — | 100.00 | 60.62 | 84.63 |
+| [Reference](results/eval-only/reference-calibration.zh-CN.md) | 94.31 | 99.91 | 100.00 | 95.24 | 100.00 | 60.62 | 84.63 |
 
 </details>
 
@@ -178,7 +178,7 @@ Agent 负责实现文件系统的存储和操作逻辑；固定的 FUSE adapter 
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.zh-CN.md) · Pi | `complete` | 5 | 11 | 31 | 7 | 15.95 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.zh-CN.md) · Pi | `complete` | 8 | 1 | 23 | 10 | 17.86 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.zh-CN.md) · Pi | `complete` | 8 | 3 | 29 | 0 | 16.39 |
-| [Reference](results/eval-only/reference-calibration.zh-CN.md) | `incomplete` | — | — | — | — | — |
+| [Reference](results/eval-only/reference-calibration.zh-CN.md) | `complete` | 0 | 0 | 1 | 0 | 95.24 |
 
 未完成或未审查的结果保持缺失，不视为零缺陷。
 <!-- agent-review:end -->

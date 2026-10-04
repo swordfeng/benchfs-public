@@ -6,7 +6,7 @@
   "rule": "core-overall-v3-zero-fill",
   "schema_version": 1,
   "scorer_sha256": "145cd6e047391ee24b24a4bd81da74a183e77b1f7fd25bbdf636c4c90bd96c13",
-  "source_sha256": "8cf8d110d66f61670cf8b8e2913bbe587247ff5b505051f59cddcb418391fd51",
+  "source_sha256": "2ee35638b63406e8c4e47f40cc95eb5714ea8d5c8de59a699fd968ddc1546815",
   "submissions": {
     "core-deepseek-v4-flash-0731": {
       "previous_score": {
@@ -7793,14 +7793,14 @@
           "M": 84.62279091591591,
           "P": 43.99442676949701,
           "R": 100.0,
-          "S": 0.0,
+          "S": 95.23809523809524,
           "W": 100.0
         },
         "eligible": false,
         "hard_gates": "not-assessed",
         "inputs": {
           "M": 84.62279091591591,
-          "S": null,
+          "S": 95.23809523809524,
           "canonical-format": 100.0,
           "crash-core": 100.0,
           "perf-cpu": 42.091779670302905,
@@ -7813,21 +7813,17 @@
         },
         "rule": "core-overall-v2-zero-fill",
         "status": "provisional",
-        "total": 76.81272026880349,
+        "total": 96.47938693547016,
         "utility": {
           "C": 99.94925548589342,
           "M": 94.61797682057058,
           "P": 70.99582007712276,
           "R": 100.0,
-          "S": 0.0,
+          "S": 98.33333333333333,
           "W": 100.0
         },
-        "zero_imputed": [
-          "S"
-        ],
-        "zero_imputed_dimensions": [
-          "S"
-        ]
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
       },
       "score": {
         "crash_capabilities": {
@@ -7869,14 +7865,14 @@
           "M": 84.62828078078078,
           "P": 60.6223592829625,
           "R": 100.0,
-          "S": 0,
+          "S": 95.23809523809524,
           "W": 100.0
         },
         "eligible": false,
         "hard_gates": "not-assessed",
         "inputs": {
           "M": 84.62828078078078,
-          "S": null,
+          "S": 95.23809523809524,
           "canonical-format": 100.0,
           "crash-core": 100.0,
           "perf-cpu": 61.000501463041616,
@@ -8483,21 +8479,17 @@
         },
         "rule": "core-overall-v3-zero-fill",
         "status": "provisional",
-        "total": 75.26320325887133,
+        "total": 94.31082230649038,
         "utility": {
           "C": 99.91300940438872,
           "M": 84.62828078078078,
           "P": 60.6223592829625,
           "R": 100.0,
-          "S": 0,
+          "S": 95.23809523809524,
           "W": 100.0
         },
-        "zero_imputed": [
-          "S"
-        ],
-        "zero_imputed_dimensions": [
-          "S"
-        ]
+        "zero_imputed": [],
+        "zero_imputed_dimensions": []
       }
     }
   }

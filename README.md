@@ -44,7 +44,7 @@ Reference is a calibration implementation. Its scores and report are listed belo
 
 | Implementation | Total / 100 | Correctness | Robustness | Code review | Applications | Performance | Maintainability |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [Reference](results/eval-only/reference-calibration.md) | 75.26 | 99.91 | 100.00 | — | 100.00 | 60.62 | 84.63 |
+| [Reference](results/eval-only/reference-calibration.md) | 94.31 | 99.91 | 100.00 | 95.24 | 100.00 | 60.62 | 84.63 |
 
 </details>
 
@@ -178,7 +178,7 @@ Diagnostic results after independent reviews, root-cause deduplication and align
 | [DeepSeek V4 Flash 0731](results/core/deepseek-v4-flash-0731-high.md) · Pi | `complete` | 5 | 11 | 31 | 7 | 15.95 |
 | [Gemini 3.8 Flash](results/core/gemini-3.8-flash-high.md) · Pi | `complete` | 8 | 1 | 23 | 10 | 17.86 |
 | [Qwen 3.8 Flash Next](results/core/qwen-3.8-flash-next-high.md) · Pi | `complete` | 8 | 3 | 29 | 0 | 16.39 |
-| [Reference](results/eval-only/reference-calibration.md) | `incomplete` | — | — | — | — | — |
+| [Reference](results/eval-only/reference-calibration.md) | `complete` | 0 | 0 | 1 | 0 | 95.24 |
 
 Incomplete or unreviewed results remain missing; they do not imply zero defects.
 <!-- agent-review:end -->

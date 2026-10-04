@@ -212,7 +212,13 @@ Execution backend: `hyperv`
 
 ### Agent code review
 
-Status: `incomplete`; S has no complete result, shown as — and imputed as zero only in the provisional total.
+S: **95.24** / 100; status: `complete`; purpose: `diagnostic`.
+
+| Critical | High | Medium | Low |
+|---:|---:|---:|---:|
+| 0 | 0 | 1 | 0 |
+
+Counts include confirmed, deduplicated root causes; S contributes 20% of the provisional total.
 
 Scoring rule: `agent-review-score-v2`.
 

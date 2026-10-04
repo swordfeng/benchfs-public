@@ -234,13 +234,25 @@
       "status": "complete"
     },
     "core-reference": {
-      "S": null,
-      "burden": null,
-      "counts": null,
+      "S": 95.23809523809524,
+      "burden": 5,
+      "counts": {
+        "critical": 0,
+        "high": 0,
+        "low": 0,
+        "medium": 1
+      },
       "eligible": false,
+      "identity": {
+        "complete_sha256": "5bddcf60a44567f6295ee7e456ca32c2e145a5a34e50644bde16e541b5254e44",
+        "final_sha256": "fa2bd5a3b67c98bb6df777d34adf844dc98c3dc77d7369b52d35f8ed08e5fdb7",
+        "review_input_manifest_sha256": "99e1e3f17f2ece60b2d88b9beb5606914b127055786678c729165af46ecdf539",
+        "score_sha256": "16bfec70f141895efc366a0fcf318159044ac83ae99d50361d943c319f3231d7",
+        "source_sha256": "a99748fce44df559b028e6441724aa533f70e54c40e80b1f297f5d5d97a9a7c6"
+      },
       "purpose": "diagnostic",
       "scoring_rule": "agent-review-score-v2",
-      "status": "incomplete"
+      "status": "complete"
     }
   }
 }

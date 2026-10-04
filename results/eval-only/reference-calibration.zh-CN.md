@@ -212,7 +212,13 @@ Run: `reference-fallocate-perf-nvme-20261004-r1`
 
 ### Agent 代码评审
 
-状态：`incomplete`；S 尚无完整结果，显示为 —，仅在暂计总分中填 0。
+S：**95.24** / 100；状态：`complete`；用途：`diagnostic`。
+
+| Critical | High | Medium | Low |
+|---:|---:|---:|---:|
+| 0 | 0 | 1 | 0 |
+
+仅统计已确认、按根因去重的问题；以 20% 权重计入暂计总分。
 
 Scoring rule: `agent-review-score-v2`.
 
